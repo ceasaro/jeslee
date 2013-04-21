@@ -1,0 +1,51 @@
+================================
+Manual deployment from scratch
+================================
+
+.. contents::
+
+Local system
+============
+Assuming checkout project + virtualenv with all requirements
+  $ svn export svn://svn.fam/data/svn/vortex/trunk/ vortex
+  $ tar --create --auto-compress --file /tmp/vortex.tar.bz2 vortex
+  $ pip install -r vortex/requirements/production.txt -d /tmp/vortex/sdists/
+  (scp vortex.tar.bz2 and sdists dir to hosting server)
+
+
+Hosting server configuration
+============================
+Starting point is Ubuntu 12.04 LTS, with apache installed
+
+  $ sudo apt-get install gcc g++ python-dev python-virtualenv libapache2-mod-wsgi libhaml-ruby1.8 zlib1g-dev libjpeg62-dev libfreetype6-dev libmysqld-dev gettext libcurl4-openssl-dev librtmp-dev libgnutls-dev mercurial git
+
+  $ sudo adduser --system --no-create-home --disabled-login --disabled-password --group vortex
+
+  $ sudo mkdir /opt/vortex
+  $ sudo mkdir /opt/virtualenvs
+#  $ sudo mkdir /opt/vortex_media
+  $ sudo mkdir /opt/log
+
+#  $ sudo chown vortex.vortex /opt/vortex_media
+  $ sudo chown vortex.vortex /opt/log
+
+  $ sudo virtualenv --no-site-packages /opt/virtualenvs/vortex
+
+  $ sudo tar -xvf ~/vortex.tar.bz2 -d /opt/vortex/
+  $ sudo chown -R vortex.vortex /opt/vortex/*
+
+  $ sudo /opt/virtualenvs/vortex/bin/pip install --find-links file://$HOME/sdists -r /opt/vortex/requirements/production.txt
+
+  $ cd /opt/vortex/vortex_web
+  $ sudo -u vortex /opt/virtualenvs/vortex/bin/python /opt/vortex/manage.py syncdb --settings=vortex_web.settings.production --noinput --all
+  $ sudo -u vortex /opt/virtualenvs/vortex/bin/python /opt/vortex/manage.py migrate --settings=vortex_web.settings.production --fake
+  $ sudo -u vortex /opt/virtualenvs/vortex/bin/python /opt/vortex/manage.py collectstatic --settings=vortex_web.settings.production --noinput
+
+
+
+#sudo -u vortex /opt/virtualenvs/vortex/bin/python /opt/vortex/manage.py shell --settings=vortex_web.settings.production
+
+
+Apache wsgi configuration
+============================
+sudo ln -s /opt/vortex/deployment/apache/vortex-prod.conf

@@ -1,0 +1,11 @@
+-r base.txt
+django-debug-toolbar
+-e git+https://github.com/playfire/django-debug-toolbar-user-panel.git#egg=django_debug_toolbar_user_panel-dev
+
+# for teseting
+django-nose
+fudge
+pysqlite
+
+# for runserver_plus
+werkzeug

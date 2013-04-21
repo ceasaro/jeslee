@@ -1,0 +1,53 @@
+/****************************************
+* entire page
+*/
+/* line 4, ../style.scss */
+html {
+  background-color: #A2DF86;
+  height: 100%;
+  width: 100%; }
+
+/* line 10, ../style.scss */
+#site-container {
+  background-color: #31b019;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  width: 1024px; }
+
+/****************************************
+* header
+*/
+/* line 21, ../style.scss */
+#header {
+  padding: 10px; }
+
+/****************************************
+* menu
+*/
+/* line 28, ../style.scss */
+#main-menu {
+  background-color: #a1a1a1;
+  padding: 10px; }
+  /* line 32, ../style.scss */
+  #main-menu ul {
+    list-style: none none; }
+    /* line 34, ../style.scss */
+    #main-menu ul li {
+      display: inline-block; }
+
+/****************************************
+* content
+*/
+/* line 43, ../style.scss */
+#content {
+  padding: 10px;
+  min-height: 400px; }
+
+/****************************************
+* footer
+*/
+/* line 51, ../style.scss */
+#footer {
+  background-color: #a1a1a1;
+  margin-bottom: 50px;
+  padding: 10px; }

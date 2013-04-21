@@ -1,0 +1,55 @@
+/****************************************
+* entire page
+*/
+html {
+  background-color: #A2DF86;
+  height: 100%;
+  width: 100%;
+}
+
+#site-container {
+  background-color: #31b019;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  width: 1024px;
+}
+
+
+/****************************************
+* header
+*/
+#header {
+  padding: 10px;
+}
+
+/****************************************
+* menu
+*/
+#main-menu {
+  background-color: #a1a1a1;
+  padding: 10px;
+
+  ul {
+    list-style: none none;
+    li {
+      display: inline-block;
+    }
+  }
+}
+
+/****************************************
+* content
+*/
+#content {
+  padding: 10px;
+  min-height: 400px;
+}
+
+/****************************************
+* footer
+*/
+#footer {
+  background-color: #a1a1a1;
+  margin-bottom: 50px;
+  padding: 10px;
+}

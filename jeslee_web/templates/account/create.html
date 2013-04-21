@@ -1,0 +1,17 @@
+{% extends 'base/site-base.html' %}
+
+{% block page_title %}Nieuw account{% endblock %}
+
+{%  block content %}
+    <div>
+        <b>Maar een nieuw account aan</b>
+        <form action="." method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <input type="text" name="fieldNames"/> <br/>
+            <input type="text" name="fieldNames"/> <br/>
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+{%  endblock %}

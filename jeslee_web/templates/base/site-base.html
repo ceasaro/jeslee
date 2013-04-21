@@ -1,0 +1,47 @@
+{% extends 'base/base.html' %}
+{% load webdesign %}
+{% load i18n %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}scss/css-generated/html5-reset.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}scss/css-generated/style.css"/>
+{% endblock %}
+
+{% block javascript %}
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+{% endblock %}
+
+{% block body %}
+<section id="header">
+    <img src="{{ STATIC_URL }}gfx/logo-scaunt.png" title="logo scaunt" alt="logo scaunt"/>
+    <h1>{% block page_title %}Scaunts{% endblock %}</h1>
+</section>
+
+<section id="main-menu">
+<div>
+</div>
+    <b>Menu</b>
+    <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}">Uitloggen</a></li>
+        {% else %}
+            <li><a href="{% url 'login' %}">Inloggen</a></li>
+        {% endif %}
+    </ul>
+</section>
+
+<section id="content">
+    {%  block content %}
+    {% lorem 3 w %}
+    {%  endblock %}
+</section>
+
+<section id="footer">
+    <div>footer</div>
+    <p>
+        {% lorem 9 w %}
+    </p>
+</section>
+{% endblock %}
