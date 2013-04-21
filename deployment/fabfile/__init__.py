@@ -75,14 +75,6 @@ def pip_install_requirements():
     with virtualenv.context(env.virtualenv_dir):
         sudo('pip install {}'.format(env.pip_bundle_uploaded))
     sudo('rm {}'.format(env.pip_bundle_uploaded))
-    
-
-@task
-def ubuntu_apt_get():
-    require('ubuntu_required_packages')
-    apt_get_params = ' '.join(env.ubuntu_required_packages)
-    sudo('apt-get update')
-    sudo('apt-get -q -y install {}'.format(apt_get_params))
 
 
 # TODO: integrate into upgrade task

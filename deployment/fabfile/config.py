@@ -14,7 +14,7 @@ env.project_root = normpath(join(dirname(__file__), '..', '..'))
 env.project_django_root = join(env.project_root, '')
 
 env.repository = AttrDict(
-        type='svn',
+        type='git',
         url='svn://svn.fam/data/svn/radyus/vortex/'
         )
 
@@ -46,7 +46,7 @@ def development():
     env.requirements_file = join(env.project_root,
                                  'requirements/dev.txt')
     env.virtualenv_dir = expandvars('$WORKON_HOME/caire/')
-    env.django_settings = 'vortex_web.settings.dev'
+    env.django_settings = 'jeslee_web.settings.dev'
     env.svn_branch = 'trunk/'
     django_settings_to_env()
     env.django_developing = True
@@ -54,7 +54,7 @@ def development():
 @task(alias='prod')
 def production():
     '''Configuration for production server'''
-    env.hosts = ['vortex.adverterenwerkt.nl']
+    env.hosts = ['jeslee.nl']
     env.install_dir = '/opt/vortex/'
     env.install_user = 'vortex'
 #    env.django_media_root = '/opt/caire_media'

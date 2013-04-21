@@ -7,10 +7,9 @@ Manual deployment from scratch
 Local system
 ============
 Assuming checkout project + virtualenv with all requirements
-  $ svn export svn://svn.fam/data/svn/vortex/trunk/ vortex
-  $ tar --create --auto-compress --file /tmp/vortex.tar.bz2 vortex
-  $ pip install -r vortex/requirements/production.txt -d /tmp/vortex/sdists/
-  (scp vortex.tar.bz2 and sdists dir to hosting server)
+  $ tar --create --auto-compress --file /tmp/jeslee.tar.bz2 jeslee
+  $ pip install -r jeslee/requirements/production.txt -d /tmp/jeslee/sdists/
+  (scp jeslee.tar.bz2 and sdists dir to hosting server)
 
 
 Hosting server configuration
@@ -19,22 +18,24 @@ Starting point is Ubuntu 12.04 LTS, with apache installed
 
   $ sudo apt-get install gcc g++ python-dev python-virtualenv libapache2-mod-wsgi libhaml-ruby1.8 zlib1g-dev libjpeg62-dev libfreetype6-dev libmysqld-dev gettext libcurl4-openssl-dev librtmp-dev libgnutls-dev mercurial git
 
-  $ sudo adduser --system --no-create-home --disabled-login --disabled-password --group vortex
+  $ sudo adduser --system --no-create-home --disabled-login --disabled-password --group jeslee
 
-  $ sudo mkdir /opt/vortex
-  $ sudo mkdir /opt/virtualenvs
-#  $ sudo mkdir /opt/vortex_media
-  $ sudo mkdir /opt/log
+  $ sudo mkdir -p /sites/python/django/jeslee
+  $ sudo mkdir -p /sites/python/virtualenvs
+#  $ sudo mkdir -p /sites/python/django/jeslee_media
+  $ sudo mkdir -p /sites/python/django/log
 
-#  $ sudo chown vortex.vortex /opt/vortex_media
-  $ sudo chown vortex.vortex /opt/log
+#  $ sudo chown jeslee.jeslee /sites/python/django/jeslee_media
+  $ sudo chown jeslee.jeslee /sites/python/django/log
 
-  $ sudo virtualenv --no-site-packages /opt/virtualenvs/vortex
+  $ sudo virtualenv --no-site-packages /sites/python/virtualenvs/jeslee
+  $ sudo . /sites/python/virtualenvs/jeslee/bin/activate
 
-  $ sudo tar -xvf ~/vortex.tar.bz2 -d /opt/vortex/
-  $ sudo chown -R vortex.vortex /opt/vortex/*
+  $ sudo cd /sites/python/django/jeslee
+  $ sudo git clone https://github.com/ceasaro/jeslee.git
+  $ sudo chown -R jeslee.jeslee /sites/python/django/jeslee/*
 
-  $ sudo /opt/virtualenvs/vortex/bin/pip install --find-links file://$HOME/sdists -r /opt/vortex/requirements/production.txt
+  $ sudo /sites/python/virtualenvs/jeslee/bin/pip install -r /opt/vortex/requirements/production.txt
 
   $ cd /opt/vortex/vortex_web
   $ sudo -u vortex /opt/virtualenvs/vortex/bin/python /opt/vortex/manage.py syncdb --settings=vortex_web.settings.production --noinput --all
