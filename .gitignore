@@ -1,5 +1,7 @@
 lfs.db
 .installed.cfg
+*.log
+*.pot
 *.pyc
 *.pyo
 *.DS_Store
