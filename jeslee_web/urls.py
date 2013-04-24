@@ -1,8 +1,9 @@
 from django.conf.urls import patterns, include, url
 
 # Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+from django.contrib import admin
+admin.autodiscover()
+
 from jeslee_web.views import HomeView
 
 urlpatterns = patterns('',
@@ -13,13 +14,31 @@ urlpatterns = patterns('',
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
-
     url(r'^$', HomeView.as_view(template_name="home.html"), name='home'),
 
     # authentication
     url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': "auth/login.html"}, name='login'),
     url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': "/"}, name='logout'),
 
+)
+
+import os
+DIRNAME = os.path.dirname(__file__)
+
+handler500 = 'lfs.core.views.server_error'
+
+#urlpatterns = patterns("",
+#    (r'', include('lfs.core.urls')),
+#    (r'^manage/', include('lfs.manage.urls')),
+#)
+
+urlpatterns += patterns("",
+    (r'^reviews/', include('reviews.urls')),
+    (r'^paypal/ipn/', include('paypal.standard.ipn.urls')),
+    (r'^paypal/pdt/', include('paypal.standard.pdt.urls')),
+)
+
+urlpatterns += patterns("",
+    (r'^admin/', include(admin.site.urls)),
+    (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': os.path.join(DIRNAME, "media"), 'show_indexes': True }),
 )
