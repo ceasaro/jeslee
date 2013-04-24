@@ -1,23 +1,80 @@
-{% load webdesign %}
+<!DOCTYPE html>
 {% load i18n %}
+{% load lfs_tags %}
+{% load lfs_theme_tags %}
+{% load lfs_portlets_tags %}
+{% load compress %}
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-    <meta charset="urt-8" />
-    <meta name="viewport" content="initial-scale=1.0;"/>
-    <meta name="description" content="{% block meta_description %}JesLee fantasie kleding{% endblock %}"/>
-    <title>{% block head_title %}JesLee{% endblock %}</title>
+    <title>{% block title %}{{ SHOP.get_meta_title }}{% endblock %}</title>
+    <link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.ico" type="image/ico" />
 
-    <link rel="icon" href="/favicon.ico" />
-    {%  block css %}{% endblock %}
-    {%  block javascript %}{% endblock %}
+    {% block head %}{% endblock %}
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <meta name="generator" content="LFS - http://www.getlfs.com" />
+
+    {% compress css %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/960_12_col.css" />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/960_12_col.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}scss/css-generated/style.css"/>
+
+    {% endcompress %}
+    <!--[if IE]>
+    {% compress css %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/iefixes.css" />
+    {% endcompress %}
+    <![endif]-->
+
+    {% compress js %}
+
+    {% endcompress %}
+
 </head>
-<body class="{% block body_class %}page{% endblock %}">
+<body class="{% block section %}lfs{% endblock %}">
+<section id="jeslee-header">
+    <div class="header-left-background"></div>
+    <div class="header-content">
+        <div class="jeslee-logo">
+            <img src="{{ STATIC_URL }}gfx/logo-jeslee-transparent.png" title="logo JesLee"/>
+        </div>
+        <div id="header-menu">
+            <ul>
+                <li>Inloggen</li>
+                <li>Aanmelden</li>
+                <li>Je aankopen</li>
+            </ul>
+            <a href="#" class="link-shopping-bag" title="winkel tasje">
+                <img src="{{ STATIC_URL }}gfx/shopping-bag.png" class="shopping-bag" title="winkel tasje"/>
+            </a>
+        </div>
+    </div>
+    <div id="main-site-menu">
+        <ul>
+            <li>Home</li>
+            <li>Over JesLee</li>
+            <li>Collecties</li>
+            <li>Nieuws</li>
+            <li>Agenda</li>
+            <li>Brochure</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+    <div class="header-right-background"></div>
+</section>
 
-<div id="site-container" class="{% if user.is_authenticated %}loggedin{%  endif %}">
-    {% block body %}
-    {% endblock %}
-</div>
+<section id="jeslee-body">
+    <img src="{{ STATIC_URL }}gfx/party-fashion-for-children-impression.png" title="feest kleding voor kinderen"/>
+</section>
+
+<section id="jeslee-footer">
+
+</section>
+{% block google-analytics-tracking %}
+{% google_analytics_tracking %}
+{% endblock %}
+{% block google-analytics-ecommerce %}{% endblock %}
 
 </body>
 </html>

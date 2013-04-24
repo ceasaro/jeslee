@@ -1,55 +1,106 @@
-/****************************************
-* entire page
-*/
+/***********************
+ * COLORS
+ **********************/
+$purple: #390e41;
+
+/***********************
+ * main
+ **********************/
+@font-face {
+  font-family: university_roman;
+  src: url('../../fonts/UNIVERSI.TTF');
+  src: url('http://127.0.0.1:8000/static/fonts/UNIVERSI.TTF');
+}
 html {
-  background-color: #A2DF86;
-  height: 100%;
+  background: url('../../gfx/background/background-left.png') no-repeat scroll left top 185px transparent;
+  font-family: university_roman;
+}
+body {
+  background: url('../../gfx/background/background-right.png') no-repeat scroll right top 125px transparent;
+}
+
+/***********************
+ * header
+ **********************/
+#jeslee-header {
+  background: $purple url('../../gfx/background/header-bottom.png') no-repeat center bottom;
+  height: 120px;
+  margin-top: 60px;
+  position: relative;
   width: 100%;
-}
 
-#site-container {
-  background-color: #31b019;
-  margin: 0 auto;
-  padding-bottom: 20px;
-  width: 1024px;
-}
-
-
-/****************************************
-* header
-*/
-#header {
-  padding: 10px;
-}
-
-/****************************************
-* menu
-*/
-#main-menu {
-  background-color: #a1a1a1;
-  padding: 10px;
-
-  ul {
-    list-style: none none;
-    li {
-      display: inline-block;
+  .header-left-background {
+    background: url("../../gfx/background/background-top-left.png") no-repeat scroll left top transparent;
+    height: 144px;
+    width: 90px;
+    position: absolute;
+    top: -62px;
+    left: 0;
+  }
+  .header-content {
+    width:960px;
+    margin: 0 auto;
+    .jeslee-logo {
+      float: left;
+      margin-left:20px;
+      //width: 215px;
     }
+    #header-menu {
+      float:right;
+      margin-top:15px;
+      ul {
+        display: inline;
+        li {
+          color: #FFF;
+          display: inline;
+        }
+      }
+      a.link-shopping-bag {
+        height: 59px;
+        width: 36px;
+      }
+    }
+  }
+  #main-site-menu {
+    background-color: #FFF;
+    bottom: 1px;
+    height: 40px;
+    position: absolute;
+    width: 100%;
+    ul {
+      width: 960px;
+      margin: 10px auto 0 auto;
+      li {
+        border-right: 1px solid $purple;
+        display: inline;
+        padding: 0 20px;
+      }
+    }
+  }
+  .header-right-background {
+    background: url("../../gfx/background/background-top-right.png") no-repeat scroll right top transparent;
+    height: 144px;
+    width: 90px;
+    position: absolute;
+    top: -62px;
+    right: 0;
   }
 }
 
-/****************************************
-* content
-*/
-#content {
-  padding: 10px;
+/***********************
+ * body
+ **********************/
+#jeslee-body {
+  margin:0 auto;
   min-height: 400px;
+  width: 960px;
 }
 
-/****************************************
-* footer
-*/
-#footer {
-  background-color: #a1a1a1;
-  margin-bottom: 50px;
-  padding: 10px;
+/***********************
+ * footer
+ **********************/
+#jeslee-footer {
+  border:1px solid #0FF;
+  min-height: 150px;
+  widows: 100%;
 }
