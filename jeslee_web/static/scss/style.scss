@@ -54,10 +54,16 @@ a {
         float: left;
         margin-top: 26px;
         li {
-          border-right: 1px solid #FFF;
-          color: #FFF;
           display: inline;
-          padding: 0 10px;
+          a {
+            border-right: 1px solid #FFF;
+            color: #FFF;
+            padding: 0 10px;
+            text-decoration: none;
+          }
+          a:hover {
+            text-decoration: underline;
+          }
         }
         li:last-child {
           border-right: none;
@@ -80,7 +86,14 @@ a {
       li {
         border-right: 1px solid $purple;
         display: inline;
-        padding: 0 20px;
+        a {
+          padding: 0 20px;
+          text-decoration: none;
+        }
+        a:hover {
+          padding: 0 20px;
+          text-decoration: underline;
+        }
       }
       li:last-child {
         border-right: none;
@@ -118,7 +131,7 @@ a {
     border-bottom:1px solid $purple;
     padding-top: 10px;
   }
-  .footer-menu {
+  #footer-menu {
     ul {
       color:#000;
       margin: 10px 10px 0 10px;
@@ -129,4 +142,14 @@ a {
     }
 
   }
+}
+
+
+/***********************
+ * utility
+ **********************/
+a.disabled {
+  cursor: default!important;
+  color:#000!important;
+  text-decoration: line-through!important;
 }

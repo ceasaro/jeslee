@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     url(r'^$', HomeView.as_view(template_name="home.html"), name='home'),
+    url(r'^collecties$', HomeView.as_view(template_name="lfs/collections.html"), name='collections'),
 
     # authentication
     url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': "auth/login.html"}, name='login'),
