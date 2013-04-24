@@ -1,12 +1,16 @@
 # Django settings for healthMap project.
 import os
 from django.core.urlresolvers import reverse_lazy
+# django imports
+from django.utils.translation import gettext_lazy as _
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 SITE_ROOT = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 PROJECT_DIR = os.path.dirname(SITE_ROOT) # this is not Django setting.
+
+DEFAULT_FROM_EMAIL = 'your_email@domain.com'
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -16,8 +20,12 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '../accounts_dev',                      # Or path to database file if using sqlite3.
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'lfs_test',                      # Or path to database file if using sqlite3.
+        'USER': 'lfs_test',                      # Not used with sqlite3.
+        'PASSWORD': 'lfs_test',                  # Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 #    'default': {
 #        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
@@ -57,12 +65,12 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = SITE_ROOT + '/media'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://example.com/media/", "http://media.example.com/"
-MEDIA_URL = ''
+MEDIA_URL = '/media/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -85,6 +93,7 @@ STATICFILES_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(SITE_ROOT, 'static'), #Our custom static files for this site.
+    os.path.join(SITE_ROOT, '../lfs/lfs_project/sitestatic'), #static from LFS
 )
 
 # List of finder classes that know how to find static files in
@@ -92,6 +101,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
@@ -111,6 +121,8 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'lfs.utils.middleware.RedirectFallbackMiddleware',
+    "pagination.middleware.PaginationMiddleware",
 )
 
 ROOT_URLCONF = 'jeslee_web.urls'
@@ -133,20 +145,138 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
-     'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+    'django.contrib.admin',
 
     # none default django apps
     'django_extensions',
     'django.contrib.webdesign',
+    'django.contrib.flatpages',
+    'django.contrib.sitemaps',
+    'django_countries',
+    "lfstheme",
+    'compressor',
+    'pagination',
+    'reviews',
+    'tagging',
+    'portlets',
 
     # LFS (Lighting Fast Shop)
     'lfs',
+    'lfs.tests',
+    'lfs.core',
+    'lfs.caching',
+    'lfs.cart',
+    'lfs.catalog',
+    'lfs.checkout',
+    'lfs.criteria',
+    'lfs.customer',
+    'lfs.discounts',
+    'lfs.export',
+    'lfs.gross_price',
+    'lfs.integrationtests',
+    'lfs.mail',
+    'lfs.manage',
+    'lfs.marketing',
+    'lfs.manufacturer',
+    'lfs.net_price',
+    'lfs.order',
+    'lfs.page',
+    'lfs.payment',
+    'lfs.portlet',
+    'lfs.search',
+    'lfs.shipping',
+    'lfs.supplier',
+    'lfs.tagging',
+    'lfs.tax',
+    'lfs.customer_tax',
+    'lfs.utils',
+    'lfs.voucher',
+    'lfs_contact',
+    'lfs_order_numbers',
+    'postal',
+    'paypal.standard.ipn',
+    'paypal.standard.pdt',
+    'gunicorn',
     # own written django apps
-#    'jeslee_web.base',
-#    'jeslee_web.account'
+    #    'jeslee_web.base',
+    #    'jeslee_web.account'
 )
+
+FORCE_SCRIPT_NAME=""
+LOGIN_URL           = reverse_lazy('login')
+LOGIN_ERROR_URL     = reverse_lazy('login-error')
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.debug',
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.request',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'lfs.core.context_processors.main',
+)
+
+AUTHENTICATION_BACKENDS = (
+    'lfs.customer.auth.EmailBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+# For sql_queries
+INTERNAL_IPS = (
+    "127.0.0.1",
+)
+
+CACHE_MIDDLEWARE_KEY_PREFIX = "lfs"
+# CACHE_BACKEND = 'file:///'
+# CACHE_BACKEND = 'locmem:///'
+# CACHE_BACKEND = 'memcached://127.0.0.1:11211/'
+CACHE_BACKEND = 'dummy:///'
+
+EMAIL_HOST = ""
+EMAIL_HOST_USER = ""
+EMAIL_HOST_PASSWORD = ""
+
+PAYPAL_RECEIVER_EMAIL = "info@yourbusiness.com"
+PAYPAL_IDENTITY_TOKEN = "set_this_to_your_paypal_pdt_identity_token"
+
+# TODO: Put this into the Shop model
+LFS_PAYPAL_REDIRECT = True
+LFS_AFTER_ADD_TO_CART = "lfs_added_to_cart"
+LFS_RECENT_PRODUCTS_LIMIT = 5
+
+LFS_ORDER_NUMBER_GENERATOR = "lfs_order_numbers.models.OrderNumberGenerator"
+LFS_DOCS = "http://docs.getlfs.com/en/latest/"
+
+LFS_INVOICE_COMPANY_NAME_REQUIRED = False
+LFS_INVOICE_EMAIL_REQUIRED = True
+LFS_INVOICE_PHONE_REQUIRED = True
+
+LFS_SHIPPING_COMPANY_NAME_REQUIRED = False
+LFS_SHIPPING_EMAIL_REQUIRED = False
+LFS_SHIPPING_PHONE_REQUIRED = False
+
+LFS_PRICE_CALCULATORS = [
+    ['lfs.gross_price.GrossPriceCalculator', _(u'Price includes tax')],
+    ['lfs.net_price.NetPriceCalculator', _(u'Price excludes tax')],
+]
+
+LFS_SHIPPING_METHOD_PRICE_CALCULATORS = [
+    ["lfs.shipping.GrossShippingMethodPriceCalculator", _(u'Price includes tax')],
+    ["lfs.shipping.NetShippingMethodPriceCalculator", _(u'Price excludes tax')],
+]
+
+LFS_UNITS = [
+    u"l",
+    u"m",
+    u"qm",
+    u"cm",
+    u"lfm",
+    u"Package",
+    u"Piece",
+]
+
+LFS_PRICE_UNITS = LFS_BASE_PRICE_UNITS = LFS_PACKING_UNITS = LFS_UNITS
+
+LFS_LOG_FILE = SITE_ROOT + "/../lfs.log"
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
@@ -189,5 +319,12 @@ LOGGING = {
     }
 }
 
-LOGIN_URL           = reverse_lazy('login')
-LOGIN_ERROR_URL     = reverse_lazy('login-error')
+REVIEWS_SHOW_PREVIEW = False
+REVIEWS_IS_NAME_REQUIRED = False
+REVIEWS_IS_EMAIL_REQUIRED = False
+REVIEWS_IS_MODERATED = False
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
