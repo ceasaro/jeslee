@@ -1,1 +1,57 @@
 {% extends 'lfs/base.html' %}
+{% block shop-content %}
+<div class="grid_12">
+    Navigation
+</div>
+<div class="grid_3">
+    <div class="product-card">
+        <div class="product-card-content">
+            <div class="product-card-text">
+                <ul>
+                    <li class="collection-group">meisjes collectie (33)</li>
+                    <li>Prinsessejurkjes (13)</li>
+                    <li>Nette jurkjes (3)</li>
+                    <li>Discojurkjes (12)</li>
+                    <li>Bruidsjurkjes en communiejurkjes(12)</li>
+                </ul>
+                <ul>
+                    <li class="collection-group">jongens collectie (27)</li>
+                    <li>Prinsenpakken (15)</li>
+                    <li>Gelegenheidskleding (12)</li>
+                </ul>
+                <ul>
+                    <li class="collection-group">unieke modellen (8)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="product-card-teaser">
+            Jurknaam<br/>
+            € 100,-
+        </div>
+    </div>
+</div>
+<div class="prefix_3">
+    <div class="grid_3">
+        {% include "includes/product-card.html" with dress="Jurkje 1" price="€100,-" impression="gfx/tmp/placeholder-dress-1.png" %}
+    </div>
+    <div class="grid_3">
+        {% include "includes/product-card.html" with dress="Jurkje 1" price="€100,-" impression="gfx/tmp/placeholder-dress-1.png" %}
+    </div>
+    <div class="grid_3">
+        {% include "includes/product-card.html" with dress="Jurkje 1" price="€100,-" impression="gfx/tmp/placeholder-dress-1.png" %}
+    </div>
+    <div class="grid_3">
+        {% include "includes/product-card.html" with dress="Jurkje 1" price="€100,-" impression="gfx/tmp/placeholder-dress-1.png" %}
+    </div>
+    <div class="grid_3">
+        {% include "includes/product-card.html" with dress="Jurkje 1" price="€100,-" impression="gfx/tmp/placeholder-dress-1.png" %}
+    </div>
+    <div class="grid_3">
+        {% include "includes/product-card.html" with dress="Jurkje 1" price="€100,-" impression="gfx/tmp/placeholder-dress-1.png" %}
+    </div>
+    <div class="grid_3">
+        {% include "includes/product-card.html" with dress="Jurkje 1" price="€100,-" impression="gfx/tmp/placeholder-dress-1.png" %}
+    </div>
+</div>
+
+{% endblock %}

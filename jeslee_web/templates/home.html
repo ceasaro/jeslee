@@ -2,20 +2,12 @@
 
 {% block title %}Home{% endblock %}
 
-{% block jeslee-body %}
+{% block jeslee-content %}
     <img src="{{ STATIC_URL }}gfx/party-fashion-for-children-impression.png" title="feest kleding voor kinderen"/>
     <div class="product-cards-home">
         <div class="grid_3">
             <div class="product-card-home-container">
-                <div class="product-card">
-                    <div class="product-card-content">
-                        <img src="{{ STATIC_URL }}/gfx/tmp/placeholder-dress-1.png"/>
-                    </div>
-                    <div class="product-card-teaser">
-                        Jurknaam<br/>
-                        € 100,-
-                    </div>
-                </div>
+            {% include "includes/product-card.html" with dress="Jurkje 1" price="€100,-" impression="gfx/tmp/placeholder-dress-1.png" %}
                 <div class="product-card-title">
                     Meisjes collectie
                 </div>
@@ -23,15 +15,7 @@
         </div>
         <div class="grid_3">
             <div class="product-card-home-container">
-                <div class="product-card">
-                    <div class="product-card-content">
-                        <img src="{{ STATIC_URL }}/gfx/tmp/placeholder-dress-2.png"/>
-                    </div>
-                    <div class="product-card-teaser">
-                        Jurknaam<br/>
-                        € 100,-
-                    </div>
-                </div>
+                {% include "includes/product-card.html" with dress="Jurkje 2" price="€120,-" impression="gfx/tmp/placeholder-dress-2.png"%}
                 <div class="product-card-title">
                     Jonges collectie
                 </div>
