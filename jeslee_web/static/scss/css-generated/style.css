@@ -6,29 +6,35 @@
  **********************/
 @font-face {
   font-family: university_roman;
-  src: url("../../fonts/UNIVERSI.TTF");
-  src: url("http://127.0.0.1:8000/static/fonts/UNIVERSI.TTF"); }
+  src: url("../../fonts/UNIVERSI.TTF"); }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000310}}
 html {
   background: url("../../gfx/background/background-left.png") no-repeat scroll left top 185px transparent;
-  font-family: university_roman; }
+  color: #390e41;
+  font-family: university_roman;
+  font-size: 11pt;
+  height: auto; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000317}}
 body {
   background: url("../../gfx/background/background-right.png") no-repeat scroll right top 125px transparent; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000321}}
+a {
+  color: #390e41; }
 
 /***********************
  * header
  **********************/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000325}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000328}}
 #jeslee-header {
   background: #390e41 url("../../gfx/background/header-bottom.png") no-repeat center bottom;
   height: 120px;
   margin-top: 60px;
   position: relative;
   width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000332}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000335}}
   #jeslee-header .header-left-background {
     background: url("../../gfx/background/background-top-left.png") no-repeat scroll left top transparent;
     height: 144px;
@@ -36,46 +42,53 @@ body {
     position: absolute;
     top: -62px;
     left: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000340}}
-  #jeslee-header .header-content {
-    width: 960px;
-    margin: 0 auto; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000343}}
+  #jeslee-header .header-content {
+    margin: 0 auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000345}}
     #jeslee-header .header-content .jeslee-logo {
       float: left;
       margin-left: 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000348}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000350}}
     #jeslee-header .header-content #header-menu {
       float: right;
       margin-top: 15px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000351}}
-      #jeslee-header .header-content #header-menu ul {
-        display: inline; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000353}}
+      #jeslee-header .header-content #header-menu ul {
+        float: left;
+        margin-top: 26px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000356}}
         #jeslee-header .header-content #header-menu ul li {
+          border-right: 1px solid #FFF;
           color: #FFF;
-          display: inline; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000358}}
+          display: inline;
+          padding: 0 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000362}}
+        #jeslee-header .header-content #header-menu ul li:last-child {
+          border-right: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000366}}
       #jeslee-header .header-content #header-menu a.link-shopping-bag {
         height: 59px;
         width: 36px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000364}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000372}}
   #jeslee-header #main-site-menu {
     background-color: #FFF;
     bottom: 1px;
     height: 40px;
     position: absolute;
     width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000370}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000378}}
     #jeslee-header #main-site-menu ul {
-      width: 960px;
       margin: 10px auto 0 auto; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000373}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000380}}
       #jeslee-header #main-site-menu ul li {
         border-right: 1px solid #390e41;
         display: inline;
         padding: 0 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000380}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000385}}
+      #jeslee-header #main-site-menu ul li:last-child {
+        border-right: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000390}}
   #jeslee-header .header-right-background {
     background: url("../../gfx/background/background-top-right.png") no-repeat scroll right top transparent;
     height: 144px;
@@ -87,17 +100,31 @@ body {
 /***********************
  * body
  **********************/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\0000393}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\00003103}}
 #jeslee-body {
   margin: 0 auto;
-  min-height: 400px;
-  width: 960px; }
+  min-height: 400px; }
 
 /***********************
  * footer
  **********************/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\00003102}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\00003111}}
 #jeslee-footer {
-  border: 1px solid #0FF;
   min-height: 150px;
   widows: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\00003114}}
+  #jeslee-footer hr {
+    background-color: #390e41;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    /* For IE8 and earlier */
+    border-bottom: 1px solid #390e41;
+    padding-top: 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\00003122}}
+  #jeslee-footer .footer-menu ul {
+    color: #000;
+    margin: 10px 10px 0 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/style\.scss}line{font-family:\00003125}}
+    #jeslee-footer .footer-menu ul li {
+      display: inline;
+      padding: 0 20px; }

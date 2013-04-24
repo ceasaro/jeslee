@@ -7,7 +7,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-    <title>{% block title %}{{ SHOP.get_meta_title }}{% endblock %}</title>
+    <title>{% block title %}{% endblock %} {{ SHOP.get_meta_title }}</title>
     <link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.ico" type="image/ico" />
 
     {% block head %}{% endblock %}
@@ -17,8 +17,8 @@
     {% compress css %}
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/reset.css" />
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/960_12_col.css" />
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/960_12_col.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}scss/css-generated/style.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}scss/css-generated/content.css"/>
 
     {% endcompress %}
     <!--[if IE]>
@@ -33,45 +33,10 @@
 
 </head>
 <body class="{% block section %}lfs{% endblock %}">
-<section id="jeslee-header">
-    <div class="header-left-background"></div>
-    <div class="header-content">
-        <div class="jeslee-logo">
-            <img src="{{ STATIC_URL }}gfx/logo-jeslee-transparent.png" title="logo JesLee"/>
-        </div>
-        <div id="header-menu">
-            <ul>
-                <li>Inloggen</li>
-                <li>Aanmelden</li>
-                <li>Je aankopen</li>
-            </ul>
-            <a href="#" class="link-shopping-bag" title="winkel tasje">
-                <img src="{{ STATIC_URL }}gfx/shopping-bag.png" class="shopping-bag" title="winkel tasje"/>
-            </a>
-        </div>
-    </div>
-    <div id="main-site-menu">
-        <ul>
-            <li>Home</li>
-            <li>Over JesLee</li>
-            <li>Collecties</li>
-            <li>Nieuws</li>
-            <li>Agenda</li>
-            <li>Brochure</li>
-            <li>Contact</li>
-        </ul>
-    </div>
-    <div class="header-right-background"></div>
-</section>
 
-<section id="jeslee-body">
-    {% block jeslee-body %}
-    {% endblock %}
-</section>
+{% block jeslee-site %}
+{% endblock %}
 
-<section id="jeslee-footer">
-
-</section>
 {% block google-analytics-tracking %}
 {% google_analytics_tracking %}
 {% endblock %}

@@ -1,7 +1,83 @@
 {% extends 'base/site-base.html' %}
 
-{% block page_title %}Scaunts home{% endblock %}
+{% block title %}Home{% endblock %}
 
 {% block jeslee-body %}
-<img src="{{ STATIC_URL }}gfx/party-fashion-for-children-impression.png" title="feest kleding voor kinderen"/>
+    <img src="{{ STATIC_URL }}gfx/party-fashion-for-children-impression.png" title="feest kleding voor kinderen"/>
+    <div class="product-cards-home">
+        <div class="grid_3">
+            <div class="product-card-home-container">
+                <div class="product-card">
+                    <div class="product-card-content">
+                        <img src="{{ STATIC_URL }}/gfx/tmp/placeholder-dress-1.png"/>
+                    </div>
+                    <div class="product-card-teaser">
+                        Jurknaam<br/>
+                        € 100,-
+                    </div>
+                </div>
+                <div class="product-card-title">
+                    Meisjes collectie
+                </div>
+            </div>
+        </div>
+        <div class="grid_3">
+            <div class="product-card-home-container">
+                <div class="product-card">
+                    <div class="product-card-content">
+                        <img src="{{ STATIC_URL }}/gfx/tmp/placeholder-dress-2.png"/>
+                    </div>
+                    <div class="product-card-teaser">
+                        Jurknaam<br/>
+                        € 100,-
+                    </div>
+                </div>
+                <div class="product-card-title">
+                    Jonges collectie
+                </div>
+            </div>
+        </div>
+        <div class="grid_3">
+            <div class="product-card-home-container">
+                <div class="product-card">
+                    <div class="product-card-content">
+                        <img src="{{ STATIC_URL }}/gfx/tmp/placeholder-modeshow.jpg"/>
+                    </div>
+                    <div class="product-card-teaser">
+                        ZATERDAG 12 APRIL<br/>
+                        <a href="#">Schrijf je in als model!</a>
+                    </div>
+                </div>
+                <div class="product-card-title">
+                    Onze modeshows
+                </div>
+            </div>
+        </div>
+        <div class="grid_3">
+            <div class="product-card-home-container">
+                <div class="product-card">
+                    <div class="product-card-content">
+                        <div class="product-card-text">
+                            <strong>Laat je gegevens achter!</strong>
+                            <p>
+                                Dan houden wij je op per e-mail op de hoogte over nieuwe collecties en onze modeshows.
+                            </p>
+                            <form accept=".">
+                                <input type="text" placeholder="Je naam" name="name"/>
+                                <input type="text" placeholder="Je e-mailadres" name="email"/>
+                                <input type="submit" value="Versturen"/>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="product-card-teaser">
+                        Jurknaam<br/>
+                        € 100,-
+                    </div>
+                </div>
+                <div class="product-card-title">
+                    Blijf op de hoogte
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

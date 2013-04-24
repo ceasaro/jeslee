@@ -1,7 +1,4 @@
-/***********************
- * COLORS
- **********************/
-$purple: #390e41;
+@import "settings";
 
 /***********************
  * main
@@ -9,14 +6,20 @@ $purple: #390e41;
 @font-face {
   font-family: university_roman;
   src: url('../../fonts/UNIVERSI.TTF');
-  src: url('http://127.0.0.1:8000/static/fonts/UNIVERSI.TTF');
 }
 html {
   background: url('../../gfx/background/background-left.png') no-repeat scroll left top 185px transparent;
+  color: $purple;
   font-family: university_roman;
+  font-size: 11pt;
+  height: auto;
 }
 body {
   background: url('../../gfx/background/background-right.png') no-repeat scroll right top 125px transparent;
+  //min-height: 100%;
+}
+a {
+  color:$purple;
 }
 
 /***********************
@@ -38,7 +41,6 @@ body {
     left: 0;
   }
   .header-content {
-    width:960px;
     margin: 0 auto;
     .jeslee-logo {
       float: left;
@@ -49,10 +51,16 @@ body {
       float:right;
       margin-top:15px;
       ul {
-        display: inline;
+        float: left;
+        margin-top: 26px;
         li {
+          border-right: 1px solid #FFF;
           color: #FFF;
           display: inline;
+          padding: 0 10px;
+        }
+        li:last-child {
+          border-right: none;
         }
       }
       a.link-shopping-bag {
@@ -68,12 +76,14 @@ body {
     position: absolute;
     width: 100%;
     ul {
-      width: 960px;
       margin: 10px auto 0 auto;
       li {
         border-right: 1px solid $purple;
         display: inline;
         padding: 0 20px;
+      }
+      li:last-child {
+        border-right: none;
       }
     }
   }
@@ -93,14 +103,30 @@ body {
 #jeslee-body {
   margin:0 auto;
   min-height: 400px;
-  width: 960px;
 }
 
 /***********************
  * footer
  **********************/
 #jeslee-footer {
-  border:1px solid #0FF;
   min-height: 150px;
   widows: 100%;
+  hr {
+    background-color: $purple;
+    opacity:0.4;
+    filter:alpha(opacity=40); /* For IE8 and earlier */
+    border-bottom:1px solid $purple;
+    padding-top: 10px;
+  }
+  .footer-menu {
+    ul {
+      color:#000;
+      margin: 10px 10px 0 10px;
+      li {
+        display: inline;
+        padding: 0 20px;
+      }
+    }
+
+  }
 }

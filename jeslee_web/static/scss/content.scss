@@ -1,0 +1,61 @@
+@import "settings";
+
+/***********************
+ * home
+ **********************/
+.product-cards-home {
+  margin-top:10px;
+  .product-card-home-container {
+    height: 370px;
+
+    .product-card-title {
+      margin: 10px 20px;
+    }
+  }
+}
+
+
+.product-card {
+  background-color: $purple;
+  color:#FFF;
+  height: 312px;
+  padding: 6px;
+  a {
+    color:#FFF;
+  }
+
+
+  .product-card-content {
+    background-color: #FFF;
+    color:$purple;
+    height: 270px;
+
+    .product-card-text {
+      padding: 20px;
+
+      strong {
+        display: block;
+        margin-bottom: 15px;
+      }
+      p {
+        margin: 10px 0;
+        line-height: 1.1;
+      }
+      form {
+        margin-top:20px;
+
+        input {
+          margin: 10px 0;
+          width: 100%;
+        }
+        input[type=submit] {
+          background-color: $purple;
+        }
+
+      }
+    }
+  }
+  .product-card-teaser {
+    margin:6px 14px 0 14px;
+  }
+}
