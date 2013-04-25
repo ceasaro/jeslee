@@ -17,9 +17,9 @@ PROJECT_ROOT = os.path.normpath(os.path.join(
     os.path.dirname(os.path.realpath(__file__)),
     '..','..'))
 sys.path.insert(0, PROJECT_ROOT)
-sys.path.insert(0, os.path.join(PROJECT_ROOT, 'vortex_web'))
+sys.path.insert(0, os.path.join(PROJECT_ROOT, 'jeslee_web'))
 
 # Configure used settings
-os.environ['DJANGO_SETTINGS_MODULE'] = 'vortex_web.settings.production'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'jeslee_web.settings.production'
 
 application = django.core.handlers.wsgi.WSGIHandler()
