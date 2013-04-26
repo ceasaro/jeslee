@@ -3,6 +3,7 @@ from jeslee_web.settings.defaults import *
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+#django-admin: ceasaro -> D)p$g3ks
 
 DATABASES = {
     'default': {
