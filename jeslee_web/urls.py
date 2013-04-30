@@ -28,10 +28,10 @@ DIRNAME = os.path.dirname(__file__)
 
 handler500 = 'lfs.core.views.server_error'
 
-#urlpatterns = patterns("",
-#    (r'', include('lfs.core.urls')),
-#    (r'^manage/', include('lfs.manage.urls')),
-#)
+urlpatterns += patterns("",
+    (r'^shop/', include('jeslee_web.lfs_patch.core.urls')),
+    (r'^manage/', include('jeslee_web.lfs_patch.manage.urls')),
+)
 
 urlpatterns += patterns("",
     (r'^reviews/', include('reviews.urls')),
