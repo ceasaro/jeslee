@@ -1,11 +1,11 @@
 {% extends 'base/site-base.html' %}
-{%  block content %}
+{%  block jeslee-content %}
     {% if form.errors %}
         <div class="page-erros">
             <p>Geef een geldige gebruikersnaam en wachtwoord op.</p>
         </div>
     {% endif %}
-    <form method="post" action="{% url django.contrib.auth.views.login %}">
+    <form method="post" action="{% url 'django.contrib.auth.views.login' %}">
         {% csrf_token %}
         <input type="hidden" name="next" value="{{ next }}"/>
         <table>
