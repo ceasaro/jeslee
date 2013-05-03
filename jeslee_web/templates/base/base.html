@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 {% load i18n %}
 {% load lfs_tags %}
-{% load lfs_theme_tags %}
-{% load lfs_portlets_tags %}
 {% load compress %}
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -19,7 +17,8 @@
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/960_12_col.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}scss/css-generated/style.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}scss/css-generated/content.css"/>
-
+        {% block css %}
+        {% endblock %}
     {% endcompress %}
     <!--[if IE]>
     {% compress css %}

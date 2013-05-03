@@ -1,0 +1,22 @@
+@import "settings";
+
+#category-menu {
+  >ul.root {
+    >li {
+      >a {
+        text-transform: uppercase;
+      }
+      li:first-child {
+        margin-top: 10px;
+      }
+    }
+  }
+  li {
+    margin-bottom: 10px;
+    a {
+      .product-count {
+        color: $pink;
+      }
+    }
+  }
+}

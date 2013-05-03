@@ -1,0 +1,244 @@
+<h2>Data</h2>
+<form id="product-data-form" action="/manage/edit-product-data/2" method="post">
+<fieldset>
+    <legend>General</legend>
+
+    <div class="field">
+    <div class=
+    "label"> <label for="id_active">Active</label>:                </div>
+    <div><input id="id_active" name="active" type="checkbox"/></div>
+    </div>
+    <div class=
+    "field">
+    <div class=
+    "label"> <label for="id_name">Name</label>:                </div>
+    <div><input id="id_name" maxlength="80" name="name" type="text" value="boek"/></div>
+    </div>
+</fieldset>
+<fieldset>
+    <legend>Urls</legend>
+
+    <div class=
+    "field">
+    <div class=
+    "label"> <label for="id_slug">Slug</label>:                </div>
+    <div><input id="id_slug" maxlength="80" name="slug" type="text" value="boek"/></div>
+    </div>
+    <div class=
+    "field">
+    <div class=
+    "label"> Redirect to                </div>
+    <div><input type="text" id="redirect_to" name="redirect_to" value=""/></div>
+    </div>
+</fieldset>
+<fieldset>
+    <legend>Article numbers</legend>
+
+    <div class=
+    "field">
+    <div class=
+    "label"> <label for="id_sku">SKU</label>:                </div>
+    <div><input id="id_sku" maxlength="30" name="sku" type="text" value="b001"/></div>
+    </div>
+    <div class=
+    "field">
+    <div class=
+    "label"> <label for="id_manufacturer">Manufacturer</label>:                </div>
+    <div><select id="id_manufacturer" name="manufacturer">
+        <option value=
+        "" selected="selected">---------</option></select>
+    </div>
+    </div>
+    <div class=
+    "field">
+    <div class=
+    "label"> <label for="id_sku_manufacturer">SKU Manufacturer</label>:                </div>
+    <div><input id="id_sku_manufacturer" maxlength="100" name="sku_manufacturer" type="text"/></div>
+    </div>
+</fieldset>
+<fieldset>
+    <legend>Prices</legend>
+
+    <div class=
+    "field">
+    <div class=
+    "label"> <label for="id_price">Price</label>:                </div>
+    <div><input id="id_price" name="price" type="text" value="12"/></div>
+    </div>
+    <div class=
+    "field">
+    <div class=
+    "label"> <label for="id_price_unit">Price unit</label>:                    </div>
+    <div><select id="id_price_unit" name="price_unit">
+        <option value=
+        "">---------</option>
+        <option value=
+        "l">l</option>
+        <option value=
+        "m">m</option>
+        <option value=
+        "qm">qm</option>
+        <option value=
+        "cm">cm</option>
+        <option value=
+        "lfm">lfm</option>
+        <option value=
+        "Package">Package</option>
+        <option value=
+        "Piece" selected="selected">Piece</option></select>
+    </div>
+    </div>
+    <div class=
+    "field">
+    <div class=
+    "label"> <label for="id_tax">Tax</label>:                    </div>
+    <div><select id="id_tax" name="tax">
+        <option value=
+        "">---------</option>
+        <option value=
+        "1" selected="selected">21.0%</option></select>
+    </div>
+    </div>
+    <div class=
+    "field">
+    <div class=
+    "label"> <label for="id_price_calculator">Price calculator</label>:                    </div>
+    <div><select id="id_price_calculator" name="price_calculator">
+        <option value=
+        "">---------</option>
+        <option value=
+        "lfs.gross_price.GrossPriceCalculator" selected="selected">Price includes tax</option>
+        <option value=
+        "lfs.net_price.NetPriceCalculator">Price excludes tax</option></select>
+    </div>
+    </div>
+    <div class=
+    "field">
+    <div class=
+    "label"> <input id="id_for_sale" name="for_sale" type="checkbox"/> <label for="id_for_sale">For
+    sale</label>:                    </div>
+    <div><input id="id_for_sale_price" name="for_sale_price" type="text" value="0.0"/></div>
+    </div>
+</fieldset>
+<fieldset>
+    <legend>Quantity field</legend>
+
+    <div class=
+    "field">
+    <div class=
+    "label"> <label for="id_unit">Quanity field unit</label>:                    </div>
+    <div><select id="id_unit" name="unit">
+        <option value=
+        "" selected="selected">---------</option>
+        <option value=
+        "l">l</option>
+        <option value=
+        "m">m</option>
+        <option value=
+        "qm">qm</option>
+        <option value=
+        "cm">cm</option>
+        <option value=
+        "lfm">lfm</option>
+        <option value=
+        "Package">Package</option>
+        <option value=
+        "Piece">Piece</option></select>
+    </div>
+    </div>
+    <div class=
+    "field">
+    <div class=
+    "label"> <label for="id_type_of_quantity_field">Type of quantity field</label>:                    </div>
+    <div><select id="id_type_of_quantity_field" name="type_of_quantity_field">
+        <option value=
+        "" selected="selected">---------</option>
+        <option value=
+        "0">Integer</option>
+        <option value=
+        "1">Decimal 0.1</option>
+        <option value=
+        "2">Decimal 0.01</option></select>
+    </div>
+    </div>
+</fieldset>
+<fieldset>
+    <legend>Base price</legend>
+
+    <div class=
+    "field">
+    <div class=
+    "label"> <label for="id_active_base_price">Active base price</label>:                </div>
+    <div><input checked="checked" id="id_active_base_price" name="active_base_price" type="checkbox"/>
+    </div>
+    </div>
+    <div class=
+    "field">
+    <div class=
+    "label"> <label for="id_base_price_unit">Base price unit</label>:                </div>
+    <div><select id="id_base_price_unit" name="base_price_unit">
+        <option value=
+        "">---------</option>
+        <option value=
+        "l">l</option>
+        <option value=
+        "m">m</option>
+        <option value=
+        "qm">qm</option>
+        <option value=
+        "cm">cm</option>
+        <option value=
+        "lfm">lfm</option>
+        <option value=
+        "Package">Package</option>
+        <option value=
+        "Piece" selected="selected">Piece</option></select>
+    </div>
+    </div>
+    <div class=
+    "field">
+    <div class=
+    "label"> <label for="id_base_price_amount">Base price amount</label>:                </div>
+    <div><input id="id_base_price_amount" name="base_price_amount" type="text" value="10"/></div>
+    </div>
+</fieldset>
+<div class="field">
+    <div class="label"><label
+            for="id_short_description">Short description</label>:
+    </div>
+    <div><textarea cols="40" id="id_short_description" name="short_description" rows="10">r</textarea>
+    </div>
+</div>
+<div class="field">
+    <div class="label"><label
+            for="id_description">Description</label>:
+    </div>
+    <div><textarea cols="40" id="id_description" name="description" rows="10">r</textarea>
+    </div>
+</div>
+<fieldset>
+    <legend>Appearance</legend>
+
+    <div class=
+    "field">
+    <div class=
+    "label"> <label for="id_static_block">Static block</label>:                </div>
+    <div><select id="id_static_block" name="static_block">
+        <option value=
+        "" selected="selected">---------</option></select>
+    </div>
+    </div>
+    <div class=
+    "field">
+    <div class=
+    "label"> <label for="id_template">Product template</label>:                </div>
+    <div><select id="id_template" name="template">
+        <option value=
+act        "0" title="/media/lfs/icons/product_default.png" selected="selected">Default</option>   </select>
+
+    </div>
+    </div>
+</fieldset>
+<div class="buttons"><input
+        class="ajax-save-button button" type="submit" value="Save data"/></div>
+</form>

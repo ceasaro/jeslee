@@ -4,52 +4,41 @@
 /***********************
  * home
  **********************/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/content\.scss}line{font-family:\000036}}
 .product-cards-home {
   margin-top: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/content\.scss}line{font-family:\000038}}
   .product-cards-home .product-card-home-container {
     height: 370px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/content\.scss}line{font-family:\0000311}}
     .product-cards-home .product-card-home-container .product-card-title {
       margin: 10px 20px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/content\.scss}line{font-family:\0000318}}
 .product-card {
   background-color: #390e41;
-  color: #FFF;
+  color: white;
   height: 312px;
   padding: 6px;
   margin-bottom: 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/content\.scss}line{font-family:\0000325}}
   .product-card a {
-    color: #FFF; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/content\.scss}line{font-family:\0000330}}
+    color: white; }
   .product-card .product-card-content {
     background-color: #FFF;
     color: #390e41;
     height: 270px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/content\.scss}line{font-family:\0000335}}
+    .product-card .product-card-content a {
+      color: #390e41; }
     .product-card .product-card-content .product-card-text {
       padding: 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/content\.scss}line{font-family:\0000338}}
       .product-card .product-card-content .product-card-text strong {
         display: block;
         margin-bottom: 15px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/content\.scss}line{font-family:\0000342}}
       .product-card .product-card-content .product-card-text p {
         margin: 10px 0;
         line-height: 1.1; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/content\.scss}line{font-family:\0000346}}
       .product-card .product-card-content .product-card-text form {
         margin-top: 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/content\.scss}line{font-family:\0000349}}
         .product-card .product-card-content .product-card-text form input {
           margin: 10px 0;
           width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/content\.scss}line{font-family:\0000353}}
         .product-card .product-card-content .product-card-text form input[type=submit] {
           background-color: #390e41; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ceasaro\/projects\/python\/jeslee\/jeslee_web\/static\/scss\/content\.scss}line{font-family:\0000360}}
   .product-card .product-card-teaser {
     margin: 6px 14px 0 14px; }

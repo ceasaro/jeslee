@@ -1,4 +1,4 @@
-# Django settings for healthMap project.
+# Django settings for JesLee project.
 import os
 from django.core.urlresolvers import reverse_lazy
 # django imports
@@ -147,13 +147,16 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
 
+    # own written django apps
+    'jeslee_web',
+    #    'jeslee_web.account'
+
     # none default django apps
     'django_extensions',
     'django.contrib.webdesign',
     'django.contrib.flatpages',
     'django.contrib.sitemaps',
     'django_countries',
-    "lfstheme",
     'compressor',
     'pagination',
     'reviews',
@@ -197,10 +200,8 @@ INSTALLED_APPS = (
     'paypal.standard.ipn',
     'paypal.standard.pdt',
     'gunicorn',
-    # own written django apps
-    #    'jeslee_web.base',
-    #    'jeslee_web.account'
-)
+    'lfstheme',
+    )
 
 FORCE_SCRIPT_NAME=""
 LOGIN_URL           = reverse_lazy('login')

@@ -1,0 +1,11 @@
+/***********************
+ * COLORS
+ **********************/
+#category-menu > ul.root > li > a {
+  text-transform: uppercase; }
+#category-menu > ul.root > li li:first-child {
+  margin-top: 10px; }
+#category-menu li {
+  margin-bottom: 10px; }
+  #category-menu li a .product-count {
+    color: #ca1e69; }

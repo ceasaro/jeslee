@@ -17,13 +17,13 @@
 
 .product-card {
   background-color: $purple;
-  color:#FFF;
+  color:$white;
   height: 312px;
   padding: 6px;
   margin-bottom: 20px;
 
   a {
-    color:#FFF;
+    color:$white;
   }
 
 
@@ -31,6 +31,10 @@
     background-color: #FFF;
     color:$purple;
     height: 270px;
+
+    a {
+      color:$purple;
+    }
 
     .product-card-text {
       padding: 20px;
