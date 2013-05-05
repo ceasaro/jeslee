@@ -1,9 +1,5 @@
 {% load i18n lfs_tags %}
 
-{% include "lfs/catalog/categories/product/products_navigation.html" %}
-
-{% sorting %}
-
     {% for col in products %}
         {% for product in col %}
             <div class="grid_3">

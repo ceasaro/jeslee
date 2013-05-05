@@ -9,7 +9,11 @@
 {% endblock %}
 
 {% block jeslee-content %}
-    <div class="grid_12">
+    <div id="shop-container">
+        <div class="grid_12">
+            <div id="shop-above-content">
+                {% block shop-above-content %}{% endblock %}
+            </div>
 {% comment %}
         <div id="breadcrumbs">
             <div class="container">
@@ -17,23 +21,16 @@
             </div>
         </div>
 {% endcomment %}
-    </div>
-    <div class="grid_3">
-        <div class="product-card">
-            <div class="product-card-content">
-                <div class="product-card-text">
-                    <div id="category-menu">
-                    {% lfs_categories_portlet %}
-                    </div>
-                </div>
-            </div>
-            <div class="product-card-teaser">
+        </div>
+        <div class="grid_3">
+            <div id="category-menu">
+            {% lfs_categories_portlet %}
             </div>
         </div>
-    </div>
-    <div class="prefix_3 {{ content_class }}">
-        <div class="middle-slot">
-            {% block content %}{% endblock %}
+        <div class="prefix_3 {{ content_class }}">
+            <div class="middle-slot">
+                {% block content %}{% endblock %}
+            </div>
         </div>
-    </div>
+    </div> <!-- #shop-container -->
 {% endblock %}

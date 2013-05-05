@@ -1,14 +1,33 @@
 /***********************
  * COLORS
  **********************/
-#category-menu > ul.root > li > a {
-  text-transform: uppercase; }
-#category-menu > ul.root > li li:first-child {
-  margin-top: 10px; }
-#category-menu li {
-  margin-bottom: 10px; }
-  #category-menu li a .product-count {
-    color: #ca1e69; }
-
-.for-sale-standard-price {
+#shop-container #shop-above-content {
+  height: 50px; }
+  #shop-container #shop-above-content .category-name {
+    float: left;
+    font-size: 16pt;
+    margin-top: 14px; }
+  #shop-container #shop-above-content .sorting {
+    float: right; }
+    #shop-container #shop-above-content .sorting select {
+      background-color: #390e41;
+      border: none;
+      color: white;
+      margin-top: 11px;
+      padding: 5px; }
+      #shop-container #shop-above-content .sorting select option {
+        background-color: #390e41; }
+#shop-container #category-menu {
+  border: 6px solid #390e41;
+  padding: 10px;
+  min-height: 292px; }
+  #shop-container #category-menu > ul.root > li > a {
+    text-transform: uppercase; }
+  #shop-container #category-menu > ul.root > li li:first-child {
+    margin-top: 10px; }
+  #shop-container #category-menu li {
+    margin-bottom: 10px; }
+    #shop-container #category-menu li a .product-count {
+      color: #ca1e69; }
+#shop-container .for-sale-standard-price {
   text-decoration: line-through; }

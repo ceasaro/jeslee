@@ -22,6 +22,14 @@
     {% breadcrumbs category %}
 {% endblock %}
 
+{% block shop-above-content %}
+    {% include "lfs/catalog/categories/product/products_navigation.html" %}
+    <div class="prefix_3 category-name">
+        {{ category.name }}
+    </div>
+    {% sorting %}
+{% endblock %}
+
 {% block content %}
     {{ category.static_block.html|safe }}
     {{ category_inline|safe }}
