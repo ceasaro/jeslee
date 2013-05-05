@@ -10,7 +10,13 @@
 
 {% block jeslee-content %}
     <div class="grid_12">
-        Navigation
+{% comment %}
+        <div id="breadcrumbs">
+            <div class="container">
+                {% block breadcrumbs %}{% endblock %}
+            </div>
+        </div>
+{% endcomment %}
     </div>
     <div class="grid_3">
         <div class="product-card">
@@ -25,8 +31,9 @@
             </div>
         </div>
     </div>
-    <div class="prefix_3">
-        {% block shop-content %}
-        {% endblock %}
+    <div class="prefix_3 {{ content_class }}">
+        <div class="middle-slot">
+            {% block content %}{% endblock %}
+        </div>
     </div>
 {% endblock %}

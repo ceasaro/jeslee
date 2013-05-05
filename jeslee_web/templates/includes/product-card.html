@@ -1,9 +1,51 @@
+{% load i18n lfs_tags %}
+
+
 <div class="product-card">
     <div class="product-card-content">
-        <img src="{{ STATIC_URL }}{{ impression }}"/>
+        <img src="{{ product.image.url_208x270 }}"/>
     </div>
     <div class="product-card-teaser">
-        {{ dress }}<br/>
-        {{ price }}
+        {{ product.name }}
+
+        <div class="product-price">
+            {% if price_starting_from %}
+                {% trans "Starting at" %}
+            {% endif %}
+            {% if product.obj.get_for_sale %}
+                <span class="for-sale-standard-price">{{ standard_price }}</span>
+                <span class="for-sale-price">{{ price }}</span>
+            {% else %}
+                <span class="standard-price">{{ price }}</span>
+            {% endif %}
+            {% if product.price_unit %}
+                / {{ product.price_unit }}
+            {% endif %}
+            {% if product.obj.get_active_packing_unit %}
+                <div class="base-price">
+                    {{ base_packing_price }} / {{ product.obj.get_packing_info.1 }}
+                </div>
+            {% endif %}
+            {% if product.obj.get_active_base_price %}
+                <div class="base-price">
+                    {% if base_price_starting_from %}
+                        {% trans "Starting at" %}
+                    {% endif %}
+                    {{ base_price }}
+                    {% if product.obj.get_base_price_unit %}
+                        / {{ product.obj.get_base_price_unit }}
+                    {% endif %}
+                </div>
+            {% endif %}
+            <span class="price-disclaimer">
+                {% if product.price_includes_tax %}
+                    {% trans 'inc. btw' %}
+                {% else  %}
+                    {% trans 'exc. btw' %}
+                {% endif %}
+            </span>
+        </div>
+
+
     </div>
 </div>

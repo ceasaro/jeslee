@@ -148,7 +148,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
 
     # own written django apps
-    'jeslee_web',
+    'jeslee_web.lfs_patch',
     #    'jeslee_web.account'
 
     # none default django apps
@@ -266,19 +266,22 @@ LFS_SHIPPING_METHOD_PRICE_CALCULATORS = [
 ]
 
 LFS_UNITS = [
-    u"l",
-    u"m",
-    u"qm",
-    u"cm",
-    u"lfm",
-    u"Package",
+#    u"l",
+#    u"m",
+#    u"qm",
+#    u"cm",
+#    u"lfm",
+#    u"Package",
     u"Piece",
 ]
-
+LFS_CRITERIA = [
+    ["jeslee_web.lfs_patch.core.models.ClothingCriterion", _(u"Clothing Criterion")],
+    ]
 LFS_PRICE_UNITS = LFS_BASE_PRICE_UNITS = LFS_PACKING_UNITS = LFS_UNITS
 
 LFS_LOG_FILE = SITE_ROOT + "/../lfs.log"
 
+LFS_THUMBNAIL_SIZES = ((208, 270), (60, 60), (100, 100), (200, 200), (300, 300), (400, 400))
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error.
