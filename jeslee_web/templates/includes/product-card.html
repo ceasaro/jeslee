@@ -7,9 +7,6 @@
     </div>
     <div class="product-card-teaser">
         {{ product.name }}
-        {%  for attr in product.price_unit %}
-            attr={{ attr }}<br/>
-        {%  endfor %}
 
         {% category_product_prices_gross product.obj.id %}
         <div class="product-price">
