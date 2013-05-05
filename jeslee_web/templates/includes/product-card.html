@@ -7,16 +7,21 @@
     </div>
     <div class="product-card-teaser">
         {{ product.name }}
+        {%  for attr in product.price_unit %}
+            attr={{ attr }}<br/>
+        {%  endfor %}
 
+        {% category_product_prices_gross product.obj.id %}
         <div class="product-price">
+
             {% if price_starting_from %}
                 {% trans "Starting at" %}
             {% endif %}
             {% if product.obj.get_for_sale %}
-                <span class="for-sale-standard-price">{{ standard_price }}</span>
-                <span class="for-sale-price">{{ price }}</span>
+                <span class="for-sale-standard-price">{{ standard_price|currency:request }}</span>
+                <span class="for-sale-price">{{ price|currency:request }}</span>
             {% else %}
-                <span class="standard-price">{{ price }}</span>
+                <span class="standard-price">{{ price|currency:request }}</span>
             {% endif %}
             {% if product.price_unit %}
                 / {{ product.price_unit }}

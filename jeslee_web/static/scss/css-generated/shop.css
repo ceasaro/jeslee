@@ -9,3 +9,6 @@
   margin-bottom: 10px; }
   #category-menu li a .product-count {
     color: #ca1e69; }
+
+.for-sale-standard-price {
+  text-decoration: line-through; }

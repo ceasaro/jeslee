@@ -36,7 +36,7 @@ urlpatterns += patterns('lfs.cart.views',
 
 # Catalog
 urlpatterns += patterns('lfs.catalog.views',
-    url(r'^category-(?P<slug>[-\w]*)$', "category_view", name="lfs_category"),
+    url(r'^collectie-(?P<slug>[-\w]*)$', "category_view", name="lfs_category"),
     url(r'^product/(?P<slug>[-\w]*)$', "product_view", name="lfs_product"),
     url(r'^product-form-dispatcher', "product_form_dispatcher", name="lfs_product_dispatcher"),
     url(r'^set-sorting', "set_sorting", name="lfs_catalog_set_sorting"),
