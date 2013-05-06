@@ -25,11 +25,18 @@
     {% breadcrumbs product %}
 {% endblock %}
 
+
+{% block shop-above-content %}
+    <div class="prefix_3">
+        {% product_navigation product %}
+    </div>
+{% endblock %}
+
+
+
 {% block content %}
 
     {{ product.static_block.html|safe }}
-
-    {% product_navigation product %}
 
     <div class="overview">
         {% current_category product %}
@@ -44,7 +51,7 @@
 
     <a name="reviews"></a>
 
-    {% reviews_for_instance product %}
+{#    {% reviews_for_instance product %}#}
 
     {% tags_for_object product as tags %}
     {% if tags %}

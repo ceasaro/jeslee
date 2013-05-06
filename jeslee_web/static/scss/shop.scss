@@ -15,39 +15,54 @@
       float: right;
 
       select {
-        background-color: $purple;
+        background-color: $dark-text-color;
         border: none;
-        color: $white;
+        color: $light-text-color;
         margin-top: 11px;
         padding: 5px;
 
         option {
-          background-color: $purple;
+          background-color: $dark-text-color;
         }
       }
     }
   }
 
   #category-menu {
-    border: 6px solid $purple;
+    border: 6px solid $dark-text-color;
     padding: 10px;
     min-height: 292px;
     >ul.root {
       >li {
         >a {
+          font-weight: bold;
           text-transform: uppercase;
         }
         li:first-child {
-          margin-top: 10px;
+          margin-top: 2px;
         }
       }
     }
     li {
-      margin-bottom: 10px;
+      margin-bottom: 2px;
       a {
+        width: 180px;
+        display: block;
+        padding: 4px;
+        text-decoration: none;
+
         .product-count {
           color: $pink;
         }
+      }
+      a.current {
+        background-color: #BFAFC1;
+      }
+    }
+    li.level-1 {
+      margin-left:10px;
+      a {
+        width: 170px;
       }
     }
   }

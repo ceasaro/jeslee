@@ -12,7 +12,7 @@
     #shop-container #shop-above-content .sorting select {
       background-color: #390e41;
       border: none;
-      color: white;
+      color: #ebdc78;
       margin-top: 11px;
       padding: 5px; }
       #shop-container #shop-above-content .sorting select option {
@@ -22,12 +22,24 @@
   padding: 10px;
   min-height: 292px; }
   #shop-container #category-menu > ul.root > li > a {
+    font-weight: bold;
     text-transform: uppercase; }
   #shop-container #category-menu > ul.root > li li:first-child {
-    margin-top: 10px; }
+    margin-top: 2px; }
   #shop-container #category-menu li {
-    margin-bottom: 10px; }
-    #shop-container #category-menu li a .product-count {
-      color: #ca1e69; }
+    margin-bottom: 2px; }
+    #shop-container #category-menu li a {
+      width: 180px;
+      display: block;
+      padding: 4px;
+      text-decoration: none; }
+      #shop-container #category-menu li a .product-count {
+        color: #ca1e69; }
+    #shop-container #category-menu li a.current {
+      background-color: #BFAFC1; }
+  #shop-container #category-menu li.level-1 {
+    margin-left: 10px; }
+    #shop-container #category-menu li.level-1 a {
+      width: 170px; }
 #shop-container .for-sale-standard-price {
   text-decoration: line-through; }

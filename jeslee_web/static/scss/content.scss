@@ -16,24 +16,25 @@
 
 
 .product-card {
-  background-color: $purple;
-  color:$white;
+  background-color: $dark-text-color;
+  color:$light-text-color;
   height: 312px;
   padding: 6px;
   margin-bottom: 20px;
 
   a {
-    color:$white;
+    color:$light-text-color;
+    text-decoration: none;
   }
 
 
   .product-card-content {
-    background-color: #FFF;
-    color:$purple;
+    background-color: $background-color-site;
+    color:$dark-text-color;
     height: 270px;
 
     a {
-      color:$purple;
+      color:$dark-text-color;
     }
 
     .product-card-text {
@@ -55,7 +56,7 @@
           width: 100%;
         }
         input[type=submit] {
-          background-color: $purple;
+          background-color: $dark-text-color;
         }
 
       }
@@ -64,4 +65,9 @@
   .product-card-teaser {
     margin:6px 14px 0 14px;
   }
+}
+.product-card:hover {
+  -webkit-box-shadow: 0px 0px 15px 5px rgba(235, 220, 120, 1);
+  -moz-box-shadow: 0px 0px 15px 5px rgba(235, 220, 120, 1);
+  box-shadow: 0px 0px 15px 5px rgba(235, 220, 120, 1);
 }

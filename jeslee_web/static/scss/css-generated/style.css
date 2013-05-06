@@ -10,6 +10,7 @@
 
 html {
   background: url("../../gfx/background/background-left.png") no-repeat scroll left top 185px transparent;
+  background-color: #ebe7ec;
   color: #390e41;
   font-family: university_roman;
   font-size: 11pt;
@@ -52,7 +53,7 @@ a {
           display: inline; }
           #jeslee-header .header-content #header-menu ul li a {
             border-right: 1px solid #FFF;
-            color: #FFF;
+            color: #ebdc78;
             padding: 0 10px;
             text-decoration: none; }
           #jeslee-header .header-content #header-menu ul li a:hover {
@@ -63,7 +64,7 @@ a {
         height: 59px;
         width: 36px; }
   #jeslee-header #main-site-menu {
-    background-color: #FFF;
+    background-color: #ebe7ec;
     bottom: 1px;
     height: 40px;
     position: absolute;
