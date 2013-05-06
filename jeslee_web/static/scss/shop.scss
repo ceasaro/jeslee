@@ -2,6 +2,16 @@
 
 #shop-container {
 
+  //commen shop style classes
+  .navigation-button {
+    background-color: $button-color;
+    color:$light-text-color;
+    display: inline-block;
+    padding:5px;
+    margin-top:10px;
+    text-decoration: none;
+  }
+
   #shop-above-content {
     height: 50px;
 

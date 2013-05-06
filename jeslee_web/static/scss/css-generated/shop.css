@@ -1,6 +1,13 @@
 /***********************
  * COLORS
  **********************/
+#shop-container .navigation-button {
+  background-color: #8f3ca1;
+  color: #ebdc78;
+  display: inline-block;
+  padding: 5px;
+  margin-top: 10px;
+  text-decoration: none; }
 #shop-container #shop-above-content {
   height: 50px; }
   #shop-container #shop-above-content .category-name {

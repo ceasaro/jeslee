@@ -21,28 +21,33 @@
     {% endif %}
 {% endblock %}
 
+{% block css-shop %}
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}scss/css-generated/product-detail.css"/>
+{% endblock %}
+
+
 {% block breadcrumbs %}
     {% breadcrumbs product %}
 {% endblock %}
 
 
 {% block shop-above-content %}
-    <div class="prefix_3">
+    <div class="grid_6">
+        <a href="{{ current_category.get_absolute_url }}" class="navigation-button">
+            {% trans 'Back to the collections' %}
+        </a>
         {% product_navigation product %}
     </div>
 {% endblock %}
 
 
 
-{% block content %}
+{% block shop-content %}
 
     {{ product.static_block.html|safe }}
 
     <div class="overview">
         {% current_category product %}
-        <a href="{{ current_category.get_absolute_url }}">
-           {% trans 'Back to overview' %}
-        </a>
     </div>
 
     <div id="product-inline">

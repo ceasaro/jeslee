@@ -6,6 +6,8 @@
 
 {% block css %}
     <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}scss/css-generated/shop.css"/>
+    {% block css-shop %}
+    {% endblock %}
 {% endblock %}
 
 {% block jeslee-content %}
@@ -22,15 +24,17 @@
         </div>
 {% endcomment %}
         </div>
-        <div class="grid_3">
-            <div id="category-menu">
-            {% lfs_categories_portlet %}
+        {% block shop-content %}
+            <div class="grid_3">
+                <div id="category-menu">
+                {% lfs_categories_portlet %}
+                </div>
             </div>
-        </div>
-        <div class="prefix_3 {{ content_class }}">
-            <div class="middle-slot">
-                {% block content %}{% endblock %}
+            <div class="prefix_3 {{ content_class }}">
+                <div class="middle-slot">
+                    {% block content %}{% endblock %}
+                </div>
             </div>
-        </div>
+        {% endblock %}
     </div> <!-- #shop-container -->
 {% endblock %}
