@@ -27,5 +27,42 @@
     }
   }
 
+  #product-form {
+    .product-images {
+      .main-image {
+        border:1px solid $button-color;
+        height: 584px;
+        width: 460px;
+      }
+
+    }
+    .order-info {
+      background-color: $dark-background-color;
+      color:$light-text-color;
+      padding:30px 20px 20px 20px;
+
+      .prices {
+        .for-sale-price {
+           font-size: $font-size-strong;
+        }
+        .product-price {
+          margin-bottom: 20px;
+
+        }
+      }
+
+      .size-and-order {
+        #size-selector {
+          width: 100%;
+        }
+
+      }
+      .separator {
+        border-top:1px solid $light-background-color;
+        margin: 20px -10px 20px -10px;
+      }
+
+    }
+  }
 
 }

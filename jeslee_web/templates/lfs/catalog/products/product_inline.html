@@ -28,7 +28,7 @@
         </div>
     </div>
 
-    <div class="grid_6">
+    <div class="grid_3">
         <div class="product-info">
             <h1 class="product-title">
                 {{ product.get_name }}
@@ -43,64 +43,105 @@
                 {% endfor %}
             </div>
 
+            <p class="product-description">
+                {{ product.get_description|safe}}
+            </p>
         </div>
     </div>
-    {% shipping product %}
-    {% average_for_instance product %}
+    <div class="grid_3">
+        <div class="order-info">
 
-    {# Prices #}
-    <div class="prices">
-        {% if for_sale %}
             <div>
-                <span class="for-sale-standard-price" nowrap="nowrap">
-                    <span class="for-sale-standard-price-value">
-                        {{ product|get_standard_price_gross:request|currency:request }}
-                    </span>
-                    * {% if price_unit %}/ {{ price_unit }}{% endif %}</span>
-                <span class="for-sale-price" nowrap="nowrap">
-                    <span class="for-sale-price-value">
-                        {{ product|get_for_sale_price_gross:request|currency:request }}
-                    </span>
-                    * {% if price_unit %}/ {{ price_unit }}{% endif %}
-                </span>
+                {{ product.get_name }}
             </div>
-            {% if product.get_active_base_price %}
-                <div class="base-price">
-                    {{ product|get_base_price_gross:request|currency:request }} / {{ product.get_base_price_unit }}*
-                </div>
-            {% endif %}
-            <div class="price-disclaimer">
-                {% if price_includes_tax %}
-                    {% trans '*inc. VAT' %}
-                {% else  %}
-                    {% trans '*exc. VAT' %}
+            {% average_for_instance product %}
+
+            {# Prices #}
+            <div class="prices">
+                {% if for_sale %}
+                    <div class="product-price">
+                        <span class="for-sale-standard-price" nowrap="nowrap">
+                            <span class="for-sale-standard-price-value">
+                                {{ product|get_standard_price_gross:request|currency:request }}
+                            </span>
+                            {% if price_unit %}/ {{ price_unit }}{% endif %}</span>
+                        <span class="for-sale-price" nowrap="nowrap">
+                            <span class="for-sale-price-value">
+                                {{ product|get_for_sale_price_gross:request|currency:request }}
+                            </span>
+                            {% if price_unit %}/ {{ price_unit }}{% endif %}
+                        </span>
+                    </div>
+                    {% if product.get_active_base_price %}
+                        <div class="base-price">
+                            {{ product|get_base_price_gross:request|currency:request }} / {{ product.get_base_price_unit }}*
+                        </div>
+                    {% endif %}
+                    <div class="price-disclaimer">
+                        {% if price_includes_tax %}
+                            {% trans 'inc. VAT' %}
+                        {% else  %}
+                            {% trans 'exc. VAT' %}
+                        {% endif %}
+                    </div>
+                {% else %}
+                    <div class="standard-price"
+                          nowrap="nowrap">
+                          <span class="standard-price-value">{{ product|get_price_gross:request|currency:request }}</span>* {% if price_unit %}/ {{ price_unit }}{% endif %}
+                    </div>
+                    {% if product.get_active_base_price %}
+                        <div class="base-price">
+                            {{ product|get_base_price_gross:request|currency:request }} / {{ product.get_base_price_unit }}*
+                        </div>
+                    {% endif %}
+                    <div class="price-disclaimer">
+                        {% if price_includes_tax %}
+                            {% trans 'inc. VAT' %}
+                        {% else  %}
+                            {% trans 'exc. VAT' %}
+                        {% endif %}
+                    </div>
                 {% endif %}
-            </div>
-        {% else %}
-            <div class="standard-price"
-                  nowrap="nowrap">
-                  <span class="standard-price-value">{{ product|get_price_gross:request|currency:request }}</span>* {% if price_unit %}/ {{ price_unit }}{% endif %}
-            </div>
-            {% if product.get_active_base_price %}
-                <div class="base-price">
-                    {{ product|get_base_price_gross:request|currency:request }} / {{ product.get_base_price_unit }}*
+            </div> <!-- .prices -->
+            {% shipping product %}
+
+            <hr class="separator"/>
+
+            <div class="size-and-order">
+                <select id="size-selector" name="size" disabled="disabled">
+                    <option>???</option>
+                </select>
+
+                <div class="order-block">
+                    <img src="{{ STATIC_URL }}gfx/shopping-bag-small.png" class="shopping-bag-small" title="bestel {{ product.get_name }}"/>
+                    <span>Bestel nu!</span>
                 </div>
-            {% endif %}
-            <div class="price-disclaimer">
-                {% if price_includes_tax %}
-                    {% trans '*inc. VAT' %}
-                {% else  %}
-                    {% trans '*exc. VAT' %}
-                {% endif %}
             </div>
-        {% endif %}
+
+            <hr class="separator"/>
+
+            <div class="share-product">
+                <div class="save-product">
+                    <img src="{{ STATIC_URL }}gfx/icons/icon-hart.png" class="shopping-bag-small" title="bestel {{ product.get_name }}"/>
+                    <span>{% trans 'Bewaren' %}</span>
+                </div>
+                <div class="social-share-product">
+                    <img src="{{ STATIC_URL }}gfx/icons/icon-mail.png" class="shopping-bag-small" title="bestel {{ product.get_name }}"/>
+                    <img src="{{ STATIC_URL }}gfx/icons/icon-hives.png" class="shopping-bag-small" title="bestel {{ product.get_name }}"/>
+                    <img src="{{ STATIC_URL }}gfx/icons/icon-facebook.png" class="shopping-bag-small" title="bestel {{ product.get_name }}"/>
+                    <img src="{{ STATIC_URL }}gfx/icons/icon-twitter.png" class="shopping-bag-small" title="bestel {{ product.get_name }}"/>
+
+                </div>
+             </div>
+        </div> <!-- .product-order -->
+
     </div>
 
     {# Configurable Properties #}
     {% if product.is_configurable_product %}
         <table class="cp-properties"
                id="cp-url"
-               data="{% url 'lfs_calculate_price product.id' %}">
+               data="{% url 'lfs_calculate_price' product.id %}">
 
             {% for property in properties %}
                 <tr>
@@ -155,7 +196,7 @@
                     <td>
                         <div class="product-quantity packing-unit"
                             id="packing-url"
-                            data="{% url 'lfs_calculate_packing product.id' %}">
+                            data="{% url 'lfs_calculate_packing' product.id %}">
                             <input class="number quantity"
                                    name="quantity"
                                    size="3"
@@ -195,9 +236,6 @@
                 name="">{% trans 'Send request' %}</button>
     {% endif %}
 
-    <p class="product-description">
-        {{ product.get_description|safe}}
-    </p>
 
     {# Variants #}
     {% if product.is_variant %}

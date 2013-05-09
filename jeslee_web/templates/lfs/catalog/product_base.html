@@ -46,15 +46,10 @@
 
     {{ product.static_block.html|safe }}
 
-    <div class="overview">
-        {% current_category product %}
-    </div>
 
     <div id="product-inline">
         {{ product_inline|safe }}
     </div>
-
-    <a name="reviews"></a>
 
 {#    {% reviews_for_instance product %}#}
 

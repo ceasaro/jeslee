@@ -4,46 +4,61 @@
 /***********************
  * home
  **********************/
+/* line 6, ../content.scss */
 .product-cards-home {
   margin-top: 10px; }
+  /* line 8, ../content.scss */
   .product-cards-home .product-card-home-container {
     height: 370px; }
+    /* line 11, ../content.scss */
     .product-cards-home .product-card-home-container .product-card-title {
       margin: 10px 20px; }
 
+/* line 18, ../content.scss */
 .product-card {
   background-color: #390e41;
   color: #ebdc78;
   height: 312px;
   padding: 6px;
   margin-bottom: 20px; }
+  /* line 25, ../content.scss */
   .product-card a {
     color: #ebdc78;
     text-decoration: none; }
+  /* line 31, ../content.scss */
   .product-card .product-card-content {
     background-color: #ebe7ec;
     color: #390e41;
     height: 270px; }
+    /* line 36, ../content.scss */
     .product-card .product-card-content a {
       color: #390e41; }
+    /* line 40, ../content.scss */
     .product-card .product-card-content .product-card-text {
       padding: 20px; }
+      /* line 43, ../content.scss */
       .product-card .product-card-content .product-card-text strong {
         display: block;
         margin-bottom: 15px; }
+      /* line 47, ../content.scss */
       .product-card .product-card-content .product-card-text p {
         margin: 10px 0;
         line-height: 1.1; }
+      /* line 51, ../content.scss */
       .product-card .product-card-content .product-card-text form {
         margin-top: 20px; }
+        /* line 54, ../content.scss */
         .product-card .product-card-content .product-card-text form input {
           margin: 10px 0;
           width: 100%; }
+        /* line 58, ../content.scss */
         .product-card .product-card-content .product-card-text form input[type=submit] {
           background-color: #390e41; }
+  /* line 65, ../content.scss */
   .product-card .product-card-teaser {
     margin: 6px 14px 0 14px; }
 
+/* line 69, ../content.scss */
 .product-card:hover {
   -webkit-box-shadow: 0px 0px 15px 5px #ebdc78;
   -moz-box-shadow: 0px 0px 15px 5px #ebdc78;

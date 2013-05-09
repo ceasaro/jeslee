@@ -12,7 +12,7 @@ html {
   background-color: $background-color-site;
   color: $dark-text-color;
   font-family: university_roman;
-  font-size: 11pt;
+  font-size: $font-size-normal;
   height: 100%;
 }
 body {
@@ -27,7 +27,7 @@ a {
  * header
  **********************/
 #jeslee-header {
-  background: $dark-text-color url('../../gfx/background/header-bottom.png') no-repeat center bottom;
+  background: $dark-background-color url('../../gfx/background/header-bottom.png') no-repeat center bottom;
   height: 120px;
   margin-top: 60px;
   position: relative;

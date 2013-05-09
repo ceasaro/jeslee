@@ -11,11 +11,10 @@
 {% endblock %}
 
 {% block jeslee-content %}
-    <div id="shop-container">
-        <div class="grid_12">
-            <div id="shop-above-content">
-                {% block shop-above-content %}{% endblock %}
-            </div>
+    <div id="shop-container" >
+        <div id="shop-above-content" >
+            {% block shop-above-content %}{% endblock %}
+        </div>
 {% comment %}
         <div id="breadcrumbs">
             <div class="container">
@@ -23,7 +22,6 @@
             </div>
         </div>
 {% endcomment %}
-        </div>
         {% block shop-content %}
             <div class="grid_3">
                 <div id="category-menu">
