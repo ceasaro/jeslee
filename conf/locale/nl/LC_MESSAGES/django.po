@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-10 07:34-0500\n"
+"POT-Creation-Date: 2013-05-10 08:07-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -71,15 +71,15 @@ msgid "This product has been added to cart"
 msgstr "Dit product is toegevoegd"
 
 #: jeslee_web/templates/lfs/cart/added_to_cart.html:25
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:341
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:303
 #: jeslee_web/templates/manage/product/accessories.html:4
 #: jeslee_web/templates/manage/product/product.html:106
 msgid "Accessories"
 msgstr "Accessoires"
 
 #: jeslee_web/templates/lfs/cart/added_to_cart.html:29
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:252
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:345
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:214
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:307
 #: jeslee_web/templates/lfs/mail/order_details.html:178
 #: jeslee_web/templates/lfs/mail/order_details.txt:50
 #: jeslee_web/templates/lfs/mail/review_added_mail.html:12
@@ -120,15 +120,14 @@ msgstr "Naam"
 
 #: jeslee_web/templates/lfs/cart/added_to_cart.html:32
 #: jeslee_web/templates/lfs/cart/added_to_cart_items.html:9
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:213
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:346
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:308
 #: jeslee_web/templates/manage/product/accessories_inline.html:116
 msgid "Quantity"
 msgstr "Hoeveelheid"
 
 #: jeslee_web/templates/lfs/cart/added_to_cart.html:35
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:260
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:347
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:222
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:309
 #: jeslee_web/templates/lfs/customer/orders.html:47
 #: jeslee_web/templates/lfs/mail/order_details.html:184
 #: jeslee_web/templates/lfs/mail/order_details.txt:52
@@ -167,7 +166,7 @@ msgstr "Prijs"
 #: jeslee_web/templates/lfs/cart/added_to_cart_items.html:76
 #: jeslee_web/templates/lfs/cart/cart_inline.html:44
 #: jeslee_web/templates/lfs/cart/cart_inline.html:253
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:348
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:310
 #: jeslee_web/templates/lfs/checkout/checkout_cart_inline.html:37
 #: jeslee_web/templates/lfs/checkout/checkout_cart_inline.html:182
 #: jeslee_web/templates/lfs/mail/order_details.html:55
@@ -358,15 +357,16 @@ msgstr "Dit voldoet aan de"
 msgid "and costs"
 msgstr "en kosten"
 
-#: jeslee_web/templates/lfs/catalog/product_base.html:37
-msgid "Back to the collections"
-msgstr "Terug naar de collecties"
+#: jeslee_web/templates/lfs/catalog/product_base.html:38
+#, fuzzy
+msgid "Back to"
+msgstr "Terug naar"
 
-#: jeslee_web/templates/lfs/catalog/product_base.html:59
+#: jeslee_web/templates/lfs/catalog/product_base.html:60
 msgid "Tags"
 msgstr ""
 
-#: jeslee_web/templates/lfs/catalog/product_base.html:70
+#: jeslee_web/templates/lfs/catalog/product_base.html:71
 msgid "Tag cloud"
 msgstr ""
 
@@ -467,55 +467,51 @@ msgstr "inc. 21% BTW"
 msgid "exc. VAT"
 msgstr "exc. 21% BTW"
 
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:117
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:120
 msgid "Order now!"
 msgstr "Bestel nu!"
 
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:125
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:127
+msgid "Send request"
+msgstr "Verzoek verzenden"
+
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:134
 #, fuzzy
 msgid "Store product in your favorite"
 msgstr "Bewaar produkt bij je favorieten"
 
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:126
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:135
 msgid "Store favorite"
 msgstr "Bewaren"
 
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:129
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:138
 #, fuzzy
 msgid "Share product through e-mail"
 msgstr "Deel produkt via e-mail"
 
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:130
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:139
 msgid "Share product on hives"
 msgstr "Deel produkt op hives"
 
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:131
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:140
 msgid "Share product on facebook"
 msgstr "Deel produkt op facebook"
 
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:132
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:141
 msgid "Share product on twitter"
 msgstr "Deel produkt op twitter"
 
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:133
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:142
 msgid "Share"
 msgstr "Delen"
 
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:227
-msgid "Add to cart"
-msgstr "Toevoegen aan winkelmandje"
-
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:237
-msgid "Send request"
-msgstr "Verzoek verzenden"
-
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:244
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:206
 #: jeslee_web/templates/manage/product/product.html:103
 #: jeslee_web/templates/manage/product/variants.html:97
 msgid "Variants"
 msgstr "Varianten"
 
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:320
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:282
 #: jeslee_web/templates/manage/product/attachments.html:3
 #: jeslee_web/templates/manage/product/product.html:100
 msgid "Attachments"
@@ -3776,6 +3772,12 @@ msgstr ""
 #: jeslee_web/templates/tagging/related_products_by_tags_portlet.html:4
 msgid "Products with same Tags"
 msgstr ""
+
+#~ msgid "Back to the collections"
+#~ msgstr "Terug naar de collecties"
+
+#~ msgid "Add to cart"
+#~ msgstr "Toevoegen aan winkelmandje"
 
 #, fuzzy
 #~ msgid "month"

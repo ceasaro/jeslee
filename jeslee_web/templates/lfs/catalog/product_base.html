@@ -32,9 +32,10 @@
 
 
 {% block shop-above-content %}
+    {% current_category product %}
     <div class="grid_6">
         <a href="{{ current_category.get_absolute_url }}" class="navigation-button">
-            {% trans 'Back to the collections' %}
+            {% trans 'Back to' %} {{ current_category.name }}
         </a>
         {% product_navigation product %}
     </div>
