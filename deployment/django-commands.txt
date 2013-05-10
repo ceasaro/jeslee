@@ -1,0 +1,2 @@
+./manage.py makemessages -l nl -i *gunicorn* -i *lfstheme* -i "lfs/eggs/django_lfs-0.7.7-py2.7.egg/lfs/templates/manage"
+processing language nl

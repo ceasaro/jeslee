@@ -50,6 +50,12 @@ TIME_ZONE = 'America/Chicago'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 #LANGUAGE_CODE = 'en-us'
 LANGUAGE_CODE = 'nl-nl'
+LANGUAGES = (
+    ('nl', 'Dutch'),
+)
+LOCALE_PATHS = (
+    PROJECT_DIR+'/jeslee_web/locale',
+)
 
 SITE_ID = 1
 
@@ -122,6 +128,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'lfs.utils.middleware.RedirectFallbackMiddleware',
     "pagination.middleware.PaginationMiddleware",
 )
@@ -200,8 +207,8 @@ INSTALLED_APPS = (
     'postal',
     'paypal.standard.ipn',
     'paypal.standard.pdt',
-    'gunicorn',
-    'lfstheme',
+#    'gunicorn',
+#    'lfstheme',
     )
 
 FORCE_SCRIPT_NAME=""
