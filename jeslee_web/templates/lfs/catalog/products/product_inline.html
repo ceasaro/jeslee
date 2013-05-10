@@ -112,24 +112,34 @@
                     <option>???</option>
                 </select>
 
-                <div class="order-block">
-                    <img src="{{ STATIC_URL }}gfx/shopping-bag-small.png" class="shopping-bag-small" title="bestel {{ product.get_name }}"/>
-                    <span>Bestel nu!</span>
-                </div>
-            </div>
+                {% if product.is_deliverable %}
+                    <div class="order-block">
+                        <button class="add-to-cart-button"
+                                type="submit"
+                                title="bestel {{ pruduct.get_name }}"
+                                name="add-to-cart">{% trans 'Order now!' %}</button>
+{#                        <img src="{{ STATIC_URL }}gfx/shopping-bag-small.png" class="shopping-bag-small" title="bestel {{ product.get_name }}"/>#}
+{#                        <span>{%  trans 'Order now!' %}</span>#}
+                    </div>
+                {% else %}
+                    <button class="emphasized"
+                            onclick="window.location='{% url 'lfs_contact_form' %}'; return false"
+                            name="">{% trans 'Send request' %}</button>
+                {% endif %}            </div>
 
             <hr class="separator"/>
 
             <div class="share-product">
                 <div class="save-product">
-                    <img src="{{ STATIC_URL }}gfx/icons/icon-hart.png" class="shopping-bag-small" title="bestel {{ product.get_name }}"/>
-                    <span>{% trans 'Bewaren' %}</span>
+                    <img src="{{ STATIC_URL }}gfx/icons/icon-hart.png" class="share-icon" title="{% trans 'Store product in your favorite' %}"/>
+                    <span>{% trans 'Store favorite' %}</span>
                 </div>
                 <div class="social-share-product">
-                    <img src="{{ STATIC_URL }}gfx/icons/icon-mail.png" class="shopping-bag-small" title="bestel {{ product.get_name }}"/>
-                    <img src="{{ STATIC_URL }}gfx/icons/icon-hives.png" class="shopping-bag-small" title="bestel {{ product.get_name }}"/>
-                    <img src="{{ STATIC_URL }}gfx/icons/icon-facebook.png" class="shopping-bag-small" title="bestel {{ product.get_name }}"/>
-                    <img src="{{ STATIC_URL }}gfx/icons/icon-twitter.png" class="shopping-bag-small" title="bestel {{ product.get_name }}"/>
+                    <img src="{{ STATIC_URL }}gfx/icons/icon-mail.png" class="share-icon" title="{% trans 'Share product through e-mail' %}"/>
+                    <img src="{{ STATIC_URL }}gfx/icons/icon-hives.png" class="share-icon" title="{% trans 'Share product on hives' %}"/>
+                    <img src="{{ STATIC_URL }}gfx/icons/icon-facebook.png" class="share-icon" title="{% trans 'Share product on facebook' %}"/>
+                    <img src="{{ STATIC_URL }}gfx/icons/icon-twitter.png" class="share-icon" title="{% trans 'Share product on twitter' %}"/>
+                    <span>{% trans 'Share' %}</span>
 
                 </div>
              </div>
@@ -189,53 +199,6 @@
     {% endif %}
 
     <br clear="both">
-    {% if product.is_deliverable %}
-        <table align="right" class="buttons">
-            <tr>
-                {% if product.get_active_packing_unit %}
-                    <td>
-                        <div class="product-quantity packing-unit"
-                            id="packing-url"
-                            data="{% url 'lfs_calculate_packing' product.id %}">
-                            <input class="number quantity"
-                                   name="quantity"
-                                   size="3"
-                                   type="text"
-                                   value="{{ quantity }}" /> {{ unit }}
-                        </div>
-                    </td>
-                {% else %}
-                    <td>
-                        {% if unit %}
-                            {{ unit }}:
-                        {% else %}
-                            {% trans "Quantity" %}:
-                        {% endif %}
-                    </td>
-                    <td class="product-quantity">
-                        <input class="number"
-                               name="quantity"
-                               size="3"
-                               type="text"
-                               value="{{ quantity }}" />
-                    </td>
-                {% endif %}
-                <td nowrap="nowrap">
-                    <button class="emphasized"
-                           type="submit"
-                           name="add-to-cart">{% trans 'Add to cart' %}</button>
-                </td>
-            </tr>
-        </table>
-        <div class="packing-result">
-            {{ packing_result }}
-        </div>
-    {% else %}
-        <button class="emphasized"
-                onclick="window.location='{% url 'lfs_contact_form' %}'; return false"
-                name="">{% trans 'Send request' %}</button>
-    {% endif %}
-
 
     {# Variants #}
     {% if product.is_variant %}

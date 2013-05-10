@@ -39,7 +39,20 @@
   /* line 55, ../product-detail.scss */
   #shop-container #product-form .order-info .size-and-order #size-selector {
     width: 100%; }
-  /* line 60, ../product-detail.scss */
+  /* line 59, ../product-detail.scss */
+  #shop-container #product-form .order-info .size-and-order .add-to-cart-button {
+    background: url("../../gfx/shopping-bag-small.png") no-repeat 5px center;
+    border: none;
+    color: #ebdc78;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto 0 auto;
+    padding: 17px 3px 3px 35px;
+    width: 100px; }
+  /* line 74, ../product-detail.scss */
+  #shop-container #product-form .order-info .share-product .save-product {
+    margin-bottom: 15px; }
+  /* line 78, ../product-detail.scss */
   #shop-container #product-form .order-info .separator {
     border-top: 1px solid #ebdc78;
     margin: 20px -10px 20px -10px; }

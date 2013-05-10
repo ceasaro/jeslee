@@ -50,11 +50,10 @@ TIME_ZONE = 'America/Chicago'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 #LANGUAGE_CODE = 'en-us'
 LANGUAGE_CODE = 'nl-nl'
-LANGUAGES = (
-    ('nl', 'Dutch'),
-)
+
+
 LOCALE_PATHS = (
-    PROJECT_DIR+'/jeslee_web/locale',
+    PROJECT_DIR+'/conf/locale',
 )
 
 SITE_ID = 1
@@ -207,7 +206,7 @@ INSTALLED_APPS = (
     'postal',
     'paypal.standard.ipn',
     'paypal.standard.pdt',
-#    'gunicorn',
+    'gunicorn',
 #    'lfstheme',
     )
 

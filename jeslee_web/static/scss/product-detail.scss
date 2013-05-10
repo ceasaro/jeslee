@@ -56,6 +56,24 @@
           width: 100%;
         }
 
+      .add-to-cart-button {
+        background: url('../../gfx/shopping-bag-small.png') no-repeat 5px center;
+        border:none;
+        color:$light-text-color;
+        cursor: pointer;
+        display: block;
+        margin:10px auto 0 auto;
+        padding: 17px 3px 3px 35px;
+        width: 100px;
+      }
+
+
+      }
+
+      .share-product {
+        .save-product {
+          margin-bottom: 15px;
+        }
       }
       .separator {
         border-top:1px solid $light-background-color;
