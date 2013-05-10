@@ -19,7 +19,7 @@
                 <li><a href="#" class="disabled">Aanmelden</a></li>
                 <li><a href="#" class="disabled">Je aankopen</a></li>
             </ul>
-            <a href="#" class="link-shopping-bag" title="winkel tasje">
+            <a href="{% url 'lfs.cart.views.cart' %}" class="link-shopping-bag" title="winkel tasje">
                 <img src="{{ STATIC_URL }}gfx/shopping-bag.png" class="shopping-bag" title="winkel tasje"/>
             </a>
         </div>

@@ -22,6 +22,32 @@ body {
 a {
   color:$dark-text-color;
 }
+/***********************
+ * generic classes
+ **********************/
+table.lfs-default {
+  background: $dark-background-color;
+  color:$light-text-color;
+  width:100%;
+  tr {
+    border-bottom: 1px solid $light-background-color;
+  }
+  tr:last-child {
+    border-bottom: none;
+  }
+  th {
+    border-right: 1px dotted $light-background-color;
+    padding:5px;
+  }
+  td {
+    border-right: 1px dotted $light-background-color;
+    padding: 5px;
+  }
+  td:first-child,
+  td:last-child {
+    border-right: none;
+  }
+}
 
 /***********************
  * header
