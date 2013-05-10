@@ -4,42 +4,32 @@
 /* line 7, ../product-detail.scss */
 #shop-container #shop-above-content .product-navigation {
   float: right; }
-  /* line 10, ../product-detail.scss */
-  #shop-container #shop-above-content .product-navigation .left-triangle {
-    display: inline-block;
-    width: 0px;
-    height: 0px;
-    border-style: solid;
-    border-width: 5px 10px 5px 0;
-    border-color: transparent #ebdc78 transparent transparent; }
-  /* line 19, ../product-detail.scss */
-  #shop-container #shop-above-content .product-navigation .right-triangle {
-    display: inline-block;
-    width: 0px;
-    height: 0px;
-    border-style: solid;
-    border-width: 5px 0 5px 10px;
-    border-color: transparent transparent transparent #ebdc78; }
-/* line 32, ../product-detail.scss */
+/* line 10, ../product-detail.scss */
+#shop-container #shop-above-content .navigation-button.previous-product {
+  width: 52px; }
+/* line 13, ../product-detail.scss */
+#shop-container #shop-above-content .navigation-button.next-product {
+  width: 68px; }
+/* line 20, ../product-detail.scss */
 #shop-container #product-form .product-images .main-image {
   border: 1px solid #8f3ca1;
   height: 584px;
   width: 460px; }
-/* line 39, ../product-detail.scss */
+/* line 27, ../product-detail.scss */
 #shop-container #product-form .order-info {
   background-color: #390e41;
   color: #ebdc78;
   padding: 30px 20px 20px 20px; }
-  /* line 45, ../product-detail.scss */
+  /* line 33, ../product-detail.scss */
   #shop-container #product-form .order-info .prices .for-sale-price {
     font-size: 14pt; }
-  /* line 48, ../product-detail.scss */
+  /* line 36, ../product-detail.scss */
   #shop-container #product-form .order-info .prices .product-price {
     margin-bottom: 20px; }
-  /* line 55, ../product-detail.scss */
+  /* line 43, ../product-detail.scss */
   #shop-container #product-form .order-info .size-and-order #size-selector {
     width: 100%; }
-  /* line 59, ../product-detail.scss */
+  /* line 47, ../product-detail.scss */
   #shop-container #product-form .order-info .size-and-order .add-to-cart-button {
     background: url("../../gfx/shopping-bag-small.png") no-repeat 5px center;
     border: none;
@@ -49,10 +39,10 @@
     margin: 10px auto 0 auto;
     padding: 17px 3px 3px 35px;
     width: 100px; }
-  /* line 74, ../product-detail.scss */
+  /* line 62, ../product-detail.scss */
   #shop-container #product-form .order-info .share-product .save-product {
     margin-bottom: 15px; }
-  /* line 78, ../product-detail.scss */
+  /* line 66, ../product-detail.scss */
   #shop-container #product-form .order-info .separator {
     border-top: 1px solid #ebdc78;
     margin: 20px -10px 20px -10px; }

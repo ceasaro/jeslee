@@ -13,56 +13,72 @@
 #shop-container #shop-above-content {
   height: 50px; }
   /* line 18, ../shop.scss */
+  #shop-container #shop-above-content .left-triangle {
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 5px 10px 5px 0;
+    border-color: transparent #ebdc78 transparent transparent; }
+  /* line 27, ../shop.scss */
+  #shop-container #shop-above-content .right-triangle {
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 5px 0 5px 10px;
+    border-color: transparent transparent transparent #ebdc78; }
+  /* line 36, ../shop.scss */
   #shop-container #shop-above-content .category-name {
     float: left;
     font-size: 16pt;
     margin-top: 14px; }
-  /* line 24, ../shop.scss */
+  /* line 42, ../shop.scss */
   #shop-container #shop-above-content .sorting {
     float: right; }
-    /* line 27, ../shop.scss */
+    /* line 45, ../shop.scss */
     #shop-container #shop-above-content .sorting select {
       background-color: #390e41;
       border: none;
       color: #ebdc78;
       margin-top: 11px;
       padding: 5px; }
-      /* line 34, ../shop.scss */
+      /* line 52, ../shop.scss */
       #shop-container #shop-above-content .sorting select option {
         background-color: #390e41; }
-/* line 41, ../shop.scss */
+/* line 59, ../shop.scss */
 #shop-container #category-menu {
   border: 6px solid #390e41;
   padding: 10px;
   min-height: 292px; }
-  /* line 47, ../shop.scss */
+  /* line 65, ../shop.scss */
   #shop-container #category-menu > ul.root > li > a {
     font-weight: bold;
     text-transform: uppercase; }
-  /* line 51, ../shop.scss */
+  /* line 69, ../shop.scss */
   #shop-container #category-menu > ul.root > li li:first-child {
     margin-top: 2px; }
-  /* line 56, ../shop.scss */
+  /* line 74, ../shop.scss */
   #shop-container #category-menu li {
     margin-bottom: 2px; }
-    /* line 58, ../shop.scss */
+    /* line 76, ../shop.scss */
     #shop-container #category-menu li a {
       width: 180px;
       display: block;
       padding: 4px;
       text-decoration: none; }
-      /* line 64, ../shop.scss */
+      /* line 82, ../shop.scss */
       #shop-container #category-menu li a .product-count {
         color: #ca1e69; }
-    /* line 68, ../shop.scss */
+    /* line 86, ../shop.scss */
     #shop-container #category-menu li a.current {
       background-color: #BFAFC1; }
-  /* line 72, ../shop.scss */
+  /* line 90, ../shop.scss */
   #shop-container #category-menu li.level-1 {
     margin-left: 10px; }
-    /* line 74, ../shop.scss */
+    /* line 92, ../shop.scss */
     #shop-container #category-menu li.level-1 a {
       width: 170px; }
-/* line 80, ../shop.scss */
+/* line 98, ../shop.scss */
 #shop-container .for-sale-standard-price {
   text-decoration: line-through; }

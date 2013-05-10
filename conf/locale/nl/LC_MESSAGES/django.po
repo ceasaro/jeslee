@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-10 11:29-0500\n"
+"POT-Creation-Date: 2013-05-10 12:41-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,15 +33,15 @@ msgstr "kleding criteria"
 
 #: jeslee_web/templates/404.html:9 jeslee_web/templates/500.html:4
 msgid "We are sorry!"
-msgstr ""
+msgstr "Onze excuses"
 
 #: jeslee_web/templates/404.html:12
 msgid "The page you have requested could not be found."
-msgstr ""
+msgstr "De gevraagde pagine kunnen we helaas niet vinden."
 
 #: jeslee_web/templates/500.html:7
 msgid "An error has occured. Please try again in a minute."
-msgstr ""
+msgstr "Excuses er is iets fout gegaan."
 
 #: jeslee_web/templates/includes/product-card.html:18
 #: jeslee_web/templates/includes/product-card.html:37
@@ -357,23 +357,21 @@ msgstr "Dit voldoet aan de"
 msgid "and costs"
 msgstr "en kosten"
 
-#: jeslee_web/templates/lfs/catalog/product_base.html:38
-#, fuzzy
-msgid "Back to"
-msgstr "Terug naar"
+#: jeslee_web/templates/lfs/catalog/product_base.html:39
+msgid "to collection"
+msgstr "naar de collectie"
 
-#: jeslee_web/templates/lfs/catalog/product_base.html:60
+#: jeslee_web/templates/lfs/catalog/product_base.html:62
 msgid "Tags"
 msgstr ""
 
-#: jeslee_web/templates/lfs/catalog/product_base.html:71
+#: jeslee_web/templates/lfs/catalog/product_base.html:73
 msgid "Tag cloud"
 msgstr ""
 
-#: jeslee_web/templates/lfs/catalog/product_navigation.html:5
 #: jeslee_web/templates/lfs/catalog/product_navigation.html:7
-msgid "Previous product"
-msgstr "Vorig produkt"
+msgid "previous"
+msgstr "vorige"
 
 #: jeslee_web/templates/lfs/catalog/product_navigation.html:9
 #: jeslee_web/templates/manage/cart/carts_filters_inline.html:39
@@ -398,6 +396,9 @@ msgid "of"
 msgstr "van"
 
 #: jeslee_web/templates/lfs/catalog/product_navigation.html:11
+msgid "next"
+msgstr "volgende"
+
 #: jeslee_web/templates/lfs/catalog/product_navigation.html:13
 msgid "Next product"
 msgstr "Volgend produkt"
@@ -405,7 +406,7 @@ msgstr "Volgend produkt"
 #: jeslee_web/templates/lfs/catalog/sorting.html:14
 #: jeslee_web/templates/lfs/search/search_results.html:27
 msgid "Go!"
-msgstr ""
+msgstr "Ga!"
 
 #: jeslee_web/templates/lfs/catalog/categories/category/default.html:29
 #: jeslee_web/templates/lfs/catalog/categories/product/default-ori.html:74
@@ -476,16 +477,14 @@ msgid "Send request"
 msgstr "Verzoek verzenden"
 
 #: jeslee_web/templates/lfs/catalog/products/product_inline.html:134
-#, fuzzy
 msgid "Store product in your favorite"
-msgstr "Bewaar produkt bij je favorieten"
+msgstr "Bewaar produkt in je favorieten"
 
 #: jeslee_web/templates/lfs/catalog/products/product_inline.html:135
 msgid "Store favorite"
 msgstr "Bewaren"
 
 #: jeslee_web/templates/lfs/catalog/products/product_inline.html:138
-#, fuzzy
 msgid "Share product through e-mail"
 msgstr "Deel produkt via e-mail"
 
@@ -3773,8 +3772,9 @@ msgstr ""
 msgid "Products with same Tags"
 msgstr ""
 
-#~ msgid "Back to the collections"
-#~ msgstr "Terug naar de collecties"
+#, fuzzy
+#~ msgid "Back to"
+#~ msgstr "Terug naar"
 
 #~ msgid "Add to cart"
 #~ msgstr "Toevoegen aan winkelmandje"

@@ -15,6 +15,24 @@
   #shop-above-content {
     height: 50px;
 
+    .left-triangle {
+      display: inline-block;
+      width: 0px;
+      height: 0px;
+      border-style: solid;
+      border-width: 5px 10px 5px 0;
+      border-color: transparent $light-text-color transparent transparent;
+    }
+
+    .right-triangle {
+      display: inline-block;
+      width: 0px;
+      height: 0px;
+      border-style: solid;
+      border-width: 5px 0 5px 10px;
+      border-color: transparent transparent transparent $light-text-color;
+    }
+
     .category-name {
       float: left;
       font-size: 16pt;
