@@ -1,0 +1,23 @@
+/***********************
+ * COLORS
+ **********************/
+/* line 11, ../cart.scss */
+#cart-items table.lfs-default td {
+  vertical-align: middle; }
+  /* line 13, ../cart.scss */
+  #cart-items table.lfs-default td.product {
+    width: 120px; }
+    /* line 15, ../cart.scss */
+    #cart-items table.lfs-default td.product .image-container {
+      background-color: #ebe7ec;
+      margin: 0 auto;
+      width: 100px; }
+  /* line 21, ../cart.scss */
+  #cart-items table.lfs-default td.product-price {
+    width: 60px; }
+  /* line 24, ../cart.scss */
+  #cart-items table.lfs-default td.product-info {
+    vertical-align: top; }
+    /* line 26, ../cart.scss */
+    #cart-items table.lfs-default td.product-info .product-name {
+      font-size: 14pt; }

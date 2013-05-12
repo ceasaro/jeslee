@@ -1,0 +1,35 @@
+<div class="product-images">
+    <div id="product-impression-slide-show" class="cycle-slideshow"
+         data-cycle-slides="> div"
+         data-cycle-timeout="0"
+         data-cycle-prev="#product-impression-cycle-prev"
+         data-cycle-next="#product-impression-cycle-next"
+            {#                 data-cycle-caption="#slideshow-1 .custom-caption"#}
+            >
+        {% for image in product.get_images %}
+            <div class="large-image">
+                <img src="{{ image.image.url_450x584}}"
+                     title="{{ image.title }}"
+                     alt="{{ image.title }}" />
+            </div>
+        {% endfor %}
+        {% if product.get_images|length > 1 %}
+            <a href="#" id="product-impression-cycle-prev">
+                <span class="cycle-left-triangle"></span>
+            </a>
+            <a href="#" id="product-impression-cycle-next">
+                <span class="cycle-right-triangle"></span>
+            </a>
+        {% endif %}
+    </div>
+    <div class="sub-images">
+        {% for image in product.get_images %}
+            <div class="sub-image" data-slide-index="{{ forloop.counter0 }}">
+                <img src="{{ image.image.url_100x100 }}"
+                     title="{{ image.title }}"
+                     alt="{{ image.title }}"
+                        />
+            </div>
+        {% endfor %}
+    </div>
+</div>

@@ -36,14 +36,13 @@ table.lfs-default {
     border-bottom: none;
   }
   th {
-    border-right: 1px dotted $light-background-color;
+    //border-right: 1px dotted $light-background-color;
     padding:5px;
   }
   td {
-    border-right: 1px dotted $light-background-color;
+    //border-right: 1px dotted $light-background-color;
     padding: 5px;
   }
-  td:first-child,
   td:last-child {
     border-right: none;
   }

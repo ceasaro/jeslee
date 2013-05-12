@@ -288,7 +288,7 @@ LFS_PRICE_UNITS = LFS_BASE_PRICE_UNITS = LFS_PACKING_UNITS = LFS_UNITS
 
 LFS_LOG_FILE = SITE_ROOT + "/../lfs.log"
 
-LFS_THUMBNAIL_SIZES = ((208, 270), (450, 584), (60, 60), (100, 100), (200, 200), (300, 300), (400, 400))
+LFS_THUMBNAIL_SIZES = ((208, 270), (450, 584), (104,135), (60, 60), (100, 100), (200, 200), (300, 300), (400, 400))
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error.

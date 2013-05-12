@@ -17,10 +17,60 @@
 
   #product-form {
     .product-images {
-      .main-image {
-        border:1px solid $button-color;
+      #product-impression-slide-show {
+        position: relative;
+        #product-impression-cycle-prev, #product-impression-cycle-next {
+          background: $dark-background-color;
+          display: block;
+          height: 52px;
+          position: absolute;
+          top:206px;
+          width: 28px;
+          z-index: 110;
+        }
+        #product-impression-cycle-prev {
+          left:10px;
+          .cycle-left-triangle {
+            display: inline-block;
+            width: 0px;
+            height: 0px;
+            border-style: solid;
+            border-width: 17px 15px 17px 0;
+            border-color: transparent $light-text-color transparent transparent;
+            margin-left: 6px;
+            margin-top: 9px;
+          }
+        }
+        #product-impression-cycle-next {
+          right:10px;
+          .cycle-right-triangle {
+            display: inline-block;
+            width: 0px;
+            height: 0px;
+            border-style: solid;
+            border-width: 17px 0 17px 15px;
+            border-color: transparent transparent transparent $light-text-color;
+            margin-left: 7px;
+            margin-top: 9px;
+          }
+        }
+      }
+      .large-image {
+        border:1px solid $action-color;
         height: 584px;
         width: 460px;
+      }
+      .sub-images {
+        padding:10px 0 10px 0;
+        .sub-image.cycle-slide-active {
+          border:1px solid $action-color;
+        }
+        .sub-image {
+          display: inline-block;
+          height: 100px;
+          margin-right: 10px;
+          width: 100px;
+        }
       }
 
     }

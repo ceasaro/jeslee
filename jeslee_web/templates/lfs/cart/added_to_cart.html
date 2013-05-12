@@ -1,6 +1,7 @@
-{% extends "lfs/base.html" %}
+{% extends "lfs/cart/base.html" %}
 {% load i18n %}
 {% load lfs_tags %}
+{% load lfs_patch_tags %}
 
 {% block section %}added-to-cart{% endblock %}
 {% block left-slot-wrapper %}{% endblock %}
@@ -28,12 +29,19 @@
 {%  endblock %}
 
 {% block shop-content %}
-    <div class="grid_6" >
+
+    <div id="product-inline">
+        {{ product_inline|safe }}
+    </div>
+
+    <div class="grid_12" >
+{% comment %}
         {% if plural %}
             <h1>{% trans 'This products have been added to cart' %}</h1>
         {% else %}
             <h1>{% trans 'This product has been added to cart' %}</h1>
         {% endif %}
+{% endcomment %}
 
         <div id="cart-items">
             {{ cart_items }}

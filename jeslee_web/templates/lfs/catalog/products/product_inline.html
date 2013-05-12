@@ -1,5 +1,6 @@
 {% load i18n %}
 {% load lfs_tags %}
+{% load lfs_patch_tags %}
 {% load reviews_tags %}
 
 <form id="product-form"
@@ -10,22 +11,7 @@
 
     {# Images #}
     <div class="grid_6">
-        <div class="product-images">
-            <div class="main-image">
-                {% if product.get_image %}
-                    <img src="{{ product.get_image.image.url_450x584}}"
-                         title="{{ product.get_image.title }}"
-                         alt="{{ product.get_image.title }}" />
-                {% endif %}
-            </div>
-            <div class="sub-images">
-                {% for image in product.get_sub_images %}
-                    <img src="{{ image.image.url_60x60 }}"
-                         title="{{ image.title }}"
-                         alt="{{ image.title }}" />
-                {% endfor %}
-            </div>
-        </div>
+        {% product_image_slide product %}
     </div>
 
     <div class="grid_3">

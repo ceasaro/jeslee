@@ -10,6 +10,14 @@
     {{ product.get_meta_title }} - {{ block.super }}
 {% endblock %}
 
+{% block javascript-shop %}
+    <script src="{{ STATIC_URL }}js/jquery/jquery.cycle2.js" type="text/javascript"></script>
+    <script src="{{ STATIC_URL }}js/jquery/jquery.cycle2.carousel.js" type="text/javascript"></script>
+    <script src="{{ STATIC_URL }}js/jquery/jquery.cycle2.tile.js" type="text/javascript"></script>
+    <script src="{{ STATIC_URL }}js/product-detail.js" type="text/javascript"></script>
+
+{% endblock %}
+
 {% block section %}product{% endblock %}
 
 {% block head %}

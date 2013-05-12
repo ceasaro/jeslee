@@ -1,0 +1,35 @@
+@import "settings";
+
+#cart-items {
+  table.lfs-default {
+    tr {
+    }
+    tr:last-child {
+    }
+    th {
+    }
+    td {
+      vertical-align: middle;
+      &.product {
+        width:120px;
+        .image-container {
+          background-color: $background-color-site;
+          margin: 0 auto;
+          width:100px;
+        }
+      }
+      &.product-price {
+          width:60px;
+      }
+      &.product-info {
+        vertical-align:top;
+        .product-name {
+          font-size: $font-size-strong;
+        }
+      }
+    }
+    td:first-child,
+    td:last-child {
+    }
+  }
+}
