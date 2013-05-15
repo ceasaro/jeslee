@@ -21,3 +21,6 @@
     /* line 26, ../cart.scss */
     #cart-items table.lfs-default td.product-info .product-name {
       font-size: 14pt; }
+  /* line 30, ../cart.scss */
+  #cart-items table.lfs-default td.total {
+    float: right; }

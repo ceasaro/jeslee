@@ -46,6 +46,9 @@ table.lfs-default {
   td:last-child {
     border-right: none;
   }
+  a {
+    color:$light-text-color;
+  }
 }
 
 /***********************

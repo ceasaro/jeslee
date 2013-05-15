@@ -3,7 +3,7 @@
 <table class="lfs-default">
     <tr>
         <th colspan="2" class="product">
-            {% trans 'Product' %}
+            {% trans 'Article' %}
         </th>
 {#        <th class="product-info">#}
 {#            {% trans 'Product' %}#}
@@ -27,7 +27,12 @@
                 <div class="product-name">
                     {{ cart_item.product.get_name }}
                 </div>
-
+                <div class="product-description">
+                    {{ cart_item.product.get_short_description|safe }}
+                </div>
+                <div>
+                    <a href="{% url 'lfs_delete_cart_item' cart_item.obj.id %}">{% trans 'Remove from cart' %}</a>
+                </div>
                 <div class="product-property">
                     {% for property in cart_item.product.get_variant_properties %}
                         <div>
@@ -69,8 +74,7 @@
         </tr>
     {% endfor %}
     <tr class="total">
-        <td colspan="3"></td>
-        <td colspan="3" class="number total">
+        <td colspan="4" class="total">
             {% trans 'Total' %}: {{ total|currency:request}}
         </td>
     </tr>

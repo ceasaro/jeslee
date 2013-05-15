@@ -27,6 +27,9 @@
           font-size: $font-size-strong;
         }
       }
+      &.total {
+        float:right;
+      }
     }
     td:first-child,
     td:last-child {
