@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-10 12:41-0500\n"
+"POT-Creation-Date: 2013-05-15 13:42-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,13 +17,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: jeslee_web/lfs_patch/templatetags/lfs_patch_tags.py:61
+#, python-format
+msgid "%s tag needs no argument"
+msgstr ""
+
 #: jeslee_web/settings/defaults.py:266 jeslee_web/settings/defaults.py:271
-#: lfs/lfs_project/settings.py:209 lfs/lfs_project/settings.py:214
 msgid "Price includes tax"
 msgstr "prijs inclusief btw"
 
 #: jeslee_web/settings/defaults.py:267 jeslee_web/settings/defaults.py:272
-#: lfs/lfs_project/settings.py:210 lfs/lfs_project/settings.py:215
 msgid "Price excludes tax"
 msgstr "prijs exclusief btw"
 
@@ -58,12 +61,12 @@ msgstr "inc. btw"
 msgid "exc. btw"
 msgstr "exc. btw"
 
-#: jeslee_web/templates/lfs/cart/added_to_cart.html:10
+#: jeslee_web/templates/lfs/cart/added_to_cart.html:11
 msgid "Added to cart"
 msgstr "Aan mandje toegevoegd"
 
-#: jeslee_web/templates/lfs/cart/added_to_cart.html:17
-#: jeslee_web/templates/lfs/cart/cart_inline.html:289
+#: jeslee_web/templates/lfs/cart/added_to_cart.html:18
+#: jeslee_web/templates/lfs/cart/cart.html:19
 #: jeslee_web/templates/lfs/checkout/empty_page_checkout.html:6
 #: jeslee_web/templates/lfs/checkout/empty_page_checkout.html:12
 #: jeslee_web/templates/lfs/checkout/login.html:92
@@ -74,39 +77,31 @@ msgstr "Aan mandje toegevoegd"
 msgid "Checkout"
 msgstr "Afrekenen"
 
-#: jeslee_web/templates/lfs/cart/added_to_cart.html:21
+#: jeslee_web/templates/lfs/cart/added_to_cart.html:22
 #: jeslee_web/templates/lfs/checkout/one_page_checkout.html:256
 #: jeslee_web/templates/lfs/portlets/cart.html:8
 #: jeslee_web/templates/lfs/portlets/cart.html:32
 msgid "Go to cart"
 msgstr "Ga naar het winkelmandje"
 
-#: jeslee_web/templates/lfs/cart/added_to_cart.html:25
-#: jeslee_web/templates/lfs/cart/cart_inline.html:293
-#: jeslee_web/templates/lfs/cart/cart_inline.html:306
+#: jeslee_web/templates/lfs/cart/added_to_cart.html:26
+#: jeslee_web/templates/lfs/cart/cart.html:23
+#: jeslee_web/templates/lfs/cart/cart_inline.html:286
 #: jeslee_web/templates/lfs/checkout/empty_page_checkout.html:21
 #: jeslee_web/templates/lfs/contact/contact_form_sent.html:20
 msgid "Go on shopping"
 msgstr "Ga verder met winkelen"
 
-#: jeslee_web/templates/lfs/cart/added_to_cart.html:33
-msgid "This products have been added to cart"
-msgstr "Deze producten zijn toegevoegd"
-
-#: jeslee_web/templates/lfs/cart/added_to_cart.html:35
-msgid "This product has been added to cart"
-msgstr "Dit product is toegevoegd"
-
-#: jeslee_web/templates/lfs/cart/added_to_cart.html:43
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:303
+#: jeslee_web/templates/lfs/cart/added_to_cart.html:51
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:289
 #: jeslee_web/templates/manage/product/accessories.html:4
 #: jeslee_web/templates/manage/product/product.html:106
 msgid "Accessories"
 msgstr "Accessoires"
 
-#: jeslee_web/templates/lfs/cart/added_to_cart.html:47
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:214
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:307
+#: jeslee_web/templates/lfs/cart/added_to_cart.html:55
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:200
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:293
 #: jeslee_web/templates/lfs/mail/order_details.html:178
 #: jeslee_web/templates/lfs/mail/order_details.txt:50
 #: jeslee_web/templates/lfs/mail/review_added_mail.html:12
@@ -145,16 +140,16 @@ msgstr "Accessoires"
 msgid "Name"
 msgstr "Naam"
 
-#: jeslee_web/templates/lfs/cart/added_to_cart.html:50
-#: jeslee_web/templates/lfs/cart/added_to_cart_items.html:9
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:308
+#: jeslee_web/templates/lfs/cart/added_to_cart.html:58
+#: jeslee_web/templates/lfs/cart/added_to_cart_items.html:12
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:294
 #: jeslee_web/templates/manage/product/accessories_inline.html:116
 msgid "Quantity"
 msgstr "Aantal"
 
-#: jeslee_web/templates/lfs/cart/added_to_cart.html:53
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:222
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:309
+#: jeslee_web/templates/lfs/cart/added_to_cart.html:61
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:208
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:295
 #: jeslee_web/templates/lfs/customer/orders.html:47
 #: jeslee_web/templates/lfs/mail/order_details.html:184
 #: jeslee_web/templates/lfs/mail/order_details.txt:52
@@ -188,12 +183,12 @@ msgstr "Aantal"
 msgid "Price"
 msgstr "Prijs"
 
-#: jeslee_web/templates/lfs/cart/added_to_cart.html:56
-#: jeslee_web/templates/lfs/cart/added_to_cart_items.html:18
-#: jeslee_web/templates/lfs/cart/added_to_cart_items.html:76
-#: jeslee_web/templates/lfs/cart/cart_inline.html:44
-#: jeslee_web/templates/lfs/cart/cart_inline.html:253
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:310
+#: jeslee_web/templates/lfs/cart/added_to_cart.html:64
+#: jeslee_web/templates/lfs/cart/added_to_cart_items.html:15
+#: jeslee_web/templates/lfs/cart/added_to_cart_items.html:78
+#: jeslee_web/templates/lfs/cart/cart_inline.html:37
+#: jeslee_web/templates/lfs/cart/cart_inline.html:247
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:296
 #: jeslee_web/templates/lfs/checkout/checkout_cart_inline.html:37
 #: jeslee_web/templates/lfs/checkout/checkout_cart_inline.html:182
 #: jeslee_web/templates/lfs/mail/order_details.html:55
@@ -210,7 +205,7 @@ msgstr "Prijs"
 msgid "Total"
 msgstr "Totaal"
 
-#: jeslee_web/templates/lfs/cart/added_to_cart.html:80
+#: jeslee_web/templates/lfs/cart/added_to_cart.html:88
 #: jeslee_web/templates/manage/actions/add_action.html:21
 #: jeslee_web/templates/manage/discounts/criteria.html:12
 #: jeslee_web/templates/manage/shipping_methods/shipping_method_criteria.html:13
@@ -219,28 +214,12 @@ msgstr "Toevoegen"
 
 #: jeslee_web/templates/lfs/cart/added_to_cart_items.html:6
 #: jeslee_web/templates/lfs/cart/cart_inline.html:31
-#: jeslee_web/templates/lfs/checkout/checkout_cart_inline.html:24
-#: jeslee_web/templates/lfs/mail/review_added_mail.html:7
-#: jeslee_web/templates/lfs/mail/review_added_mail.txt:2
-#: jeslee_web/templates/lfs/search/search_results.html:46
-#: jeslee_web/templates/manage/cart/cart_inline.html:100
-#: jeslee_web/templates/manage/reviews/review_inline.html:78
-#: jeslee_web/templates/manage/reviews/reviews_inline.html:38
-#: jeslee_web/templates/tagging/product_list.html:14
-msgid "Product"
-msgstr "Produkt"
+msgid "Article"
+msgstr "Artikel"
 
-#: jeslee_web/templates/lfs/cart/added_to_cart_items.html:12
-#: jeslee_web/templates/lfs/cart/cart_inline.html:38
-#: jeslee_web/templates/lfs/checkout/checkout_cart_inline.html:31
-msgid "Net Price"
-msgstr "Netto prijs"
-
-#: jeslee_web/templates/lfs/cart/added_to_cart_items.html:15
-#: jeslee_web/templates/lfs/cart/cart_inline.html:41
-#: jeslee_web/templates/lfs/checkout/checkout_cart_inline.html:34
-msgid "VAT"
-msgstr "BTW"
+#: jeslee_web/templates/lfs/cart/added_to_cart_items.html:34
+msgid "Remove from cart"
+msgstr "Verwijder uit winkelmandje"
 
 #: jeslee_web/templates/lfs/cart/cart.html:6
 #: jeslee_web/templates/lfs/cart/cart.html:12
@@ -253,7 +232,7 @@ msgid "Cart"
 msgstr "Winkelmandje"
 
 #: jeslee_web/templates/lfs/cart/cart_inline.html:5
-#: jeslee_web/templates/lfs/cart/cart_inline.html:155
+#: jeslee_web/templates/lfs/cart/cart_inline.html:149
 #: jeslee_web/templates/lfs/checkout/checkout_cart_inline.html:125
 #: jeslee_web/templates/lfs/mail/order_details.html:239
 #: jeslee_web/templates/lfs/mail/order_details.txt:54
@@ -265,7 +244,7 @@ msgstr "Kortingscode"
 msgid "Your Cart"
 msgstr "Jouw winkelmandje"
 
-#: jeslee_web/templates/lfs/cart/cart_inline.html:35
+#: jeslee_web/templates/lfs/cart/cart_inline.html:34
 #: jeslee_web/templates/lfs/checkout/checkout_cart_inline.html:28
 #: jeslee_web/templates/lfs/mail/order_details.html:181
 #: jeslee_web/templates/lfs/mail/order_details.txt:51
@@ -274,13 +253,21 @@ msgstr "Jouw winkelmandje"
 #: jeslee_web/templates/manage/order/order_inline.html:169
 #: jeslee_web/templates/manage/product/product_filters_inline.html:13
 msgid "Amount"
-msgstr "Bedrag"
+msgstr "Aantal"
 
-#: jeslee_web/templates/lfs/cart/cart_inline.html:121
+#: jeslee_web/templates/lfs/cart/cart_inline.html:56
+msgid "Article nr."
+msgstr "Artikel nr."
+
+#: jeslee_web/templates/lfs/cart/cart_inline.html:61
 msgid "Delete item"
 msgstr "verwijder item"
 
-#: jeslee_web/templates/lfs/cart/cart_inline.html:179
+#: jeslee_web/templates/lfs/cart/cart_inline.html:62
+msgid "Remove article"
+msgstr "Artikel verwijderen"
+
+#: jeslee_web/templates/lfs/cart/cart_inline.html:173
 #: jeslee_web/templates/manage/criteria/combinedlengthandgirth_criterion.html:8
 #: jeslee_web/templates/manage/criteria/country_criterion.html:8
 #: jeslee_web/templates/manage/criteria/distance_criterion.html:8
@@ -295,7 +282,7 @@ msgstr "verwijder item"
 msgid "Country"
 msgstr "Land"
 
-#: jeslee_web/templates/lfs/cart/cart_inline.html:200
+#: jeslee_web/templates/lfs/cart/cart_inline.html:194
 #: jeslee_web/templates/lfs/checkout/checkout_cart_inline.html:146
 #: jeslee_web/templates/lfs/checkout/one_page_checkout.html:53
 #: jeslee_web/templates/lfs/mail/order_details.html:256
@@ -305,7 +292,7 @@ msgstr "Land"
 msgid "Shipping"
 msgstr "Verzenden"
 
-#: jeslee_web/templates/lfs/cart/cart_inline.html:226
+#: jeslee_web/templates/lfs/cart/cart_inline.html:220
 #: jeslee_web/templates/lfs/checkout/checkout_cart_inline.html:164
 #: jeslee_web/templates/lfs/checkout/payment_inline.html:3
 #: jeslee_web/templates/lfs/mail/order_details.html:271
@@ -314,7 +301,7 @@ msgstr "Verzenden"
 msgid "Payment"
 msgstr "Betaling"
 
-#: jeslee_web/templates/lfs/cart/cart_inline.html:267
+#: jeslee_web/templates/lfs/cart/cart_inline.html:261
 #: jeslee_web/templates/lfs/checkout/checkout_cart_inline.html:189
 #: jeslee_web/templates/lfs/mail/order_details.html:292
 #: jeslee_web/templates/lfs/mail/order_details.txt:59
@@ -323,11 +310,11 @@ msgstr "Betaling"
 msgid "Inclusive VAT"
 msgstr "Inclusief 21% BTW"
 
-#: jeslee_web/templates/lfs/cart/cart_inline.html:281
+#: jeslee_web/templates/lfs/cart/cart_inline.html:275
 msgid "Total delivery time"
 msgstr "Totale levertijd"
 
-#: jeslee_web/templates/lfs/cart/cart_inline.html:302
+#: jeslee_web/templates/lfs/cart/cart_inline.html:282
 msgid "Your Cart is empty"
 msgstr "Jouw winkelmandje is leeg"
 
@@ -357,18 +344,20 @@ msgstr "Dit voldoet aan de"
 msgid "and costs"
 msgstr "en kosten"
 
-#: jeslee_web/templates/lfs/catalog/product_base.html:39
+#: jeslee_web/templates/lfs/catalog/product_base.html:45
+#: jeslee_web/templates/lfs/catalog/product_base.html:47
 msgid "to collection"
 msgstr "naar de collectie"
 
-#: jeslee_web/templates/lfs/catalog/product_base.html:62
+#: jeslee_web/templates/lfs/catalog/product_base.html:69
 msgid "Tags"
 msgstr ""
 
-#: jeslee_web/templates/lfs/catalog/product_base.html:73
+#: jeslee_web/templates/lfs/catalog/product_base.html:80
 msgid "Tag cloud"
 msgstr ""
 
+#: jeslee_web/templates/lfs/catalog/product_navigation.html:5
 #: jeslee_web/templates/lfs/catalog/product_navigation.html:7
 msgid "previous"
 msgstr "vorige"
@@ -396,12 +385,9 @@ msgid "of"
 msgstr "van"
 
 #: jeslee_web/templates/lfs/catalog/product_navigation.html:11
+#: jeslee_web/templates/lfs/catalog/product_navigation.html:13
 msgid "next"
 msgstr "volgende"
-
-#: jeslee_web/templates/lfs/catalog/product_navigation.html:13
-msgid "Next product"
-msgstr "Volgend produkt"
 
 #: jeslee_web/templates/lfs/catalog/sorting.html:14
 #: jeslee_web/templates/lfs/search/search_results.html:27
@@ -458,59 +444,59 @@ msgid_plural "(%(amount_of_products)s products)"
 msgstr[0] "(%(amount_of_products)s produkt)"
 msgstr[1] "(%(amount_of_products)s produkten)"
 
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:82
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:99
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:68
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:85
 msgid "inc. VAT"
 msgstr "inc. 21% BTW"
 
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:84
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:101
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:70
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:87
 msgid "exc. VAT"
 msgstr "exc. 21% BTW"
 
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:120
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:106
 msgid "Order now!"
 msgstr "Bestel nu!"
 
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:127
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:113
 msgid "Send request"
 msgstr "Verzoek verzenden"
 
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:134
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:120
 msgid "Store product in your favorite"
 msgstr "Bewaar produkt in je favorieten"
 
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:135
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:121
 msgid "Store favorite"
 msgstr "Bewaren"
 
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:138
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:124
 msgid "Share product through e-mail"
 msgstr "Deel produkt via e-mail"
 
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:139
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:125
 msgid "Share product on hives"
 msgstr "Deel produkt op hives"
 
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:140
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:126
 msgid "Share product on facebook"
 msgstr "Deel produkt op facebook"
 
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:141
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:127
 msgid "Share product on twitter"
 msgstr "Deel produkt op twitter"
 
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:142
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:128
 msgid "Share"
 msgstr "Delen"
 
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:206
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:192
 #: jeslee_web/templates/manage/product/product.html:103
 #: jeslee_web/templates/manage/product/variants.html:97
 msgid "Variants"
 msgstr "Varianten"
 
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:282
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:268
 #: jeslee_web/templates/manage/product/attachments.html:3
 #: jeslee_web/templates/manage/product/product.html:100
 msgid "Attachments"
@@ -523,6 +509,25 @@ msgstr "Kortingscode"
 #: jeslee_web/templates/lfs/checkout/checkout_cart_inline.html:20
 msgid "Your cart"
 msgstr "Jouw winkelmandje"
+
+#: jeslee_web/templates/lfs/checkout/checkout_cart_inline.html:24
+#: jeslee_web/templates/lfs/mail/review_added_mail.html:7
+#: jeslee_web/templates/lfs/mail/review_added_mail.txt:2
+#: jeslee_web/templates/lfs/search/search_results.html:46
+#: jeslee_web/templates/manage/cart/cart_inline.html:100
+#: jeslee_web/templates/manage/reviews/review_inline.html:78
+#: jeslee_web/templates/manage/reviews/reviews_inline.html:38
+#: jeslee_web/templates/tagging/product_list.html:14
+msgid "Product"
+msgstr "Produkt"
+
+#: jeslee_web/templates/lfs/checkout/checkout_cart_inline.html:31
+msgid "Net Price"
+msgstr "Netto prijs"
+
+#: jeslee_web/templates/lfs/checkout/checkout_cart_inline.html:34
+msgid "VAT"
+msgstr "BTW"
 
 #: jeslee_web/templates/lfs/checkout/empty_page_checkout.html:17
 msgid "There is nothing to checkout"
@@ -3771,6 +3776,15 @@ msgstr ""
 #: jeslee_web/templates/tagging/related_products_by_tags_portlet.html:4
 msgid "Products with same Tags"
 msgstr ""
+
+#~ msgid "This products have been added to cart"
+#~ msgstr "Deze producten zijn toegevoegd"
+
+#~ msgid "This product has been added to cart"
+#~ msgstr "Dit product is toegevoegd"
+
+#~ msgid "Next product"
+#~ msgstr "Volgend produkt"
 
 #, fuzzy
 #~ msgid "Back to"

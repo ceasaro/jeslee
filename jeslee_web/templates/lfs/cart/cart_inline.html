@@ -28,38 +28,39 @@
         <table class="lfs-default">
             <tr>
                 <th colspan="2">
-                    {% trans 'Product' %}
+                    {% trans 'Article' %}
                 </th>
-                <th class="left"
-                    colspan="2">
+                <th class="left">
                     {% trans 'Amount' %}
-                </th>
-                <th class="number">
-                    {% trans 'Net Price' %}
-                </th>
-                <th class="number">
-                    {% trans 'VAT' %}
                 </th>
                 <th class="number">
                     {% trans 'Total' %}
                 </th>
-                <th></th>
             </tr>
             {% for cart_item in cart_items %}
                 <tr>
-                    <td class="image">
+                    <td class="product-image">
                         {% if cart_item.product.get_image.image %}
-                            <a href="{{ cart_item.product.get_absolute_url }}">
-                                <img src="{{ cart_item.product.get_image.image.url_60x60 }}"
+                            <div class="image-container">
+                                <img src="{{ cart_item.product.get_image.image.url_104x135 }}"
                                      alt="{{ cart_item.product.get_name }}"/>
-                            </a>
+                            </div>
                         {% endif %}
                     </td>
-                    <td>
+                    <td class="product-info">
                         <span class="product-title">
-                            <a href="{{ cart_item.product.get_absolute_url }}">
+                            <a class="product-name" href="{{ cart_item.product.get_absolute_url }}">
                                 {{ cart_item.product.get_name }}
                             </a>
+                            <div class="product-sku-container">
+                                <span class="product-sku-text">{% trans 'Article nr.' %}</span>
+                                <span class="product-sku">{{ cart_item.product.get_sku }}</span>
+                            </div>
+                            <div>
+                                <a href="{% url 'lfs_delete_cart_item' cart_item.obj.id %}"
+                                   title="{% trans 'Delete item' %}"
+                                   class="delete-button delete-cart-item">{% trans 'Remove article' %}</a>
+                            </div>
                         </span>
                         {% for property in cart_item.product.get_variant_properties %}
                             <div>
@@ -92,7 +93,7 @@
                                size="6"
                                value="{{ cart_item.quantity }}" />
                     </td>
-                    <td>
+{% comment %}                    <td>
                         {% if cart_item.product.get_unit %}
                             <span class="product-unit">
                                 {{ cart_item.product.get_unit }}
@@ -103,27 +104,19 @@
                                 ({{ cart_item.obj|packages }} {{ cart_item.product.get_packing_info.1 }})
                             </span>
                         {% endif %}
-                    </td>
-                    <td class="number"
-                        nowrap="nowrap">
-                        {{ cart_item.product_price_net|currency:request }}
-                    </td>
-                    <td class="number"
-                        nowrap="nowrap">
-                        {{ cart_item.product_tax|currency:request }}
-                    </td>
-                    <td class="number"
+                    </td>{% endcomment %}
+                    <td class="right"
                         nowrap="nowrap">
                         {{ cart_item.product_price_gross|currency:request }}
                     </td>
-                    <td class="right">
-                        <a href="{% url 'lfs_delete_cart_item' cart_item.obj.id %}"
-                           title="{% trans 'Delete item' %}"
-                           class="delete-button delete-cart-item">X</a>
-                    </td>
                 </tr>
             {% endfor %}
-            {% for discount in discounts %}
+        </table>
+
+        <br/>
+        <table>
+
+        {% for discount in discounts %}
                 <tr id="discounts-display">
                     <td></td>
                     <td class="left">
@@ -279,20 +272,6 @@
                 <td colspan="5"
                     class="discreet left padding-top">
                     {% trans 'Total delivery time' %}: {{ max_delivery_time }}
-                </td>
-            </tr>
-            <tr>
-                <td colspan="8">
-                    <div class="buttons">
-                        <a class="button checkout-button emphasized"
-                           href="{% url 'lfs_checkout_dispatcher' %}">
-                           {% trans 'Checkout' %}
-                        </a>
-                        <a class="button shopping-button"
-                           href="{{ shopping_url }}">
-                            {% trans 'Go on shopping' %}
-                        </a>
-                    </div>
                 </td>
             </tr>
         </table>

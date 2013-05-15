@@ -1,6 +1,6 @@
 @import "settings";
 
-#cart-items {
+#cart-form {
   table.lfs-default {
     tr {
     }
@@ -10,22 +10,39 @@
     }
     td {
       vertical-align: middle;
-      &.product {
+      &.product-image {
+        height: 140px;
         width:120px;
         .image-container {
           background-color: $background-color-site;
           margin: 0 auto;
-          width:100px;
+          height:135px;
+          width:104px;
+        }
+      }
+      &.product-info {
+        vertical-align:top;
+        width:300px;
+        .product-name {
+          display: block;
+          font-size: $font-size-strong;
+          font-style: italic;
+          height:20px;
+          margin-bottom: 5px;
+          text-decoration: none;
+        }
+        .product-name:hover {
+          font-weight: bold;
+          font-style: italic;
+          font-size: $font-size-strong;
+
+        }
+        .product-sku-container {
+          font-size: $font-size-small;
         }
       }
       &.product-price {
           width:60px;
-      }
-      &.product-info {
-        vertical-align:top;
-        .product-name {
-          font-size: $font-size-strong;
-        }
       }
       &.total {
         float:right;

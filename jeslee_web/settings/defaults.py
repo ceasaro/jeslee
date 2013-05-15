@@ -248,7 +248,7 @@ PAYPAL_IDENTITY_TOKEN = "set_this_to_your_paypal_pdt_identity_token"
 
 # TODO: Put this into the Shop model
 LFS_PAYPAL_REDIRECT = True
-LFS_AFTER_ADD_TO_CART = "lfs_added_to_cart"
+LFS_AFTER_ADD_TO_CART = "lfs_cart"
 LFS_RECENT_PRODUCTS_LIMIT = 5
 
 LFS_ORDER_NUMBER_GENERATOR = "lfs_order_numbers.models.OrderNumberGenerator"

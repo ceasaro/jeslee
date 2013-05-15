@@ -2,25 +2,41 @@
  * COLORS
  **********************/
 /* line 11, ../cart.scss */
-#cart-items table.lfs-default td {
+#cart-form table.lfs-default td {
   vertical-align: middle; }
   /* line 13, ../cart.scss */
-  #cart-items table.lfs-default td.product {
+  #cart-form table.lfs-default td.product-image {
+    height: 140px;
     width: 120px; }
-    /* line 15, ../cart.scss */
-    #cart-items table.lfs-default td.product .image-container {
+    /* line 16, ../cart.scss */
+    #cart-form table.lfs-default td.product-image .image-container {
       background-color: #ebe7ec;
       margin: 0 auto;
-      width: 100px; }
-  /* line 21, ../cart.scss */
-  #cart-items table.lfs-default td.product-price {
-    width: 60px; }
-  /* line 24, ../cart.scss */
-  #cart-items table.lfs-default td.product-info {
-    vertical-align: top; }
+      height: 135px;
+      width: 104px; }
+  /* line 23, ../cart.scss */
+  #cart-form table.lfs-default td.product-info {
+    vertical-align: top;
+    width: 300px; }
     /* line 26, ../cart.scss */
-    #cart-items table.lfs-default td.product-info .product-name {
+    #cart-form table.lfs-default td.product-info .product-name {
+      display: block;
+      font-size: 14pt;
+      font-style: italic;
+      height: 20px;
+      margin-bottom: 5px;
+      text-decoration: none; }
+    /* line 34, ../cart.scss */
+    #cart-form table.lfs-default td.product-info .product-name:hover {
+      font-weight: bold;
+      font-style: italic;
       font-size: 14pt; }
-  /* line 30, ../cart.scss */
-  #cart-items table.lfs-default td.total {
+    /* line 40, ../cart.scss */
+    #cart-form table.lfs-default td.product-info .product-sku-container {
+      font-size: 8pt; }
+  /* line 44, ../cart.scss */
+  #cart-form table.lfs-default td.product-price {
+    width: 60px; }
+  /* line 47, ../cart.scss */
+  #cart-form table.lfs-default td.total {
     float: right; }
