@@ -1,15 +1,26 @@
 @import "settings";
 
 #cart-form {
-  table.lfs-default {
+  table.article-list {
+    colgroup {
+      .col-info {
+      }
+      .col-amount {
+        width: 10%;
+      }
+      .col-total-price {
+        width: 10%;
+      }
+    }
     tr {
     }
     tr:last-child {
     }
     th {
+      padding: 10px;
     }
     td {
-      vertical-align: middle;
+      padding-top:20px;
       &.product-image {
         height: 140px;
         width:120px;
@@ -21,7 +32,6 @@
         }
       }
       &.product-info {
-        vertical-align:top;
         width:300px;
         .product-name {
           display: block;
@@ -42,14 +52,32 @@
         }
       }
       &.product-price {
-          width:60px;
+
       }
-      &.total {
+      &.product-amount {
+        input.cart-amount {
+          margin-left: 14px;
+          width:20px;
+        }
+      }
+      &.product-total-price {
         float:right;
+        margin-right: 20px;
       }
     }
     td:first-child,
     td:last-child {
+    }
+  }
+
+  table.checkout-table {
+    float: right;
+    width:250px;
+    th {
+
+    }
+    td {
+      vertical-align: middle;
     }
   }
 }

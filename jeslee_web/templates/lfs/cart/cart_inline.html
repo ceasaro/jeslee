@@ -1,6 +1,7 @@
 {% load i18n lfs_tags %}
 
 {% if cart_items %}
+{% comment %}
     <h1 class="first-heading">
         {% trans "Voucher" %}
     </h1>
@@ -16,24 +17,31 @@
             {{ voucher_message }}
         </span>
     {% endif %}
+{% endcomment %}
 
+{% comment %}
     <h1 class="title">
         {% trans 'Your Cart' %}
     </h1>
+{% endcomment %}
 
     <form id="cart-form"
           action="{% url 'lfs.cart.views.refresh_cart' %}"
           onsubmit="return false;">
 
-        <table class="lfs-default">
-            <tr>
+        <table class="lfs-default article-list">
+                <colgroup>
+                    <col span="2" class="col-info">
+                    <col span="1" class="col-amount">
+                    <col span="1" class="col-total-price">
+                </colgroup>            <tr>
                 <th colspan="2">
                     {% trans 'Article' %}
                 </th>
-                <th class="left">
+                <th class="amount">
                     {% trans 'Amount' %}
                 </th>
-                <th class="number">
+                <th class="total-price">
                     {% trans 'Total' %}
                 </th>
             </tr>
@@ -86,11 +94,11 @@
                         {% endif %}
 
                     </td>
-                    <td class="number">
+                    <td class="product-amount">
                         <input class="number cart-amount"
                                type="text"
                                name="amount-cart-item_{{ cart_item.obj.id }}"
-                               size="6"
+                               size="2"
                                value="{{ cart_item.quantity }}" />
                     </td>
 {% comment %}                    <td>
@@ -105,7 +113,7 @@
                             </span>
                         {% endif %}
                     </td>{% endcomment %}
-                    <td class="right"
+                    <td class="product-total-price"
                         nowrap="nowrap">
                         {{ cart_item.product_price_gross|currency:request }}
                     </td>
@@ -114,7 +122,8 @@
         </table>
 
         <br/>
-        <table>
+
+        <table class="lfs-default checkout-table">
 
         {% for discount in discounts %}
                 <tr id="discounts-display">

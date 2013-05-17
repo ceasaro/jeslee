@@ -1,42 +1,59 @@
 /***********************
  * COLORS
  **********************/
+/* line 8, ../cart.scss */
+#cart-form table.article-list colgroup .col-amount {
+  width: 10%; }
 /* line 11, ../cart.scss */
-#cart-form table.lfs-default td {
-  vertical-align: middle; }
-  /* line 13, ../cart.scss */
-  #cart-form table.lfs-default td.product-image {
+#cart-form table.article-list colgroup .col-total-price {
+  width: 10%; }
+/* line 19, ../cart.scss */
+#cart-form table.article-list th {
+  padding: 10px; }
+/* line 22, ../cart.scss */
+#cart-form table.article-list td {
+  padding-top: 20px; }
+  /* line 24, ../cart.scss */
+  #cart-form table.article-list td.product-image {
     height: 140px;
     width: 120px; }
-    /* line 16, ../cart.scss */
-    #cart-form table.lfs-default td.product-image .image-container {
+    /* line 27, ../cart.scss */
+    #cart-form table.article-list td.product-image .image-container {
       background-color: #ebe7ec;
       margin: 0 auto;
       height: 135px;
       width: 104px; }
-  /* line 23, ../cart.scss */
-  #cart-form table.lfs-default td.product-info {
-    vertical-align: top;
+  /* line 34, ../cart.scss */
+  #cart-form table.article-list td.product-info {
     width: 300px; }
-    /* line 26, ../cart.scss */
-    #cart-form table.lfs-default td.product-info .product-name {
+    /* line 36, ../cart.scss */
+    #cart-form table.article-list td.product-info .product-name {
       display: block;
       font-size: 14pt;
       font-style: italic;
       height: 20px;
       margin-bottom: 5px;
       text-decoration: none; }
-    /* line 34, ../cart.scss */
-    #cart-form table.lfs-default td.product-info .product-name:hover {
+    /* line 44, ../cart.scss */
+    #cart-form table.article-list td.product-info .product-name:hover {
       font-weight: bold;
       font-style: italic;
       font-size: 14pt; }
-    /* line 40, ../cart.scss */
-    #cart-form table.lfs-default td.product-info .product-sku-container {
+    /* line 50, ../cart.scss */
+    #cart-form table.article-list td.product-info .product-sku-container {
       font-size: 8pt; }
-  /* line 44, ../cart.scss */
-  #cart-form table.lfs-default td.product-price {
-    width: 60px; }
-  /* line 47, ../cart.scss */
-  #cart-form table.lfs-default td.total {
-    float: right; }
+  /* line 58, ../cart.scss */
+  #cart-form table.article-list td.product-amount input.cart-amount {
+    margin-left: 14px;
+    width: 20px; }
+  /* line 63, ../cart.scss */
+  #cart-form table.article-list td.product-total-price {
+    float: right;
+    margin-right: 20px; }
+/* line 73, ../cart.scss */
+#cart-form table.checkout-table {
+  float: right;
+  width: 250px; }
+  /* line 79, ../cart.scss */
+  #cart-form table.checkout-table td {
+    vertical-align: middle; }
