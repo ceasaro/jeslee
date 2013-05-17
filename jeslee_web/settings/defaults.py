@@ -1,4 +1,5 @@
 # Django settings for JesLee project.
+import locale
 import os
 from django.core.urlresolvers import reverse_lazy
 # django imports
@@ -49,8 +50,8 @@ TIME_ZONE = 'America/Chicago'
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
 #LANGUAGE_CODE = 'en-us'
-LANGUAGE_CODE = 'nl-nl'
-
+LANGUAGE_CODE = 'nl-NL'
+#locale.setlocale(locale.LC_ALL, "nl_NL.UTF-8")
 
 LOCALE_PATHS = (
     PROJECT_DIR+'/conf/locale',
@@ -247,6 +248,7 @@ PAYPAL_RECEIVER_EMAIL = "info@yourbusiness.com"
 PAYPAL_IDENTITY_TOKEN = "set_this_to_your_paypal_pdt_identity_token"
 
 # TODO: Put this into the Shop model
+LFS_LOCALE = "nl_NL"
 LFS_PAYPAL_REDIRECT = True
 LFS_AFTER_ADD_TO_CART = "lfs_cart"
 LFS_RECENT_PRODUCTS_LIMIT = 5
