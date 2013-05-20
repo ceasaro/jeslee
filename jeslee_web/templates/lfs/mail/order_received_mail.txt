@@ -1,4 +1,4 @@
-{% load i18n lfs_theme_tags %}
+{% load i18n lfs_patch_tags %}
 {% blocktrans with firstname=order.customer_firstname lastname=order.customer_lastname %}Dear {{ firstname }} {{ lastname }}{% endblocktrans %},
 
 {% trans "your order has been received." %}

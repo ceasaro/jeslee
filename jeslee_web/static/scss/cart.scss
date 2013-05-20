@@ -1,6 +1,6 @@
 @import "settings";
 
-#cart-form {
+#cart-form, #cart-inline {
   table.article-list {
     colgroup {
       .col-info {
@@ -17,7 +17,6 @@
     tr:last-child {
     }
     th {
-      padding: 10px;
     }
     td {
       padding-top:20px;
@@ -78,6 +77,33 @@
     }
     td {
       vertical-align: middle;
+    }
+  }
+}
+
+#checkout-form-container {
+  .jeslee-form-container-header {
+    .shipping-same-as-invoice {
+      font-size: $font-size-small;
+    }
+  }
+  #invoice-address-inline {
+  }
+  #shipping-address-inline {
+    display: none;
+  }
+  ul.address {
+    li {
+      &#form_invoice_line2, &#form_shipping_line2 {
+        display: none;
+      }
+      label {
+        width: 200px;
+
+      }
+      .required {
+        float: right;
+      }
     }
   }
 }

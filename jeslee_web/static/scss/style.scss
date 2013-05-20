@@ -37,7 +37,7 @@ table.lfs-default {
   }
   th {
     //border-right: 1px dotted $light-background-color;
-    padding:5px;
+    padding:10px;
   }
   td {
     //border-right: 1px dotted $light-background-color;
@@ -51,6 +51,38 @@ table.lfs-default {
   }
 }
 
+.jeslee-form-container {
+  .jeslee-form-container-header {
+    font-size: $font-size-strong;
+    margin-bottom: 20px;
+  }
+  background: $dark-background-color;
+  color:$light-text-color;
+  margin-bottom: 20px;
+  padding: 20px;
+  ul {
+    li {
+      .label {
+        display: inline-block;
+        height: 45px;
+        width: 50%;
+      }
+      input {
+        display: inline-block;
+        float: right;
+        width: 200px;
+      }
+      select {
+        float: right;
+        width: 204px;
+      }
+    }
+  }
+}
+
+.errorlist {
+  color: #F84637;
+}
 /***********************
  * header
  **********************/

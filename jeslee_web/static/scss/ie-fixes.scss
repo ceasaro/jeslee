@@ -46,3 +46,18 @@ body {
   }
 
 }
+
+.jeslee-form-container {
+  background: $dark-background-color;
+  color:$light-text-color;
+  margin-bottom: 20px;
+  padding: 20px;
+  ul {
+    li {
+      label {
+        zoom: 1;
+        *display: inline;
+      }
+    }
+  }
+}

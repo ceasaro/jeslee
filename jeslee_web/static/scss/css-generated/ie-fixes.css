@@ -1,28 +1,63 @@
-body {
-  font-size: 70%; }
+/*
+Syntax error: Undefined variable: "$dark-background-color".
+        on line 51 of ./ie-fixes.scss
 
-#livesearch-result {
-  margin-top: 30px; }
+46:   }
+47: 
+48: }
+49: 
+50: .jeslee-form-container {
+51:   background: $dark-background-color;
+52:   color:$light-text-color;
+53:   margin-bottom: 20px;
+54:   padding: 20px;
+55:   ul {
+56:     li {
 
-/* Remove image because of the z-index bug */
-.cart-portlet .portlet-body {
-  padding: 10px; }
-
-.cart-portlet .portlet-header img {
-  display: none; }
-
-#id_username,
-#id_password_1,
-#id_password_2,
-#id_password {
-  width: 150px; }
-
-#shop-container .navigation-button {
-  zoom: 1;
-  *display: inline; }
-#shop-container #shop-above-content .product-navigation .left-triangle {
-  zoom: 1;
-  *display: inline; }
-#shop-container #shop-above-content .product-navigation .right-triangle {
-  zoom: 1;
-  *display: inline; }
+Backtrace:
+./ie-fixes.scss:51
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/script/variable.rb:49:in `_perform'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/script/node.rb:40:in `perform'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:298:in `visit_prop'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:37:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:100:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:53:in `map'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:320:in `visit_rule'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:37:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:100:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:53:in `map'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:128:in `visit_root'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:37:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:100:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:7:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/root_node.rb:20:in `render'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/engine.rb:315:in `_render'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/engine.rb:262:in `render'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/plugin/compiler.rb:341:in `update_stylesheet'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/plugin/compiler.rb:203:in `block in update_stylesheets'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/plugin/compiler.rb:201:in `each'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/plugin/compiler.rb:201:in `update_stylesheets'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/plugin/compiler.rb:299:in `block in watch'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/vendor/listen/lib/listen/multi_listener.rb:108:in `call'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/vendor/listen/lib/listen/multi_listener.rb:108:in `on_change'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/vendor/listen/lib/listen/multi_listener.rb:117:in `block in initialize_adapter'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/vendor/listen/lib/listen/adapters/polling.rb:56:in `call'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/vendor/listen/lib/listen/adapters/polling.rb:56:in `poll'
+/var/lib/gems/1.9.1/gems/sass-3.2.7/vendor/listen/lib/listen/adapters/polling.rb:32:in `block in start'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Undefined variable: \"$dark-background-color\".\A         on line 51 of ./ie-fixes.scss\A \A 46:   }\A 47: \A 48: }\A 49: \A 50: .jeslee-form-container {\A 51:   background: $dark-background-color;\A 52:   color:$light-text-color;\A 53:   margin-bottom: 20px;\A 54:   padding: 20px;\A 55:   ul {\A 56:     li {"; }

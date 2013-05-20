@@ -1,4 +1,4 @@
-{% load i18n lfs_theme_tags %}
+{% load i18n lfs_patch_tags %}
 {% trans 'Welcome to' %} {{ shop.name }}</h1>
 
 {% trans "Thank you for registering" %}

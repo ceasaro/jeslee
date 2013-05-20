@@ -1,4 +1,4 @@
-{% extends "lfs/base.html" %}
+{% extends "lfs/cart/base.html" %}
 {% load i18n lfs_tags %}
 
 {% block title %}
@@ -11,61 +11,81 @@
     {% breadcrumbs _("Checkout") %}
 {% endblock %}
 
-{% block wrapper %}
+
+{% block shop-above-content %}
+    <div class="buttons grid_6" >
+        <a class="navigation-button order-button" id="place-oder-button"
+           href="#">
+            {% trans 'Submit order' %}
+        </a>
+        <a class="navigation-button cart-button"
+           href="{% url 'lfs.cart.views.cart' %}">
+            {% trans 'Go to cart' %}
+        </a>
+    </div>
+{%  endblock %}
+
+
+{% block shop-content %}
     {% if form.errors %}
         <div class="form-errors">
             {% trans "The operation could not be performed because one or more errors occurred. Please see below." %}
+            {{ form.non_field_errors }}
+{#            {{ form.errors }}#}
         </div>
     {% endif %}
-    <div>
-        <form class="checkout-form postal-address"
+    <div id="checkout-form-container">
+        <form id="checkout-form"
               method="post"
               data="{% url 'lfs_changed_checkout' %}"
               invoice="{% url 'lfs_changed_invoice_country' %}"
               shipping="{% url 'lfs_changed_shipping_country' %}">
             {% csrf_token %}
-            <table class="lfs-default">
-                <tr>
-                    <th>
+            <div class="grid_6">
+                <div class="jeslee-form-container">
+                    <div class="jeslee-form-container-header">
                         {% trans 'Invoice address' %}
-                    </th>
-                    <th>
+                    </div>
+                    {# Invoice Address #}
+                    {{ invoice_address_inline|safe }}
+                </div>
+
+                <div class="jeslee-form-container">
+                    <div class="jeslee-form-container-header">
                         {% trans 'Shipping address' %}
-                        ({{ form.no_shipping }}
-                        {{ form.no_shipping.label_tag }})
-                    </th>
-                </tr>
-                <tr>
-                	{# Invoice Address #}
-                    <td width="50%">
-                    	{{ invoice_address_inline|safe }}
-                    </td>
-
-                    {#  Shipping Address #}
-                    <td width="50%">
-                    	{{ shipping_address_inline|safe }}
-                    </td>
-                </tr>
-            </table>
-
-            {# Shipping #}
-            <div class="shipping">
-                <h2>{% trans 'Shipping' %}</h2>
-                <div id="shipping-inline">
-                    {{ shipping_inline|safe }}
+                        <span class="shipping-same-as-invoice">
+                            ({{ form.no_shipping }}
+                            {{ form.no_shipping.label_tag }})
+                        </span>
+                    </div>
+                    {{ shipping_address_inline|safe }}
                 </div>
             </div>
 
-            {# Payment #}
-            <div class="payment">
-                <div id="payment-inline">
-                    {{ payment_inline|safe }}
+            <div class="grid_6">
+                {# Shipping #}
+                <div class="jeslee-form-container">
+                    <div class="jeslee-form-container-header shipping">
+                        {% trans 'Shipping' %}
+                    </div>
+                    <div id="shipping-inline">
+                        {{ shipping_inline|safe }}
+                    </div>
                 </div>
-            </div>
 
-            {% if display_credit_card %}
-                 <table id="credit-card">
-                     <tr>
+                {# Payment #}
+                <div class="jeslee-form-container">
+                    <div class="payment">
+                        <div id="payment-inline">
+                            {{ payment_inline|safe }}
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="checkout-form-bank-credit-card" class="payment-method-form jeslee-form-container"
+                     style="{% if not display_credit_card %}display: none;{% endif %}">
+
                          <th colspan="2">
                              {% trans 'Please enter your credit card information' %}
 
@@ -81,147 +101,96 @@
                                  </div>
                              </noscript>
                          </th>
-                    </tr>
-                     <tr>
                          <td class="label"
                              colspan="2">
                              {{ form.account_number.errors }}
                          </td>
-                     </tr>
-                     <tr>
                          <td class="label">
                              {{ form.credit_card_type.label_tag }}:
                          </td>
                          <td>
                              {{ form.credit_card_type }}
                          </td>
-                     </tr>
-                     <tr>
                          <td class="label"
                              colspan="2">
                              {{ form.credit_card_owner.errors }}
                          </td>
-                     </tr>
-                     <tr>
                          <td class="label">
                              {{ form.credit_card_owner.label_tag }}:
                          </td>
                          <td>
                              {{ form.credit_card_owner }}
                          </td>
-                     </tr>
-
-                     <tr>
                          <td class="label"
                              colspan="2">
                              {{ form.credit_card_number.errors }}
                          </td>
-                     </tr>
-                     <tr>
                          <td class="label">
                              {{ form.credit_card_number.label_tag }}:
                          </td>
                          <td>
                              {{ form.credit_card_number }}
                          </td>
-                     </tr>
-
-                     <tr>
                          <td class="label">
                              <label>{% trans "Expiration date" %}:</label>
                          </td>
                          <td>
                              {{ form.credit_card_expiration_date_month }} {{ form.credit_card_expiration_date_year }}
                          </td>
-                     </tr>
-
-                     <tr>
                          <td class="label"
                              colspan="2">
                              {{ form.credit_card_verification.errors }}
                          </td>
-                     </tr>
-                     <tr>
                          <td class="label">
                              {{ form.credit_card_verification.label_tag }}:
                          </td>
                          <td>
                              {{ form.credit_card_verification }}
                          </td>
-                     </tr>
-
-                </table>
-            {% endif %}
-            {% if display_bank_account %}
-                <table id="bank-account">
-                    <tr>
-                        <th colspan="2">
-                            {% trans 'Please enter your bank information' %}
-                            <noscript>
-                                <div class="discreet">
-                                    ({% trans 'Only necessary when the payment method is direct debit' %})
-                                </div>
-                            </noscript>
-                        </th>
-                    </tr>
-                    <tr>
-                        <td class="label"
-                            colspan="2">
+                </div>
+            <div id="checkout-form-bank-account" class="payment-method-form jeslee-form-container" style="{% if not display_bank_account %}display: none;{% endif %}">
+                <div class="jeslee-form-container-header">
+                    {% trans 'Please enter your bank information' %}
+                    <noscript>
+                        <div class="discreet">
+                            ({% trans 'Only necessary when the payment method is direct debit' %})
+                        </div>
+                    </noscript>
+                </div>
+                <ul>
+                    <li>
+                        <div class="label">
                             {{ form.account_number.errors }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="label">
                             {{ form.account_number.label_tag }}:
-                        </td>
-                        <td>
-                            {{ form.account_number }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="label"
-                            colspan="2">
+                        </div>
+                        {{ form.account_number }}
+                    </li>
+                    <li>
+                        <div class="label">
                             {{ form.bank_identification_code.errors }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="label">
                             {{ form.bank_identification_code.label_tag }}:
-                        </td>
-                        <td>
-                            {{ form.bank_identification_code }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="label"
-                            colspan="2">
+                        </div>
+                        {{ form.bank_identification_code }}
+                    </li>
+                    <li>
+                        <div class="label">
                             {{ form.bank_name.errors }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="label">
                             {{ form.bank_name.label_tag }}:
-                        </td>
-                        <td>
-                            {{ form.bank_name }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="label"
-                            colspan="2">
+                        </div>
+                        {{ form.bank_name }}
+                    </li>
+                    <li>
+                        <div class="label">
                             {{ form.depositor.errors }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="label">
                             {{ form.depositor.label_tag }}:
-                        </td>
-                        <td>
-                            {{ form.depositor }}
-                        </td>
-                    </tr>
-                </table>
-            {% endif %}
+                        </div>
+                        {{ form.depositor }}
+                    </li>
+                </ul>
+
+            </div>
+
+            </div>
 
             {# Cart #}
             <div id="cart-inline">
@@ -247,15 +216,6 @@
                 <label for="confirm_toc">{% trans "Please confirm our terms and conditions" %}</label>
             {% endif %}
 
-            <div class="right">
-                <button class="button emphasized"
-                        type="submit">
-                    {% trans 'Submit order' %}
-                </button>
-                <a class="button"
-                   href="{% url 'lfs.cart.views.cart %}">{% trans 'Go to cart'' %}</a>
-            </div>
-
             {% if request.user.is_anonymous %}
                 <input type="hidden"
                        name="is_anonymous"
@@ -268,4 +228,14 @@
 
         </form>
     </div>
+
+    <div class="buttons grid_6" >
+        <button class="button emphasized"
+                type="submit">
+            {% trans 'Submit order' %}
+        </button>
+        <a class="navigation-button cart-button"
+           href="{% url 'lfs.cart.views.cart' %}">{% trans 'Go to cart' %}</a>
+    </div>
+
 {% endblock %}
