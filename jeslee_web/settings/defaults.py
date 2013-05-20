@@ -11,8 +11,6 @@ TEMPLATE_DEBUG = DEBUG
 SITE_ROOT = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 PROJECT_DIR = os.path.dirname(SITE_ROOT) # this is not Django setting.
 
-DEFAULT_FROM_EMAIL = 'your_email@domain.com'
-
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
@@ -240,9 +238,14 @@ CACHE_MIDDLEWARE_KEY_PREFIX = "lfs"
 # CACHE_BACKEND = 'memcached://127.0.0.1:11211/'
 CACHE_BACKEND = 'dummy:///'
 
-EMAIL_HOST = ""
-EMAIL_HOST_USER = ""
-EMAIL_HOST_PASSWORD = ""
+DEFAULT_FROM_EMAIL = 'info@jeslee.com'
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'info@jeslee.com'
+EMAIL_HOST_PASSWORD = 'saluttuta'
+
 
 PAYPAL_RECEIVER_EMAIL = "info@yourbusiness.com"
 PAYPAL_IDENTITY_TOKEN = "set_this_to_your_paypal_pdt_identity_token"

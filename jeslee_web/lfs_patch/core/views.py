@@ -1,4 +1,5 @@
 # Create your views here.
+from django.core.mail import send_mail
 from django.http.response import HttpResponse
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
@@ -29,3 +30,8 @@ def delete_cart_item(request, cart_item_id):
     cart_changed.send(cart, request=request)
 
     return HttpResponse(cart_view(request))
+
+def test_email(request):
+    send_mail('Subject here', 'Here is the message.', 'from@example.com',
+        ['ceesvw@gmail.com'], fail_silently=False)
+#    send_customer_added(user=request.user)

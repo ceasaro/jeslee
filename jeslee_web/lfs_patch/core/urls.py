@@ -36,6 +36,7 @@ urlpatterns += patterns('lfs.cart.views',
 # Cart patch
 urlpatterns +=patterns('jeslee_web.lfs_patch.core.views',
     url(r'^delete-cart-item/(?P<cart_item_id>\d*)$', "delete_cart_item", name="lfs_delete_cart_item"),
+    url(r'^email/$', "test_email", name="lfs_test_email"),
 )
 
 # Catalog
