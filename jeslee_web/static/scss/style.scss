@@ -56,6 +56,9 @@ table.lfs-default {
     font-size: $font-size-strong;
     margin-bottom: 20px;
   }
+  a {
+    color:$light-text-color;
+  }
   background: $dark-background-color;
   color:$light-text-color;
   margin-bottom: 20px;

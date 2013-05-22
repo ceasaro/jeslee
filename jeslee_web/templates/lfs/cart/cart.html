@@ -13,13 +13,13 @@
 {% endblock %}
 
 {% block shop-above-content %}
-    <div class="buttons grid_6" >
-        <a class="navigation-button checkout-button"
+    <div class="buttons grid_12" >
+        <a class="navigation-button-right checkout-button"
            href="{% url 'lfs_checkout_dispatcher' %}">
             {% trans 'Checkout' %}
         </a>
-        <a class="navigation-button shopping-button"
-           href="{{ shopping_url }}">
+        <a class="navigation-button-right shopping-button"
+           href="{% if shopping_url %}{{ shopping_url }}{% else %}{% url 'lfs_shop_view' %}{% endif %}">
             {% trans 'Go on shopping' %}
         </a>
     </div>
@@ -30,5 +30,20 @@
 
     <div id="cart-inline">
         {{cart_inline}}
+        <div style="clear:both;"/>
     </div>
+
 {% endblock %}
+
+{% block shop-below-content %}
+    <div class="buttons grid_12" >
+        <a class="navigation-button-right checkout-button"
+           href="{% url 'lfs_checkout_dispatcher' %}">
+            {% trans 'Checkout' %}
+        </a>
+        <a class="navigation-button-right shopping-button"
+           href="{% if shopping_url %}{{ shopping_url }}{% else %}{% url 'lfs_shop_view' %}{% endif %}">
+            {% trans 'Go on shopping' %}
+        </a>
+    </div>
+{%  endblock %}

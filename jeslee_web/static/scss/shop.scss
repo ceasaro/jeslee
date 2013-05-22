@@ -3,7 +3,7 @@
 #shop-container {
 
   //commen shop style classes
-  .navigation-button {
+  .navigation-button, .navigation-button-right {
     background-color: $action-color;
     color:$light-text-color;
     display: inline-block;
@@ -11,8 +11,21 @@
     margin:10px 15px 0 0;
     text-decoration: none;
   }
+  .navigation-button-right {
+    float: right;
+    margin:10px 0 0 15px;
 
-  #shop-above-content {
+  }
+  #checkout-login-container {
+    h2 {
+      margin-bottom: 20px;
+    }
+    form {
+      margin-top: 20px;
+    }
+  }
+
+  #shop-above-content, #shop-below-content {
     height: 50px;
 
     .left-triangle {

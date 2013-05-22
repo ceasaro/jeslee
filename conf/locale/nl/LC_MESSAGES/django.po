@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-15 13:42-0500\n"
+"POT-Creation-Date: 2013-05-20 14:11-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,15 +22,15 @@ msgstr ""
 msgid "%s tag needs no argument"
 msgstr ""
 
-#: jeslee_web/settings/defaults.py:266 jeslee_web/settings/defaults.py:271
+#: jeslee_web/settings/defaults.py:271 jeslee_web/settings/defaults.py:276
 msgid "Price includes tax"
 msgstr "prijs inclusief btw"
 
-#: jeslee_web/settings/defaults.py:267 jeslee_web/settings/defaults.py:272
+#: jeslee_web/settings/defaults.py:272 jeslee_web/settings/defaults.py:277
 msgid "Price excludes tax"
 msgstr "prijs exclusief btw"
 
-#: jeslee_web/settings/defaults.py:285
+#: jeslee_web/settings/defaults.py:290
 msgid "Clothing Criterion"
 msgstr "kleding criteria"
 
@@ -67,6 +67,7 @@ msgstr "Aan mandje toegevoegd"
 
 #: jeslee_web/templates/lfs/cart/added_to_cart.html:18
 #: jeslee_web/templates/lfs/cart/cart.html:19
+#: jeslee_web/templates/lfs/cart/cart.html:42
 #: jeslee_web/templates/lfs/checkout/empty_page_checkout.html:6
 #: jeslee_web/templates/lfs/checkout/empty_page_checkout.html:12
 #: jeslee_web/templates/lfs/checkout/login.html:92
@@ -78,7 +79,8 @@ msgid "Checkout"
 msgstr "Afrekenen"
 
 #: jeslee_web/templates/lfs/cart/added_to_cart.html:22
-#: jeslee_web/templates/lfs/checkout/one_page_checkout.html:256
+#: jeslee_web/templates/lfs/checkout/one_page_checkout.html:23
+#: jeslee_web/templates/lfs/checkout/one_page_checkout.html:244
 #: jeslee_web/templates/lfs/portlets/cart.html:8
 #: jeslee_web/templates/lfs/portlets/cart.html:32
 msgid "Go to cart"
@@ -86,7 +88,8 @@ msgstr "Ga naar het winkelmandje"
 
 #: jeslee_web/templates/lfs/cart/added_to_cart.html:26
 #: jeslee_web/templates/lfs/cart/cart.html:23
-#: jeslee_web/templates/lfs/cart/cart_inline.html:286
+#: jeslee_web/templates/lfs/cart/cart.html:46
+#: jeslee_web/templates/lfs/cart/cart_inline.html:295
 #: jeslee_web/templates/lfs/checkout/empty_page_checkout.html:21
 #: jeslee_web/templates/lfs/contact/contact_form_sent.html:20
 msgid "Go on shopping"
@@ -186,11 +189,9 @@ msgstr "Prijs"
 #: jeslee_web/templates/lfs/cart/added_to_cart.html:64
 #: jeslee_web/templates/lfs/cart/added_to_cart_items.html:15
 #: jeslee_web/templates/lfs/cart/added_to_cart_items.html:78
-#: jeslee_web/templates/lfs/cart/cart_inline.html:37
-#: jeslee_web/templates/lfs/cart/cart_inline.html:247
+#: jeslee_web/templates/lfs/cart/cart_inline.html:45
+#: jeslee_web/templates/lfs/cart/cart_inline.html:256
 #: jeslee_web/templates/lfs/catalog/products/product_inline.html:296
-#: jeslee_web/templates/lfs/checkout/checkout_cart_inline.html:37
-#: jeslee_web/templates/lfs/checkout/checkout_cart_inline.html:182
 #: jeslee_web/templates/lfs/mail/order_details.html:55
 #: jeslee_web/templates/lfs/mail/order_details.html:187
 #: jeslee_web/templates/lfs/mail/order_details.txt:11
@@ -213,7 +214,7 @@ msgid "Add"
 msgstr "Toevoegen"
 
 #: jeslee_web/templates/lfs/cart/added_to_cart_items.html:6
-#: jeslee_web/templates/lfs/cart/cart_inline.html:31
+#: jeslee_web/templates/lfs/cart/cart_inline.html:39
 msgid "Article"
 msgstr "Artikel"
 
@@ -231,21 +232,7 @@ msgstr "Verwijder uit winkelmandje"
 msgid "Cart"
 msgstr "Winkelmandje"
 
-#: jeslee_web/templates/lfs/cart/cart_inline.html:5
-#: jeslee_web/templates/lfs/cart/cart_inline.html:149
-#: jeslee_web/templates/lfs/checkout/checkout_cart_inline.html:125
-#: jeslee_web/templates/lfs/mail/order_details.html:239
-#: jeslee_web/templates/lfs/mail/order_details.txt:54
-#: jeslee_web/templates/manage/order/order_inline.html:255
-msgid "Voucher"
-msgstr "Kortingscode"
-
-#: jeslee_web/templates/lfs/cart/cart_inline.html:21
-msgid "Your Cart"
-msgstr "Jouw winkelmandje"
-
-#: jeslee_web/templates/lfs/cart/cart_inline.html:34
-#: jeslee_web/templates/lfs/checkout/checkout_cart_inline.html:28
+#: jeslee_web/templates/lfs/cart/cart_inline.html:42
 #: jeslee_web/templates/lfs/mail/order_details.html:181
 #: jeslee_web/templates/lfs/mail/order_details.txt:51
 #: jeslee_web/templates/lfs/order/lfs_order_tmpl.html:169
@@ -255,19 +242,26 @@ msgstr "Jouw winkelmandje"
 msgid "Amount"
 msgstr "Aantal"
 
-#: jeslee_web/templates/lfs/cart/cart_inline.html:56
+#: jeslee_web/templates/lfs/cart/cart_inline.html:64
 msgid "Article nr."
 msgstr "Artikel nr."
 
-#: jeslee_web/templates/lfs/cart/cart_inline.html:61
+#: jeslee_web/templates/lfs/cart/cart_inline.html:69
 msgid "Delete item"
 msgstr "verwijder item"
 
-#: jeslee_web/templates/lfs/cart/cart_inline.html:62
+#: jeslee_web/templates/lfs/cart/cart_inline.html:70
 msgid "Remove article"
 msgstr "Artikel verwijderen"
 
-#: jeslee_web/templates/lfs/cart/cart_inline.html:173
+#: jeslee_web/templates/lfs/cart/cart_inline.html:158
+#: jeslee_web/templates/lfs/mail/order_details.html:239
+#: jeslee_web/templates/lfs/mail/order_details.txt:54
+#: jeslee_web/templates/manage/order/order_inline.html:255
+msgid "Voucher"
+msgstr "Kortingscode"
+
+#: jeslee_web/templates/lfs/cart/cart_inline.html:182
 #: jeslee_web/templates/manage/criteria/combinedlengthandgirth_criterion.html:8
 #: jeslee_web/templates/manage/criteria/country_criterion.html:8
 #: jeslee_web/templates/manage/criteria/distance_criterion.html:8
@@ -282,9 +276,8 @@ msgstr "Artikel verwijderen"
 msgid "Country"
 msgstr "Land"
 
-#: jeslee_web/templates/lfs/cart/cart_inline.html:194
-#: jeslee_web/templates/lfs/checkout/checkout_cart_inline.html:146
-#: jeslee_web/templates/lfs/checkout/one_page_checkout.html:53
+#: jeslee_web/templates/lfs/cart/cart_inline.html:203
+#: jeslee_web/templates/lfs/checkout/one_page_checkout.html:69
 #: jeslee_web/templates/lfs/mail/order_details.html:256
 #: jeslee_web/templates/lfs/order/lfs_order_tmpl.html:235
 #: jeslee_web/templates/lfs/shipping/shipping_portlet.html:6
@@ -292,17 +285,15 @@ msgstr "Land"
 msgid "Shipping"
 msgstr "Verzenden"
 
-#: jeslee_web/templates/lfs/cart/cart_inline.html:220
-#: jeslee_web/templates/lfs/checkout/checkout_cart_inline.html:164
-#: jeslee_web/templates/lfs/checkout/payment_inline.html:3
+#: jeslee_web/templates/lfs/cart/cart_inline.html:229
+#: jeslee_web/templates/lfs/checkout/payment_inline.html:4
 #: jeslee_web/templates/lfs/mail/order_details.html:271
 #: jeslee_web/templates/lfs/order/lfs_order_tmpl.html:250
 #: jeslee_web/templates/manage/order/order_inline.html:290
 msgid "Payment"
 msgstr "Betaling"
 
-#: jeslee_web/templates/lfs/cart/cart_inline.html:261
-#: jeslee_web/templates/lfs/checkout/checkout_cart_inline.html:189
+#: jeslee_web/templates/lfs/cart/cart_inline.html:270
 #: jeslee_web/templates/lfs/mail/order_details.html:292
 #: jeslee_web/templates/lfs/mail/order_details.txt:59
 #: jeslee_web/templates/lfs/order/lfs_order_tmpl.html:271
@@ -310,11 +301,11 @@ msgstr "Betaling"
 msgid "Inclusive VAT"
 msgstr "Inclusief 21% BTW"
 
-#: jeslee_web/templates/lfs/cart/cart_inline.html:275
+#: jeslee_web/templates/lfs/cart/cart_inline.html:284
 msgid "Total delivery time"
 msgstr "Totale levertijd"
 
-#: jeslee_web/templates/lfs/cart/cart_inline.html:282
+#: jeslee_web/templates/lfs/cart/cart_inline.html:291
 msgid "Your Cart is empty"
 msgstr "Jouw winkelmandje is leeg"
 
@@ -502,33 +493,6 @@ msgstr "Varianten"
 msgid "Attachments"
 msgstr "Bijlagen"
 
-#: jeslee_web/templates/lfs/checkout/checkout_cart_inline.html:5
-msgid "Voucher code"
-msgstr "Kortingscode"
-
-#: jeslee_web/templates/lfs/checkout/checkout_cart_inline.html:20
-msgid "Your cart"
-msgstr "Jouw winkelmandje"
-
-#: jeslee_web/templates/lfs/checkout/checkout_cart_inline.html:24
-#: jeslee_web/templates/lfs/mail/review_added_mail.html:7
-#: jeslee_web/templates/lfs/mail/review_added_mail.txt:2
-#: jeslee_web/templates/lfs/search/search_results.html:46
-#: jeslee_web/templates/manage/cart/cart_inline.html:100
-#: jeslee_web/templates/manage/reviews/review_inline.html:78
-#: jeslee_web/templates/manage/reviews/reviews_inline.html:38
-#: jeslee_web/templates/tagging/product_list.html:14
-msgid "Product"
-msgstr "Produkt"
-
-#: jeslee_web/templates/lfs/checkout/checkout_cart_inline.html:31
-msgid "Net Price"
-msgstr "Netto prijs"
-
-#: jeslee_web/templates/lfs/checkout/checkout_cart_inline.html:34
-msgid "VAT"
-msgstr "BTW"
-
 #: jeslee_web/templates/lfs/checkout/empty_page_checkout.html:17
 msgid "There is nothing to checkout"
 msgstr "Jouw winkelmandje is leeg"
@@ -583,7 +547,12 @@ msgstr ""
 msgid "You can also checkout without login or registration."
 msgstr "Je kunt ook betalen zonder in te loggen of te registreren."
 
-#: jeslee_web/templates/lfs/checkout/one_page_checkout.html:17
+#: jeslee_web/templates/lfs/checkout/one_page_checkout.html:19
+#: jeslee_web/templates/lfs/checkout/one_page_checkout.html:240
+msgid "Submit order"
+msgstr "Bestelling plaatsen"
+
+#: jeslee_web/templates/lfs/checkout/one_page_checkout.html:32
 #: jeslee_web/templates/lfs/customer/addresses.html:20
 msgid ""
 "The operation could not be performed because one or more errors occurred. "
@@ -592,7 +561,7 @@ msgstr ""
 "De bewerking kon niet worden uitgevoerd, omdat er één of meerdere fouten "
 "zijn opgetreden .Zie hieronder."
 
-#: jeslee_web/templates/lfs/checkout/one_page_checkout.html:30
+#: jeslee_web/templates/lfs/checkout/one_page_checkout.html:47
 #: jeslee_web/templates/lfs/mail/order_details.html:69
 #: jeslee_web/templates/lfs/mail/order_details.txt:24
 #: jeslee_web/templates/lfs/order/lfs_order_tmpl.html:58
@@ -601,7 +570,7 @@ msgstr ""
 msgid "Invoice address"
 msgstr "Factuur adres"
 
-#: jeslee_web/templates/lfs/checkout/one_page_checkout.html:33
+#: jeslee_web/templates/lfs/checkout/one_page_checkout.html:55
 #: jeslee_web/templates/lfs/mail/order_details.html:66
 #: jeslee_web/templates/lfs/mail/order_details.txt:13
 #: jeslee_web/templates/lfs/order/lfs_order_tmpl.html:61
@@ -610,30 +579,26 @@ msgstr "Factuur adres"
 msgid "Shipping address"
 msgstr "Verstuur adres"
 
-#: jeslee_web/templates/lfs/checkout/one_page_checkout.html:70
+#: jeslee_web/templates/lfs/checkout/one_page_checkout.html:90
 msgid "Please enter your credit card information"
 msgstr "Vul a.u.b. je credit card gegevens in"
 
-#: jeslee_web/templates/lfs/checkout/one_page_checkout.html:80
-#: jeslee_web/templates/lfs/checkout/one_page_checkout.html:162
+#: jeslee_web/templates/lfs/checkout/one_page_checkout.html:100
+#: jeslee_web/templates/lfs/checkout/one_page_checkout.html:156
 msgid "Only necessary when the payment method is direct debit"
 msgstr "Alleen nodig wanneer de betalingswijze automatische incasso is"
 
-#: jeslee_web/templates/lfs/checkout/one_page_checkout.html:131
+#: jeslee_web/templates/lfs/checkout/one_page_checkout.html:135
 msgid "Expiration date"
 msgstr "Vervaldatum"
 
-#: jeslee_web/templates/lfs/checkout/one_page_checkout.html:159
+#: jeslee_web/templates/lfs/checkout/one_page_checkout.html:153
 msgid "Please enter your bank information"
 msgstr "Vul a.u.b. je bankgegevens in"
 
-#: jeslee_web/templates/lfs/checkout/one_page_checkout.html:247
+#: jeslee_web/templates/lfs/checkout/one_page_checkout.html:218
 msgid "Please confirm our terms and conditions"
 msgstr "Gelieve onze algemene voorwaarden te accepteren"
-
-#: jeslee_web/templates/lfs/checkout/one_page_checkout.html:253
-msgid "Submit order"
-msgstr "Bestelling plaatsen"
 
 #: jeslee_web/templates/lfs/checkout/thank_you_page.html:5
 #: jeslee_web/templates/lfs/checkout/thank_you_page.html:11
@@ -1079,7 +1044,7 @@ msgid "Message"
 msgstr "Bericht"
 
 #: jeslee_web/templates/lfs/mail/order_paid_mail.html:8
-#: jeslee_web/templates/lfs/mail/order_paid_mail.txt:1
+#: jeslee_web/templates/lfs/mail/order_paid_mail.txt:2
 #: jeslee_web/templates/lfs/mail/order_received_mail.html:8
 #: jeslee_web/templates/lfs/mail/order_received_mail.txt:2
 #: jeslee_web/templates/lfs/mail/order_sent_mail.html:8
@@ -1089,7 +1054,7 @@ msgid "Dear %(firstname)s %(lastname)s"
 msgstr ""
 
 #: jeslee_web/templates/lfs/mail/order_paid_mail.html:11
-#: jeslee_web/templates/lfs/mail/order_paid_mail.txt:3
+#: jeslee_web/templates/lfs/mail/order_paid_mail.txt:4
 msgid "your order has been paid."
 msgstr ""
 
@@ -1114,6 +1079,16 @@ msgstr ""
 #: jeslee_web/templates/lfs/mail/order_sent_subject.txt:1
 msgid "Your order has been sent"
 msgstr "Je bestelling is verstuurd"
+
+#: jeslee_web/templates/lfs/mail/review_added_mail.html:7
+#: jeslee_web/templates/lfs/mail/review_added_mail.txt:2
+#: jeslee_web/templates/lfs/search/search_results.html:46
+#: jeslee_web/templates/manage/cart/cart_inline.html:100
+#: jeslee_web/templates/manage/reviews/review_inline.html:78
+#: jeslee_web/templates/manage/reviews/reviews_inline.html:38
+#: jeslee_web/templates/tagging/product_list.html:14
+msgid "Product"
+msgstr "Produkt"
 
 #: jeslee_web/templates/lfs/mail/review_added_mail.html:17
 #: jeslee_web/templates/lfs/mail/review_added_mail.txt:6
@@ -3776,6 +3751,21 @@ msgstr ""
 #: jeslee_web/templates/tagging/related_products_by_tags_portlet.html:4
 msgid "Products with same Tags"
 msgstr ""
+
+#~ msgid "Your Cart"
+#~ msgstr "Jouw winkelmandje"
+
+#~ msgid "Voucher code"
+#~ msgstr "Kortingscode"
+
+#~ msgid "Your cart"
+#~ msgstr "Jouw winkelmandje"
+
+#~ msgid "Net Price"
+#~ msgstr "Netto prijs"
+
+#~ msgid "VAT"
+#~ msgstr "BTW"
 
 #~ msgid "This products have been added to cart"
 #~ msgstr "Deze producten zijn toegevoegd"

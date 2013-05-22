@@ -7,7 +7,7 @@ jeslee.cart || (function($) {
                 $checkout_form_bank_account = $('#checkout-form-bank-account'), // payment method nr. 1
                 $checkout_form_credit_card = $('#checkout-form-credit-card'); // payment method nr. ???
 
-            $('#place-oder-button').click(function(event) {
+            $('#place-oder-button, #place-oder-button-below').click(function(event) {
                event.preventDefault();
                 $('#checkout-form').submit();
             });
