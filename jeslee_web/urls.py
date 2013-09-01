@@ -2,6 +2,8 @@ from django.conf.urls import patterns, include, url
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
+from django.views.generic.base import TemplateView
+
 admin.autodiscover()
 
 from jeslee_web.views import HomeView
@@ -17,11 +19,15 @@ urlpatterns = patterns('',
     url(r'^$', HomeView.as_view(template_name="home.html"), name='home'),
     url(r'^collecties$', HomeView.as_view(template_name="lfs/collections.html"), name='collections'),
 
+    # pages
+    url(r'over-jeslee', TemplateView.as_view(template_name='pages/about-jeslee.html'), name='about'),
+
     # authentication
     url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': "auth/login.html"}, name='login'),
     url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': "/"}, name='logout'),
 
 )
+
 
 import os
 DIRNAME = os.path.dirname(__file__)

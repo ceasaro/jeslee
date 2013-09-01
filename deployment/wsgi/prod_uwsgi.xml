@@ -1,8 +1,0 @@
-<uwsgi>
-    <plugins>python</plugins>
-    <pythonpath>/sites/python/virtualenvs/jeslee/</pythonpath>
-    <pythonpath>/sites/python/django/jeslee/</pythonpath>
-    <app mountpoint="/">
-        <script>prod_jeslee_wsgi</script>
-    </app>
-</uwsgi>

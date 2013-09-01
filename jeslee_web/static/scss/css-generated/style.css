@@ -8,93 +8,82 @@
   font-family: university_roman;
   src: url("../../fonts/UNIVERSI.TTF"); }
 
-/* line 10, ../style.scss */
 html {
   background: url("../../gfx/background/background-left.png") no-repeat scroll left top 185px transparent;
   background-color: #ebe7ec;
   color: #390e41;
   font-family: university_roman;
   font-size: 11pt;
-  height: 100%; }
+  height: 100%;
+  line-height: 16pt; }
 
-/* line 18, ../style.scss */
 body {
   background: url("../../gfx/background/background-right.png") no-repeat scroll right top 125px transparent; }
 
-/* line 22, ../style.scss */
 a {
   color: #390e41; }
+
+h1 {
+  font-size: 18pt;
+  margin: 40px 0 20px 0; }
+
+p {
+  margin: 15px 0; }
 
 /***********************
  * generic classes
  **********************/
-/* line 28, ../style.scss */
 table.lfs-default {
   background: #390e41;
   color: #ebdc78;
   width: 100%; }
-  /* line 32, ../style.scss */
   table.lfs-default tr {
     border-bottom: 1px solid #ebdc78; }
-  /* line 35, ../style.scss */
   table.lfs-default tr:last-child {
     border-bottom: none; }
-  /* line 38, ../style.scss */
   table.lfs-default th {
     padding: 10px; }
-  /* line 42, ../style.scss */
   table.lfs-default td {
     padding: 5px; }
-  /* line 46, ../style.scss */
   table.lfs-default td:last-child {
     border-right: none; }
-  /* line 49, ../style.scss */
   table.lfs-default a {
     color: #ebdc78; }
 
-/* line 54, ../style.scss */
 .jeslee-form-container {
   background: #390e41;
   color: #ebdc78;
   margin-bottom: 20px;
   padding: 20px; }
-  /* line 55, ../style.scss */
   .jeslee-form-container .jeslee-form-container-header {
     font-size: 14pt;
     margin-bottom: 20px; }
-  /* line 59, ../style.scss */
   .jeslee-form-container a {
     color: #ebdc78; }
-  /* line 68, ../style.scss */
   .jeslee-form-container ul li .label {
     display: inline-block;
     height: 45px;
     width: 50%; }
-  /* line 73, ../style.scss */
   .jeslee-form-container ul li input {
     display: inline-block;
     float: right;
     width: 200px; }
-  /* line 78, ../style.scss */
   .jeslee-form-container ul li select {
     float: right;
     width: 204px; }
 
-/* line 86, ../style.scss */
 .errorlist {
   color: #F84637; }
 
 /***********************
  * header
  **********************/
-/* line 92, ../style.scss */
 #jeslee-header {
   background: #390e41 url("../../gfx/background/header-bottom.png") no-repeat center bottom;
   height: 120px;
   margin-top: 60px;
   position: relative;
   width: 100%; }
-  /* line 99, ../style.scss */
   #jeslee-header .header-left-background {
     background: url("../../gfx/background/background-top-left.png") no-repeat scroll left top transparent;
     height: 144px;
@@ -102,66 +91,50 @@ table.lfs-default {
     position: absolute;
     top: -62px;
     left: 0; }
-  /* line 107, ../style.scss */
   #jeslee-header .header-content {
     margin: 0 auto; }
-    /* line 109, ../style.scss */
     #jeslee-header .header-content .jeslee-logo {
       float: left;
       margin-left: 20px; }
-    /* line 114, ../style.scss */
     #jeslee-header .header-content #header-menu {
       float: right;
       margin-top: 15px; }
-      /* line 117, ../style.scss */
       #jeslee-header .header-content #header-menu ul {
         float: left;
         margin-top: 26px; }
-        /* line 120, ../style.scss */
         #jeslee-header .header-content #header-menu ul li {
           display: inline; }
-          /* line 122, ../style.scss */
           #jeslee-header .header-content #header-menu ul li a {
             border-right: 1px solid #FFF;
             color: #ebdc78;
             padding: 0 10px;
             text-decoration: none; }
-          /* line 128, ../style.scss */
           #jeslee-header .header-content #header-menu ul li a:hover {
             text-decoration: underline; }
-        /* line 132, ../style.scss */
         #jeslee-header .header-content #header-menu ul li:last-child {
           border-right: none; }
-      /* line 136, ../style.scss */
       #jeslee-header .header-content #header-menu a.link-shopping-bag {
         height: 59px;
         width: 36px; }
-  /* line 142, ../style.scss */
   #jeslee-header #main-site-menu {
     background-color: #ebe7ec;
     bottom: 1px;
     height: 40px;
     position: absolute;
     width: 100%; }
-    /* line 148, ../style.scss */
     #jeslee-header #main-site-menu ul {
       margin: 10px auto 0 auto; }
-      /* line 150, ../style.scss */
       #jeslee-header #main-site-menu ul li {
         border-right: 1px solid #390e41;
         display: inline; }
-        /* line 153, ../style.scss */
         #jeslee-header #main-site-menu ul li a {
           padding: 0 20px;
           text-decoration: none; }
-        /* line 157, ../style.scss */
         #jeslee-header #main-site-menu ul li a:hover {
           padding: 0 20px;
           text-decoration: underline; }
-      /* line 162, ../style.scss */
       #jeslee-header #main-site-menu ul li:last-child {
         border-right: none; }
-  /* line 167, ../style.scss */
   #jeslee-header .header-right-background {
     background: url("../../gfx/background/background-top-right.png") no-repeat scroll right top transparent;
     height: 144px;
@@ -173,19 +146,22 @@ table.lfs-default {
 /***********************
  * body
  **********************/
-/* line 180, ../style.scss */
 #jeslee-body {
   margin: 0 auto;
   min-height: 400px; }
 
 /***********************
+ * pages
+ **********************/
+#jeslee-page-content {
+  margin: 20px 200px 20px 20px; }
+
+/***********************
  * footer
  **********************/
-/* line 188, ../style.scss */
 #jeslee-footer {
   min-height: 150px;
   widows: 100%; }
-  /* line 191, ../style.scss */
   #jeslee-footer hr {
     background-color: #390e41;
     opacity: 0.4;
@@ -193,11 +169,9 @@ table.lfs-default {
     /* For IE8 and earlier */
     border-bottom: 1px solid #390e41;
     padding-top: 10px; }
-  /* line 199, ../style.scss */
   #jeslee-footer #footer-menu ul {
     color: #000;
     margin: 10px 10px 0 10px; }
-    /* line 202, ../style.scss */
     #jeslee-footer #footer-menu ul li {
       display: inline;
       padding: 0 20px; }
@@ -205,7 +179,6 @@ table.lfs-default {
 /***********************
  * utility
  **********************/
-/* line 215, ../style.scss */
 a.disabled {
   cursor: default !important;
   color: black !important;
