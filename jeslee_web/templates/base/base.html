@@ -28,6 +28,8 @@
 
 {#    <script src="{{ STATIC_URL }}js/tmp/jquery.js" type="text/javascript"></script>#}
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js" type="text/javascript"></script>
+    {% block javascript_external %}
+    {% endblock %}
     {% compress js %}
         <script src="{{ STATIC_URL }}js/jeslee.js" type="text/javascript"></script>
         {% block javascript %}

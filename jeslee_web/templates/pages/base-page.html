@@ -1,0 +1,19 @@
+{% extends 'base/site-base.html' %}
+{% load static from staticfiles %}
+
+{% block css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'scss/css-generated/pages.css' %}"/>
+{% endblock %}
+
+{% block jeslee-content %}
+    <div id="jeslee-page-content" class="{% block jeslee-content-class %}{% endblock %} ">
+        <h1>{% block page-title %}{% endblock %}</h1>
+
+        {% block page-content %}
+        {% endblock %}
+    </div>
+    <div id="jeslee-page-footer">
+        {% block page-footer %}{% endblock %}
+    </div>
+{% endblock %}

@@ -21,6 +21,11 @@ urlpatterns = patterns('',
 
     # pages
     url(r'over-jeslee', TemplateView.as_view(template_name='pages/about-jeslee.html'), name='about'),
+    url(r'modeshows', TemplateView.as_view(template_name='pages/modeshows.html'), name='modeshows'),
+    url(r'evenementen', TemplateView.as_view(template_name='pages/evenementen.html'), name='evenementen'),
+    url(r'fotogalerij', TemplateView.as_view(template_name='pages/fotogalerij.html'), name='fotogalerij'),
+    url(r'nieuws', TemplateView.as_view(template_name='pages/nieuws.html'), name='nieuws'),
+    url(r'contact', TemplateView.as_view(template_name='pages/contact.html'), name='contact'),
 
     # authentication
     url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': "auth/login.html"}, name='login'),

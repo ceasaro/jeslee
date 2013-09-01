@@ -1,0 +1,72 @@
+{% extends 'pages/base-page.html' %}
+{% load static from staticfiles %}
+
+{% block javascript_external %}
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?sensor=false">
+    </script>
+{% comment %}
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=API_KEY&sensor=SET_TO_TRUE_OR_FALSE">
+    </script>
+{% endcomment %}
+{% endblock %}
+
+
+{% block javascript %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'js/pages/contact.js' %}"></script>
+{% endblock %}
+
+{% block page-title %}
+    Contact
+{% endblock %}
+
+{% block page-content %}
+    <div class="grid_3">
+        <div class="contact-info">
+            <h3>Jeslee</h3>
+            <p>
+                Hoofdstraat 51 <br/>
+                9635 AT Noordbroek<br/>
+                Nederland
+            </p>
+            <ul>
+                <li>
+                    <span>E-mail</span>
+                    <span><a href="mailto:info@jeslee.com">info@jeslee.com</a></span>
+                </li>
+                <li>
+                    <span>Telefoon</span>
+                    <span>0598 - 45 09 60</span>
+                </li>
+                <li>
+                    <span>Mobiel </span>
+                    <span>06 - 15 94 80 90</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="contact-route">
+            <h3>Route</h3>
+            <form onsubmit="calcRoute(); return false;" action="#" id="routeplanner_form">
+                <img src="{% static 'gfx/icons/point-a.png' %}">
+                <label for="fromAddress">Van:</label>
+                <input value="" name="from" id="fromAddress" size="19" type="text">
+                <img src="{% static 'gfx/icons/point-b.png' %}">
+                <span>Naar:</span>
+                <span>Jeslee</span>
+                <input value="Routebeschrijving" type="submit" name="submit" class="googlebutton">
+            </form>
+        </div>
+    </div>
+
+    <div class="push_1 grid_8">
+        <div id="map_canvas"></div>
+    </div>
+
+{% endblock %}
+
+{% block page-footer %}
+    <div id="directions" class="push_3 grid_9"></div>
+{% endblock %}

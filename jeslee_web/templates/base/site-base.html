@@ -1,5 +1,6 @@
 {% extends 'base/base.html' %}
 {% load i18n %}
+{% load static from staticfiles %}
 
 {% block jeslee-site %}
 
@@ -7,7 +8,7 @@
     <div class="header-left-background"></div>
     <div class="header-content container_12">
         <div class="jeslee-logo">
-            <img src="{{ STATIC_URL }}gfx/logo-jeslee-transparent.png" title="logo JesLee"/>
+            <img src="{% static 'gfx/logo-jeslee-transparent.png' %}" title="logo JesLee"/>
         </div>
         <div id="header-menu">
             <ul>
@@ -20,7 +21,7 @@
                 <li><a href="#" class="disabled">Je aankopen</a></li>
             </ul>
             <a href="{% url 'lfs.cart.views.cart' %}" class="link-shopping-bag" title="winkel tasje">
-                <img src="{{ STATIC_URL }}gfx/shopping-bag.png" class="shopping-bag" title="winkel tasje"/>
+                <img src="{% static 'gfx/shopping-bag.png' %}" class="shopping-bag" title="winkel tasje"/>
             </a>
         </div>
     </div>
@@ -31,10 +32,11 @@
 {#            <li><a href="{% url 'collections' %}" >Collecties</a></li>#}
             <li><a href="/shop/collectie-meisjes" >Meisjes</a></li>
             <li><a href="/shop/collectie-jongens" >Jongens</a></li>
-            <li><a href="#" class="disabled">Nieuws</a></li>
-            <li><a href="#" class="disabled">Agenda</a></li>
-            <li><a href="#" class="disabled">Brochure</a></li>
-            <li><a href="#" class="disabled">Contact</a></li>
+            <li><a href="{% url 'modeshows' %}" >Modeshows</a></li>
+            <li><a href="{% url 'evenementen' %}" >Evenementen</a></li>
+            <li><a href="{% url 'fotogalerij' %}" >Fotogalerij</a></li>
+            <li><a href="{% url 'nieuws' %}" >Nieuws</a></li>
+            <li><a href="{% url 'contact' %}" >Contact</a></li>
         </ul>
     </div>
     <div class="header-right-background"></div>

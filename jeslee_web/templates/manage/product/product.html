@@ -9,6 +9,7 @@
 {% block section %}manage-product{% endblock %}
 
 {% block javascript %}
+    {{ block.super }}
     <script type="text/javascript" src="{{ STATIC_URL }}js/lfs.manage.product.js"></script>
     <script type="text/javascript">
         var MANUFACTURERS_AJAX_URL = '{% url 'lfs_manufacturers_ajax' %}';
