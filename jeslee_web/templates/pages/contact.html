@@ -50,13 +50,17 @@
         <div class="contact-route">
             <h3>Route</h3>
             <form onsubmit="calcRoute(); return false;" action="#" id="routeplanner_form">
-                <img src="{% static 'gfx/icons/point-a.png' %}">
-                <label for="fromAddress">Van:</label>
-                <input value="" name="from" id="fromAddress" size="19" type="text">
-                <img src="{% static 'gfx/icons/point-b.png' %}">
-                <span>Naar:</span>
-                <span>Jeslee</span>
-                <input value="Routebeschrijving" type="submit" name="submit" class="googlebutton">
+                <div class="form-input-row">
+                    <img src="{% static 'gfx/icons/spotlight-waypoint-a.png' %}">
+                    <label for="fromAddress">Van:</label>
+                    <input value="" name="from" id="fromAddress" size="19" type="text">
+                </div>
+                <div class="form-input-row">
+                <img src="{% static 'gfx/icons/spotlight-waypoint-b.png' %}">
+                    <span>Naar:</span>
+                    <span>Jeslee</span>
+                    <input value="Routebeschrijving" type="submit" name="submit" class="googlebutton">
+                </div>
             </form>
         </div>
     </div>
@@ -68,5 +72,5 @@
 {% endblock %}
 
 {% block page-footer %}
-    <div id="directions" class="push_3 grid_9"></div>
+    <div id="directions" class="grid_12"></div>
 {% endblock %}

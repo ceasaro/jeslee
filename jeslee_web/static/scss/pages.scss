@@ -11,7 +11,7 @@
    **********************/
   .contact-info {
     border-bottom: 1px solid #000;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     margin-bottom: 40px;
     ul {
       li {
@@ -22,9 +22,15 @@
       }
     }
   }
+  #routeplanner_form {
+    margin: 15px 0;
+    .form-input-row {
+      padding: 5px 0;
+    }
+  }
   #map_canvas {
-    margin: 10px;
     height: 500px;
-    width: 500px;
+    width: 619px;
+    margin-bottom: 30px;
   }
 }
