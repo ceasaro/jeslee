@@ -17,16 +17,16 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     url(r'^$', HomeView.as_view(template_name="home.html"), name='home'),
-    url(r'^collecties$', HomeView.as_view(template_name="lfs/collections.html"), name='collections'),
 
     # pages
-    url(r'over-jeslee', TemplateView.as_view(template_name='pages/about-jeslee.html'), name='about'),
-    url(r'modeshows', TemplateView.as_view(template_name='pages/modeshows.html'), name='modeshows'),
+    url(r'^over-jeslee/$', TemplateView.as_view(template_name='pages/about-jeslee.html'), name='about'),
+    url(r'^winkel/$', HomeView.as_view(template_name="lfs/collections.html"), name='winkel'),
+    url(r'^modeshows/$', TemplateView.as_view(template_name='pages/modeshows.html'), name='modeshows'),
 #    url(r'evenementen', TemplateView.as_view(template_name='pages/evenementen.html'), name='evenementen'),
 #    url(r'fotogalerij', TemplateView.as_view(template_name='pages/fotogalerij.html'), name='fotogalerij'),
-    url(r'nieuws', TemplateView.as_view(template_name='pages/nieuws.html'), name='nieuws'),
-    url(r'winkels', TemplateView.as_view(template_name='pages/winkels.html'), name='winkels'),
-    url(r'contact', TemplateView.as_view(template_name='pages/contact.html'), name='contact'),
+    url(r'^nieuws/$', TemplateView.as_view(template_name='pages/nieuws.html'), name='nieuws'),
+    url(r'^verkooppunten/$', TemplateView.as_view(template_name='pages/verkooppunten.html'), name='verkooppunten'),
+    url(r'^contact/$', TemplateView.as_view(template_name='pages/contact.html'), name='contact'),
 
     # authentication
     url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': "auth/login.html"}, name='login'),
