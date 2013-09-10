@@ -53,7 +53,14 @@ LOGGING = {
             'class': 'logging.StreamHandler',
             'formatter': 'simple',
             },
-#        'mail_admins': {
+        'logfile': {
+            'level':'DEBUG',
+            'class':'logging.handlers.RotatingFileHandler',
+            'filename': SITE_ROOT + "/jeslee.log",
+            'maxBytes': 50000,
+            'backupCount': 2,
+            'formatter': 'simple',
+        },#        'mail_admins': {
 #            'level': 'ERROR',
 #            'class': 'django.utils.log.AdminEmailHandler'
 #        }

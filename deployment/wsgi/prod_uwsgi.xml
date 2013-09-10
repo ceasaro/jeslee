@@ -1,0 +1,9 @@
+<uwsgi>
+    <plugins>python</plugins>
+    <pythonpath>/opt/virtualenvs/jeslee/</pythonpath>
+    <pythonpath>/sites/django/jeslee/</pythonpath>
+    <logto>/var/log/uwsgi/uwsgi-jeslee.log</logto>
+    <app mountpoint="/">
+        <script>prod_jeslee_wsgi</script>
+    </app>
+</uwsgi>
