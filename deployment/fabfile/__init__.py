@@ -63,9 +63,6 @@ def upgrade():
         install_backup_dir=install_backup_dir,
         tmp_install_dir=tmp_install_dir))
 
-    if not env.django_developing:
-        sudo('service apache2 restart')
-
 
 @task
 def pip_install_requirements():
