@@ -16,3 +16,6 @@ lfs.db
 *media/
 *build/
 *dist
+jeslee_web/static/.sass-cache
+testing
+jeslee_web/static/js/tmp/

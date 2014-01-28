@@ -1,6 +1,9 @@
 /***********************
  * COLORS
  **********************/
+/***********************
+ * SIZES
+ **********************/
 /* line 8, ../cart.scss */
 #cart-form table.article-list colgroup .col-amount, #cart-inline table.article-list colgroup .col-amount {
   width: 10%; }
