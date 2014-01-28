@@ -98,7 +98,7 @@ STATICFILES_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(SITE_ROOT, 'static'), #Our custom static files for this site.
-    os.path.join(SITE_ROOT, '../lfs/lfs_project/sitestatic'), #static from LFS
+    # os.path.join(SITE_ROOT, '../lfs/lfs_project/sitestatic'), #static from LFS
 )
 
 # List of finder classes that know how to find static files in
