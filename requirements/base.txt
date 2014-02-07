@@ -6,6 +6,7 @@ django-floppyforms==0.4.7
 PIL==1.1.7
 django-compressor==1.1.1
 MySQL-python
+South==0.8.4
 
 #TODO: fixate version (dev version has fixes for django 1.3 compatibility)
 -e git+https://github.com/django-extensions/django-extensions.git#egg=django-extensions

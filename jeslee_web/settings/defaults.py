@@ -207,6 +207,8 @@ INSTALLED_APPS = (
     'paypal.standard.pdt',
     'gunicorn',
 #    'lfstheme',
+
+    'south',
     )
 
 FORCE_SCRIPT_NAME=""
