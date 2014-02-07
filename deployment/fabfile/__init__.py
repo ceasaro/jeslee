@@ -36,9 +36,9 @@ def upgrade():
         abort('Abort')
     pack()
     upload()
-    backup()
+    # backup()
 
-    print(colors.red('TODO: impl. upload pip requirments bundle', bold=True))
+    print(colors.red('TODO: impl. upload pip requirements bundle', bold=True))
 
     tmp_install_dir = '{}_new/'.format(env.install_dir[:-1])  # strip '/'
     sudo('mkdir -p {}'.format(tmp_install_dir))
@@ -51,8 +51,8 @@ def upgrade():
         sudo('rm {}'.format(env.uploaded_packed_file))
         #        sudo('chmod +x deployment/cron/*.sh')
         with virtualenv.context(env.virtualenv_dir):
-            sudo_as_caire = functools.partial(sudo, user=env.install_user)
-            django.project_manage_upgrade(exec_cmd=sudo_as_caire, manage_cmd='python ./manage.py')
+            sudo_as = functools.partial(sudo, user=env.install_user)
+            django.project_manage_upgrade(exec_cmd=sudo_as, manage_cmd='python ./manage.py')
 
     # move/rename dirs
     install_backup_dir = '{}_old/'.format(env.install_dir[:-1])  # strip '/'
