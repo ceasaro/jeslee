@@ -36,7 +36,7 @@ def upgrade():
         abort('Abort')
     pack()
     upload()
-    # backup()
+    backup()
 
     print(colors.red('TODO: impl. upload pip requirements bundle', bold=True))
 
@@ -122,8 +122,9 @@ def backup():
             db.backup(exec_cmd=sudo)
             sudo('tar -cjf {}.tar.bz2 {}'.format(env.project_name, env.install_dir))
         #            sudo('tar -cjf caire_media.tar.bz2 {}'.format(env.django_media_root))
-        with lcd('/tmp/'):
-            get(backup_dir)
+        print(colors.red('TODO: enable coping backup to local machine', bold=True))
+        # with lcd('/tmp/'):
+        #     get(backup_dir)
 
 
 @task
