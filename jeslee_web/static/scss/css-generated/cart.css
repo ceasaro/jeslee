@@ -6,70 +6,88 @@
  **********************/
 /* line 8, ../cart.scss */
 #cart-form table.article-list colgroup .col-amount, #cart-inline table.article-list colgroup .col-amount {
-  width: 10%; }
+  width: 10%;
+}
 /* line 11, ../cart.scss */
 #cart-form table.article-list colgroup .col-total-price, #cart-inline table.article-list colgroup .col-total-price {
-  width: 10%; }
+  width: 10%;
+}
 /* line 21, ../cart.scss */
 #cart-form table.article-list td, #cart-inline table.article-list td {
-  padding-top: 20px; }
-  /* line 23, ../cart.scss */
-  #cart-form table.article-list td.product-image, #cart-inline table.article-list td.product-image {
-    height: 140px;
-    width: 120px; }
-    /* line 26, ../cart.scss */
-    #cart-form table.article-list td.product-image .image-container, #cart-inline table.article-list td.product-image .image-container {
-      background-color: #ebe7ec;
-      margin: 0 auto;
-      height: 135px;
-      width: 104px; }
-  /* line 33, ../cart.scss */
-  #cart-form table.article-list td.product-info, #cart-inline table.article-list td.product-info {
-    width: 300px; }
-    /* line 35, ../cart.scss */
-    #cart-form table.article-list td.product-info .product-name, #cart-inline table.article-list td.product-info .product-name {
-      display: block;
-      font-size: 14pt;
-      font-style: italic;
-      height: 20px;
-      margin-bottom: 5px;
-      text-decoration: none; }
-    /* line 43, ../cart.scss */
-    #cart-form table.article-list td.product-info .product-name:hover, #cart-inline table.article-list td.product-info .product-name:hover {
-      font-weight: bold;
-      font-style: italic;
-      font-size: 14pt; }
-    /* line 49, ../cart.scss */
-    #cart-form table.article-list td.product-info .product-sku-container, #cart-inline table.article-list td.product-info .product-sku-container {
-      font-size: 8pt; }
-  /* line 57, ../cart.scss */
-  #cart-form table.article-list td.product-amount input.cart-amount, #cart-inline table.article-list td.product-amount input.cart-amount {
-    margin-left: 14px;
-    width: 20px; }
-  /* line 62, ../cart.scss */
-  #cart-form table.article-list td.product-total-price, #cart-inline table.article-list td.product-total-price {
-    float: right;
-    margin-right: 20px; }
+  padding-top: 20px;
+}
+/* line 23, ../cart.scss */
+#cart-form table.article-list td.product-image, #cart-inline table.article-list td.product-image {
+  height: 140px;
+  width: 120px;
+}
+/* line 26, ../cart.scss */
+#cart-form table.article-list td.product-image .image-container, #cart-inline table.article-list td.product-image .image-container {
+  background-color: #ebe7ec;
+  margin: 0 auto;
+  height: 135px;
+  width: 104px;
+}
+/* line 33, ../cart.scss */
+#cart-form table.article-list td.product-info, #cart-inline table.article-list td.product-info {
+  width: 300px;
+}
+/* line 35, ../cart.scss */
+#cart-form table.article-list td.product-info .product-name, #cart-inline table.article-list td.product-info .product-name {
+  display: block;
+  font-size: 14pt;
+  font-style: italic;
+  height: 20px;
+  margin-bottom: 5px;
+  text-decoration: none;
+}
+/* line 43, ../cart.scss */
+#cart-form table.article-list td.product-info .product-name:hover, #cart-inline table.article-list td.product-info .product-name:hover {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 14pt;
+}
+/* line 49, ../cart.scss */
+#cart-form table.article-list td.product-info .product-sku-container, #cart-inline table.article-list td.product-info .product-sku-container {
+  font-size: 8pt;
+}
+/* line 57, ../cart.scss */
+#cart-form table.article-list td.product-amount input.cart-amount, #cart-inline table.article-list td.product-amount input.cart-amount {
+  margin-left: 14px;
+  width: 20px;
+}
+/* line 62, ../cart.scss */
+#cart-form table.article-list td.product-total-price, #cart-inline table.article-list td.product-total-price {
+  float: right;
+  margin-right: 20px;
+}
 /* line 72, ../cart.scss */
 #cart-form table.checkout-table, #cart-inline table.checkout-table {
   float: right;
-  width: 250px; }
-  /* line 78, ../cart.scss */
-  #cart-form table.checkout-table td, #cart-inline table.checkout-table td {
-    vertical-align: middle; }
+  width: 250px;
+}
+/* line 78, ../cart.scss */
+#cart-form table.checkout-table td, #cart-inline table.checkout-table td {
+  vertical-align: middle;
+}
 
 /* line 86, ../cart.scss */
 #checkout-form-container .jeslee-form-container-header .shipping-same-as-invoice {
-  font-size: 8pt; }
+  font-size: 8pt;
+}
 /* line 92, ../cart.scss */
 #checkout-form-container #shipping-address-inline {
-  display: none; }
+  display: none;
+}
 /* line 97, ../cart.scss */
 #checkout-form-container ul.address li#form_invoice_line2, #checkout-form-container ul.address li#form_shipping_line2 {
-  display: none; }
+  display: none;
+}
 /* line 100, ../cart.scss */
 #checkout-form-container ul.address li label {
-  width: 200px; }
+  width: 200px;
+}
 /* line 104, ../cart.scss */
 #checkout-form-container ul.address li .required {
-  float: right; }
+  float: right;
+}

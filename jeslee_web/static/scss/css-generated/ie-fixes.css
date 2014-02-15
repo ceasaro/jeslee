@@ -1,63 +1,60 @@
 /*
 Syntax error: Undefined variable: "$dark-background-color".
-        on line 51 of ./ie-fixes.scss
-
-46:   }
-47: 
-48: }
-49: 
-50: .jeslee-form-container {
-51:   background: $dark-background-color;
-52:   color:$light-text-color;
-53:   margin-bottom: 20px;
-54:   padding: 20px;
-55:   ul {
-56:     li {
+        on line 51 of /home/ceasaro/projects/python/jeslee/jeslee_web/static/scss/ie-fixes.scss
 
 Backtrace:
-./ie-fixes.scss:51
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/script/variable.rb:49:in `_perform'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/script/node.rb:40:in `perform'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:298:in `visit_prop'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:37:in `visit'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:53:in `map'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:320:in `visit_rule'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:37:in `visit'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:53:in `map'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:128:in `visit_root'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:37:in `visit'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:7:in `visit'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/tree/root_node.rb:20:in `render'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/engine.rb:315:in `_render'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/engine.rb:262:in `render'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/plugin/compiler.rb:341:in `update_stylesheet'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/plugin/compiler.rb:203:in `block in update_stylesheets'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/plugin/compiler.rb:201:in `each'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/plugin/compiler.rb:201:in `update_stylesheets'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/lib/sass/plugin/compiler.rb:299:in `block in watch'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/vendor/listen/lib/listen/multi_listener.rb:108:in `call'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/vendor/listen/lib/listen/multi_listener.rb:108:in `on_change'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/vendor/listen/lib/listen/multi_listener.rb:117:in `block in initialize_adapter'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/vendor/listen/lib/listen/adapters/polling.rb:56:in `call'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/vendor/listen/lib/listen/adapters/polling.rb:56:in `poll'
-/var/lib/gems/1.9.1/gems/sass-3.2.7/vendor/listen/lib/listen/adapters/polling.rb:32:in `block in start'
+/home/ceasaro/projects/python/jeslee/jeslee_web/static/scss/ie-fixes.scss:51
+/usr/lib/ruby/vendor_ruby/sass/script/variable.rb:49:in `_perform'
+/usr/lib/ruby/vendor_ruby/sass/script/node.rb:40:in `perform'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:216:in `visit_prop'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:37:in `visit'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:18:in `visit'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:53:in `map'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:53:in `visit_children'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:27:in `block in visit_children'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:39:in `with_environment'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:26:in `visit_children'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:37:in `block in visit'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:238:in `visit_rule'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:37:in `visit'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:18:in `visit'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:53:in `map'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:53:in `visit_children'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:27:in `block in visit_children'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:39:in `with_environment'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:26:in `visit_children'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:37:in `block in visit'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:47:in `visit_root'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:37:in `visit'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:18:in `visit'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:7:in `visit'
+/usr/lib/ruby/vendor_ruby/sass/tree/root_node.rb:20:in `render'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:300:in `_render'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:247:in `render'
+/usr/lib/ruby/vendor_ruby/compass/compiler.rb:140:in `block (2 levels) in compile'
+/usr/lib/ruby/vendor_ruby/compass/compiler.rb:126:in `timed'
+/usr/lib/ruby/vendor_ruby/compass/compiler.rb:139:in `block in compile'
+/usr/lib/ruby/vendor_ruby/compass/logger.rb:45:in `red'
+/usr/lib/ruby/vendor_ruby/compass/compiler.rb:138:in `compile'
+/usr/lib/ruby/vendor_ruby/compass/compiler.rb:118:in `compile_if_required'
+/usr/lib/ruby/vendor_ruby/compass/compiler.rb:103:in `block (2 levels) in run'
+/usr/lib/ruby/vendor_ruby/compass/compiler.rb:101:in `each'
+/usr/lib/ruby/vendor_ruby/compass/compiler.rb:101:in `block in run'
+/usr/lib/ruby/vendor_ruby/compass/compiler.rb:126:in `timed'
+/usr/lib/ruby/vendor_ruby/compass/compiler.rb:100:in `run'
+/usr/lib/ruby/vendor_ruby/compass/commands/watch_project.rb:147:in `recompile'
+/usr/lib/ruby/vendor_ruby/compass/commands/watch_project.rb:68:in `perform'
+/usr/lib/ruby/vendor_ruby/compass/commands/base.rb:18:in `execute'
+/usr/lib/ruby/vendor_ruby/compass/commands/project_base.rb:19:in `execute'
+/usr/lib/ruby/vendor_ruby/compass/exec/sub_command_ui.rb:43:in `perform!'
+/usr/lib/ruby/vendor_ruby/compass/exec/sub_command_ui.rb:15:in `run!'
+/usr/bin/compass:30:in `block in <main>'
+/usr/bin/compass:44:in `call'
+/usr/bin/compass:44:in `<main>'
 */
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined variable: \"$dark-background-color\".\A         on line 51 of ./ie-fixes.scss\A \A 46:   }\A 47: \A 48: }\A 49: \A 50: .jeslee-form-container {\A 51:   background: $dark-background-color;\A 52:   color:$light-text-color;\A 53:   margin-bottom: 20px;\A 54:   padding: 20px;\A 55:   ul {\A 56:     li {"; }
+  content: "Syntax error: Undefined variable: \"$dark-background-color\".\A         on line 51 of /home/ceasaro/projects/python/jeslee/jeslee_web/static/scss/ie-fixes.scss"; }

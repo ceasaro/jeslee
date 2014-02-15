@@ -8,35 +8,44 @@
 #jeslee-page-content {
   /***********************
   * contact
-  **********************/ }
-  /* line 4, ../pages.scss */
-  #jeslee-page-content.text-page {
-    margin: 20px 200px 20px 20px; }
-  /* line 8, ../pages.scss */
-  #jeslee-page-content article {
-    margin-bottom: 20px; }
-    /* line 11, ../pages.scss */
-    #jeslee-page-content article .subtitle {
-      color: #777;
-      font-size: 10pt;
-      margin-top: -18px; }
-  /* line 21, ../pages.scss */
-  #jeslee-page-content .contact-info {
-    border-bottom: 1px solid #000;
-    padding-bottom: 20px;
-    margin-bottom: 40px; }
-    /* line 27, ../pages.scss */
-    #jeslee-page-content .contact-info ul li span:first-child {
-      width: 75px;
-      display: inline-block; }
-  /* line 34, ../pages.scss */
-  #jeslee-page-content #routeplanner_form {
-    margin: 15px 0; }
-    /* line 36, ../pages.scss */
-    #jeslee-page-content #routeplanner_form .form-input-row {
-      padding: 5px 0; }
-  /* line 41, ../pages.scss */
-  #jeslee-page-content #map_canvas {
-    height: 500px;
-    width: 619px;
-    margin-bottom: 30px; }
+  **********************/
+}
+/* line 4, ../pages.scss */
+#jeslee-page-content.text-page {
+  margin: 20px 200px 20px 20px;
+}
+/* line 8, ../pages.scss */
+#jeslee-page-content article {
+  margin-bottom: 20px;
+}
+/* line 11, ../pages.scss */
+#jeslee-page-content article .subtitle {
+  color: #777;
+  font-size: 10pt;
+  margin-top: -18px;
+}
+/* line 21, ../pages.scss */
+#jeslee-page-content .contact-info {
+  border-bottom: 1px solid #000;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+}
+/* line 27, ../pages.scss */
+#jeslee-page-content .contact-info ul li span:first-child {
+  width: 75px;
+  display: inline-block;
+}
+/* line 34, ../pages.scss */
+#jeslee-page-content #routeplanner_form {
+  margin: 15px 0;
+}
+/* line 36, ../pages.scss */
+#jeslee-page-content #routeplanner_form .form-input-row {
+  padding: 5px 0;
+}
+/* line 41, ../pages.scss */
+#jeslee-page-content #map_canvas {
+  height: 500px;
+  width: 619px;
+  margin-bottom: 30px;
+}
