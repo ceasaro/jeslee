@@ -155,6 +155,7 @@ INSTALLED_APPS = (
 
     # own written django apps
     'jeslee_web.lfs_patch',
+    'jeslee_web.fashion_show',
     #    'jeslee_web.account'
 
     # none default django apps
