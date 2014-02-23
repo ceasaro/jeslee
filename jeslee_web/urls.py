@@ -27,6 +27,8 @@ urlpatterns = patterns('',
     url(r'^nieuws/$', TemplateView.as_view(template_name='pages/nieuws.html'), name='nieuws'),
     url(r'^verkooppunten/$', TemplateView.as_view(template_name='pages/verkooppunten.html'), name='verkooppunten'),
     url(r'^contact/$', TemplateView.as_view(template_name='pages/contact.html'), name='contact'),
+    # pages footer
+    url(r'^partners/$', TemplateView.as_view(template_name='pages/partners.html'), name='partners'),
 
     # authentication
     url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': "auth/login.html"}, name='login'),

@@ -1,0 +1,10 @@
+{% load static from staticfiles %}
+
+        <a href="{{ url }}" target="_blank" title="{{ name }}">
+            <div class="white-plane partner">
+                {#            <div class="partner_name">{{ name }}</div>#}
+                <div class="logo-container">
+                    <img class="partner-logo" src="{% static logo_img %}" title="{{ name }}"/>
+                </div>
+            </div>
+        </a>

@@ -2,6 +2,9 @@
 
 #jeslee-page-content {
   &.text-page {
+  }
+
+  .jeslee-page-header {
     margin: 20px 200px 20px 20px;
   }
 
@@ -45,3 +48,33 @@
   }
 }
 
+/***********************
+* fashion show
+**********************/
+#banner-registration-fashion-show {
+  width: 200px;
+}
+
+/***********************
+* partners
+**********************/
+.partner {
+
+/*
+  .partner_name {
+    color: $dark-text-color;
+    font-weight: bold;
+  }
+*/
+  .logo-container {
+    display: table-cell;
+    height: 140px;
+    text-align: center;
+    vertical-align: middle;
+    width: 210px;
+
+    img.partner-logo {
+      text-align: center;
+    }
+  }
+}
