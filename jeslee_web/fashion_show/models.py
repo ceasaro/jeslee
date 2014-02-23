@@ -18,7 +18,7 @@ class FashionRegistration(Registration):
 
 
 class FashionGarment(TimeStampedModel):
-    # garment = models.ForeignKey(Garment)
+    garment = models.ForeignKey(Garment)
     size = models.ForeignKey(ClothingSize)
 
     def __repr__(self):
