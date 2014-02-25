@@ -243,3 +243,17 @@ a.disabled {
   background-color: #ffff00;
   border:5px solid #ff00ff;
 }
+table.definition-list {
+  tr {
+    td {
+      padding:5px;
+    }
+    td.definition-key {
+      font-weight: bold;
+
+    }
+    td.definition-value {
+
+    }
+  }
+}
