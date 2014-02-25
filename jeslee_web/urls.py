@@ -32,6 +32,8 @@ urlpatterns = patterns('',
     # authentication
     url(r'^bedrijfsinformatie/$', TemplateView.as_view(template_name='pages/footer/bedrijfsinformatie.html'),
         name='bedrijfsinformatie'),
+    url(r'^veilig-betalen/$', TemplateView.as_view(template_name='pages/footer/veilig-betalen.html'),
+        name='veilig-betalen'),
 
     url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': "auth/login.html"}, name='login'),
     url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': "/"}, name='logout'),

@@ -13,8 +13,14 @@
             <h1>{% block page-title %}{% endblock %}</h1>
         </div>
         {% endblock %}
-        {% block page-content %}
-        {% endblock %}
+        <div class="grid_8">
+            {% block page-content %}
+            {% endblock %}
+        </div>
+        <div class="grid_4">
+            {% block page-right-column %}
+            {% endblock %}
+        </div>
     </div>
     <div id="jeslee-page-footer">
         {% block page-footer %}{% endblock %}
