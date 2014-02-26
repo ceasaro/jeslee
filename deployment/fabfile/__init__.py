@@ -62,6 +62,7 @@ def upgrade():
         install_dir=env.install_dir,
         install_backup_dir=install_backup_dir,
         tmp_install_dir=tmp_install_dir))
+    sudo('uwsgi --reload /tmp/jeslee-master.pid')
 
 
 @task
