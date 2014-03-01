@@ -51,6 +51,8 @@ TIME_ZONE = 'America/Chicago'
 LANGUAGE_CODE = 'nl-NL'
 #locale.setlocale(locale.LC_ALL, "nl_NL.UTF-8")
 
+DATE_FORMAT = 'j N Y'
+STRING_TO_DATE_FORMAT = '%d %B %Y'
 LOCALE_PATHS = (
     PROJECT_DIR+'/conf/locale',
 )
@@ -154,6 +156,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
 
     # own written django apps
+    'jeslee_web.utils',
     'jeslee_web.lfs_patch',
     'jeslee_web.fashion_show',
     #    'jeslee_web.account'

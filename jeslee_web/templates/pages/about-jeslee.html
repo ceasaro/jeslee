@@ -1,6 +1,7 @@
 {% extends 'pages/base-page-text.html' %}
 
 {% load static from staticfiles %}
+{% load jeslee_utils %}
 
 
 {% block page-title %}
@@ -9,16 +10,16 @@
 
 {% block javascript %}
       {{ block.super }}
-    <script src="{% static 'js/jquery/jquery.expander.js' %}"></script>
+{#    <script src="{% static 'js/jquery/jquery.expander.js' %}"></script>#}
 {% endblock %}
 
 {% block jquery-document-ready %}
-    $('.expandable').expander({
-        slicePoint: 1230,
-        expandPrefix: '...',
-        expandText: 'lees meer',
-        userCollapseText: 'verberg',
-    });
+{#    $('.expandable').expander({#}
+{#        slicePoint: 2230,#}
+{#        expandPrefix: '...',#}
+{#        expandText: 'lees meer',#}
+{#        userCollapseText: 'verberg',#}
+{#    });#}
 {% endblock %}
 
 {% block menu_about_class %}selected{% endblock %}
@@ -27,55 +28,62 @@
 
     <article >
         <div class="expandable">
+
             <p>
-                Laat ik mezelf even voorstellen. Ik ben Yasmine. Ik ben geboren in Parijs waar mijn vader werkte als
+                Laat ik mezelf even voorstellen, ik heet Yasmine. Ik ben geboren in Parijs waar mijn vader werkte als
                 journalist bij &ldquo;Le Monde&rdquo;. Na Parijs hebben wij een aantal jaren in Bonn gewoond. Waar we
                 rond mijn twaalfde vertrokken om in Marokko te genieten van de zon en de prachtige stranden. In 1997
-                ontmoette ik een leuke Nederlandse man. Samen zijn wij in 2000 naar Nederland verhuist. Wij zijn
-                getrouwd en hebben twee kinderen gekregen. Een dochter, Jessy (10) en een zoon, Wes Lee (8). Tot
-                op de dag van vandaag wonen wij als gezin in het Noorden van Nederland.
+                ontmoette ik een aardige Nederlandse man. Wij zijn getrouwd en hebben twee kinderen, Jessy
+                ({{ "17 augustus 2003"|get_age }}) en Wes Lee ({{ "21 april 2005"|get_age }}). Wij wonen in het Noorden
+                van Nederland.
             </p>
 
             <p>
-                Het idee voor Jeslee is ontstaan in 2008. Mijn dochter, toen 5 jaar, vroeg of ik een echt
+                Het idee &ldquo;Jeslee&rdquo; is ontstaan in 2008. Mijn dochter, toen 5 jaar, vroeg of ik een echt
                 prinsessenjurkje voor haar wilde kopen. Roze en goud. Met rimpeltjes en strikjes en bandjes op de
-                schouders. Haar wensen waren zeer gedetailleerd. Ik wist zeker dat het heel moeilijk zou worden om
-                zo'n jurkje in de winkel te vinden. Na zoeken en bellen wist ik het zeker: dat jurkje is niet te koop.
-                Mijn dochter vroeg me of ik haar droomjurk dan niet voor haar kon maken. Ik had nog nooit eerder in
-                mijn leven iets genaaid. Nog geen knoopje aan een vest. Maar ik besloot het avontuur aan te gaan. Samen
-                trokken we naar de markt alwaar we roze satijn en gouden stof uitzochten.
+                schouders. Haar wensen waren zeer gedetailleerd. Ik wist zeker dat het heel moeilijk zou worden
+                om zo'n jurkje in de winkel te vinden. Na zoeken en bellen wist ik het zeker: dat jurkje is nergens
+                te koop. Mijn dochter vroeg me of ik haar droomjurk dan niet voor haar kon maken. Ik had nog nooit
+                eerder in mijn leven iets genaaid. Nog geen knoopje aan een vest. Maar ik besloot het avontuur aan te
+                gaan. Samen trokken we naar de markt alwaar we roze satijn en gouden stof uitzochten.
             </p>
 
             <p>
                 Vervolgens hebben we samen een modeltekening van de jurk gemaakt en heb ik met naald en draad het
                 droomjurkje met de hand in elkaar gezet. Toen het klaar was droeg Jessy het met enorm veel plezier. Een
-                voor een vroegen haar vriendinnetjes of ik voor hen ook een prinsessenjurkje wilde maken. Ik heb toen de
-                een na de ander gemaakt. En voor ik het wist liepen er zes meisjes in mijn jurkjes!
+                voor een vroegen haar vriendinnetjes of ik voor hen ook een prinsessenjurkje wilde maken. Ik heb toen
+                de een na de ander gemaakt. En voor ik het wist liepen er zes meisjes in mijn jurkjes rond!
             </p>
 
             <p>
-                Het naaien met de hand was erg vermoeiend en was erg tijdrovend dus ik besloot een naaimachine aan te
-                schaffen. En ging een opleiding tot coupeuse volgen op de modevakschool.
+                Het naaien met de hand was erg vermoeiend en tijdrovend dus ik besloot een naaimachine aan te schaffen
+                en ging een opleiding tot coupeuse volgen op de modevakschool.
             </p>
 
             <p>
                 Van het een kwam het ander en na zeven maanden had ik al meer dan vijftig jurkjes gemaakt. In 2009
                 besloot ik een modeshow te geven. 56 meisjes mochten precies vertellen hoe hun droomjurk er uitzag en
-                ik maakte die voor hen. Dit was een succes. RTV-Noord en het NOS journaal besteedde er aandacht aan.
-                Het was een enorme ervaring voor mij en de 56 meisjes die hun jurk voor een groot publiek mochten showen.
+                ik maakte die voor hen. Dit was een succes. RTV-Noord en het NOS journaal besteedden er aandacht aan.
+                Het was een enorme ervaring voor mij en voor de 56 meisjes die hun jurk voor een groot publiek mochten
+                showen.
             </p>
 
             <p>
-                Inmiddels mag ik mijzelf ervaren naaister noemen. Ik maak prinsessejurkjes, jurken voor bruidsmeisjes,
-                nette jurkjes en disco jurkjes voor meisjes van 3 tot 15. Ook jongens kunnen bij mij terecht voor
-                prinsen-pakken en formele kleding.
+                Inmiddels is mijn hobby uitgegroeid tot een heus bedrijf. Ik heb een aantal mensen om mij heen
+                verzameld met de nodige kennis en te samen maken wij menig kinderdroom waar. U kunt nu bij Jeslee
+                terecht voor prinsessenjurkjes, prinsenpakjes, bruidsmeisjes jurkjes en feestkleding voor meisjes
+                van 3 tot 15 jaar.
             </p>
 
             <p>
-                Stap voor stap heb ik een klein team om me heen verzameld en samen werken we heel hard om van
-                &lsquo;Jeslee&rsquo; een professioneel kledingmerk te maken. In 2014 staan er 10 modeshows in het noorden
-                van Nederland gepland waarbij meer dan 400 kinderen als model zijn betrokken! We zetten alles in het werk
-                om de kinderen deze dag als een echte ster te laten beleven.
+                In 2014 staan er 8 modeshows in het noorden van Nederland gepland waarbij meer dan 400 kinderen als
+                model zijn betrokken! We zetten alles in het werk om de kinderen deze dag als een echte ster te laten
+                beleven.
+            </p>
+            <p class="push_7">
+                Mei 2013<br/>
+                Noordbroek,<br/>
+
             </p>
         </div>
     </article>
@@ -83,9 +91,12 @@
 
 {% block page-right-column %}
     <p>
-        <img src="{% static 'gfx/photos/yasmine' %}" title="Yasmine"/>
-        <img src="{% static 'gfx/photos/jessy' %}" title="Jessy"/>
-        <img src="{% static 'gfx/photos/eerste_jurkje' %}" title="Eerste jurkje van Jeslee (met de hand genaaid)"/>
-
+        <img src="{% static 'gfx/photos/Yasmine-110x200.jpg' %}" title="Yasmine, eigenaresse Jeslee"/>
+    </p>
+    <p>
+        <img src="{% static 'gfx/photos/Jessy-133x200.jpg' %}" title="Jessy, onze dochter"/>
+    </p>
+    <p>
+        <img src="{% static 'gfx/photos/allereerste-jurkje-150x200.jpg' %}" title="Het eerste jurkje voor onze dochter"/>
     </p>
 {% endblock page-right-column %}
