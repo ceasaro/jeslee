@@ -24,8 +24,8 @@ DATABASES = {
 }
 
 _dev_apps = list(INSTALLED_APPS)
-_dev_apps.append('debug_toolbar')
-_dev_apps.append('debug_toolbar_user_panel')
+# _dev_apps.append('debug_toolbar')
+# _dev_apps.append('debug_toolbar_user_panel')
 #_dev_apps.append('django_nose')
 #_dev_apps.append('rosetta')
 INSTALLED_APPS = tuple(_dev_apps)

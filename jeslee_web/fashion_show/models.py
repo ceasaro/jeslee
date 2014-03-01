@@ -1,3 +1,5 @@
+from datetime import date
+from django.db.models import Manager
 from django.utils.translation import ugettext as _
 from django.db import models
 
@@ -18,17 +20,23 @@ class FashionRegistration(Registration):
 
 
 class FashionGarment(TimeStampedModel):
-    garment = models.ForeignKey(Garment)
+    garment = models.ForeignKey(Garment, related_name=u'garment')
     size = models.ForeignKey(ClothingSize)
 
+    def __str__(self):
+        return self.__repr__()
+
     def __repr__(self):
-        return "FashionGarment[{pk}] {{{name}, {size}}}".format(pk=self.pk, name=self.name, size=self.size)
+        return "FashionGarment[{pk}] {{{name}, {size}}}".format(pk=self.pk, name=self.garment.name, size=self.size)
 
 
 class FashionModel(TimeStampedModel, Address):
     name = models.CharField(_(u'name'), max_length=50)
-    size = models.ForeignKey(ClothingSize)
-    garment = models.ForeignKey(FashionGarment)
+    size = models.ForeignKey(ClothingSize, related_name=u'model', blank=True, null=True)
+    garment = models.ForeignKey(FashionGarment, related_name=u'model', blank=True, null=True)
+
+    def __str__(self):
+        return self.__repr__()
 
     def __repr__(self):
         return "FashionModel[{pk}] {{{name}, {size}}}".format(pk=self.pk, name=self.name, size=self.size)
@@ -44,12 +52,34 @@ class FashionLocation(TimeStampedModel, Address):
         return "FashionLocation[{pk}] {{{name}}}".format(pk=self.pk, name=self.name)
 
 
+class FashionShowManager(Manager):
+
+    def get_upcoming_show(self):
+        """
+        Returns the upcoming fashion shows
+        """
+        today = date.today()
+        qs = self.get_query_set().filter(start_time__gte=today)
+        shows = list(qs[:1])
+        if shows:
+            return shows[0]
+        return None
+
+
 class FashionShow(TimeStampedModel):
-    location = models.ForeignKey(FashionLocation)
-    models = models.ManyToManyRel(FashionModel, related_name=_(u'fashion_show'))
+    location = models.ForeignKey(FashionLocation, related_name=u'fashion_show')
+    start_time = models.DateTimeField(_(u'start_time'), blank=True, null=True)
+    end_time = models.DateTimeField(_(u'end_time'), blank=True, null=True)
+    models = models.ManyToManyField(FashionModel, related_name=u'fashion_shows', blank=True, null=True)
+
+    objects = FashionShowManager()
+
+    class Meta:
+        ordering = ["start_time"]
 
     def __str__(self):
         return self.__repr__()
 
     def __repr__(self):
-        return "FashionShow[{pk}] {{{location}}}".format(pk=self.pk, name=self.location)
+        return "FashionShow[{pk}] {{{location}}}".format(pk=self.pk, location=self.location)
+

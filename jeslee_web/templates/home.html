@@ -6,6 +6,10 @@
 
 {% block jeslee-content %}
     <img src="{{ STATIC_URL }}gfx/feestelijke-kleding-voor-kinderen.jpg" title="feest kleding voor kinderen"/>
+    <div>
+     upcoming_fashion_show = {{ upcoming_fashion_show.location }}<br/>
+    starting at {{ upcoming_fashion_show.start_time }}
+    </div>
 {% comment %}
     <div class="product-cards-home">
         <div class="grid_3">
