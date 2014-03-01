@@ -14,7 +14,7 @@ class FashionRegistration(Registration):
         return self.__repr__()
 
     def __repr__(self):
-        return "FashionRegistration{{{pk}] {{{name}, {email}}}".format(pk=self.pk, name=self.name, email=self.email)
+        return "FashionRegistration[{pk}] {{{name}, {email}}}".format(pk=self.pk, name=self.name, email=self.email)
 
 
 class FashionGarment(TimeStampedModel):
@@ -36,10 +36,20 @@ class FashionModel(TimeStampedModel, Address):
 
 class FashionLocation(TimeStampedModel, Address):
     name = models.CharField(_(u'name'), max_length=50)
-    # models = models.ManyToOneRel(FashionModel, related_name=_(u'location'))
 
     def __str__(self):
         return self.__repr__()
 
     def __repr__(self):
-        return "FashionLocation{{{pk}] {{{name}}}".format(pk=self.pk, name=self.name)
+        return "FashionLocation[{pk}] {{{name}}}".format(pk=self.pk, name=self.name)
+
+
+class FashionShow(TimeStampedModel):
+    location = models.ForeignKey(FashionLocation)
+    models = models.ManyToManyRel(FashionModel, related_name=_(u'fashion_show'))
+
+    def __str__(self):
+        return self.__repr__()
+
+    def __repr__(self):
+        return "FashionShow[{pk}] {{{location}}}".format(pk=self.pk, name=self.location)

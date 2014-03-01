@@ -21,7 +21,7 @@ env.repository = AttrDict(
 
 env.django_project = 'jeslee'  # default django project (dir)
 
-env.django_manage_commands = ('syncdb --noinput',
+env.django_manage_commands = ('migrate',
                               'collectstatic --noinput',
 )
 
