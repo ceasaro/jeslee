@@ -6,7 +6,7 @@ from jeslee_web.fashion_show.views import FashionRegistrationCreateView, Fashion
 __author__ = 'ceasaro'
 urlpatterns = patterns(
     'jeslee_web.fashion_show',
-    url(r'^$', TemplateView.as_view(template_name='fashion_show/fashion_shows.html'),
+    url(r'^$', FashionRegistrationCreateView.as_view(template_name='fashion_show/fashion_shows.html'),
         name='modeshows'),
     url(r'^aanmelden/$', FashionRegistrationCreateView.as_view(
         template_name='fashion_show/fashion_shows_registration.html'),

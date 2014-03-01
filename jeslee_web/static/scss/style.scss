@@ -230,6 +230,39 @@ table.lfs-default {
   }
 }
 
+/***********************
+ * banners and planes
+ **********************/
+.purple-banner {
+  background-color: #390e41;
+  display: block;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 19px;
+  border: 5px solid $light-text-color;
+}
+.purple-banner:hover {
+  border: 10px solid $light-text-color;
+  margin:15px;
+}
+.purple-banner-header {
+  color: $light-text-color;
+  font-size: 18pt;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
+.purple-banner-content {
+  color:#fff;
+}
+
+.white-plane {
+  background-color: #fff;
+  display: block;
+  padding: 20px;
+  margin: 20px;
+  border: 5px solid $light-text-color;
+}
 
 /***********************
  * utility
@@ -238,6 +271,11 @@ a.disabled {
   cursor: default!important;
   color:#000!important;
   text-decoration: line-through!important;
+}
+.prevent-collapsing {
+  height: 0;
+  overflow: hidden;
+  width: 0;
 }
 .todo {
   background-color: #ffff00;

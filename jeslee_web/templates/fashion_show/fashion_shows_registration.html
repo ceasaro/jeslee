@@ -3,11 +3,14 @@
 {% block menu_modeshows_class %}selected{% endblock %}
 
 {% block page-title %}
-    Meedoen met een modeshow
+    Meedoen met een modeshow?
 {% endblock %}
 
-{% block jeslee-content %}
+{% block page-content %}
 
+    <article>
+        Lijkt het je leuk
+    </article>
     <form action="." method="post">{% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Submit" />

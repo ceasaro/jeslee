@@ -1,0 +1,114 @@
+[
+    {
+        "model": "base.clothingsize",
+        "pk": 1,
+        "fields": {
+            "size": "80"
+        }
+    },
+    {
+        "model": "base.clothingsize",
+        "pk": 2,
+        "fields": {
+            "size": "86"
+        }
+    },
+    {
+        "model": "base.clothingsize",
+        "pk": 3,
+        "fields": {
+            "size": "92"
+        }
+    },
+    {
+        "model": "base.clothingsize",
+        "pk": 4,
+        "fields": {
+            "size": "98"
+        }
+    },
+    {
+        "model": "base.clothingsize",
+        "pk": 5,
+        "fields": {
+            "size": "104"
+        }
+    },
+    {
+        "model": "base.clothingsize",
+        "pk": 6,
+        "fields": {
+            "size": "110"
+        }
+    },
+    {
+        "model": "base.clothingsize",
+        "pk": 7,
+        "fields": {
+            "size": "116"
+        }
+    },
+    {
+        "model": "base.clothingsize",
+        "pk": 8,
+        "fields": {
+            "size": "122"
+        }
+    },
+    {
+        "model": "base.clothingsize",
+        "pk": 9,
+        "fields": {
+            "size": "128"
+        }
+    },
+    {
+        "model": "base.clothingsize",
+        "pk": 10,
+        "fields": {
+            "size": "134"
+        }
+    },
+    {
+        "model": "base.clothingsize",
+        "pk": 11,
+        "fields": {
+            "size": "140"
+        }
+    },
+    {
+        "model": "base.clothingsize",
+        "pk": 12,
+        "fields": {
+            "size": "146"
+        }
+    },
+    {
+        "model": "base.clothingsize",
+        "pk": 13,
+        "fields": {
+            "size": "152"
+        }
+    },
+    {
+        "model": "base.clothingsize",
+        "pk": 14,
+        "fields": {
+            "size": "158"
+        }
+    },
+    {
+        "model": "base.clothingsize",
+        "pk": 15,
+        "fields": {
+            "size": "164"
+        }
+    },
+    {
+        "model": "base.clothingsize",
+        "pk": 16,
+        "fields": {
+            "size": "176"
+        }
+    }
+]
