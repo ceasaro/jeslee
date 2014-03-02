@@ -46,3 +46,49 @@
   }
 }
 
+
+/***********************
+* fashion_show
+**********************/
+#fashion_show_agenda {
+  background-color: $dark-background-color;
+  color:$background-color-site;
+  padding:20px;
+
+  h3 {
+    color:$light-text-color;
+    font-size: 20pt;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  a {
+    color:$background-color-site;
+    text-decoration: none;
+    &:hover {
+      color:$light-text-color;
+      text-decoration: none;
+    }
+    &:visited {
+      text-decoration: none;
+    }
+  }
+  .fashion_show {
+    border-bottom: 1px solid;
+    height: 60px;
+    margin-bottom: 20px;
+    .fashion_show_start_time {
+      display: inline-block;
+      width: 100px;
+      .day {
+        font-size: 24pt;
+      }
+      .month {
+        font-size:18pt
+      }
+    }
+    .fashion_show_location {
+      display: inline-block;
+    }
+  }
+}

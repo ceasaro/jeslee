@@ -83,24 +83,31 @@
 {% endblock page-content %}
 
 {% block page-right-column %}
-    <div id="fashion_show_calendar">
-        Kalender
-        {% for fashion_show in fashion_shows %}
-            <div class="fashion_show_start_time">
-                {{ fashion_show.start_date_f }} - {{ fashion_show.start_time_f }}
-            </div>
-            <div class="fashion_show_location">
-                <a href="{{ fashion_show.location.website }}" target="_blank">
-                    {{ fashion_show.location.name }}
-                </a><br/>
-                {{ fashion_show.location.street }} {{ fashion_show.location.street_nr }}<br/>
-                {{ fashion_show.location.city }}
-                <a href="{{ fashion_show.location.website }}" target="_blank">
-                    <img src="{{ MEDIA_URL }}{{ fashion_show.location.logo }}" class="locaion_logo" alt="Logo {{ fashion_show.location.name }}"/>
-                </a>
-
-            </div>
-            
+    <div id="fashion_show_agenda">
+        <h3>Agenda</h3>
+        {% for fashion_show in fashion_shows|slice:":7" %}
+            <a href="#" >
+                <div class="fashion_show">
+                    <div class="fashion_show_start_time">
+                        <span class="day">
+                        {{ fashion_show.start_time|date:"d" }}
+                        </span>
+                        <span class="month">
+                        {{ fashion_show.start_time|date:"b" }}
+                        </span>
+                        <span class="time">
+                        {{ fashion_show.start_time|date:"G:i" }}
+                        </span>
+                    </div>
+                    <div class="fashion_show_location">
+                        {{ fashion_show.location.name }}
+                        <br/>
+                        {{ fashion_show.location.city }}
+                    </div>
+                </div>
+            </a>
+        {% empty %}
+            Er zijn nog geen evenementen gepland.
         {% endfor %}
     </div>
 {% endblock page-right-column %}
