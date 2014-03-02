@@ -1,6 +1,6 @@
 # Create your views here.
 from django.core.urlresolvers import reverse
-from django.views.generic import CreateView, UpdateView, DetailView
+from django.views.generic import View, CreateView, UpdateView, DetailView
 from django.views.generic.base import ContextMixin
 from jeslee_web.fashion_show.forms import FashionRegistrationForm
 from jeslee_web.fashion_show.models import FashionRegistration, FashionShow
@@ -32,3 +32,11 @@ class FashionRegistrationDetailView(DetailView):
 
 class FashionRegistrationUpdateView(UpdateView):
     model = FashionRegistration
+
+
+class FashionShowsView(FashionRegistrationCreateView):
+
+    def get_context_data(self, **kwargs):
+        context_data = super(FashionShowsView, self).get_context_data(**kwargs)
+        context_data['fashion_shows'] = FashionShow.objects.get_upcoming_shows()
+        return context_data

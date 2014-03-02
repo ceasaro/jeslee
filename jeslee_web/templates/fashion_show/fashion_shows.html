@@ -82,3 +82,25 @@
 
 {% endblock page-content %}
 
+{% block page-right-column %}
+    <div id="fashion_show_calendar">
+        Kalender
+        {% for fashion_show in fashion_shows %}
+            <div class="fashion_show_start_time">
+                {{ fashion_show.start_date_f }} - {{ fashion_show.start_time_f }}
+            </div>
+            <div class="fashion_show_location">
+                <a href="{{ fashion_show.location.website }}" target="_blank">
+                    {{ fashion_show.location.name }}
+                </a><br/>
+                {{ fashion_show.location.street }} {{ fashion_show.location.street_nr }}<br/>
+                {{ fashion_show.location.city }}
+                <a href="{{ fashion_show.location.website }}" target="_blank">
+                    <img src="{{ MEDIA_URL }}{{ fashion_show.location.logo }}" class="locaion_logo" alt="Logo {{ fashion_show.location.name }}"/>
+                </a>
+
+            </div>
+            
+        {% endfor %}
+    </div>
+{% endblock page-right-column %}
