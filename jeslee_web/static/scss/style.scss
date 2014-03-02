@@ -7,6 +7,7 @@
   font-family: university_roman;
   src: url('../../fonts/UNIVERSI.TTF');
 }
+
 html {
   background: url('../../gfx/background/background-left.png') no-repeat scroll left top 185px transparent;
   background-color: $background-color-site;
@@ -17,42 +18,50 @@ html {
   height: 100%;
   line-height: 16pt;
 }
+
 body {
   background: url('../../gfx/background/background-right.png') no-repeat scroll right top 125px transparent;
   //min-height: 100%;
 }
+
 a {
-  color:$dark-text-color;
+  color: $dark-text-color;
 }
+
 h1 {
   color: $dark-text-color;
   font-size: 18pt;
   margin: 30px 0 20px 0;
 }
+
 h2 {
   color: $dark-text-color;
   font-size: 15pt;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
+
 h3 {
   color: $dark-text-color;
   font-size: 13pt;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
+
 p {
   margin: 15px 0;
 }
+
 strong {
   font-weight: bold;
-  font-size:12pt;
+  font-size: 12pt;
 }
+
 /***********************
  * generic classes
  **********************/
 table.lfs-default {
   background: $dark-background-color;
-  color:$light-text-color;
-  width:100%;
+  color: $light-text-color;
+  width: 100%;
   tr {
     border-bottom: 1px solid $light-background-color;
   }
@@ -61,7 +70,7 @@ table.lfs-default {
   }
   th {
     //border-right: 1px dotted $light-background-color;
-    padding:10px;
+    padding: 10px;
   }
   td {
     //border-right: 1px dotted $light-background-color;
@@ -71,7 +80,7 @@ table.lfs-default {
     border-right: none;
   }
   a {
-    color:$light-text-color;
+    color: $light-text-color;
   }
 }
 
@@ -81,10 +90,10 @@ table.lfs-default {
     margin-bottom: 20px;
   }
   a {
-    color:$light-text-color;
+    color: $light-text-color;
   }
   background: $dark-background-color;
-  color:$light-text-color;
+  color: $light-text-color;
   margin-bottom: 20px;
   padding: 20px;
   ul {
@@ -110,6 +119,7 @@ table.lfs-default {
 .errorlist {
   color: #F84637;
 }
+
 /***********************
  * header
  **********************/
@@ -132,12 +142,12 @@ table.lfs-default {
     margin: 0 auto;
     .jeslee-logo {
       float: left;
-      margin-left:20px;
+      margin-left: 20px;
       //width: 215px;
     }
     #header-menu {
-      float:right;
-      margin-top:15px;
+      float: right;
+      margin-top: 15px;
       ul {
         float: left;
         margin-top: 26px;
@@ -204,7 +214,7 @@ table.lfs-default {
  * body
  **********************/
 #jeslee-body {
-  margin:0 auto;
+  margin: 0 auto;
   min-height: 400px;
 }
 
@@ -216,14 +226,14 @@ table.lfs-default {
   widows: 100%;
   hr {
     background-color: $dark-text-color;
-    opacity:0.4;
-    filter:alpha(opacity=40); /* For IE8 and earlier */
-    border-bottom:1px solid $dark-text-color;
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+    border-bottom: 1px solid $dark-text-color;
     padding-top: 10px;
   }
   #footer-menu {
     ul {
-      color:#000;
+      color: #000;
       margin: 10px 10px 0 10px;
       li {
         display: inline;
@@ -244,20 +254,24 @@ table.lfs-default {
   margin: 20px;
   border-radius: 19px;
   border: 5px solid $light-text-color;
+  a {
+    color: $light-text-color;
+  }
+  .purple-banner-header {
+    color: $light-text-color;
+    font-size: 18pt;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+  }
+  .purple-banner-content {
+    color: #fff;
+  }
 }
+
 .purple-banner:hover {
   border: 10px solid $light-text-color;
-  margin:15px;
-}
-.purple-banner-header {
-  color: $light-text-color;
-  font-size: 18pt;
-  margin-bottom: 20px;
-  text-align: center;
-  width: 100%;
-}
-.purple-banner-content {
-  color:#fff;
+  margin: 15px;
 }
 
 .white-plane {
@@ -272,23 +286,26 @@ table.lfs-default {
  * utility
  **********************/
 a.disabled {
-  cursor: default!important;
-  color:#000!important;
-  text-decoration: line-through!important;
+  cursor: default !important;
+  color: #000 !important;
+  text-decoration: line-through !important;
 }
+
 .prevent-collapsing {
   height: 0;
   overflow: hidden;
   width: 0;
 }
+
 .todo {
   background-color: #ffff00;
-  border:5px solid #ff00ff;
+  border: 5px solid #ff00ff;
 }
+
 table.definition-list {
   tr {
     td {
-      padding:5px;
+      padding: 5px;
     }
     td.definition-key {
       font-weight: bold;

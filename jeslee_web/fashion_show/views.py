@@ -1,5 +1,5 @@
 # Create your views here.
-from django.core.urlresolvers import reverse_lazy, reverse
+from django.core.urlresolvers import reverse
 from django.views.generic import CreateView, UpdateView, DetailView
 from django.views.generic.base import ContextMixin
 from jeslee_web.fashion_show.forms import FashionRegistrationForm

@@ -1,16 +1,37 @@
 {% extends 'base/site-base.html' %}
+{% load static from staticfiles %}
 
 {% block title %}Home{% endblock %}
+
+{% block css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'scss/css-generated/home.css' %}"/>
+{% endblock %}
 
 {% block menu_home_class %}selected{% endblock %}
 
 {% block jeslee-content %}
     <img src="{{ STATIC_URL }}gfx/feestelijke-kleding-voor-kinderen.jpg" title="feest kleding voor kinderen"/>
-    <div>
-     upcoming_fashion_show = {{ upcoming_fashion_show.location }}<br/>
-    starting at {{ upcoming_fashion_show.start_time }}
+    <div id="upcoming_fashion_show" class="purple-banner grid_4">
+        <div class="purple-banner-header">Eerst volgende modeshow!</div>
+        <div class="purple-banner-content">
+            <div class="fashion_show_start_time">
+                {{ upcoming_fashion_show.start_date_f }} - {{ upcoming_fashion_show.start_time_f }}
+            </div>
+            <div class="fashion_show_location">
+                <a href="{{ upcoming_fashion_show.location.website }}" target="_blank">
+                    {{ upcoming_fashion_show.location.name }}
+                </a><br/>
+                {{ upcoming_fashion_show.location.street }} {{ upcoming_fashion_show.location.street_nr }}<br/>
+                {{ upcoming_fashion_show.location.city }}
+                <a href="{{ upcoming_fashion_show.location.website }}" target="_blank">
+                    <img src="{{ MEDIA_URL }}{{ upcoming_fashion_show.location.logo }}" class="locaion_logo" alt="Logo {{ upcoming_fashion_show.location.name }}"/>
+                </a>
+
+            </div>
+        </div>
     </div>
-{% comment %}
+    {% comment %}
     <div class="product-cards-home">
         <div class="grid_3">
             <div class="product-card-home-container">

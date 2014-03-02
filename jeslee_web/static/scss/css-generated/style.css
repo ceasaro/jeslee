@@ -12,7 +12,7 @@
   src: url("../../fonts/UNIVERSI.TTF");
 }
 
-/* line 10, ../style.scss */
+/* line 11, ../style.scss */
 html {
   background: url("../../gfx/background/background-left.png") no-repeat scroll left top 185px transparent;
   background-color: #ebe7ec;
@@ -23,43 +23,43 @@ html {
   line-height: 16pt;
 }
 
-/* line 20, ../style.scss */
+/* line 22, ../style.scss */
 body {
   background: url("../../gfx/background/background-right.png") no-repeat scroll right top 125px transparent;
 }
 
-/* line 24, ../style.scss */
+/* line 27, ../style.scss */
 a {
   color: #390e41;
 }
 
-/* line 27, ../style.scss */
+/* line 31, ../style.scss */
 h1 {
   color: #390e41;
   font-size: 18pt;
   margin: 30px 0 20px 0;
 }
 
-/* line 32, ../style.scss */
+/* line 37, ../style.scss */
 h2 {
   color: #390e41;
   font-size: 15pt;
   margin-bottom: 10px;
 }
 
-/* line 37, ../style.scss */
+/* line 43, ../style.scss */
 h3 {
   color: #390e41;
   font-size: 13pt;
   margin-bottom: 10px;
 }
 
-/* line 42, ../style.scss */
+/* line 49, ../style.scss */
 p {
   margin: 15px 0;
 }
 
-/* line 45, ../style.scss */
+/* line 53, ../style.scss */
 strong {
   font-weight: bold;
   font-size: 12pt;
@@ -68,72 +68,72 @@ strong {
 /***********************
  * generic classes
  **********************/
-/* line 52, ../style.scss */
+/* line 61, ../style.scss */
 table.lfs-default {
   background: #390e41;
   color: #ebdc78;
   width: 100%;
 }
-/* line 56, ../style.scss */
+/* line 65, ../style.scss */
 table.lfs-default tr {
   border-bottom: 1px solid #ebdc78;
 }
-/* line 59, ../style.scss */
+/* line 68, ../style.scss */
 table.lfs-default tr:last-child {
   border-bottom: none;
 }
-/* line 62, ../style.scss */
+/* line 71, ../style.scss */
 table.lfs-default th {
   padding: 10px;
 }
-/* line 66, ../style.scss */
+/* line 75, ../style.scss */
 table.lfs-default td {
   padding: 5px;
 }
-/* line 70, ../style.scss */
+/* line 79, ../style.scss */
 table.lfs-default td:last-child {
   border-right: none;
 }
-/* line 73, ../style.scss */
+/* line 82, ../style.scss */
 table.lfs-default a {
   color: #ebdc78;
 }
 
-/* line 78, ../style.scss */
+/* line 87, ../style.scss */
 .jeslee-form-container {
   background: #390e41;
   color: #ebdc78;
   margin-bottom: 20px;
   padding: 20px;
 }
-/* line 79, ../style.scss */
+/* line 88, ../style.scss */
 .jeslee-form-container .jeslee-form-container-header {
   font-size: 14pt;
   margin-bottom: 20px;
 }
-/* line 83, ../style.scss */
+/* line 92, ../style.scss */
 .jeslee-form-container a {
   color: #ebdc78;
 }
-/* line 92, ../style.scss */
+/* line 101, ../style.scss */
 .jeslee-form-container ul li .label {
   display: inline-block;
   height: 45px;
   width: 50%;
 }
-/* line 97, ../style.scss */
+/* line 106, ../style.scss */
 .jeslee-form-container ul li input {
   display: inline-block;
   float: right;
   width: 200px;
 }
-/* line 102, ../style.scss */
+/* line 111, ../style.scss */
 .jeslee-form-container ul li select {
   float: right;
   width: 204px;
 }
 
-/* line 110, ../style.scss */
+/* line 119, ../style.scss */
 .errorlist {
   color: #F84637;
 }
@@ -141,7 +141,7 @@ table.lfs-default a {
 /***********************
  * header
  **********************/
-/* line 116, ../style.scss */
+/* line 126, ../style.scss */
 #jeslee-header {
   background: #390e41 url("../../gfx/background/header-bottom.png") no-repeat center bottom;
   height: 120px;
@@ -149,7 +149,7 @@ table.lfs-default a {
   position: relative;
   width: 100%;
 }
-/* line 123, ../style.scss */
+/* line 133, ../style.scss */
 #jeslee-header .header-left-background {
   background: url("../../gfx/background/background-top-left.png") no-repeat scroll left top transparent;
   height: 144px;
@@ -158,50 +158,50 @@ table.lfs-default a {
   top: -62px;
   left: 0;
 }
-/* line 131, ../style.scss */
+/* line 141, ../style.scss */
 #jeslee-header .header-content {
   margin: 0 auto;
 }
-/* line 133, ../style.scss */
+/* line 143, ../style.scss */
 #jeslee-header .header-content .jeslee-logo {
   float: left;
   margin-left: 20px;
 }
-/* line 138, ../style.scss */
+/* line 148, ../style.scss */
 #jeslee-header .header-content #header-menu {
   float: right;
   margin-top: 15px;
 }
-/* line 141, ../style.scss */
+/* line 151, ../style.scss */
 #jeslee-header .header-content #header-menu ul {
   float: left;
   margin-top: 26px;
 }
-/* line 144, ../style.scss */
+/* line 154, ../style.scss */
 #jeslee-header .header-content #header-menu ul li {
   display: inline;
 }
-/* line 146, ../style.scss */
+/* line 156, ../style.scss */
 #jeslee-header .header-content #header-menu ul li a {
   border-right: 1px solid #FFF;
   color: #ebdc78;
   padding: 0 10px;
   text-decoration: none;
 }
-/* line 152, ../style.scss */
+/* line 162, ../style.scss */
 #jeslee-header .header-content #header-menu ul li a:hover {
   text-decoration: underline;
 }
-/* line 156, ../style.scss */
+/* line 166, ../style.scss */
 #jeslee-header .header-content #header-menu ul li:last-child {
   border-right: none;
 }
-/* line 160, ../style.scss */
+/* line 170, ../style.scss */
 #jeslee-header .header-content #header-menu a.link-shopping-bag {
   height: 59px;
   width: 36px;
 }
-/* line 166, ../style.scss */
+/* line 176, ../style.scss */
 #jeslee-header #main-site-menu {
   background-color: #ebe7ec;
   bottom: 1px;
@@ -209,29 +209,29 @@ table.lfs-default a {
   position: absolute;
   width: 100%;
 }
-/* line 172, ../style.scss */
+/* line 182, ../style.scss */
 #jeslee-header #main-site-menu ul {
   margin: 10px auto 0 auto;
 }
-/* line 174, ../style.scss */
+/* line 184, ../style.scss */
 #jeslee-header #main-site-menu ul li {
   display: inline;
 }
-/* line 177, ../style.scss */
+/* line 187, ../style.scss */
 #jeslee-header #main-site-menu ul li a {
   padding: 12px 20px;
   text-decoration: none;
 }
-/* line 181, ../style.scss */
+/* line 191, ../style.scss */
 #jeslee-header #main-site-menu ul li a:hover, #jeslee-header #main-site-menu ul li a.selected {
   background-color: #390e41;
   color: #ebdc78;
 }
-/* line 188, ../style.scss */
+/* line 198, ../style.scss */
 #jeslee-header #main-site-menu ul li:last-child {
   border-right: none;
 }
-/* line 193, ../style.scss */
+/* line 203, ../style.scss */
 #jeslee-header .header-right-background {
   background: url("../../gfx/background/background-top-right.png") no-repeat scroll right top transparent;
   height: 144px;
@@ -244,7 +244,7 @@ table.lfs-default a {
 /***********************
  * body
  **********************/
-/* line 206, ../style.scss */
+/* line 216, ../style.scss */
 #jeslee-body {
   margin: 0 auto;
   min-height: 400px;
@@ -253,12 +253,12 @@ table.lfs-default a {
 /***********************
  * footer
  **********************/
-/* line 214, ../style.scss */
+/* line 224, ../style.scss */
 #jeslee-footer {
   min-height: 150px;
   widows: 100%;
 }
-/* line 217, ../style.scss */
+/* line 227, ../style.scss */
 #jeslee-footer hr {
   background-color: #390e41;
   opacity: 0.4;
@@ -267,12 +267,12 @@ table.lfs-default a {
   border-bottom: 1px solid #390e41;
   padding-top: 10px;
 }
-/* line 225, ../style.scss */
+/* line 235, ../style.scss */
 #jeslee-footer #footer-menu ul {
   color: #000;
   margin: 10px 10px 0 10px;
 }
-/* line 228, ../style.scss */
+/* line 238, ../style.scss */
 #jeslee-footer #footer-menu ul li {
   display: inline;
   padding: 0 20px;
@@ -281,7 +281,7 @@ table.lfs-default a {
 /***********************
  * banners and planes
  **********************/
-/* line 240, ../style.scss */
+/* line 250, ../style.scss */
 .purple-banner {
   background-color: #390e41;
   display: block;
@@ -290,28 +290,30 @@ table.lfs-default a {
   border-radius: 19px;
   border: 5px solid #ebdc78;
 }
-
-/* line 248, ../style.scss */
-.purple-banner:hover {
-  border: 10px solid #ebdc78;
-  margin: 15px;
+/* line 257, ../style.scss */
+.purple-banner a {
+  color: #ebdc78;
 }
-
-/* line 252, ../style.scss */
-.purple-banner-header {
+/* line 260, ../style.scss */
+.purple-banner .purple-banner-header {
   color: #ebdc78;
   font-size: 18pt;
   margin-bottom: 20px;
   text-align: center;
   width: 100%;
 }
-
-/* line 259, ../style.scss */
-.purple-banner-content {
+/* line 267, ../style.scss */
+.purple-banner .purple-banner-content {
   color: #fff;
 }
 
-/* line 263, ../style.scss */
+/* line 272, ../style.scss */
+.purple-banner:hover {
+  border: 10px solid #ebdc78;
+  margin: 15px;
+}
+
+/* line 277, ../style.scss */
 .white-plane {
   background-color: #fff;
   display: block;
@@ -323,31 +325,31 @@ table.lfs-default a {
 /***********************
  * utility
  **********************/
-/* line 274, ../style.scss */
+/* line 288, ../style.scss */
 a.disabled {
-  cursor: default!important;
-  color: #000!important;
-  text-decoration: line-through!important;
+  cursor: default !important;
+  color: #000 !important;
+  text-decoration: line-through !important;
 }
 
-/* line 279, ../style.scss */
+/* line 294, ../style.scss */
 .prevent-collapsing {
   height: 0;
   overflow: hidden;
   width: 0;
 }
 
-/* line 284, ../style.scss */
+/* line 300, ../style.scss */
 .todo {
   background-color: #ffff00;
   border: 5px solid #ff00ff;
 }
 
-/* line 290, ../style.scss */
+/* line 307, ../style.scss */
 table.definition-list tr td {
   padding: 5px;
 }
-/* line 293, ../style.scss */
+/* line 310, ../style.scss */
 table.definition-list tr td.definition-key {
   font-weight: bold;
 }

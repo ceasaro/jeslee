@@ -52,6 +52,7 @@ LANGUAGE_CODE = 'nl-NL'
 #locale.setlocale(locale.LC_ALL, "nl_NL.UTF-8")
 
 DATE_FORMAT = 'j N Y'
+TIME_FORMAT = 'h:m'
 STRING_TO_DATE_FORMAT = '%d %B %Y'
 LOCALE_PATHS = (
     PROJECT_DIR+'/conf/locale',
