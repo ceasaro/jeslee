@@ -1,5 +1,6 @@
 from django.contrib import admin
-from jeslee_web.fashion_show.models import FashionRegistration, FashionLocation, FashionModel, FashionGarment, FashionShow
+from jeslee_web.fashion_show.models import FashionRegistration, FashionLocation\
+    , FashionModel, FashionGarment, FashionShow
 
 
 class FashionRegistrationAdmin(admin.ModelAdmin):
@@ -8,10 +9,10 @@ class FashionRegistrationAdmin(admin.ModelAdmin):
 admin.site.register(FashionRegistration, FashionRegistrationAdmin)
 
 
-class FashionLocationAdmin(admin.ModelAdmin):
+class FashionGarmentAdmin(admin.ModelAdmin):
     pass
 
-admin.site.register(FashionLocation, FashionLocationAdmin)
+admin.site.register(FashionGarment, FashionGarmentAdmin)
 
 
 class FashionModelAdmin(admin.ModelAdmin):
@@ -20,10 +21,10 @@ class FashionModelAdmin(admin.ModelAdmin):
 admin.site.register(FashionModel, FashionModelAdmin)
 
 
-class FashionGarmentAdmin(admin.ModelAdmin):
+class FashionLocationAdmin(admin.ModelAdmin):
     pass
 
-admin.site.register(FashionGarment, FashionGarmentAdmin)
+admin.site.register(FashionLocation, FashionLocationAdmin)
 
 
 class FashionShowAdmin(admin.ModelAdmin):

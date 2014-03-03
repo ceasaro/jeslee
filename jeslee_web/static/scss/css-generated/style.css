@@ -323,33 +323,50 @@ table.lfs-default a {
 }
 
 /***********************
+ * layouts
+ **********************/
+/* line 290, ../style.scss */
+table.definition-list tr td {
+  padding: 5px;
+}
+/* line 293, ../style.scss */
+table.definition-list tr td.definition-key {
+  font-weight: bold;
+}
+
+/* line 302, ../style.scss */
+.full-out-wrapper {
+  display: table;
+  width: 1000%;
+}
+/* line 305, ../style.scss */
+.full-out-wrapper .full-out-right {
+  background-color: #390e41;
+  display: table-cell;
+  overflow: hidden;
+  position: relative;
+  z-index: -10;
+}
+
+/***********************
  * utility
  **********************/
-/* line 288, ../style.scss */
+/* line 317, ../style.scss */
 a.disabled {
   cursor: default !important;
   color: #000 !important;
   text-decoration: line-through !important;
 }
 
-/* line 294, ../style.scss */
+/* line 323, ../style.scss */
 .prevent-collapsing {
   height: 0;
   overflow: hidden;
   width: 0;
 }
 
-/* line 300, ../style.scss */
+/* line 329, ../style.scss */
 .todo {
   background-color: #ffff00;
   border: 5px solid #ff00ff;
-}
-
-/* line 307, ../style.scss */
-table.definition-list tr td {
-  padding: 5px;
-}
-/* line 310, ../style.scss */
-table.definition-list tr td.definition-key {
-  font-weight: bold;
 }

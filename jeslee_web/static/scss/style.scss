@@ -248,7 +248,7 @@ table.lfs-default {
  * banners and planes
  **********************/
 .purple-banner {
-  background-color: #390e41;
+  background-color: $dark-text-color;
   display: block;
   padding: 20px;
   margin: 20px;
@@ -283,6 +283,35 @@ table.lfs-default {
 }
 
 /***********************
+ * layouts
+ **********************/
+table.definition-list {
+  tr {
+    td {
+      padding: 5px;
+    }
+    td.definition-key {
+      font-weight: bold;
+
+    }
+    td.definition-value {
+
+    }
+  }
+}
+.full-out-wrapper {
+  display: table;
+  width: 1000%;
+  .full-out-right {
+    background-color: $dark-text-color;
+    display: table-cell;
+    overflow: hidden;
+    position: relative;
+    z-index: -10;
+  }
+}
+
+/***********************
  * utility
  **********************/
 a.disabled {
@@ -302,17 +331,3 @@ a.disabled {
   border: 5px solid #ff00ff;
 }
 
-table.definition-list {
-  tr {
-    td {
-      padding: 5px;
-    }
-    td.definition-key {
-      font-weight: bold;
-
-    }
-    td.definition-value {
-
-    }
-  }
-}

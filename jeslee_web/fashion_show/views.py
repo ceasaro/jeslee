@@ -17,6 +17,14 @@ class UpcomingFashionShowMixin(ContextMixin):
         return context
 
 
+class FashionShowsMixin(ContextMixin):
+
+    def get_context_data(self, **kwargs):
+        context_data = super(FashionShowsMixin, self).get_context_data(**kwargs)
+        context_data['fashion_shows'] = FashionShow.objects.get_upcoming_shows()
+        return context_data
+
+
 class FashionRegistrationCreateView(CreateView):
     form_class = FashionRegistrationForm
     model = FashionRegistration
@@ -34,9 +42,10 @@ class FashionRegistrationUpdateView(UpdateView):
     model = FashionRegistration
 
 
-class FashionShowsView(FashionRegistrationCreateView):
+class FashionShowsView(FashionRegistrationCreateView, FashionShowsMixin):
+    pass
 
-    def get_context_data(self, **kwargs):
-        context_data = super(FashionShowsView, self).get_context_data(**kwargs)
-        context_data['fashion_shows'] = FashionShow.objects.get_upcoming_shows()
-        return context_data
+
+class FashionShowDetailView(DetailView, FashionShowsMixin):
+    model = FashionShow
+    context_object_name = 'fashion_show'

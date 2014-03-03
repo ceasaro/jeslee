@@ -8,16 +8,18 @@
 
 {% block jeslee-content %}
     <div id="jeslee-page-content" class="{% block jeslee-content-class %}{% endblock %} ">
-        {% block page-title-div %}
-        <div class="jeslee-page-header grid_12">
-            <h1>{% block page-title %}{% endblock %}</h1>
-        </div>
-        {% endblock %}
         <div class="grid_8">
-            {% block page-content %}
+            {% block page-title-div %}
+            <div class="jeslee-page-header ">
+                <h1>{% block page-title %}{% endblock %}</h1>
+            </div>
             {% endblock %}
+            <div class="page-content">
+                {% block page-content %}
+                {% endblock %}
+            </div>
         </div>
-        <div class="grid_4">
+        <div class="grid_4 right-column {% block right-column-class %}align-with-content{% endblock %}">
             {% block page-right-column %}
             {% endblock %}
         </div>

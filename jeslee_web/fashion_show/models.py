@@ -1,5 +1,4 @@
 from datetime import date
-from django.conf import settings
 from django.db.models import Manager
 from django.utils import formats
 from django.utils.translation import ugettext as _
@@ -44,10 +43,6 @@ class FashionModel(TimeStampedModel, Address):
         return "FashionModel[{pk}] {{{name}, {size}}}".format(pk=self.pk, name=self.name, size=self.size)
 
 
-class TicketOrder(TimeStampedModel):
-    order_url = models.URLField(_(u'order url'))
-
-
 class FashionLocation(TimeStampedModel, Address):
     name = models.CharField(_(u'name'), max_length=50)
     logo = models.FileField(upload_to='fashion_show/location/logos', blank=True, null=True)
@@ -84,7 +79,7 @@ class FashionShow(TimeStampedModel):
     location = models.ForeignKey(FashionLocation, related_name=u'fashion_show')
     start_time = models.DateTimeField(_(u'start_time'), blank=True, null=True)
     end_time = models.DateTimeField(_(u'end_time'), blank=True, null=True)
-    ticket_order = models.ForeignKey(TicketOrder, related_name=u'fashion_show', blank=True, null=True)
+    ticket_order_url = models.URLField(_(u'ticket order url'), blank=True, null=True)
     models = models.ManyToManyField(FashionModel, related_name=u'fashion_shows', blank=True, null=True)
 
     objects = FashionShowManager()

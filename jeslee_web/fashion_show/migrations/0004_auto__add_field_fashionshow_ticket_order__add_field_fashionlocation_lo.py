@@ -8,18 +8,9 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        # Adding model 'TicketOrder'
-        db.create_table(u'fashion_show_ticketorder', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('created', self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime.now, blank=True)),
-            ('modified', self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime.now, blank=True)),
-            ('order_url', self.gf('django.db.models.fields.URLField')(max_length=200)),
-        ))
-        db.send_create_signal(u'fashion_show', ['TicketOrder'])
-
         # Adding field 'FashionShow.ticket_order'
-        db.add_column(u'fashion_show_fashionshow', 'ticket_order',
-                      self.gf('django.db.models.fields.related.ForeignKey')(blank=True, related_name=u'fashion_show', null=True, to=orm['fashion_show.TicketOrder']),
+        db.add_column(u'fashion_show_fashionshow', 'ticket_order_url',
+                      self.gf('django.db.models.fields.URLField')(max_length=200, null=True, blank=True),
                       keep_default=False)
 
         # Adding field 'FashionLocation.logo'
@@ -34,11 +25,8 @@ class Migration(SchemaMigration):
 
 
     def backwards(self, orm):
-        # Deleting model 'TicketOrder'
-        db.delete_table(u'fashion_show_ticketorder')
-
         # Deleting field 'FashionShow.ticket_order'
-        db.delete_column(u'fashion_show_fashionshow', 'ticket_order_id')
+        db.delete_column(u'fashion_show_fashionshow', 'ticket_order')
 
         # Deleting field 'FashionLocation.logo'
         db.delete_column(u'fashion_show_fashionlocation', 'logo')
@@ -119,14 +107,7 @@ class Migration(SchemaMigration):
             'models': ('django.db.models.fields.related.ManyToManyField', [], {'blank': 'True', 'related_name': "u'fashion_shows'", 'null': 'True', 'symmetrical': 'False', 'to': u"orm['fashion_show.FashionModel']"}),
             'modified': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now', 'blank': 'True'}),
             'start_time': ('django.db.models.fields.DateTimeField', [], {'null': 'True', 'blank': 'True'}),
-            'ticket_order': ('django.db.models.fields.related.ForeignKey', [], {'blank': 'True', 'related_name': "u'fashion_show'", 'null': 'True', 'to': u"orm['fashion_show.TicketOrder']"})
-        },
-        u'fashion_show.ticketorder': {
-            'Meta': {'ordering': "('-modified', '-created')", 'object_name': 'TicketOrder'},
-            'created': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now', 'blank': 'True'}),
-            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'modified': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now', 'blank': 'True'}),
-            'order_url': ('django.db.models.fields.URLField', [], {'max_length': '200'})
+            'ticket_order': ('django.db.models.fields.URLField', [], {'max_length': '200', 'null': 'True', 'blank': 'True'})
         }
     }
 

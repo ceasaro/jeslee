@@ -5,6 +5,11 @@
     article {
     }
   }
+  .right-column {
+    &.align-with-content {
+      padding-top: 71px;
+    }
+  }
 
   article {
     margin-bottom: 20px;
@@ -52,8 +57,10 @@
 **********************/
 #fashion_show_agenda {
   background-color: $dark-background-color;
+  display:table-cell;
   color:$background-color-site;
-  padding:20px;
+  padding:71px 20px 20px 20px;
+  width: 250px;
 
   h3 {
     color:$light-text-color;
@@ -65,13 +72,14 @@
   a {
     color:$background-color-site;
     text-decoration: none;
-    &:hover {
+    &:hover, &.selected {
       color:$light-text-color;
       text-decoration: none;
     }
     &:visited {
       text-decoration: none;
     }
+
   }
   .fashion_show {
     border-bottom: 1px solid;
@@ -90,5 +98,17 @@
     .fashion_show_location {
       display: inline-block;
     }
+  }
+}
+
+#fashion-show-detail {
+  .fashion-show-time {
+    background-color: $dark-text-color;
+    color:$light-text-color;
+    font-size: 12pt;
+    font-weight: bold;
+    line-height: 22px;
+    padding:5px 5px 5px 20px;
+    width: 150px;
   }
 }

@@ -1,0 +1,46 @@
+{% extends 'pages/base-page-text.html' %}
+
+{% block menu_modeshows_class %}selected{% endblock %}
+
+{% block title %}Modeshows {% endblock %}
+
+{% block page-title %}
+    De leukste modeshowspektakels voor kinderen
+{% endblock %}
+
+{% block right-column-class %}{% endblock %} {# remove the align-with-content class #}
+
+{% block page-right-column %}
+    <div class="full-out-wrapper">
+        <div id="fashion_show_agenda">
+            <h3>Agenda</h3>
+            {% for show in fashion_shows|slice:":7" %}
+                <a href="{% url 'fashion-show' show.pk %}" class="{% if fashion_show.pk == show.pk %}selected{% endif %}">
+                    <div class="fashion_show">
+                        <div class="fashion_show_start_time">
+                            <span class="day">
+                            {{ show.start_time|date:"d" }}
+                            </span>
+                            <span class="month">
+                            {{ show.start_time|date:"b" }}
+                            </span>
+                            <span class="time">
+                            {{ show.start_time|date:"G:i" }}
+                            </span>
+                        </div>
+                        <div class="fashion_show_location">
+                            {{ show.location.name }}
+                            <br/>
+                            {{ show.location.city }}
+                        </div>
+                    </div>
+                </a>
+            {% empty %}
+                Er zijn nog geen evenementen gepland.
+            {% endfor %}
+        </div>
+        <div class="full-out-right">
+            &nbsp;
+        </div>
+    </div>
+{% endblock page-right-column %}

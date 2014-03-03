@@ -11,35 +11,39 @@
   **********************/
 }
 /* line 9, ../pages.scss */
+#jeslee-page-content .right-column.align-with-content {
+  padding-top: 71px;
+}
+/* line 14, ../pages.scss */
 #jeslee-page-content article {
   margin-bottom: 20px;
 }
-/* line 12, ../pages.scss */
+/* line 17, ../pages.scss */
 #jeslee-page-content article .subtitle {
   color: #777;
   font-size: 10pt;
   margin-top: -18px;
 }
-/* line 22, ../pages.scss */
+/* line 27, ../pages.scss */
 #jeslee-page-content .contact-info {
   border-bottom: 1px solid #000;
   padding-bottom: 20px;
   margin-bottom: 40px;
 }
-/* line 28, ../pages.scss */
+/* line 33, ../pages.scss */
 #jeslee-page-content .contact-info ul li span:first-child {
   width: 75px;
   display: inline-block;
 }
-/* line 35, ../pages.scss */
+/* line 40, ../pages.scss */
 #jeslee-page-content #routeplanner_form {
   margin: 15px 0;
 }
-/* line 37, ../pages.scss */
+/* line 42, ../pages.scss */
 #jeslee-page-content #routeplanner_form .form-input-row {
   padding: 5px 0;
 }
-/* line 42, ../pages.scss */
+/* line 47, ../pages.scss */
 #jeslee-page-content #map_canvas {
   height: 500px;
   width: 619px;
@@ -49,53 +53,66 @@
 /***********************
 * fashion_show
 **********************/
-/* line 53, ../pages.scss */
+/* line 58, ../pages.scss */
 #fashion_show_agenda {
   background-color: #390e41;
+  display: table-cell;
   color: #ebe7ec;
-  padding: 20px;
+  padding: 71px 20px 20px 20px;
+  width: 250px;
 }
-/* line 58, ../pages.scss */
+/* line 65, ../pages.scss */
 #fashion_show_agenda h3 {
   color: #ebdc78;
   font-size: 20pt;
   margin-bottom: 30px;
   text-align: center;
 }
-/* line 65, ../pages.scss */
+/* line 72, ../pages.scss */
 #fashion_show_agenda a {
   color: #ebe7ec;
   text-decoration: none;
 }
-/* line 68, ../pages.scss */
-#fashion_show_agenda a:hover {
+/* line 75, ../pages.scss */
+#fashion_show_agenda a:hover, #fashion_show_agenda a.selected {
   color: #ebdc78;
   text-decoration: none;
 }
-/* line 72, ../pages.scss */
+/* line 79, ../pages.scss */
 #fashion_show_agenda a:visited {
   text-decoration: none;
 }
-/* line 76, ../pages.scss */
+/* line 84, ../pages.scss */
 #fashion_show_agenda .fashion_show {
   border-bottom: 1px solid;
   height: 60px;
   margin-bottom: 20px;
 }
-/* line 80, ../pages.scss */
+/* line 88, ../pages.scss */
 #fashion_show_agenda .fashion_show .fashion_show_start_time {
   display: inline-block;
   width: 100px;
 }
-/* line 83, ../pages.scss */
+/* line 91, ../pages.scss */
 #fashion_show_agenda .fashion_show .fashion_show_start_time .day {
   font-size: 24pt;
 }
-/* line 86, ../pages.scss */
+/* line 94, ../pages.scss */
 #fashion_show_agenda .fashion_show .fashion_show_start_time .month {
   font-size: 18pt;
 }
-/* line 90, ../pages.scss */
+/* line 98, ../pages.scss */
 #fashion_show_agenda .fashion_show .fashion_show_location {
   display: inline-block;
+}
+
+/* line 105, ../pages.scss */
+#fashion-show-detail .fashion-show-time {
+  background-color: #390e41;
+  color: #ebdc78;
+  font-size: 12pt;
+  font-weight: bold;
+  line-height: 22px;
+  padding: 5px 5px 5px 20px;
+  width: 150px;
 }

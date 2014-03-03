@@ -1,0 +1,37 @@
+{% extends 'fashion_show/fashion-show-base.html' %}
+
+{% block menu_modeshows_class %}selected{% endblock %}
+
+{% block title %}Modeshow in {{ fashion_show.location.name }} {% endblock %}
+
+{% block page-title %}
+    Modeshowspektakel {{ fashion_show.location.name }}, {{ fashion_show.location.city }}
+{% endblock %}
+
+
+{% block page-content %}
+    <div id="fashion-show-detail">
+        <div class="fashion-show-time">
+            {{ fashion_show.start_time|date:"d F Y" }} <br/>
+            {{ fashion_show.start_time|date:"G:i" }} uur
+        </div>
+        <p>
+            {{ fashion_show.location.name }}<br/>
+            {% if fashion_show.location.logo %}
+                <img src="{{ MEDIA_URL }}{{ fashion_show.location.logo }}" alt="logo {{ fashion_show.location.name }}"/>
+            {% endif %}
+        </p>
+        <p>
+            {{ fashion_show.location.street }} {{ fashion_show.location.street_nr }}<br/>
+            {{ fashion_show.location.city }}
+        </p>
+        <p>
+            {% if fashion_show.ticket_order_url %}
+            <a href="{{ fashion_show.ticket_order_url }}" title="Klik hier om uw kaarten te kopen" target="_blank"
+                    >Kaarten kopen</a>
+            {% else %}
+                <span>De kaart verkoop is nog niet gestart.</span>
+            {% endif %}
+        </p>
+    </div>
+{% endblock page-content %}
