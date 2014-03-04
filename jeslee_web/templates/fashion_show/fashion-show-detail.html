@@ -16,7 +16,9 @@
             {{ fashion_show.start_time|date:"G:i" }} uur
         </div>
         <p>
-            {{ fashion_show.location.name }}<br/>
+            {% include 'pages/snippets/partner-snippet.html' with name='{{ fashion_show.location.name }}' logo_img='{{ fashion_show.location.logo }}' url="{{ fashion_show.location.website }}" %}
+
+            <br/>
             {% if fashion_show.location.logo %}
                 <img src="{{ MEDIA_URL }}{{ fashion_show.location.logo }}" alt="logo {{ fashion_show.location.name }}"/>
             {% endif %}

@@ -8,7 +8,7 @@
 
 var map;
 var CENTER_MAPS = new google.maps.LatLng(53.196041, 6.873017);
-var TENNIS_COURT_ALOE = new google.maps.LatLng(53.196041, 6.873017);
+var JESLEE_HEADQUATERS = new google.maps.LatLng(53.196041, 6.873017);
 
 function maps_initialize() {
 
@@ -34,7 +34,7 @@ function maps_initialize() {
 */
 
     var marker = new google.maps.Marker({
-        position: TENNIS_COURT_ALOE,
+        position: JESLEE_HEADQUATERS,
         //icon: image,
         map: map
     });
@@ -43,7 +43,7 @@ function maps_initialize() {
 
 function calcRoute() {
     var origin = document.getElementById("fromAddress").value + " nederland";
-    var destination = TENNIS_COURT_ALOE;//new google.maps.LatLng(52.34786600014047, 5.009175000001558);
+    var destination = JESLEE_HEADQUATERS;//new google.maps.LatLng(52.34786600014047, 5.009175000001558);
 
     var request = {
         origin: origin,

@@ -62,7 +62,7 @@
 }
 /* line 58, ../product-detail.scss */
 #shop-container #product-form .product-images .large-image {
-  border: 1px solid #8c6194;
+  border: 1px solid #64124d;
   height: 584px;
   width: 460px;
 }
@@ -72,7 +72,7 @@
 }
 /* line 65, ../product-detail.scss */
 #shop-container #product-form .product-images .sub-images .sub-image.cycle-slide-active {
-  border: 1px solid #8c6194;
+  border: 1px solid #64124d;
 }
 /* line 68, ../product-detail.scss */
 #shop-container #product-form .product-images .sub-images .sub-image {

@@ -1,0 +1,78 @@
+{% extends 'fashion_show/fashion-show-base.html' %}
+
+{% block menu_modeshows_class %}selected{% endblock %}
+
+{% block title %}Modeshows {% endblock %}
+
+{% block page-title %}
+    De leukste modeshowspektakels voor kinderen
+{% endblock %}
+
+{% block page-content %}
+    <article>
+
+        <p>
+            Jeslee is een speciaalzaak voor feestelijke kinderkleding. Ieder jaar geven wij meerdere modeshows op diverse
+            locaties in Nederland om onze collecties te tonen.
+        </p>
+
+        <p>
+            Deelnemers aan de modeshowspektakels zijn kinderen van 3 tot en met 15 jaar.<br/>
+            In elke plaats gaan we op zoek naar een geschikte locatie. Aan iedere show kunnen zo’n 40 kinderen meedoen.
+            De kinderen die zich hebben aangemeld krijgen 1,5 maand voor de show een training van een catwalk-docent en
+            expressie- specialist. Dit gebeurt meestal in een sporthal in de betreffende plaats.
+        </p>
+
+        <p>
+            De modeshowspektakels worden meestal in weekenden buiten de schoolvakanties gehouden.<br/>
+            De deelnemers worden door de ouders naar de locatie gebracht. Daar worden ze opgemaakt door
+            professionele kapsters en visagistes. Er zijn oppasdames aanwezig die de modelletjes voor- en tijdens de
+            modeshow goed in de gaten houden.<br/>
+            Deelnemers krijgen broodjes en drinken en mogen tv kijken of gewoon uitrusten terwijl de volgende kinderen
+            opgemaakt worden. Er is altijd een EHBO team en een beveiligings-team aanwezig. Aan het einde van het
+            spektakel worden de kinderen door hun ouders opgehaald.
+        </p>
+
+        <p>
+            <strong>&ldquo;Meedoen aan deze modeshows geeft kinderen zelfvertrouwen en is een enorm leuke
+            en bijzondere ervaring.&rdquo;</strong>
+        </p>
+
+        <p>
+            Meedoen aan een modeshow van Jeslee kost €20,00,-. Dit bedrag is voor het eten,  drinken en begeleiding van
+            de kinderen voor en tijdens de show en is inclusief een entree ticket voor een van de ouders of begeleiders.
+            Tevens ontvangt u een professionele herinnerings-foto van uw kind op de catwalk.<br/>
+            Als uw kind mee wil doen aan een modeshowspektakel van Jeslee dan kunt u onderstaand formulier invullen of
+            een mail sturen naar <a href="mailto:info@jeslee.com?subject=Opgave modeshow">info@jeslee.com</a>. U hoort
+            van ons of er nog plek is. U kunt uw kind voor iedere locatie inschrijven.
+        </p>
+
+        <p>
+            Naast modellen in deze leeftijdscategorie zijn we ook vaak op zoek naar meisjes van 15 tot 20 jaar voor
+            de opening van onze evenementen. Naast je opleiding is het heel leuk om af en toe als professioneel model
+            te werken. Als je je bij ons aanmeld word je door onze catwalk-trainer klaar gestoomd voor de catwalk. Na
+            deze training loop je de modeshow en begeleid je de jongste modellen, die het vaak heel leuk vinden maar
+            toch ook wel een beetje eng. Lijkt je dat wat dan kun je
+            <a href="#" class="todo">hier een formulier invullen</a>.
+        </p>
+
+        <p>
+            <a name="download_flyer" class="todo">Download hier de flyer</a><br/>
+            <a name="download_poster" class="todo">Download hier de poster</a><br/>
+        </p>
+
+    </article>
+
+    <div class="prevent-collapsing">.</div>
+    <div class="prevent-collapsing">.</div>
+
+    <div id="fashion-registration-form" style="display:none;">
+        <form action="." method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit" />
+        </form>
+
+    </div>
+
+{% endblock page-content %}
+

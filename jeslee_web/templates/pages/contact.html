@@ -1,11 +1,16 @@
-{% extends 'pages/base-page.html' %}
+{% extends 'base/site-base.html' %}
 {% load static from staticfiles %}
+
+{% block css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'scss/css-generated/contact.css' %}"/>
+{% endblock %}
 
 {% block javascript_external %}
     <script type="text/javascript"
             src="https://maps.googleapis.com/maps/api/js?sensor=false">
     </script>
-{% comment %}
+    {% comment %}
     <script type="text/javascript"
             src="https://maps.googleapis.com/maps/api/js?key=API_KEY&sensor=SET_TO_TRUE_OR_FALSE">
     </script>
@@ -24,55 +29,56 @@
 
 {% block menu_contact_class %}selected{% endblock %}
 
-{% block page-content %}
-    <div class="grid_3">
-        <div class="contact-info">
-            <h3>Jeslee</h3>
-            <p>
-                Hoofdstraat 51 <br/>
-                9635 AT Noordbroek<br/>
-                Nederland
-            </p>
-            <ul>
-                <li>
-                    <span>E-mail</span>
-                    <span><a href="mailto:info@jeslee.com">info@jeslee.com</a></span>
-                </li>
-                <li>
-                    <span>Telefoon</span>
-                    <span>0598 - 45 09 60</span>
-                </li>
-                <li>
-                    <span>Mobiel </span>
-                    <span>06 - 15 94 80 90</span>
-                </li>
-            </ul>
+{% block jeslee-content %}
+    <div id="contact-page">
+        <div class="grid_3">
+            <div class="contact-info">
+                <h3>Jeslee</h3>
+
+                <p>
+                    Hoofdstraat 51 <br/>
+                    9635 AT Noordbroek<br/>
+                    Nederland
+                </p>
+                <ul>
+                    <li>
+                        <span>E-mail</span>
+                        <span><a href="mailto:info@jeslee.com">info@jeslee.com</a></span>
+                    </li>
+                    <li>
+                        <span>Telefoon</span>
+                        <span>0598 - 45 09 60</span>
+                    </li>
+                    <li>
+                        <span>Mobiel </span>
+                        <span>06 - 15 94 80 90</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="contact-route">
+                <h3>Route</h3>
+
+                <form onsubmit="calcRoute(); return false;" action="#" id="routeplanner_form">
+                    <div class="form-input-row">
+                        <img src="{% static 'gfx/icons/spotlight-waypoint-a.png' %}">
+                        <label for="fromAddress">Van:</label>
+                        <input value="" name="from" id="fromAddress" size="19" type="text">
+                    </div>
+                    <div class="form-input-row">
+                        <img src="{% static 'gfx/icons/spotlight-waypoint-b.png' %}">
+                        <span>Naar:</span>
+                        <span>Jeslee</span>
+                        <input value="Routebeschrijving" type="submit" name="submit" class="googlebutton">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="grid_8">
+            <div id="map_canvas">&nbsp;</div>
         </div>
 
-        <div class="contact-route">
-            <h3>Route</h3>
-            <form onsubmit="calcRoute(); return false;" action="#" id="routeplanner_form">
-                <div class="form-input-row">
-                    <img src="{% static 'gfx/icons/spotlight-waypoint-a.png' %}">
-                    <label for="fromAddress">Van:</label>
-                    <input value="" name="from" id="fromAddress" size="19" type="text">
-                </div>
-                <div class="form-input-row">
-                <img src="{% static 'gfx/icons/spotlight-waypoint-b.png' %}">
-                    <span>Naar:</span>
-                    <span>Jeslee</span>
-                    <input value="Routebeschrijving" type="submit" name="submit" class="googlebutton">
-                </div>
-            </form>
-        </div>
     </div>
-
-    <div class="push_1 grid_8">
-        <div id="map_canvas"></div>
-    </div>
-
-{% endblock %}
-
-{% block page-footer %}
     <div id="directions" class="grid_12"></div>
-{% endblock %}
+{% endblock jeslee-content %}
+

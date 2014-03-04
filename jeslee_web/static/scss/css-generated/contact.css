@@ -1,0 +1,28 @@
+/***********************
+* contact
+**********************/
+/* line 5, ../contact.scss */
+#contact-page .contact-info {
+  border-bottom: 1px solid #000;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+}
+/* line 11, ../contact.scss */
+#contact-page .contact-info ul li span:first-child {
+  width: 75px;
+  display: inline-block;
+}
+/* line 18, ../contact.scss */
+#contact-page #routeplanner_form {
+  margin: 15px 0;
+}
+/* line 20, ../contact.scss */
+#contact-page #routeplanner_form .form-input-row {
+  padding: 5px 0;
+}
+/* line 25, ../contact.scss */
+#contact-page #map_canvas {
+  height: 500px;
+  width: 619px;
+  margin-bottom: 30px;
+}

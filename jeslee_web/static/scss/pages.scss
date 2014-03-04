@@ -20,37 +20,7 @@
       margin-top: -18px;
     }
   }
-
-/***********************
-* contact
-**********************/
-  .contact-info {
-    border-bottom: 1px solid #000;
-    padding-bottom: 20px;
-    margin-bottom: 40px;
-    ul {
-      li {
-        span:first-child {
-          width: 75px;
-          display: inline-block;
-        }
-      }
-    }
-  }
-  #routeplanner_form {
-    margin: 15px 0;
-    .form-input-row {
-      padding: 5px 0;
-    }
-
-  }
-  #map_canvas {
-    height: 500px;
-    width: 619px;
-    margin-bottom: 30px;
-  }
 }
-
 
 /***********************
 * fashion_show
@@ -107,7 +77,7 @@
     color:$light-text-color;
     font-size: 12pt;
     font-weight: bold;
-    line-height: 22px;
+    line-height: px;
     padding:5px 5px 5px 20px;
     width: 150px;
   }
