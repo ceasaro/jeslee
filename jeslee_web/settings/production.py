@@ -24,6 +24,8 @@ DATABASES = {
 #    }
 }
 
+MEDIA_ROOT = '/sites/django/jeslee_media/'
+
 _dev_apps = list(INSTALLED_APPS)
 #_dev_apps.append('debug_toolbar')
 #_dev_apps.append('debug_toolbar_user_panel')
