@@ -103,3 +103,11 @@
   font-size: 15pt;
   width: 118px;
 }
+
+/***********************
+* sponsors
+**********************/
+/* line 113, ../pages.scss */
+#jeslee-sponsors .sponsor {
+  margin-bottom: 10px;
+}

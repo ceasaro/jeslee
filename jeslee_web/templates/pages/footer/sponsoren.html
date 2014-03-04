@@ -9,13 +9,26 @@
 {#{% block menu_about_class %}selected{% endblock %}#}
 {% block page-grid-class %}grid_10{% endblock %}
 {% block page-content %}
-    <div class="grid_3">
-        {% include 'pages/snippets/company-logo-snippet.html' with name='WTC Expo, Leeuwarden' logo_img='gfx/logos/logo_WTC_Expo_220x33.jpg' url="http://www.wtcexpo.nl/" %}
-    </div>
-    <div class="grid_3">
-        {% include 'pages/snippets/company-logo-snippet.html' with name='Bonte Wever, Assen' logo_img='gfx/logos/bontewever_210x128.png' url="http://www.debontewever.nl/" %}
-    </div>
-    <div class="grid_3">
-        {% include 'pages/snippets/company-logo-snippet.html' with name='Bonte Wever, Assen' logo_img='gfx/logos/bontewever_210x128.png' url="http://www.debontewever.nl/" %}
+    <div id="jeslee-sponsors">
+        <div class="grid_3">
+            <div class="sponsor">
+                {% include 'pages/snippets/company-logo-snippet.html' with name='WTC Expo, Leeuwarden' logo_img='gfx/logos/logo_WTC_Expo_210x33.jpg' url="http://www.wtcexpo.nl/" %}
+            </div>
+        </div>
+        <div class="grid_3">
+            <div class="sponsor">
+                {% include 'pages/snippets/company-logo-snippet.html' with name='Bonte Wever, Assen' logo_img='gfx/logos/bontewever_210x128.png' url="http://www.debontewever.nl/" %}
+            </div>
+        </div>
+        <div class="grid_3">
+            <div class="sponsor">
+                {% include 'pages/snippets/company-logo-snippet.html' with name='Martinikerk, Groningen' logo_img='gfx/logos/logo_martinikerk.jpg' url="http://www.martinikerk.nl/" %}
+            </div>
+        </div>
+        <div class="grid_3">
+            <div class="sponsor">
+                {% include 'pages/snippets/company-logo-snippet.html' with name='Noorderpoort, Groningen' logo_img='gfx/logos/logo-noorderpoort_210x46.jpg' url="http://www.noorderpoort.nl/" %}
+            </div>
+        </div>
     </div>
 {% endblock %}

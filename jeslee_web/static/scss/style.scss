@@ -299,8 +299,10 @@ table.lfs-default {
 }
 
 .company-logo {
-  width: 210px;
+  display: table-cell;
   height: 128px;
+  vertical-align: middle;
+  width: 210px;
 }
 /***********************
  * layouts
