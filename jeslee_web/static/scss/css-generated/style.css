@@ -9,7 +9,7 @@
  **********************/
 @font-face {
   font-family: university_roman;
-  src: url("../../fonts/UNIVERSI.TTF");
+  src: url("../../fonts/UNIVERSI.TTF") format("truetype");
 }
 
 /* line 11, ../style.scss */
@@ -17,7 +17,7 @@ html {
   background: url("../../gfx/background/background-left.png") no-repeat scroll left top 185px transparent;
   background-color: #ebe7ec;
   color: #000;
-  font-family: university_roman;
+  font-family: "Helvetica Neue", Arial, "Lucida Grande", sans-serif;
   font-size: 11pt;
   height: 100%;
   line-height: 16pt;
@@ -207,33 +207,34 @@ table.lfs-default a {
 #jeslee-header #main-site-menu {
   background-color: #ebe7ec;
   bottom: 1px;
+  font-family: university_roman;
   height: 40px;
   position: absolute;
   width: 100%;
 }
-/* line 184, ../style.scss */
+/* line 185, ../style.scss */
 #jeslee-header #main-site-menu ul {
   margin: 10px auto 0 auto;
 }
-/* line 186, ../style.scss */
+/* line 187, ../style.scss */
 #jeslee-header #main-site-menu ul li {
   display: inline;
 }
-/* line 189, ../style.scss */
+/* line 190, ../style.scss */
 #jeslee-header #main-site-menu ul li a {
   padding: 11px 20px;
   text-decoration: none;
 }
-/* line 193, ../style.scss */
+/* line 194, ../style.scss */
 #jeslee-header #main-site-menu ul li a:hover, #jeslee-header #main-site-menu ul li a.selected {
   background-color: #390e41;
   color: #ebdc78;
 }
-/* line 200, ../style.scss */
+/* line 201, ../style.scss */
 #jeslee-header #main-site-menu ul li:last-child {
   border-right: none;
 }
-/* line 205, ../style.scss */
+/* line 206, ../style.scss */
 #jeslee-header .header-right-background {
   background: url("../../gfx/background/background-top-right.png") no-repeat scroll right top transparent;
   height: 144px;
@@ -246,7 +247,7 @@ table.lfs-default a {
 /***********************
  * body
  **********************/
-/* line 218, ../style.scss */
+/* line 219, ../style.scss */
 #jeslee-body {
   margin: 0 auto;
   min-height: 400px;
@@ -255,12 +256,12 @@ table.lfs-default a {
 /***********************
  * footer
  **********************/
-/* line 226, ../style.scss */
+/* line 227, ../style.scss */
 #jeslee-footer {
   min-height: 150px;
   widows: 100%;
 }
-/* line 229, ../style.scss */
+/* line 230, ../style.scss */
 #jeslee-footer hr {
   background-color: #390e41;
   opacity: 0.4;
@@ -269,12 +270,12 @@ table.lfs-default a {
   border-bottom: 1px solid #390e41;
   padding-top: 10px;
 }
-/* line 237, ../style.scss */
+/* line 238, ../style.scss */
 #jeslee-footer #footer-menu ul {
   color: #000;
   margin: 10px 10px 0 10px;
 }
-/* line 240, ../style.scss */
+/* line 241, ../style.scss */
 #jeslee-footer #footer-menu ul li {
   display: inline;
   padding: 0 20px;
@@ -283,7 +284,7 @@ table.lfs-default a {
 /***********************
  * banners and planes
  **********************/
-/* line 252, ../style.scss */
+/* line 253, ../style.scss */
 .purple-banner {
   background-color: #64124d;
   border: 6px solid #ad9d30;
@@ -291,22 +292,22 @@ table.lfs-default a {
   height: 63px;
   padding: 20px;
 }
-/* line 259, ../style.scss */
+/* line 260, ../style.scss */
 .purple-banner:hover .button-change {
   font-size: 90pt;
 }
-/* line 263, ../style.scss */
+/* line 264, ../style.scss */
 .purple-banner .purple-banner-left-column {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 267, ../style.scss */
+/* line 268, ../style.scss */
 .purple-banner .purple-banner-right-column {
   display: table-cell;
   text-align: center;
   vertical-align: middle;
 }
-/* line 272, ../style.scss */
+/* line 273, ../style.scss */
 .purple-banner .button-change {
   color: #ad9d30;
   float: right;
@@ -314,7 +315,7 @@ table.lfs-default a {
   font-weight: bold;
   width: 90px;
 }
-/* line 279, ../style.scss */
+/* line 280, ../style.scss */
 .purple-banner .purple-banner-header {
   color: #ebdc78;
   font-size: 18pt;
@@ -322,21 +323,21 @@ table.lfs-default a {
   text-align: center;
   width: 100%;
 }
-/* line 286, ../style.scss */
+/* line 287, ../style.scss */
 .purple-banner .purple-banner-content {
   color: #fff;
   font-size: 15pt;
   width: 205px;
 }
 
-/* line 293, ../style.scss */
+/* line 294, ../style.scss */
 .white-plane {
   background-color: #fff;
   display: block;
   padding: 10px;
 }
 
-/* line 300, ../style.scss */
+/* line 301, ../style.scss */
 .company-logo {
   width: 210px;
   height: 94px;
@@ -345,21 +346,21 @@ table.lfs-default a {
 /***********************
  * layouts
  **********************/
-/* line 309, ../style.scss */
+/* line 310, ../style.scss */
 table.definition-list tr td {
   padding: 5px;
 }
-/* line 312, ../style.scss */
+/* line 313, ../style.scss */
 table.definition-list tr td.definition-key {
   font-weight: bold;
 }
 
-/* line 322, ../style.scss */
+/* line 323, ../style.scss */
 .full-out-wrapper {
   display: table;
   width: 1000%;
 }
-/* line 325, ../style.scss */
+/* line 326, ../style.scss */
 .full-out-wrapper .full-out-right {
   background-color: #390e41;
   display: table-cell;
@@ -371,21 +372,21 @@ table.definition-list tr td.definition-key {
 /***********************
  * utility
  **********************/
-/* line 337, ../style.scss */
+/* line 338, ../style.scss */
 a.disabled {
   cursor: default !important;
   color: #000 !important;
   text-decoration: line-through !important;
 }
 
-/* line 343, ../style.scss */
+/* line 344, ../style.scss */
 .prevent-collapsing {
   height: 0;
   overflow: hidden;
   width: 0;
 }
 
-/* line 349, ../style.scss */
+/* line 350, ../style.scss */
 .todo {
   background-color: #ffff00;
   border: 5px solid #ff00ff;

@@ -27,55 +27,62 @@
   background-color: #390e41;
   display: table-cell;
   color: #ebe7ec;
-  padding: 20px 20px 20px 30px;
-  width: 340px;
+  padding: 20px 0 20px 30px;
+  width: 300px;
 }
 /* line 35, ../pages.scss */
 #fashion_show_agenda h3 {
   color: #ebdc78;
+  font-family: university_roman;
   font-size: 20pt;
   margin-bottom: 30px;
   text-align: center;
 }
-/* line 42, ../pages.scss */
+/* line 43, ../pages.scss */
 #fashion_show_agenda a {
   color: #ebe7ec;
   text-decoration: none;
 }
-/* line 45, ../pages.scss */
+/* line 46, ../pages.scss */
 #fashion_show_agenda a:hover, #fashion_show_agenda a.selected {
   color: #ebdc78;
   text-decoration: none;
 }
-/* line 49, ../pages.scss */
+/* line 50, ../pages.scss */
 #fashion_show_agenda a:visited {
   text-decoration: none;
 }
-/* line 54, ../pages.scss */
+/* line 55, ../pages.scss */
 #fashion_show_agenda .fashion_show {
   border-bottom: 1px solid;
   height: 60px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
 }
-/* line 58, ../pages.scss */
+/* line 60, ../pages.scss */
 #fashion_show_agenda .fashion_show .fashion_show_start_time {
   display: inline-block;
+  margin-top: 10px;
+  vertical-align: top;
   width: 100px;
 }
-/* line 61, ../pages.scss */
+/* line 65, ../pages.scss */
 #fashion_show_agenda .fashion_show .fashion_show_start_time .day {
   font-size: 24pt;
 }
-/* line 64, ../pages.scss */
+/* line 68, ../pages.scss */
 #fashion_show_agenda .fashion_show .fashion_show_start_time .month {
   font-size: 18pt;
 }
-/* line 68, ../pages.scss */
+/* line 72, ../pages.scss */
 #fashion_show_agenda .fashion_show .fashion_show_location {
   display: inline-block;
+  height: 60px;
+  overflow: hidden;
+  width: 195px;
 }
 
-/* line 75, ../pages.scss */
+/* line 82, ../pages.scss */
 #fashion-show-detail .fashion-show-time {
   float: left;
   font-size: 12pt;
@@ -84,13 +91,13 @@
   padding: 5px 5px 5px 20px;
   width: 150px;
 }
-/* line 86, ../pages.scss */
+/* line 93, ../pages.scss */
 #fashion-show-detail .company-logo {
   bottom: 0;
   float: right;
   right: 0;
 }
-/* line 92, ../pages.scss */
+/* line 99, ../pages.scss */
 #fashion-show-detail .purple-banner.by-ticket .purple-banner-content {
   color: #fff;
   font-size: 15pt;

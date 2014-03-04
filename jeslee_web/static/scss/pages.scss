@@ -29,11 +29,12 @@
   background-color: $dark-background-color;
   display:table-cell;
   color:$background-color-site;
-  padding:20px 20px 20px 30px;
-  width: 340px;
+  padding:20px 0 20px 30px;
+  width: 300px;
 
   h3 {
     color:$light-text-color;
+    font-family: university_roman;
     font-size: 20pt;
     margin-bottom: 30px;
     text-align: center;
@@ -54,9 +55,12 @@
   .fashion_show {
     border-bottom: 1px solid;
     height: 60px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
     .fashion_show_start_time {
       display: inline-block;
+      margin-top: 10px;
+      vertical-align: top;
       width: 100px;
       .day {
         font-size: 24pt;
@@ -67,6 +71,9 @@
     }
     .fashion_show_location {
       display: inline-block;
+      height: 60px;
+      overflow: hidden;
+      width: 195px;
     }
   }
 }
