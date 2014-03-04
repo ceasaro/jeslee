@@ -22,6 +22,18 @@ class Address(models.Model):
         return "Address[{pk}] {{{zip}, {street_nr}}}".format(pk=self.pk, zip=self.zip, street_nr=self.street_nr)
 
 
+class Location(models.Model):
+
+    class Meta:
+        abstract = True
+
+    latitude = models.FloatField(_(u'latitude'), blank=True, null=True)
+    longitude = models.FloatField(_(u'longitude'), blank=True, null=True)
+
+    def __repr__(self):
+        return "Location[{lat}, {lng}]".format(lat=self.latitude, lng=self.longitude)
+
+
 class Registration(TimeStampedModel, Address):
 
     class Meta:

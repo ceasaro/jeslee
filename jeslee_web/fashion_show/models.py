@@ -6,7 +6,7 @@ from django.db import models
 
 # Create your models here.
 from django_extensions.db.models import TimeStampedModel
-from jeslee_web.base.models import Registration, Address, ClothingSize, Garment
+from jeslee_web.base.models import Registration, Address, ClothingSize, Garment, Location
 
 
 class FashionRegistration(Registration):
@@ -43,7 +43,7 @@ class FashionModel(TimeStampedModel, Address):
         return "FashionModel[{pk}] {{{name}, {size}}}".format(pk=self.pk, name=self.name, size=self.size)
 
 
-class FashionLocation(TimeStampedModel, Address):
+class FashionLocation(TimeStampedModel, Address, Location):
     name = models.CharField(_(u'name'), max_length=50)
     logo = models.FileField(upload_to='fashion_show/location/logos', blank=True, null=True)
     website = models.URLField(_(u'website'), blank=True, null=True)

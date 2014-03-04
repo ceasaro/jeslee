@@ -8,31 +8,23 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        # Adding field 'FashionShow.ticket_order_url'
-        db.add_column(u'fashion_show_fashionshow', 'ticket_order_url',
-                      self.gf('django.db.models.fields.URLField')(max_length=200, null=True, blank=True),
+        # Adding field 'FashionLocation.latitude'
+        db.add_column(u'fashion_show_fashionlocation', 'latitude',
+                      self.gf('django.db.models.fields.FloatField')(null=True, blank=True),
                       keep_default=False)
 
-        # Adding field 'FashionLocation.logo'
-        db.add_column(u'fashion_show_fashionlocation', 'logo',
-                      self.gf('django.db.models.fields.files.FileField')(max_length=100, null=True, blank=True),
-                      keep_default=False)
-
-        # Adding field 'FashionLocation.website'
-        db.add_column(u'fashion_show_fashionlocation', 'website',
-                      self.gf('django.db.models.fields.URLField')(max_length=200, null=True, blank=True),
+        # Adding field 'FashionLocation.longitude'
+        db.add_column(u'fashion_show_fashionlocation', 'longitude',
+                      self.gf('django.db.models.fields.FloatField')(null=True, blank=True),
                       keep_default=False)
 
 
     def backwards(self, orm):
-        # Deleting field 'FashionShow.ticket_order_url'
-        db.delete_column(u'fashion_show_fashionshow', 'ticket_order_url')
+        # Deleting field 'FashionLocation.latitude'
+        db.delete_column(u'fashion_show_fashionlocation', 'latitude')
 
-        # Deleting field 'FashionLocation.logo'
-        db.delete_column(u'fashion_show_fashionlocation', 'logo')
-
-        # Deleting field 'FashionLocation.website'
-        db.delete_column(u'fashion_show_fashionlocation', 'website')
+        # Deleting field 'FashionLocation.longitude'
+        db.delete_column(u'fashion_show_fashionlocation', 'longitude')
 
 
     models = {
@@ -60,7 +52,9 @@ class Migration(SchemaMigration):
             'country': ('django.db.models.fields.CharField', [], {'default': "'Netherlands'", 'max_length': '100', 'blank': 'True'}),
             'created': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now', 'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'latitude': ('django.db.models.fields.FloatField', [], {'null': 'True', 'blank': 'True'}),
             'logo': ('django.db.models.fields.files.FileField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'}),
+            'longitude': ('django.db.models.fields.FloatField', [], {'null': 'True', 'blank': 'True'}),
             'modified': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now', 'blank': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
             'street': ('django.db.models.fields.CharField', [], {'max_length': '100', 'blank': 'True'}),
