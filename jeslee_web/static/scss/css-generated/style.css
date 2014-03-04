@@ -341,6 +341,7 @@ table.lfs-default a {
 .company-logo {
   display: table-cell;
   height: 128px;
+  text-align: center;
   vertical-align: middle;
   width: 210px;
 }
@@ -348,21 +349,21 @@ table.lfs-default a {
 /***********************
  * layouts
  **********************/
-/* line 312, ../style.scss */
+/* line 313, ../style.scss */
 table.definition-list tr td {
   padding: 5px;
 }
-/* line 315, ../style.scss */
+/* line 316, ../style.scss */
 table.definition-list tr td.definition-key {
   font-weight: bold;
 }
 
-/* line 325, ../style.scss */
+/* line 326, ../style.scss */
 .full-out-wrapper {
   display: table;
   width: 1000%;
 }
-/* line 328, ../style.scss */
+/* line 329, ../style.scss */
 .full-out-wrapper .full-out-right {
   background-color: #390e41;
   display: table-cell;
@@ -374,21 +375,21 @@ table.definition-list tr td.definition-key {
 /***********************
  * utility
  **********************/
-/* line 340, ../style.scss */
+/* line 341, ../style.scss */
 a.disabled {
   cursor: default !important;
   color: #000 !important;
   text-decoration: line-through !important;
 }
 
-/* line 346, ../style.scss */
+/* line 347, ../style.scss */
 .prevent-collapsing {
   height: 0;
   overflow: hidden;
   width: 0;
 }
 
-/* line 352, ../style.scss */
+/* line 353, ../style.scss */
 .todo {
   background-color: #ffff00;
   border: 5px solid #ff00ff;

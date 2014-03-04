@@ -107,7 +107,12 @@
 /***********************
 * sponsors
 **********************/
-/* line 113, ../pages.scss */
+/* line 112, ../pages.scss */
+#jeslee-sponsors {
+  margin-left: -10px;
+}
+/* line 114, ../pages.scss */
 #jeslee-sponsors .sponsor {
   margin-bottom: 10px;
+  width: 230px;
 }
