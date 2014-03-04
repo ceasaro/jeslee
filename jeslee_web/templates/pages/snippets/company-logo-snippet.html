@@ -1,0 +1,28 @@
+{% load static from staticfiles %}
+    {% if logo_img %}
+        {% if url %}
+            <a href="{{ url }}" target="_blank" title="{{ name }}">
+        {% endif %}
+            <div class="white-plane partner company-logo">
+                {#            <div class="partner_name">{{ name }}</div>#}
+                <div class="logo-container">
+                    <img class="partner-logo" src="{{ logo_img }}" title="{{ name }}"/>
+                </div>
+            </div>
+        {% if url %}
+            </a>
+        {% endif %}
+    {% elif location and location.logo %}
+        {% if location.website %}
+            <a href="{{ location.website }}" target="_blank" title="{{ location.name }}">
+        {% endif %}
+            <div class="white-plane partner company-logo">
+                {#            <div class="partner_name">{{ name }}</div>#}
+                <div class="logo-container">
+                    <img class="partner-logo" src="{{ MEDIA_URL }}{{ location.logo }}" title="{{ location.name }}"/>
+                </div>
+            </div>
+        {% if location.website %}
+            </a>
+        {% endif %}
+    {% endif %}

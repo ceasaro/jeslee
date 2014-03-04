@@ -11,29 +11,50 @@
 
 {% block page-content %}
     <div id="fashion-show-detail">
+
         <div class="fashion-show-time">
             {{ fashion_show.start_time|date:"d F Y" }} <br/>
-            {{ fashion_show.start_time|date:"G:i" }} uur
+            {{ fashion_show.start_time|date:"G:i" }} uur<br/>
         </div>
+        <br style="clear: left;"/>
         <p>
-            {% include 'pages/snippets/partner-snippet.html' with name='{{ fashion_show.location.name }}' logo_img='{{ fashion_show.location.logo }}' url="{{ fashion_show.location.website }}" %}
+            De modeshow vind plaats in {{ fashion_show.location.name }}<br/>
+            Het adres is:<br/>
 
-            <br/>
-            {% if fashion_show.location.logo %}
-                <img src="{{ MEDIA_URL }}{{ fashion_show.location.logo }}" alt="logo {{ fashion_show.location.name }}"/>
-            {% endif %}
-        </p>
-        <p>
             {{ fashion_show.location.street }} {{ fashion_show.location.street_nr }}<br/>
             {{ fashion_show.location.city }}
+
         </p>
-        <p>
-            {% if fashion_show.ticket_order_url %}
-            <a href="{{ fashion_show.ticket_order_url }}" title="Klik hier om uw kaarten te kopen" target="_blank"
-                    >Kaarten kopen</a>
-            {% else %}
-                <span>De kaart verkoop is nog niet gestart.</span>
-            {% endif %}
-        </p>
+        {% if fashion_show.ticket_order_url %}
+        <a href="{{ fashion_show.ticket_order_url }}" title="Klik hier om uw kaarten te kopen" target="_blank"
+                class="purple-banner by-ticket">
+            <div class="purple-banner-left-column">
+    {#            <div class="purple-banner-header">Meedoen</div>#}
+                <div class="purple-banner-content">
+                    <span>Klik hier om kaarten te kopen</span>
+                </div>
+            </div>
+            <div class="purple-banner-right-column">
+                <div class="button-change">!</div>
+            </div>
+        </a>
+        {% else %}
+        <div class="purple-banner no-tickets-for-sale">
+            <div class="purple-banner-left-column">
+    {#            <div class="purple-banner-header">Meedoen</div>#}
+                <div class="purple-banner-content">
+                    <span>De kaart verkoop is nog niet gestart.</span>
+                </div>
+            </div>
+{% comment %}
+            <div class="purple-banner-right-column">
+                <div class="button-change">!</div>
+            </div>
+{% endcomment %}
+        </div>
+        {% endif %}
+        <div>
+            {% include 'pages/snippets/company-logo-snippet.html' with location=fashion_show.location %}
+        </div>
     </div>
 {% endblock page-content %}

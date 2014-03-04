@@ -73,12 +73,27 @@
 
 #fashion-show-detail {
   .fashion-show-time {
-    background-color: $dark-text-color;
-    color:$light-text-color;
+//    background-color: $dark-text-color;
+//    color:$light-text-color;
+    float: left;
     font-size: 12pt;
     font-weight: bold;
     line-height: px;
     padding:5px 5px 5px 20px;
     width: 150px;
+  }
+
+  .company-logo {
+    bottom: 0;
+    float: right;
+    right: 0;
+  }
+  .purple-banner.by-ticket {
+    .purple-banner-content {
+      color: #fff;
+      font-size: 15pt;
+      width: 118px;
+    }
+
   }
 }

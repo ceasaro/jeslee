@@ -77,11 +77,22 @@
 
 /* line 75, ../pages.scss */
 #fashion-show-detail .fashion-show-time {
-  background-color: #390e41;
-  color: #ebdc78;
+  float: left;
   font-size: 12pt;
   font-weight: bold;
   line-height: px;
   padding: 5px 5px 5px 20px;
   width: 150px;
+}
+/* line 86, ../pages.scss */
+#fashion-show-detail .company-logo {
+  bottom: 0;
+  float: right;
+  right: 0;
+}
+/* line 92, ../pages.scss */
+#fashion-show-detail .purple-banner.by-ticket .purple-banner-content {
+  color: #fff;
+  font-size: 15pt;
+  width: 118px;
 }

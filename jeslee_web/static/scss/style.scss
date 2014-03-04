@@ -252,17 +252,16 @@ table.lfs-default {
   background-color: $action-color;
   border: 6px solid $action-color-border;
   display: table;
+  height: 63px;
   padding: 20px;
-  margin: 20px;
   &:hover {
     .button-change {
       font-size: 90pt;
     }
   }
-  a {
-  }
   .purple-banner-left-column {
     display: table-cell;
+    vertical-align: middle;
   }
   .purple-banner-right-column {
     display: table-cell;
@@ -293,11 +292,14 @@ table.lfs-default {
 .white-plane {
   background-color: #fff;
   display: block;
-  padding: 20px;
-  margin: 20px;
-  border: 5px solid $light-text-color;
+  padding: 10px;
+//  border: 2px solid #B3B3B3;
 }
 
+.company-logo {
+  width: 210px;
+  height: 94px;
+}
 /***********************
  * layouts
  **********************/
@@ -315,6 +317,7 @@ table.definition-list {
     }
   }
 }
+
 .full-out-wrapper {
   display: table;
   width: 1000%;

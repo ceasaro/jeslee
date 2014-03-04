@@ -1,0 +1,22 @@
+{% extends 'pages/base-page-text.html' %}
+
+{% block title %}Webinkel {% endblock %}
+
+{% block page-title %}
+    Onze webwinkel
+{% endblock %}
+
+{% block menu_girls_class %}selected{% endblock %}
+{% block menu_boys_class %}selected{% endblock %}
+
+{% block page-content %}
+    <p>
+        Onze excuses onze web winkel is nog niet beschikbaar. Wilt u toch wat meer informatie over de verkoop
+        van onze kleding kunt u altijd contact met ons opnemen
+    </p>
+    <p>
+        e-mail: <a href="mailto:info@jeslee.com?verkoop van jullie kleding">info@jeslee.com</a><br/>
+        <a href="{% url 'contact' %}">Contact gegevens</a>
+    </p>
+{% endblock %}
+

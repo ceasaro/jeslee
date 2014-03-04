@@ -20,15 +20,14 @@ urlpatterns = patterns('',
 
     # pages
     url(r'^over-jeslee/$', TemplateView.as_view(template_name='pages/about-jeslee.html'), name='about'),
-    url(r'^winkel/$', HomeView.as_view(template_name="lfs/collections.html"), name='winkel'),
+    # url(r'^winkel/$', HomeView.as_view(template_name="lfs/collections.html"), name='winkel'),
+    url(r'^winkel/$', HomeView.as_view(template_name="pages/web-shop-uc.html"), name='winkel'),
     url(r'^modeshows/', include('jeslee_web.fashion_show.urls')),
 #    url(r'evenementen', TemplateView.as_view(template_name='pages/evenementen.html'), name='evenementen'),
 #    url(r'fotogalerij', TemplateView.as_view(template_name='pages/fotogalerij.html'), name='fotogalerij'),
     url(r'^nieuws/$', TemplateView.as_view(template_name='pages/nieuws.html'), name='nieuws'),
     url(r'^verkooppunten/$', TemplateView.as_view(template_name='pages/verkooppunten.html'), name='verkooppunten'),
     url(r'^contact/$', TemplateView.as_view(template_name='pages/contact.html'), name='contact'),
-    # pages footer
-    url(r'^partners/$', TemplateView.as_view(template_name='pages/partners.html'), name='partners'),
 
     #pages footer
     # authentication
@@ -38,11 +37,13 @@ urlpatterns = patterns('',
         name='veilig-betalen'),
     url(r'^retour/$', TemplateView.as_view(template_name='pages/footer/retour.html'),
         name='retour'),
+    url(r'^partners/$', TemplateView.as_view(template_name='pages/footer/partners.html'), name='partners'),
     url(r'^privacy/$', TemplateView.as_view(template_name='pages/footer/privacy.html'),
         name='privacy'),
 
     url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': "auth/login.html"}, name='login'),
     url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': "/"}, name='logout'),
+
 
 )
 
