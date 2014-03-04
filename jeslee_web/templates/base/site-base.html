@@ -11,18 +11,18 @@
             <img src="{% static 'gfx/logo-jeslee-transparent.png' %}" title="logo Jeslee"/>
         </div>
         <div id="header-menu">
-            <ul>
-                {% if user.is_authenticated %}
-                <li><a href="{% url 'logout' %}">Uitloggen</a></li>
-                {% else %}
-                <li><a href="{% url 'login' %}">Inloggen</a></li>
-                {% endif %}
+{#            <ul>#}
+{#                {% if user.is_authenticated %}#}
+{#                <li><a href="{% url 'logout' %}">Uitloggen</a></li>#}
+{#                {% else %}#}
+{#                <li><a href="{% url 'login' %}">Inloggen</a></li>#}
+{#                {% endif %}#}
 {#                <li><a href="#" class="disabled">Aanmelden</a></li>#}
-                <li><a href="{% url 'lfs.cart.views.cart' %}">Je aankopen</a></li>
-            </ul>
-            <a href="{% url 'lfs.cart.views.cart' %}" class="link-shopping-bag" title="winkel tasje">
+{#                <li><a href="{% url 'lfs.cart.views.cart' %}">Je aankopen</a></li>#}
+{#            </ul>#}
+{#            <a href="{% url 'lfs.cart.views.cart' %}" class="link-shopping-bag" title="winkel tasje">#}
                 <img src="{% static 'gfx/shopping-bag.png' %}" class="shopping-bag" title="winkel tasje"/>
-            </a>
+{#            </a>#}
         </div>
     </div>
     <div id="main-site-menu" >

@@ -17,7 +17,7 @@ html {
   background: url("../../gfx/background/background-left.png") no-repeat scroll left top 185px transparent;
   background-color: #ebe7ec;
   color: #000;
-  font-family: "Helvetica Neue", Arial, "Lucida Grande", sans-serif;
+  font-family: Georgia, "Bitstream Charter", sans-serif;
   font-size: 11pt;
   height: 100%;
   line-height: 16pt;
@@ -340,7 +340,7 @@ table.lfs-default a {
 /* line 301, ../style.scss */
 .company-logo {
   width: 210px;
-  height: 94px;
+  height: 128px;
 }
 
 /***********************

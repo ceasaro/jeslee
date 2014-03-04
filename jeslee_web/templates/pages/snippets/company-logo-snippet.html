@@ -6,7 +6,7 @@
             <div class="white-plane partner company-logo">
                 {#            <div class="partner_name">{{ name }}</div>#}
                 <div class="logo-container">
-                    <img class="partner-logo" src="{{ logo_img }}" title="{{ name }}"/>
+                    <img class="partner-logo" src="{% static logo_img %}" title="{{ name }}"/>
                 </div>
             </div>
         {% if url %}
