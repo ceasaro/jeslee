@@ -120,16 +120,11 @@
 /***********************
 * sales points
 **********************/
-/* line 122, ../pages.scss */
-#sales-points {
-  position: relative;
-}
-/* line 124, ../pages.scss */
+/* line 123, ../pages.scss */
 #sales-points .shopping-bags-row {
-  position: absolute;
-  top: 250px;
+  margin: 85px 0 40px 0;
 }
-/* line 127, ../pages.scss */
+/* line 125, ../pages.scss */
 #sales-points .shopping-bags-row img {
   margin-right: 49px;
 }
