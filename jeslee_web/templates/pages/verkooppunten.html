@@ -1,4 +1,5 @@
 {% extends 'pages/base-page-text.html' %}
+{% load static from staticfiles %}
 
 {% block menu_retail_class %}selected{% endblock %}
 
@@ -7,14 +8,28 @@
 {% endblock %}
 
 {% block page-content %}
-    <article>
-        <p>
-            Waar kunt u onze artikelen kopen ?
-        </p>
-        <p>
-            Wilt u een of meerdere artikelen van Jeslee kopen, dan is dit vanaf <b>april</b> mogelijk
-            via onze <a href="{% url 'winkel' %}">webshop</a>.<br/>
-        </p>
-    </article>
+    <div id="sales-points">
+        <article>
+            <p>
+                Waar kunt u onze artikelen kopen ?
+            </p>
+            <p>
+                Wilt u een of meerdere artikelen van Jeslee kopen, dan is dit vanaf <b>april</b> mogelijk
+                via onze <a href="{% url 'winkel' %}">webshop</a>.<br/>
+            </p>
 
+        </article>
+        <div class="shopping-bags-row">
+            <img src="{% static 'gfx/shopping-bag.png' %}" class="shopping-bag" title="winkel tasje"/>
+            <img src="{% static 'gfx/shopping-bag.png' %}" class="shopping-bag" title="winkel tasje"/>
+            <img src="{% static 'gfx/shopping-bag.png' %}" class="shopping-bag" title="winkel tasje"/>
+            <img src="{% static 'gfx/shopping-bag.png' %}" class="shopping-bag" title="winkel tasje"/>
+            <img src="{% static 'gfx/shopping-bag.png' %}" class="shopping-bag" title="winkel tasje"/>
+            <img src="{% static 'gfx/shopping-bag.png' %}" class="shopping-bag" title="winkel tasje"/>
+            <img src="{% static 'gfx/shopping-bag.png' %}" class="shopping-bag" title="winkel tasje"/>
+        </div>
+    </div>
 {% endblock page-content %}
+
+{% block page-footer %}
+{% endblock %}

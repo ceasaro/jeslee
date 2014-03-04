@@ -107,12 +107,29 @@
 /***********************
 * sponsors
 **********************/
-/* line 112, ../pages.scss */
+/* line 111, ../pages.scss */
 #jeslee-sponsors {
   margin-left: -10px;
 }
-/* line 114, ../pages.scss */
+/* line 113, ../pages.scss */
 #jeslee-sponsors .sponsor {
   margin-bottom: 10px;
   width: 230px;
+}
+
+/***********************
+* sales points
+**********************/
+/* line 122, ../pages.scss */
+#sales-points {
+  position: relative;
+}
+/* line 124, ../pages.scss */
+#sales-points .shopping-bags-row {
+  position: absolute;
+  top: 250px;
+}
+/* line 127, ../pages.scss */
+#sales-points .shopping-bags-row img {
+  margin-right: 49px;
 }
