@@ -57,12 +57,11 @@ class FashionLocation(TimeStampedModel, Address, Location):
 
 class FashionShowManager(Manager):
 
-    def get_upcoming_shows(self):
+    def get_upcoming_shows(self, date_from=date.today()):
         """
         Returns all upcoming fashion shows ordered
         """
-        today = date.today()
-        return self.get_query_set().filter(start_time__gte=today)
+        return self.get_query_set().filter(start_time__gte=date_from)
 
     def get_upcoming_show(self):
         """
