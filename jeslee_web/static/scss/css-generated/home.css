@@ -1,3 +1,28 @@
 /***********************
 * home
 **********************/
+/* line 8, ../home.scss */
+#upcoming_fashion_show.purple-banner .purple-banner-content {
+  width: 300px;
+}
+/* line 10, ../home.scss */
+#upcoming_fashion_show.purple-banner .purple-banner-content .fashion_show_start_time {
+  display: inline-block;
+  margin-top: 11px;
+  vertical-align: top;
+  width: 120px;
+}
+/* line 15, ../home.scss */
+#upcoming_fashion_show.purple-banner .purple-banner-content .fashion_show_start_time .day {
+  font-size: 34pt;
+}
+/* line 18, ../home.scss */
+#upcoming_fashion_show.purple-banner .purple-banner-content .fashion_show_start_time .month {
+  font-size: 22pt;
+}
+/* line 22, ../home.scss */
+#upcoming_fashion_show.purple-banner .purple-banner-content .fashion_show_location {
+  display: inline-block;
+  height: 54px;
+  overflow: hidden;
+}

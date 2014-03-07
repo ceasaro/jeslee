@@ -2,6 +2,30 @@
 * home
 **********************/
 #upcoming_fashion_show {
-//  width:300px;
+  &.purple-banner {
+    .purple-banner-header {
+    }
+    .purple-banner-content {
+      width: 300px;
+      .fashion_show_start_time {
+        display: inline-block;
+        margin-top: 11px;
+        vertical-align: top;
+        width: 120px;
+        .day {
+          font-size: 34pt;
+        }
+        .month {
+          font-size: 22pt
+        }
+      }
+      .fashion_show_location {
+        display: inline-block;
+        height: 54px;
+        overflow: hidden;
+      }
+    }
+
+  }
 }
 

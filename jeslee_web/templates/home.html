@@ -18,11 +18,18 @@
             <div class="purple-banner-header">Eerst volgende modeshowspektakel!</div>
             <div class="purple-banner-content">
                 <div class="fashion_show_start_time">
-                    {{ upcoming_fashion_show.start_time|date:"d F Y" }} om {{ upcoming_fashion_show.start_time|date:"G:i" }}
+                    <span class="day">
+                    {{ upcoming_fashion_show.start_time|date:"d" }}
+                    </span>
+                    <span class="month">
+                    {{ upcoming_fashion_show.start_time|date:"b" }}
+                    </span>
+                    <span class="time">
+                    {{ upcoming_fashion_show.start_time|date:"G:i" }}
+                    </span>
                 </div>
                 <div class="fashion_show_location">
                     {{ upcoming_fashion_show.location.name }}<br/>
-                    {{ upcoming_fashion_show.location.street }} {{ upcoming_fashion_show.location.street_nr }}<br/>
                     {{ upcoming_fashion_show.location.city }}
 
                 </div>

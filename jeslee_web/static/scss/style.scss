@@ -9,7 +9,7 @@
 }
 
 html {
-  background: url('../../gfx/background/background-left.png') no-repeat scroll left top 185px transparent;
+  background: url('../../gfx/background/background-left.png') no-repeat scroll left top 178px transparent;
   background-color: $background-color-site;
   //color: $dark-text-color;
   color: #000;
@@ -20,7 +20,7 @@ html {
 }
 
 body {
-  background: url('../../gfx/background/background-right.png') no-repeat scroll right top 125px transparent;
+  background: url('../../gfx/background/background-right.png') no-repeat scroll right top 178px transparent;
   height: auto;
   //min-height: 100%;
 }
@@ -127,8 +127,8 @@ table.lfs-default {
  **********************/
 #jeslee-header {
   background: $dark-background-color url('../../gfx/background/header-bottom.png') no-repeat center bottom;
-  height: 120px;
-  margin-top: 60px;
+  height: 140px;
+  padding-top: 30px;
   position: relative;
   width: 100%;
 
@@ -137,7 +137,7 @@ table.lfs-default {
     height: 144px;
     width: 90px;
     position: absolute;
-    top: -62px;
+    top: -18px;
     left: 0;
   }
   .header-content {
@@ -178,7 +178,7 @@ table.lfs-default {
   #main-site-menu {
     background-color: $background-color-site;
     bottom: 1px;
-    font-family: university_roman;
+//    font-family: university_roman;
     height: 40px;
     position: absolute;
     width: 100%;
@@ -208,7 +208,7 @@ table.lfs-default {
     height: 144px;
     width: 90px;
     position: absolute;
-    top: -62px;
+    top: -18px;
     right: 0;
   }
 }
@@ -225,6 +225,7 @@ table.lfs-default {
  * footer
  **********************/
 #jeslee-footer {
+  margin-top: 20px;
   min-height: 150px;
   widows: 100%;
   hr {
@@ -256,7 +257,15 @@ table.lfs-default {
   display: table;
   height: 63px;
   padding: 20px;
+  text-decoration: none;
   &:hover {
+    .purple-banner-header {
+      color: $action-color-border;
+//      font-size: 20pt;
+    }
+    .purple-banner-content {
+//      color: $light-text-color;
+    }
     .button-change {
       font-size: 90pt;
     }
@@ -280,6 +289,7 @@ table.lfs-default {
   .purple-banner-header {
     color: $light-text-color;
     font-size: 18pt;
+    line-height: 22pt;
     margin-bottom: 20px;
     text-align: center;
     width: 100%;
