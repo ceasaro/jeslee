@@ -263,6 +263,10 @@ table.lfs-default {
   height: 63px;
   padding: 20px;
   text-decoration: none;
+  &.inactive {
+    border: none;
+    background-color: #696969;
+  }
   &:hover {
     .purple-banner-header {
       color: $action-color-border;
