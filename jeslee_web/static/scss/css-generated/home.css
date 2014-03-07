@@ -3,26 +3,29 @@
 **********************/
 /* line 8, ../home.scss */
 #upcoming_fashion_show.purple-banner .purple-banner-content {
-  width: 300px;
+  margin-left: 36px;
+  width: 100%;
 }
-/* line 10, ../home.scss */
+/* line 11, ../home.scss */
 #upcoming_fashion_show.purple-banner .purple-banner-content .fashion_show_start_time {
   display: inline-block;
   margin-top: 11px;
   vertical-align: top;
-  width: 120px;
 }
-/* line 15, ../home.scss */
+/* line 16, ../home.scss */
 #upcoming_fashion_show.purple-banner .purple-banner-content .fashion_show_start_time .day {
   font-size: 34pt;
 }
-/* line 18, ../home.scss */
+/* line 19, ../home.scss */
 #upcoming_fashion_show.purple-banner .purple-banner-content .fashion_show_start_time .month {
   font-size: 22pt;
 }
-/* line 22, ../home.scss */
+/* line 23, ../home.scss */
 #upcoming_fashion_show.purple-banner .purple-banner-content .fashion_show_location {
+  border-left: 1px solid #fff;
   display: inline-block;
   height: 54px;
+  margin-left: 20px;
+  padding-left: 20px;
   overflow: hidden;
 }

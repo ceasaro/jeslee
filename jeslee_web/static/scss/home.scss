@@ -6,12 +6,13 @@
     .purple-banner-header {
     }
     .purple-banner-content {
-      width: 300px;
+      margin-left: 36px;
+      width: 100%;
       .fashion_show_start_time {
         display: inline-block;
         margin-top: 11px;
         vertical-align: top;
-        width: 120px;
+//        width: 120px;
         .day {
           font-size: 34pt;
         }
@@ -20,8 +21,11 @@
         }
       }
       .fashion_show_location {
+        border-left: 1px solid #fff;
         display: inline-block;
         height: 54px;
+        margin-left:20px;
+        padding-left:20px;
         overflow: hidden;
       }
     }

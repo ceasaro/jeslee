@@ -14,7 +14,7 @@
     <img src="{{ STATIC_URL }}gfx/feestelijke-kleding-voor-kinderen.jpg" title="feest kleding voor kinderen"/>
 
     {% if upcoming_fashion_show %}
-        <a href="{% url 'fashion-show' upcoming_fashion_show.pk %}" id="upcoming_fashion_show" class="purple-banner grid_4">
+        <a href="{% url 'fashion-show' upcoming_fashion_show.pk %}" id="upcoming_fashion_show" class="purple-banner grid_6">
             <div class="purple-banner-header">Eerst volgende modeshowspektakel!</div>
             <div class="purple-banner-content">
                 <div class="fashion_show_start_time">
@@ -23,7 +23,7 @@
                     </span>
                     <span class="month">
                     {{ upcoming_fashion_show.start_time|date:"b" }}
-                    </span>
+                    </span><br/>
                     <span class="time">
                     {{ upcoming_fashion_show.start_time|date:"G:i" }}
                     </span>
