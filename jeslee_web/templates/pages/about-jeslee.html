@@ -91,13 +91,18 @@
 {% endblock page-content %}
 
 {% block page-right-column %}
-    <p>
-        <img src="{% static 'gfx/photos/Yasmine-155x200.jpg' %}" title="Yasmine van Wieringen, ontwerpster Jeslee"/>
-    </p>
-    <p>
-        <img src="{% static 'gfx/photos/Jessy-133x200.jpg' %}" title="Jessy, onze dochter"/>
-    </p>
-    <p>
-        <img src="{% static 'gfx/photos/allereerste-jurkje-155x154.jpg' %}" title="Het eerste jurkje voor onze dochter"/>
-    </p>
+    <div id="about-jeslee-right-column">
+        <p>
+            <img src="{% static 'gfx/photos/Yasmine-155x200.jpg' %}" title="Yasmine van Wieringen, ontwerpster Jeslee"/>
+        </p>
+        <div class="img-title">Yasmine van Wieringen, ontwerpster Jeslee</div>
+        <p>
+            <img src="{% static 'gfx/photos/Jessy-133x200.jpg' %}" title="Jessy, onze dochter"/>
+        </p>
+        <div class="img-title">Jessy, onze dochter</div>
+        <p>
+            <img src="{% static 'gfx/photos/allereerste-jurkje-155x154.jpg' %}" title="Het eerste jurkje voor onze dochter"/>
+        </p>
+        <div class="img-title">Het eerste jurkje voor onze dochter</div>
+    </div>
 {% endblock page-right-column %}

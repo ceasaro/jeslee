@@ -8,11 +8,16 @@
 #jeslee-page-content .right-column.align-with-content {
   padding-top: 71px;
 }
-/* line 14, ../pages.scss */
+/* line 12, ../pages.scss */
+#jeslee-page-content .right-column .img-title {
+  margin-bottom: 30px;
+  width: 160px;
+}
+/* line 19, ../pages.scss */
 #jeslee-page-content article {
   margin-bottom: 20px;
 }
-/* line 17, ../pages.scss */
+/* line 22, ../pages.scss */
 #jeslee-page-content article .subtitle {
   color: #777;
   font-size: 10pt;
@@ -22,7 +27,7 @@
 /***********************
 * fashion_show
 **********************/
-/* line 28, ../pages.scss */
+/* line 33, ../pages.scss */
 #fashion_show_agenda {
   background-color: #390e41;
   display: table-cell;
@@ -30,7 +35,7 @@
   padding: 20px 0 20px 30px;
   width: 300px;
 }
-/* line 35, ../pages.scss */
+/* line 40, ../pages.scss */
 #fashion_show_agenda h3 {
   color: #ebdc78;
   font-family: university_roman;
@@ -38,43 +43,43 @@
   margin-bottom: 30px;
   text-align: center;
 }
-/* line 43, ../pages.scss */
+/* line 48, ../pages.scss */
 #fashion_show_agenda a {
   color: #ebe7ec;
   text-decoration: none;
 }
-/* line 46, ../pages.scss */
+/* line 51, ../pages.scss */
 #fashion_show_agenda a:hover, #fashion_show_agenda a.selected {
   color: #ebdc78;
   text-decoration: none;
 }
-/* line 50, ../pages.scss */
+/* line 55, ../pages.scss */
 #fashion_show_agenda a:visited {
   text-decoration: none;
 }
-/* line 55, ../pages.scss */
+/* line 60, ../pages.scss */
 #fashion_show_agenda .fashion_show {
   border-bottom: 1px solid;
   height: 60px;
   margin-bottom: 10px;
   padding-bottom: 10px;
 }
-/* line 60, ../pages.scss */
+/* line 65, ../pages.scss */
 #fashion_show_agenda .fashion_show .fashion_show_start_time {
   display: inline-block;
   margin-top: 10px;
   vertical-align: top;
   width: 100px;
 }
-/* line 65, ../pages.scss */
+/* line 70, ../pages.scss */
 #fashion_show_agenda .fashion_show .fashion_show_start_time .day {
   font-size: 24pt;
 }
-/* line 68, ../pages.scss */
+/* line 73, ../pages.scss */
 #fashion_show_agenda .fashion_show .fashion_show_start_time .month {
   font-size: 18pt;
 }
-/* line 72, ../pages.scss */
+/* line 77, ../pages.scss */
 #fashion_show_agenda .fashion_show .fashion_show_location {
   display: inline-block;
   height: 60px;
@@ -82,7 +87,7 @@
   width: 195px;
 }
 
-/* line 82, ../pages.scss */
+/* line 87, ../pages.scss */
 #fashion-show-detail .fashion-show-time {
   float: left;
   font-size: 12pt;
@@ -91,13 +96,13 @@
   padding: 5px 5px 5px 20px;
   width: 150px;
 }
-/* line 93, ../pages.scss */
+/* line 98, ../pages.scss */
 #fashion-show-detail .company-logo {
   bottom: 0;
   float: right;
   right: 0;
 }
-/* line 99, ../pages.scss */
+/* line 104, ../pages.scss */
 #fashion-show-detail .purple-banner.by-ticket .purple-banner-content {
   color: #fff;
   font-size: 15pt;
@@ -105,13 +110,21 @@
 }
 
 /***********************
+* about
+**********************/
+/* line 116, ../pages.scss */
+#about-jeslee-right-column {
+  margin-left: 50px;
+}
+
+/***********************
 * sponsors
 **********************/
-/* line 111, ../pages.scss */
+/* line 123, ../pages.scss */
 #jeslee-sponsors {
   margin-left: -10px;
 }
-/* line 113, ../pages.scss */
+/* line 125, ../pages.scss */
 #jeslee-sponsors .sponsor {
   margin-bottom: 10px;
   width: 230px;
@@ -120,11 +133,11 @@
 /***********************
 * sales points
 **********************/
-/* line 123, ../pages.scss */
+/* line 135, ../pages.scss */
 #sales-points .shopping-bags-row {
   margin: 85px 0 40px 0;
 }
-/* line 125, ../pages.scss */
+/* line 137, ../pages.scss */
 #sales-points .shopping-bags-row img {
   margin-right: 49px;
 }
