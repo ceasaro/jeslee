@@ -265,7 +265,11 @@ table.lfs-default {
   text-decoration: none;
   &.inactive {
     border: none;
-    background-color: #696969;
+    background-color: #A38FA7;
+    .purple-banner-content {
+      width: 100%;
+    }
+
   }
   &:hover {
     .purple-banner-header {
