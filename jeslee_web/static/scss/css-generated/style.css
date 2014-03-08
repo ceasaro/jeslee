@@ -380,12 +380,44 @@ table.definition-list tr td.definition-key {
   font-weight: bold;
 }
 
-/* line 349, ../style.scss */
+/* line 353, ../style.scss */
+dl dd {
+  padding-left: 20px;
+}
+
+/* line 357, ../style.scss */
+em {
+  font-style: italic;
+}
+/* line 359, ../style.scss */
+em a {
+  font-style: italic;
+}
+
+/* line 364, ../style.scss */
+sup a {
+  text-decoration: none;
+}
+
+/* line 368, ../style.scss */
+.footnotes {
+  margin-top: 40px;
+}
+/* line 370, ../style.scss */
+.footnotes .footnote {
+  margin-top: 10px;
+}
+/* line 374, ../style.scss */
+.footnotes .footnote a {
+  font-size: 10pt;
+}
+
+/* line 379, ../style.scss */
 .full-out-wrapper {
   display: table;
   width: 1000%;
 }
-/* line 352, ../style.scss */
+/* line 382, ../style.scss */
 .full-out-wrapper .full-out-right {
   background-color: #390e41;
   display: table-cell;
@@ -397,27 +429,27 @@ table.definition-list tr td.definition-key {
 /***********************
  * utility
  **********************/
-/* line 364, ../style.scss */
+/* line 394, ../style.scss */
 a.disabled {
   cursor: default !important;
   color: #000 !important;
   text-decoration: line-through !important;
 }
 
-/* line 370, ../style.scss */
+/* line 400, ../style.scss */
 .prevent-collapsing {
   height: 0;
   overflow: hidden;
   width: 0;
 }
 
-/* line 376, ../style.scss */
+/* line 406, ../style.scss */
 .todo {
   background-color: #ffff00;
   border: 5px solid #ff00ff;
 }
 
-/* line 381, ../style.scss */
+/* line 411, ../style.scss */
 .page-uc-message {
   color: #390e41;
   font-size: 18pt;

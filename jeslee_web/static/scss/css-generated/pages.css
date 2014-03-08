@@ -141,3 +141,11 @@
 #sales-points .shopping-bags-row img {
   margin-right: 49px;
 }
+
+/***********************
+* voorwaarden
+**********************/
+/* line 148, ../pages.scss */
+#conditions-page .list-definition {
+  width: 100px;
+}

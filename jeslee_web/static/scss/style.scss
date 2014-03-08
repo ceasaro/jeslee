@@ -345,7 +345,37 @@ table.definition-list {
     }
   }
 }
-
+dl {
+  dt {
+    dfn {
+    }
+  }
+  dd {
+    padding-left: 20px;
+  }
+}
+em {
+  font-style: italic;
+  a {
+    font-style: italic;
+  }
+}
+sup {
+  a {
+    text-decoration: none;
+  }
+}
+.footnotes {
+  margin-top:40px;
+  .footnote {
+    margin-top:10px;
+    sup {
+    }
+    a {
+      font-size: 10pt;
+    }
+  }
+}
 .full-out-wrapper {
   display: table;
   width: 1000%;
