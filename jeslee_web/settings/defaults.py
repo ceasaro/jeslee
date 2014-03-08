@@ -48,7 +48,7 @@ TIME_ZONE = 'Europe/Amsterdam'
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
 #LANGUAGE_CODE = 'en-us'
-LANGUAGE_CODE = 'nl-NL'
+LANGUAGE_CODE = 'nl'
 #locale.setlocale(locale.LC_ALL, "nl_NL.UTF-8")
 
 DATE_FORMAT = 'j N Y'
@@ -129,7 +129,8 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
+    # removed, cause it uses the browsers default and this is mostly english and we want to use dutch.
+    # 'django.middleware.locale.LocaleMiddleware',
     'lfs.utils.middleware.RedirectFallbackMiddleware',
     "pagination.middleware.PaginationMiddleware",
 )
