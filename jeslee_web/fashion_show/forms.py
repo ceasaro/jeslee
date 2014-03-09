@@ -27,7 +27,7 @@ class FashionRegistrationForm(ModelForm):
         widgets = {
             'remarks': forms.Textarea(attrs={'rows': 4, 'cols': 15}),
         }
-        fields = ['name', 'age', 'email', 'city', 'fashion_show', 'remarks']
+        fields = ['name', 'age', 'email', 'fashion_show', 'remarks']
 
     # def clean_age(self):
     #     age = self.cleaned_data['age']

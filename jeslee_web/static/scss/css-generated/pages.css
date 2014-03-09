@@ -108,8 +108,17 @@
   font-size: 15pt;
   width: 118px;
 }
+/* line 111, ../pages.scss */
+#fashion-show-detail .fashion-show-route {
+  margin-top: 20px;
+}
+/* line 114, ../pages.scss */
+#fashion-show-detail #map_canvas {
+  width: 590px;
+  height: 400px;
+}
 
-/* line 115, ../pages.scss */
+/* line 122, ../pages.scss */
 #fashion-show-participate form label[for=id_remarks] {
   float: left;
   margin-top: 40px;
@@ -118,7 +127,7 @@
 /***********************
 * about
 **********************/
-/* line 125, ../pages.scss */
+/* line 132, ../pages.scss */
 #about-jeslee-right-column {
   margin-left: 50px;
 }
@@ -126,11 +135,11 @@
 /***********************
 * sponsors
 **********************/
-/* line 132, ../pages.scss */
+/* line 139, ../pages.scss */
 #jeslee-sponsors {
   margin-left: -10px;
 }
-/* line 134, ../pages.scss */
+/* line 141, ../pages.scss */
 #jeslee-sponsors .sponsor {
   margin-bottom: 10px;
   width: 230px;
@@ -139,11 +148,11 @@
 /***********************
 * sales points
 **********************/
-/* line 144, ../pages.scss */
+/* line 151, ../pages.scss */
 #sales-points .shopping-bags-row {
   margin: 85px 0 40px 0;
 }
-/* line 146, ../pages.scss */
+/* line 153, ../pages.scss */
 #sales-points .shopping-bags-row img {
   margin-right: 49px;
 }
@@ -151,7 +160,7 @@
 /***********************
 * voorwaarden
 **********************/
-/* line 157, ../pages.scss */
+/* line 164, ../pages.scss */
 #conditions-page .list-definition {
   width: 100px;
 }

@@ -5,6 +5,18 @@
 
 {% block title %}Modeshow in {{ fashion_show.location.name }} {% endblock %}
 
+{% block javascript_external %}
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?sensor=false">
+    </script>
+{% endblock %}
+
+{% block javascript %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'js/utils/route.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/pages/fashion-show-detail.js' %}"></script>
+{% endblock %}
+
 {% block page-title %}
     Modeshowspektakel {{ fashion_show.location.name }}, {{ fashion_show.location.city }}
 {% endblock %}
@@ -56,24 +68,34 @@
             </div>
         {% endif %}
 
-        <div class="fashion-show-route">
-            <h4>Route</h4>
+{% comment %}
+        {% if fashion_show.location.latitude and fashion_show.location.longitude %}
+            <h2>bepaal route</h2>
 
-            <form onsubmit="calcRoute(); return false;" action="#" id="routeplanner_form">
-                <div class="form-input-row">
-                    <img src="{% static 'gfx/icons/spotlight-waypoint-a.png' %}">
-                    <label for="fromAddress">Van:</label>
-                    <input value="" name="from" id="fromAddress" size="19" type="text">
-                </div>
-                <div class="form-input-row">
-                    <img src="{% static 'gfx/icons/spotlight-waypoint-b.png' %}">
-                    <span>Naar:</span>
-                    <span>{{ fashion_show.location.name }}</span>
-                    <input value="Routebeschrijving" type="submit" name="submit" class="googlebutton">
-                </div>
-            </form>
-        </div>
+            <div class="toggle-show-hide">
+                <div class="fashion-show-route">
 
+                    <form action="#" id="routeplanner_form" class="calc-route-onsubmit" data-lat-lng="{{ fashion_show.location.latitude|stringformat:"f" }},{{ fashion_show.location.longitude|stringformat:"f" }}">
+                        <div class="form-input-row">
+                            <img src="{% static 'gfx/icons/spotlight-waypoint-a.png' %}">
+                            <label for="fromAddress">Van:</label>
+                            <input value="" name="from" id="fromAddress" size="19" type="text">
+                        </div>
+                        <div class="form-input-row">
+                            <img src="{% static 'gfx/icons/spotlight-waypoint-b.png' %}">
+                            <span>Naar:</span>
+                            <span>{{ fashion_show.location.name }}</span>
+                            <input value="Routebeschrijving" type="submit" name="submit" class="googlebutton">
+                        </div>
+                    </form>
+                </div>
+                <div class="grid_8">
+                    <div id="map_canvas">&nbsp;</div>
+                </div>
+                <div id="directions" class="grid_8"></div>
+            </div>
+        {% endif %}
+{% endcomment %}
         <div>
             {% include 'pages/snippets/company-logo-snippet.html' with location=fashion_show.location %}
         </div>

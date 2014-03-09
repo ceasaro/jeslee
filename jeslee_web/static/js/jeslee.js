@@ -1,5 +1,10 @@
 var jeslee = {};
 
+jeslee.trim = function(str) {
+    return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+};
+
+
 (function() {
     if (!window.console) {
         window.console = {};

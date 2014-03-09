@@ -14,18 +14,13 @@ jeslee.route || (function ($) {
     jeslee.route = {
 
         init: function (params) {
-            if (params && params.mapOptions && !params.mapOptions.center) {
-                if (params.mapOptions.destinationLatLng) {
-                    params.mapOptions.center = params.mapOptions.destinationLatLng;
-                } else {
-                    params.mapOptions.center = JESLEE_HEADQUATERS;
-                }
-            }
+
             var defaultOptions = {
                 destinationLatLng: JESLEE_HEADQUATERS,
                 mapCssId: 'map_canvas',
                 directionsCssId: 'directions',
                 $fromAddress: $('#fromAddress'),
+                $routeTrigger: $('.calc-route-onsubmit'),
                 mapOptions: {
                     zoom: 16,
                     mapTypeId: google.maps.MapTypeId.HYBRID,
@@ -35,6 +30,21 @@ jeslee.route || (function ($) {
             };
             $.extend(true, settings, defaultOptions, params);
 
+            var destinationLatLng = settings.$routeTrigger.data('lat-lng');
+            if (destinationLatLng) {
+                var splitArr = destinationLatLng.split(',');
+                if (splitArr.length == 2) {
+                    var lat = jeslee.trim(splitArr[0]);
+                    var lng = jeslee.trim(splitArr[1]);
+                } else {
+                    console.warn("unrecognized lat lng value '"+destinationLatLng+
+                        "' expected somethinng like '53.196041, 6.873017'")
+                }
+                settings.destinationLatLng = new google.maps.LatLng(lat, lng);
+            }
+            if (settings.destinationLatLng && settings.mapOptions.center == JESLEE_HEADQUATERS) {
+                settings.mapOptions.center = settings.destinationLatLng;
+            }
             var map = new google.maps.Map(document.getElementById(settings.mapCssId), settings.mapOptions);
 
             settings.directionsDisplay = new google.maps.DirectionsRenderer();
@@ -57,7 +67,7 @@ jeslee.route || (function ($) {
                 map: map
             });
 
-            $('.calc-route-onsubmit').submit(function(event) {
+            settings.$routeTrigger.submit(function(event) {
                 event.preventDefault();
                 jeslee.route.calcRoute(settings.$fromAddress.val() + " nederland");
             });
