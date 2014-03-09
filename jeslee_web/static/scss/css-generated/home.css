@@ -1,31 +1,48 @@
 /***********************
 * home
 **********************/
-/* line 8, ../home.scss */
-#upcoming_fashion_show.purple-button .purple-button-content {
+/* line 5, ../home.scss */
+#home-page .home-page-impression {
+  margin-bottom: 20px;
+}
+/* line 12, ../home.scss */
+#home-page #upcoming_fashion_show.purple-button .purple-button-content {
   margin-left: 36px;
   width: 100%;
 }
-/* line 11, ../home.scss */
-#upcoming_fashion_show.purple-button .purple-button-content .fashion_show_start_time {
+/* line 15, ../home.scss */
+#home-page #upcoming_fashion_show.purple-button .purple-button-content .fashion_show_start_time {
   display: inline-block;
   margin-top: 11px;
   vertical-align: top;
 }
-/* line 16, ../home.scss */
-#upcoming_fashion_show.purple-button .purple-button-content .fashion_show_start_time .day {
+/* line 20, ../home.scss */
+#home-page #upcoming_fashion_show.purple-button .purple-button-content .fashion_show_start_time .day {
   font-size: 34pt;
 }
-/* line 19, ../home.scss */
-#upcoming_fashion_show.purple-button .purple-button-content .fashion_show_start_time .month {
+/* line 23, ../home.scss */
+#home-page #upcoming_fashion_show.purple-button .purple-button-content .fashion_show_start_time .month {
   font-size: 22pt;
 }
-/* line 23, ../home.scss */
-#upcoming_fashion_show.purple-button .purple-button-content .fashion_show_location {
+/* line 27, ../home.scss */
+#home-page #upcoming_fashion_show.purple-button .purple-button-content .fashion_show_location {
   border-left: 1px solid #fff;
   display: inline-block;
   height: 54px;
   margin-left: 20px;
   padding-left: 20px;
   overflow: hidden;
+}
+/* line 40, ../home.scss */
+#home-page .sponsors a {
+  display: inline-block;
+}
+/* line 42, ../home.scss */
+#home-page .sponsors a .white-plane {
+  padding: 6px;
+}
+/* line 45, ../home.scss */
+#home-page .sponsors a .company-logo {
+  height: 75px;
+  width: auto;
 }

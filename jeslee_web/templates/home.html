@@ -12,30 +12,52 @@
 {% block menu_home_class %}selected{% endblock %}
 
 {% block jeslee-content %}
-    <img src="{{ STATIC_URL }}gfx/feestelijke-kleding-voor-kinderen.jpg" title="feest kleding voor kinderen"/>
+    <div id="home-page">
+        <div class="home-page-impression">
+            <img src="{% static 'gfx/feestelijke-kleding-voor-kinderen.jpg'%}" title="feest kleding voor kinderen"/>
+        </div>
 
-    {% if upcoming_fashion_show %}
-        <a href="{% url 'fashion-show' upcoming_fashion_show.pk %}" id="upcoming_fashion_show" class="purple-button grid_6">
-            <div class="purple-button-header">Eerst volgende modeshowspektakel!</div>
-            <div class="purple-button-content">
-                <div class="fashion_show_start_time">
-                    <span class="day">
-                    {{ upcoming_fashion_show.start_time|date:"d" }}
-                    </span>
-                    <span class="month">
-                    {{ upcoming_fashion_show.start_time|date:"b" }}
-                    </span><br/>
-                    <span class="time">
-                    {{ upcoming_fashion_show.start_time|date:"G:i" }}
-                    </span>
-                </div>
-                <div class="fashion_show_location">
-                    {{ upcoming_fashion_show.location.name }}<br/>
-                    {{ upcoming_fashion_show.location.city }}
+        {% if upcoming_fashion_show %}
+            <div class="grid_6">
+                <a href="{% url 'fashion-show' upcoming_fashion_show.pk %}" id="upcoming_fashion_show" class="purple-button ">
+                    <div class="purple-button-header">Eerst volgende modeshowspektakel!</div>
+                    <div class="purple-button-content">
+                        <div class="fashion_show_start_time">
+                            <span class="day">
+                            {{ upcoming_fashion_show.start_time|date:"d" }}
+                            </span>
+                            <span class="month">
+                            {{ upcoming_fashion_show.start_time|date:"b" }}
+                            </span><br/>
+                            <span class="time">
+                            {{ upcoming_fashion_show.start_time|date:"G:i" }}
+                            </span>
+                        </div>
+                        <div class="fashion_show_location">
+                            {{ upcoming_fashion_show.location.name }}<br/>
+                            {{ upcoming_fashion_show.location.city }}
 
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="grid_6">
+                <h3>Onze shows worden mede mogelijk gemaakt door:</h3>
+                <div class="sponsors">
+                    {% include 'pages/snippets/company-logo-snippet.html' with name='WTC Expo, Leeuwarden' logo_img='gfx/logos/logo_WTC_Expo_100x15.jpg' url="http://www.wtcexpo.nl/" %}
+                    {% include 'pages/snippets/company-logo-snippet.html' with name='Bonte Wever, Assen' logo_img='gfx/logos/bontewever_100x45.png' url="http://www.debontewever.nl/" %}
+                    {% include 'pages/snippets/company-logo-snippet.html' with name='Martinikerk, Groningen' logo_img='gfx/logos/logo_martinikerk_100x61.jpg' url="http://www.martinikerk.nl/" %}
+                    {% include 'pages/snippets/company-logo-snippet.html' with name='Noorderpoort, Groningen' logo_img='gfx/logos/logo-noorderpoort_100x22.jpg' url="http://www.noorderpoort.nl/" %}
+{% comment %}
+                    <img src="{% static 'gfx/logos/logo_WTC_Expo_210x33.jpg' %}" alt="logo WTC Expo, KLeeuwarden"/>
+                    <img src="{% static 'gfx/logos/bontewever_210x128.png' %}" alt="logo bontewever, Assen"/>
+                    <img src="{% static 'gfx/logos/logo-noorderpoort_210x46.jpg' %}" alt="logo noorderpoort, Groningen"/>
+                    <img src="{% static 'gfx/logos/logo_martinikerk.jpg' %}" alt="logo martinikerk, Groningen"/>
+{% endcomment %}
                 </div>
             </div>
-        </a>
+        </div>
     {% endif %}
     {% comment %}
     <div class="product-cards-home">

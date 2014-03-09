@@ -1,35 +1,51 @@
 /***********************
 * home
 **********************/
-#upcoming_fashion_show {
-  &.purple-button {
-    .purple-button-header {
-    }
-    .purple-button-content {
-      margin-left: 36px;
-      width: 100%;
-      .fashion_show_start_time {
-        display: inline-block;
-        margin-top: 11px;
-        vertical-align: top;
-//        width: 120px;
-        .day {
-          font-size: 34pt;
+#home-page {
+  .home-page-impression {
+    margin-bottom: 20px;
+  }
+  #upcoming_fashion_show {
+    &.purple-button {
+      .purple-button-header {
+      }
+      .purple-button-content {
+        margin-left: 36px;
+        width: 100%;
+        .fashion_show_start_time {
+          display: inline-block;
+          margin-top: 11px;
+          vertical-align: top;
+  //        width: 120px;
+          .day {
+            font-size: 34pt;
+          }
+          .month {
+            font-size: 22pt
+          }
         }
-        .month {
-          font-size: 22pt
+        .fashion_show_location {
+          border-left: 1px solid #fff;
+          display: inline-block;
+          height: 54px;
+          margin-left:20px;
+          padding-left:20px;
+          overflow: hidden;
         }
       }
-      .fashion_show_location {
-        border-left: 1px solid #fff;
-        display: inline-block;
-        height: 54px;
-        margin-left:20px;
-        padding-left:20px;
-        overflow: hidden;
-      }
-    }
 
+    }
+  }
+  .sponsors {
+    a {
+      display: inline-block;
+      .white-plane {
+        padding: 6px;
+      }
+      .company-logo {
+        height: 75px;
+        width: auto;
+      }
+    }
   }
 }
-
