@@ -454,24 +454,36 @@ sup a {
 }
 
 /* line 423, ../style.scss */
+.text-wrap-right {
+  float: right;
+  margin: 0 0 20px 20px;
+}
+
+/* line 427, ../style.scss */
+.text-wrap-left {
+  float: left;
+  margin: 20px 20px 0 0;
+}
+
+/* line 432, ../style.scss */
 .footnotes {
   margin-top: 40px;
 }
-/* line 425, ../style.scss */
+/* line 434, ../style.scss */
 .footnotes .footnote {
   margin-top: 10px;
 }
-/* line 429, ../style.scss */
+/* line 438, ../style.scss */
 .footnotes .footnote a {
   font-size: 10pt;
 }
 
-/* line 435, ../style.scss */
+/* line 444, ../style.scss */
 .full-out-wrapper {
   display: table;
   width: 1000%;
 }
-/* line 438, ../style.scss */
+/* line 447, ../style.scss */
 .full-out-wrapper .full-out-right {
   background-color: #390e41;
   display: table-cell;
@@ -483,37 +495,37 @@ sup a {
 /***********************
  * utility
  **********************/
-/* line 450, ../style.scss */
+/* line 459, ../style.scss */
 a.disabled {
   cursor: default !important;
   color: #000 !important;
   text-decoration: line-through !important;
 }
 
-/* line 456, ../style.scss */
+/* line 465, ../style.scss */
 .prevent-collapsing {
   height: 0;
   overflow: hidden;
   width: 0;
 }
 
-/* line 462, ../style.scss */
+/* line 471, ../style.scss */
 .todo {
   background-color: #ffff00;
   border: 5px solid #ff00ff;
 }
 
-/* line 467, ../style.scss */
+/* line 476, ../style.scss */
 .page-uc {
   margin-top: 60px;
   text-align: center;
 }
-/* line 470, ../style.scss */
+/* line 479, ../style.scss */
 .page-uc .page-announcement {
   margin-bottom: 50px;
 }
 
-/* line 477, ../style.scss */
+/* line 486, ../style.scss */
 .page-announcement {
   color: #390e41;
   font-size: 18pt;

@@ -1,4 +1,5 @@
 {% extends 'fashion_show/fashion-show-base.html' %}
+{% load static from staticfiles %}
 
 {% block menu_modeshows_class %}selected{% endblock %}
 
@@ -17,6 +18,7 @@
             {{ fashion_show.start_time|date:"G:i" }} uur<br/>
         </div>
         <br style="clear: left;"/>
+
         <p>
             De modeshow vind plaats in {{ fashion_show.location.name }}<br/>
             Het adres is:<br/>
@@ -26,33 +28,52 @@
 
         </p>
         {% if fashion_show.ticket_order_url %}
-        <a href="{{ fashion_show.ticket_order_url }}" title="Klik hier om uw kaarten te kopen" target="_blank"
-                class="purple-button by-ticket ">
-            <div class="purple-button-left-column">
-    {#            <div class="purple-button-header">Meedoen</div>#}
-                <div class="purple-button-content">
-                    <span>Klik hier om kaarten te kopen</span>
+            <a href="{{ fashion_show.ticket_order_url }}" title="Klik hier om uw kaarten te kopen" target="_blank"
+               class="purple-button by-ticket ">
+                <div class="purple-button-left-column">
+                    {#            <div class="purple-button-header">Meedoen</div>#}
+                    <div class="purple-button-content">
+                        <span>Klik hier om kaarten te kopen</span>
+                    </div>
                 </div>
-            </div>
-            <div class="purple-button-right-column">
-                <div class="button-change">!</div>
-            </div>
-        </a>
+                <div class="purple-button-right-column">
+                    <div class="button-change">!</div>
+                </div>
+            </a>
         {% else %}
-        <div class="purple-button inactive no-tickets-for-sale">
-            <div class="purple-button-left-column">
-    {#            <div class="purple-button-header">Meedoen</div>#}
-                <div class="purple-button-content">
-                    <span>De kaart verkoop is nog niet gestart.</span>
+            <div class="purple-button inactive no-tickets-for-sale">
+                <div class="purple-button-left-column">
+                    {#            <div class="purple-button-header">Meedoen</div>#}
+                    <div class="purple-button-content">
+                        <span>De kaart verkoop is nog niet gestart.</span>
+                    </div>
                 </div>
-            </div>
-{% comment %}
+                {% comment %}
             <div class="purple-button-right-column">
                 <div class="button-change">!</div>
             </div>
 {% endcomment %}
-        </div>
+            </div>
         {% endif %}
+
+        <div class="fashion-show-route">
+            <h4>Route</h4>
+
+            <form onsubmit="calcRoute(); return false;" action="#" id="routeplanner_form">
+                <div class="form-input-row">
+                    <img src="{% static 'gfx/icons/spotlight-waypoint-a.png' %}">
+                    <label for="fromAddress">Van:</label>
+                    <input value="" name="from" id="fromAddress" size="19" type="text">
+                </div>
+                <div class="form-input-row">
+                    <img src="{% static 'gfx/icons/spotlight-waypoint-b.png' %}">
+                    <span>Naar:</span>
+                    <span>{{ fashion_show.location.name }}</span>
+                    <input value="Routebeschrijving" type="submit" name="submit" class="googlebutton">
+                </div>
+            </form>
+        </div>
+
         <div>
             {% include 'pages/snippets/company-logo-snippet.html' with location=fashion_show.location %}
         </div>

@@ -420,6 +420,15 @@ sup {
   }
 }
 
+.text-wrap-right {
+  float:right;
+  margin: 0 0 20px 20px;
+}
+.text-wrap-left {
+  float:left;
+  margin: 20px 20px 0 0;
+}
+
 .footnotes {
   margin-top: 40px;
   .footnote {

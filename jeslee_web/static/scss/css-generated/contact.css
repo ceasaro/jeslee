@@ -20,7 +20,11 @@
 #contact-page #routeplanner_form .form-input-row {
   padding: 5px 0;
 }
-/* line 25, ../contact.scss */
+/* line 23, ../contact.scss */
+#contact-page #routeplanner_form #fromAddress {
+  width: 200px;
+}
+/* line 28, ../contact.scss */
 #contact-page #map_canvas {
   height: 500px;
   width: 619px;

@@ -20,12 +20,15 @@
     .form-input-row {
       padding: 5px 0;
     }
-
+    #fromAddress {
+      width: 200px;
+    }
   }
-#map_canvas {
-  height: 500px;
-  width: 619px;
-  margin-bottom: 30px;
-}
+
+  #map_canvas {
+    height: 500px;
+    width: 619px;
+    margin-bottom: 30px;
+  }
 }
 
