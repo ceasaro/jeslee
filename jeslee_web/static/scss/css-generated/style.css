@@ -67,7 +67,13 @@ p {
   text-align: justify;
 }
 
-/* line 60, ../style.scss */
+/* line 61, ../style.scss */
+article ul {
+  list-style: disc;
+  margin-left: 40px;
+}
+
+/* line 66, ../style.scss */
 strong {
   font-weight: bold;
   font-size: 12pt;
@@ -76,77 +82,77 @@ strong {
 /***********************
  * generic classes
  **********************/
-/* line 68, ../style.scss */
+/* line 74, ../style.scss */
 table.lfs-default {
   background: #390e41;
   color: #ebdc78;
   width: 100%;
 }
-/* line 72, ../style.scss */
+/* line 78, ../style.scss */
 table.lfs-default tr {
   border-bottom: 1px solid #ebdc78;
 }
-/* line 75, ../style.scss */
+/* line 81, ../style.scss */
 table.lfs-default tr:last-child {
   border-bottom: none;
 }
-/* line 78, ../style.scss */
+/* line 84, ../style.scss */
 table.lfs-default th {
   padding: 10px;
 }
-/* line 82, ../style.scss */
+/* line 88, ../style.scss */
 table.lfs-default td {
   padding: 5px;
 }
-/* line 86, ../style.scss */
+/* line 92, ../style.scss */
 table.lfs-default td:last-child {
   border-right: none;
 }
-/* line 89, ../style.scss */
+/* line 95, ../style.scss */
 table.lfs-default a {
   color: #ebdc78;
 }
 
-/* line 94, ../style.scss */
+/* line 100, ../style.scss */
 .jeslee-form-container {
   background: #390e41;
   color: #ebdc78;
   margin-bottom: 20px;
   padding: 20px;
 }
-/* line 95, ../style.scss */
+/* line 101, ../style.scss */
 .jeslee-form-container .jeslee-form-container-header {
   font-size: 14pt;
   margin-bottom: 20px;
 }
-/* line 99, ../style.scss */
+/* line 105, ../style.scss */
 .jeslee-form-container a {
   color: #ebdc78;
 }
-/* line 108, ../style.scss */
+/* line 114, ../style.scss */
 .jeslee-form-container ul li .label {
   display: inline-block;
   height: 45px;
   width: 50%;
 }
-/* line 113, ../style.scss */
+/* line 119, ../style.scss */
 .jeslee-form-container ul li input {
   display: inline-block;
   float: right;
   width: 200px;
 }
-/* line 118, ../style.scss */
+/* line 124, ../style.scss */
 .jeslee-form-container ul li select {
   float: right;
   width: 204px;
 }
 
-/* line 127, ../style.scss */
+/* line 133, ../style.scss */
 form label {
   display: inline-block;
   width: 100px;
 }
-/* line 131, ../style.scss */
+/* line 137, ../style.scss */
 form input[type=text], form select {
   border: none;
   background-color: #a38fa7;
@@ -157,12 +163,12 @@ form input[type=text], form select {
   width: 456px;
   padding-left: 20px;
 }
-/* line 142, ../style.scss */
+/* line 148, ../style.scss */
 form select {
   font-size: 12pt;
   width: 476px;
 }
-/* line 146, ../style.scss */
+/* line 152, ../style.scss */
 form textarea {
   font-family: "Times New Roman";
   font-size: 12pt;
@@ -171,17 +177,17 @@ form textarea {
   width: 438px;
 }
 
-/* line 155, ../style.scss */
+/* line 161, ../style.scss */
 .small-text {
   font-size: 10pt;
 }
 
-/* line 159, ../style.scss */
+/* line 165, ../style.scss */
 .errorlist {
   color: #F84637;
 }
 
-/* line 163, ../style.scss */
+/* line 169, ../style.scss */
 .img-title {
   font-size: 10pt;
   font-style: italic;
@@ -190,7 +196,7 @@ form textarea {
 /***********************
  * header
  **********************/
-/* line 171, ../style.scss */
+/* line 177, ../style.scss */
 #jeslee-header {
   background: #390e41 url("../../gfx/background/header-bottom.png") no-repeat center bottom;
   height: 140px;
@@ -198,7 +204,7 @@ form textarea {
   position: relative;
   width: 100%;
 }
-/* line 178, ../style.scss */
+/* line 184, ../style.scss */
 #jeslee-header .header-left-background {
   background: url("../../gfx/background/background-top-left.png") no-repeat scroll left top transparent;
   height: 144px;
@@ -207,50 +213,50 @@ form textarea {
   top: -18px;
   left: 0;
 }
-/* line 186, ../style.scss */
+/* line 192, ../style.scss */
 #jeslee-header .header-content {
   margin: 0 auto;
 }
-/* line 188, ../style.scss */
+/* line 194, ../style.scss */
 #jeslee-header .header-content .jeslee-logo {
   float: left;
   margin-left: 20px;
 }
-/* line 193, ../style.scss */
+/* line 199, ../style.scss */
 #jeslee-header .header-content #header-menu {
   float: right;
   margin-top: 15px;
 }
-/* line 196, ../style.scss */
+/* line 202, ../style.scss */
 #jeslee-header .header-content #header-menu ul {
   float: left;
   margin-top: 26px;
 }
-/* line 199, ../style.scss */
+/* line 205, ../style.scss */
 #jeslee-header .header-content #header-menu ul li {
   display: inline;
 }
-/* line 201, ../style.scss */
+/* line 207, ../style.scss */
 #jeslee-header .header-content #header-menu ul li a {
   border-right: 1px solid #FFF;
   color: #ebdc78;
   padding: 0 10px;
   text-decoration: none;
 }
-/* line 207, ../style.scss */
+/* line 213, ../style.scss */
 #jeslee-header .header-content #header-menu ul li a:hover {
   text-decoration: underline;
 }
-/* line 211, ../style.scss */
+/* line 217, ../style.scss */
 #jeslee-header .header-content #header-menu ul li:last-child {
   border-right: none;
 }
-/* line 215, ../style.scss */
+/* line 221, ../style.scss */
 #jeslee-header .header-content #header-menu a.link-shopping-bag {
   height: 59px;
   width: 36px;
 }
-/* line 221, ../style.scss */
+/* line 227, ../style.scss */
 #jeslee-header #main-site-menu {
   background-color: #ebe7ec;
   bottom: 1px;
@@ -258,29 +264,29 @@ form textarea {
   position: absolute;
   width: 100%;
 }
-/* line 228, ../style.scss */
+/* line 234, ../style.scss */
 #jeslee-header #main-site-menu ul {
   margin: 10px auto 0 auto;
 }
-/* line 230, ../style.scss */
+/* line 236, ../style.scss */
 #jeslee-header #main-site-menu ul li {
   display: inline;
 }
-/* line 233, ../style.scss */
+/* line 239, ../style.scss */
 #jeslee-header #main-site-menu ul li a {
   padding: 11px 20px;
   text-decoration: none;
 }
-/* line 237, ../style.scss */
+/* line 243, ../style.scss */
 #jeslee-header #main-site-menu ul li a:hover, #jeslee-header #main-site-menu ul li a.selected {
   background-color: #390e41;
   color: #ebdc78;
 }
-/* line 244, ../style.scss */
+/* line 250, ../style.scss */
 #jeslee-header #main-site-menu ul li:last-child {
   border-right: none;
 }
-/* line 249, ../style.scss */
+/* line 255, ../style.scss */
 #jeslee-header .header-right-background {
   background: url("../../gfx/background/background-top-right.png") no-repeat scroll right top transparent;
   height: 144px;
@@ -293,7 +299,7 @@ form textarea {
 /***********************
  * body
  **********************/
-/* line 262, ../style.scss */
+/* line 268, ../style.scss */
 #jeslee-body {
   margin: 0 auto;
   min-height: 400px;
@@ -302,13 +308,13 @@ form textarea {
 /***********************
  * footer
  **********************/
-/* line 270, ../style.scss */
+/* line 276, ../style.scss */
 #jeslee-footer {
   margin-top: 20px;
   min-height: 150px;
   widows: 100%;
 }
-/* line 274, ../style.scss */
+/* line 280, ../style.scss */
 #jeslee-footer hr {
   background-color: #390e41;
   opacity: 0.4;
@@ -317,12 +323,12 @@ form textarea {
   border-bottom: 1px solid #390e41;
   padding-top: 10px;
 }
-/* line 282, ../style.scss */
+/* line 288, ../style.scss */
 #jeslee-footer #footer-menu ul {
   color: #000;
   margin: 10px 10px 0 10px;
 }
-/* line 285, ../style.scss */
+/* line 291, ../style.scss */
 #jeslee-footer #footer-menu ul li {
   display: inline;
   padding: 0 20px;
@@ -331,7 +337,7 @@ form textarea {
 /***********************
  * banners and planes
  **********************/
-/* line 297, ../style.scss */
+/* line 303, ../style.scss */
 input[type=submit].purple-button {
   color: #ebdc78;
   font-size: 16pt;
@@ -340,12 +346,12 @@ input[type=submit].purple-button {
   margin-right: 40px;
   margin-top: 20px;
 }
-/* line 304, ../style.scss */
+/* line 310, ../style.scss */
 input[type=submit].purple-button:hover {
   color: #ad9d30;
 }
 
-/* line 309, ../style.scss */
+/* line 315, ../style.scss */
 .purple-button {
   background-color: #64124d;
   border: 6px solid #ad9d30;
@@ -354,35 +360,35 @@ input[type=submit].purple-button:hover {
   padding: 20px;
   text-decoration: none;
 }
-/* line 316, ../style.scss */
+/* line 322, ../style.scss */
 .purple-button.inactive {
   border: none;
   background-color: #A38FA7;
 }
-/* line 319, ../style.scss */
+/* line 325, ../style.scss */
 .purple-button.inactive .purple-button-content {
   width: 100%;
 }
-/* line 325, ../style.scss */
+/* line 331, ../style.scss */
 .purple-button:hover .purple-button-header {
   color: #ad9d30;
 }
-/* line 332, ../style.scss */
+/* line 338, ../style.scss */
 .purple-button:hover .button-change {
   font-size: 90pt;
 }
-/* line 336, ../style.scss */
+/* line 342, ../style.scss */
 .purple-button .purple-button-left-column {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 340, ../style.scss */
+/* line 346, ../style.scss */
 .purple-button .purple-button-right-column {
   display: table-cell;
   text-align: center;
   vertical-align: middle;
 }
-/* line 345, ../style.scss */
+/* line 351, ../style.scss */
 .purple-button .button-change {
   color: #ad9d30;
   float: right;
@@ -390,7 +396,7 @@ input[type=submit].purple-button:hover {
   font-weight: bold;
   width: 90px;
 }
-/* line 352, ../style.scss */
+/* line 358, ../style.scss */
 .purple-button .purple-button-header {
   color: #ebdc78;
   font-size: 18pt;
@@ -399,21 +405,21 @@ input[type=submit].purple-button:hover {
   text-align: center;
   width: 100%;
 }
-/* line 360, ../style.scss */
+/* line 366, ../style.scss */
 .purple-button .purple-button-content {
   color: #fff;
   font-size: 15pt;
   width: 205px;
 }
 
-/* line 367, ../style.scss */
+/* line 373, ../style.scss */
 .white-plane {
   background-color: #fff;
   display: block;
   padding: 10px;
 }
 
-/* line 374, ../style.scss */
+/* line 380, ../style.scss */
 .company-logo {
   display: table-cell;
   height: 128px;
@@ -425,65 +431,65 @@ input[type=submit].purple-button:hover {
 /***********************
  * layouts
  **********************/
-/* line 387, ../style.scss */
+/* line 393, ../style.scss */
 table.definition-list tr td {
   padding: 5px;
 }
-/* line 390, ../style.scss */
+/* line 396, ../style.scss */
 table.definition-list tr td.definition-key {
   font-weight: bold;
 }
 
-/* line 405, ../style.scss */
+/* line 411, ../style.scss */
 dl dd {
   padding-left: 20px;
 }
 
-/* line 410, ../style.scss */
+/* line 416, ../style.scss */
 em {
   font-style: italic;
 }
-/* line 412, ../style.scss */
+/* line 418, ../style.scss */
 em a {
   font-style: italic;
 }
 
-/* line 418, ../style.scss */
+/* line 424, ../style.scss */
 sup a {
   text-decoration: none;
 }
 
-/* line 423, ../style.scss */
+/* line 429, ../style.scss */
 .text-wrap-right {
   float: right;
   margin: 0 0 20px 20px;
 }
 
-/* line 427, ../style.scss */
+/* line 433, ../style.scss */
 .text-wrap-left {
   float: left;
   margin: 20px 20px 0 0;
 }
 
-/* line 432, ../style.scss */
+/* line 438, ../style.scss */
 .footnotes {
   margin-top: 40px;
 }
-/* line 434, ../style.scss */
+/* line 440, ../style.scss */
 .footnotes .footnote {
   margin-top: 10px;
 }
-/* line 438, ../style.scss */
+/* line 444, ../style.scss */
 .footnotes .footnote a {
   font-size: 10pt;
 }
 
-/* line 444, ../style.scss */
+/* line 450, ../style.scss */
 .full-out-wrapper {
   display: table;
   width: 1000%;
 }
-/* line 447, ../style.scss */
+/* line 453, ../style.scss */
 .full-out-wrapper .full-out-right {
   background-color: #390e41;
   display: table-cell;
@@ -495,37 +501,37 @@ sup a {
 /***********************
  * utility
  **********************/
-/* line 459, ../style.scss */
+/* line 465, ../style.scss */
 a.disabled {
   cursor: default !important;
   color: #000 !important;
   text-decoration: line-through !important;
 }
 
-/* line 465, ../style.scss */
+/* line 471, ../style.scss */
 .prevent-collapsing {
   height: 0;
   overflow: hidden;
   width: 0;
 }
 
-/* line 471, ../style.scss */
+/* line 477, ../style.scss */
 .todo {
   background-color: #ffff00;
   border: 5px solid #ff00ff;
 }
 
-/* line 476, ../style.scss */
+/* line 482, ../style.scss */
 .page-uc {
   margin-top: 60px;
   text-align: center;
 }
-/* line 479, ../style.scss */
+/* line 485, ../style.scss */
 .page-uc .page-announcement {
   margin-bottom: 50px;
 }
 
-/* line 486, ../style.scss */
+/* line 492, ../style.scss */
 .page-announcement {
   color: #390e41;
   font-size: 18pt;
