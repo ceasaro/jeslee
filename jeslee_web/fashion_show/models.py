@@ -1,4 +1,5 @@
 from datetime import date
+from django.conf import settings
 from django.db.models import Manager
 from django.utils import formats
 from django.utils.translation import ugettext as _
@@ -10,7 +11,7 @@ from jeslee_web.base.models import Registration, Address, ClothingSize, Garment,
 
 
 class FashionRegistration(Registration):
-    age = models.CharField(_(u'age'), null=True, max_length=5)
+    age = models.CharField(_(u'age'), null=True, max_length=5, error_messages={'required': 'Enter a valid phone number'})
     fashion_show = models.CharField(u'fashion show', max_length=100)
 
     def __str__(self):
@@ -76,8 +77,8 @@ class FashionShowManager(Manager):
 
 class FashionShow(TimeStampedModel):
     location = models.ForeignKey(FashionLocation, related_name=u'fashion_show')
-    start_time = models.DateTimeField(_(u'start_time'), blank=True, null=True)
-    end_time = models.DateTimeField(_(u'end_time'), blank=True, null=True)
+    start_time = models.DateTimeField(_(u'start time'), blank=True, null=True)
+    end_time = models.DateTimeField(_(u'end time'), blank=True, null=True)
     ticket_order_url = models.URLField(_(u'ticket order url'), blank=True, null=True)
     models = models.ManyToManyField(FashionModel, related_name=u'fashion_shows', blank=True, null=True)
 
@@ -93,6 +94,12 @@ class FashionShow(TimeStampedModel):
     @property
     def start_time_f(self):
         return formats.time_format(self.start_time, "TIME_FORMAT")
+
+    def __unicode__(self):
+        start_time_strftime = self.start_time.strftime(settings.STRING_TO_DATE_FORMAT).lstrip('0')
+        return "{start_time}, {location}, {place}".format(start_time=start_time_strftime,
+                                                          location=self.location.name,
+                                                          place=self.location.city)
 
     def __str__(self):
         return self.__repr__()

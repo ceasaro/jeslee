@@ -1,4 +1,5 @@
 {% extends 'pages/base-page-text.html' %}
+{% load static from staticfiles %}
 
 {% block title %}Webwinkel {% endblock %}
 
@@ -8,9 +9,11 @@
 {% block menu_girls_class %}selected{% endblock %}
 {% block menu_boys_class %}selected{% endblock %}
 
+{% block page-grid-class %}{% endblock %}
 {% block page-content %}
     <div class="page-uc-message">
         Medio april is onze webwinkel actief
+        <img src="{% static 'gfx/photos/nothing_to_see-350x326.jpg' %}"/>
     </div>
 {% comment %}
     <p>

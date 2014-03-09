@@ -2,26 +2,26 @@
 * home
 **********************/
 /* line 8, ../home.scss */
-#upcoming_fashion_show.purple-banner .purple-banner-content {
+#upcoming_fashion_show.purple-button .purple-button-content {
   margin-left: 36px;
   width: 100%;
 }
 /* line 11, ../home.scss */
-#upcoming_fashion_show.purple-banner .purple-banner-content .fashion_show_start_time {
+#upcoming_fashion_show.purple-button .purple-button-content .fashion_show_start_time {
   display: inline-block;
   margin-top: 11px;
   vertical-align: top;
 }
 /* line 16, ../home.scss */
-#upcoming_fashion_show.purple-banner .purple-banner-content .fashion_show_start_time .day {
+#upcoming_fashion_show.purple-button .purple-button-content .fashion_show_start_time .day {
   font-size: 34pt;
 }
 /* line 19, ../home.scss */
-#upcoming_fashion_show.purple-banner .purple-banner-content .fashion_show_start_time .month {
+#upcoming_fashion_show.purple-button .purple-button-content .fashion_show_start_time .month {
   font-size: 22pt;
 }
 /* line 23, ../home.scss */
-#upcoming_fashion_show.purple-banner .purple-banner-content .fashion_show_location {
+#upcoming_fashion_show.purple-button .purple-button-content .fashion_show_location {
   border-left: 1px solid #fff;
   display: inline-block;
   height: 54px;

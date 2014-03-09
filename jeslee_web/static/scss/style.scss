@@ -123,6 +123,27 @@ table.lfs-default {
   }
 }
 
+form {
+  label {
+    display: inline-block;
+    width:100px;
+  }
+  input[type=text], select {
+    border: none;
+    background-color: $transparent-purple;
+//    color: ;
+    font-size: 14pt;
+    height: 30px;
+    margin-bottom: 20px;
+    width: 450px;
+    padding-left: 20px;
+  }
+  select {
+    font-size: 12pt;
+    width:470px;
+  }
+}
+
 .errorlist {
   color: #F84637;
 }
@@ -260,7 +281,16 @@ table.lfs-default {
 /***********************
  * banners and planes
  **********************/
-.purple-banner {
+input[type=submit].purple-button {
+  color: #ebdc78;
+  font-size: 16pt;
+  line-height: 11pt;
+  float: right;
+  &:hover {
+    color:$action-color-border;
+  }
+}
+.purple-button {
   background-color: $action-color;
   border: 6px solid $action-color-border;
   display: table;
@@ -270,28 +300,28 @@ table.lfs-default {
   &.inactive {
     border: none;
     background-color: #A38FA7;
-    .purple-banner-content {
+    .purple-button-content {
       width: 100%;
     }
 
   }
   &:hover {
-    .purple-banner-header {
+    .purple-button-header {
       color: $action-color-border;
 //      font-size: 20pt;
     }
-    .purple-banner-content {
+    .purple-button-content {
 //      color: $light-text-color;
     }
     .button-change {
       font-size: 90pt;
     }
   }
-  .purple-banner-left-column {
+  .purple-button-left-column {
     display: table-cell;
     vertical-align: middle;
   }
-  .purple-banner-right-column {
+  .purple-button-right-column {
     display: table-cell;
     text-align: center;
     vertical-align: middle;
@@ -303,7 +333,7 @@ table.lfs-default {
     font-weight: bold;
     width: 90px;
   }
-  .purple-banner-header {
+  .purple-button-header {
     color: $light-text-color;
     font-size: 18pt;
     line-height: 22pt;
@@ -311,7 +341,7 @@ table.lfs-default {
     text-align: center;
     width: 100%;
   }
-  .purple-banner-content {
+  .purple-button-content {
     color: #fff;
     font-size: 15pt;
     width: 205px;

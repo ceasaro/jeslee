@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-15 14:20-0600\n"
+"POT-Creation-Date: 2014-03-08 18:24+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,53 +17,109 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: jeslee_web/fashion_show/models.py:13
-msgid "name"
-msgstr "naam"
-
-#: jeslee_web/fashion_show/models.py:14
-msgid "birth date"
-msgstr "Geboortedatum"
-
-#: jeslee_web/fashion_show/models.py:15
-msgid "email"
-msgstr "e-mail"
-
-#: jeslee_web/fashion_show/models.py:16
+#: jeslee_web/base/models.py:15
 msgid "street"
 msgstr "straat"
 
-#: jeslee_web/fashion_show/models.py:17
+#: jeslee_web/base/models.py:16
 msgid "street number"
 msgstr "huisnummer"
 
-#: jeslee_web/fashion_show/models.py:18
+#: jeslee_web/base/models.py:17
 msgid "zip"
 msgstr "postcode"
 
-#: jeslee_web/fashion_show/models.py:19
+#: jeslee_web/base/models.py:18
 msgid "city"
 msgstr "plaats"
 
-#: jeslee_web/fashion_show/models.py:20
-#, fuzzy
+#: jeslee_web/base/models.py:19
 msgid "country"
 msgstr "land"
+
+#: jeslee_web/base/models.py:30
+msgid "latitude"
+msgstr ""
+
+#: jeslee_web/base/models.py:31
+msgid "longitude"
+msgstr ""
+
+#: jeslee_web/base/models.py:42 jeslee_web/base/models.py:61
+#: jeslee_web/fashion_show/models.py:36 jeslee_web/fashion_show/models.py:48
+msgid "name"
+msgstr "naam"
+
+#: jeslee_web/base/models.py:43
+msgid "birth date"
+msgstr "Geboortedatum"
+
+#: jeslee_web/base/models.py:44
+msgid "email"
+msgstr "e-mail"
+
+#: jeslee_web/fashion_show/forms.py:11
+msgid "Choose a fashion show"
+msgstr "Kies een modeshow"
+
+#: jeslee_web/fashion_show/forms.py:11
+msgid "Fashion show"
+msgstr "Modeshow"
+
+#: jeslee_web/fashion_show/forms.py:12
+msgid "We need to know which show you like to participate"
+msgstr "We willen graag weten aan welke modeshow(s) je mee zou willen doen."
+
+#: jeslee_web/fashion_show/forms.py:13
+msgid "We would like to have your name"
+msgstr "We willen graag je naam weten"
+
+#: jeslee_web/fashion_show/forms.py:14
+msgid "We need your age to know which model can fit"
+msgstr "We willen graag je leeftijd weten, om kijken in welk model past."
+
+#: jeslee_web/fashion_show/forms.py:15
+msgid "Your age should be a number between "
+msgstr ""
+
+#: jeslee_web/fashion_show/forms.py:16
+msgid "We need your email to get back to you :-)"
+msgstr "We zijn je e-mail nodig om weer met je in contact te komen."
+
+#: jeslee_web/fashion_show/models.py:14
+msgid "age"
+msgstr "leeftijd"
+
+#: jeslee_web/fashion_show/models.py:50
+msgid "website"
+msgstr ""
+
+#: jeslee_web/fashion_show/models.py:80
+msgid "start time"
+msgstr "start tijdstip"
+
+#: jeslee_web/fashion_show/models.py:81
+msgid "end time"
+msgstr "eind tijdstip"
+
+#: jeslee_web/fashion_show/models.py:82
+msgid "ticket order url"
+msgstr "Url voro het kopen van een Toegangskaartje"
 
 #: jeslee_web/lfs_patch/templatetags/lfs_patch_tags.py:61
 #, python-format
 msgid "%s tag needs no argument"
 msgstr ""
 
-#: jeslee_web/settings/defaults.py:274 jeslee_web/settings/defaults.py:279
+#: jeslee_web/settings/defaults.py:280 jeslee_web/settings/defaults.py:285
 msgid "Price includes tax"
 msgstr "prijs inclusief btw"
 
-#: jeslee_web/settings/defaults.py:275 jeslee_web/settings/defaults.py:280
+#: jeslee_web/settings/defaults.py:281 jeslee_web/settings/defaults.py:286
 msgid "Price excludes tax"
 msgstr "prijs exclusief btw"
 
-#: jeslee_web/settings/defaults.py:293
+#: jeslee_web/settings/defaults.py:299
 msgid "Clothing Criterion"
 msgstr "kleding criteria"
 
