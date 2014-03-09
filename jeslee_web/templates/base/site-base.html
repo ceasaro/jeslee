@@ -26,7 +26,51 @@
         </div>
     </div>
     <div id="main-site-menu" >
-        {% include 'base/menu-snippet.html' %}
+        <ul class="container_12">
+            <li><a href="{% url 'home' %}"
+                   class="{% block menu_home_class %}{% endblock %}">Home</a>
+            </li>
+            <li><a href="{% url 'about' %}"
+                   class="{% block menu_about_class %}{% endblock %}">Over Jeslee</a>
+            </li>
+{% comment %}
+            <li><a href="{% url 'winkel' %}"
+                   class="{% block menu_shop_class %}{% endblock %}">Winkel</a>
+            </li>
+{% endcomment %}
+            <li><a href="{% url 'winkel' %}"
+                   class="{% block menu_girls_class %}{% endblock %}">Meisjes</a>
+            </li>
+            <li><a href="{% url 'winkel' %}"
+                   class="{% block menu_boys_class %}{% endblock %}">Jongens</a>
+            </li>
+{% comment %}
+            <li><a href="/shop/collectie-meisjes"
+                   class="{% block menu_girls_class %}{% endblock %}">Meisjes</a>
+            </li>
+            <li><a href="/shop/collectie-jongens"
+                   class="{% block menu_boys_class %}{% endblock %}">Jongens</a>
+            </li>
+{% endcomment %}
+            <li><a href="{% url 'fashion-shows' %}"
+                   class="{% block menu_modeshows_class %}{% endblock %}">Modeshows</a>
+            </li>
+{% comment %}
+    <li><a href="{% url 'fotogalerij' %}"
+           class="{% block menu_galery_class %}{% endblock %}">Fotogalerij</a></li>
+{% endcomment %}
+{% comment %}
+            <li><a href="{% url 'nieuws' %}"
+                   class="{% block menu_news_class %}{% endblock %}">Nieuws</a>
+            </li>
+{% endcomment %}
+            <li><a href="{% url 'verkooppunten' %}"
+                   class="{% block menu_retail_class %}{% endblock %}">Verkooppunten</a>
+            </li>
+            <li><a href="{% url 'contact' %}"
+                   class="{% block menu_contact_class %}{% endblock %}">Contact</a>
+            </li>
+        </ul>
     </div>
     <div class="header-right-background"></div>
 </section>
