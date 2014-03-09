@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block page-content %}
-    <div>
+    <div id="fashion-show-participate">
         <article>
 
             <p>
@@ -26,15 +26,15 @@
                 einde van het spektakel worden de kinderen door hun ouders opgehaald.
             </p>
 
-            <div class="announcement">
+            <div class="page-announcement">
                 &ldquo;Meedoen aan deze modeshows geeft kinderen zelfvertrouwen
                 en is een enorm leuke en bijzondere ervaring.&rdquo;
             </div>
 
             <p>
-                Meedoen aan een van onze modeshowspektakels kost €&nbsp;20,- Dit is voor het eten, drinken en
-                begeleiding van de kinderen voor (en tijdens) de show en is inclusief een entree ticket voor een van
-                de ouders / begeleiders. Tevens ontvangt u een professionele herinneringsfoto van uw kind.
+                Meedoen aan een van onze modeshowspektakels kost €&nbsp;20,-, hiervoor krijgen de kinderen een lunch
+                en is inclusief een entree ticket voor een van de ouders / begeleiders. Tevens ontvangt u een
+                professionele herinneringsfoto van uw kind.
                 Als uw kind mee wil doen aan een modeshowspektakel van Jeslee in uw buurt dan kunt u onderstaand
                 formulier invullen of een email sturen naar
                 <a href="mailto:info@jeslee.com?subject=Opgave modeshow">info@jeslee.com</a>.
@@ -43,7 +43,7 @@
 
             <p>
                 Daarnaast zijn we ook op zoek naar meisjes van 15 tot 20 jaar voor de opening van onze evenementen.
-                Naast je opleiding is het heel leuk om af en toe als professioneel model te werken. Als je je bij ons
+                Naast je opleiding is het ook leuk om af en toe als professioneel model te werken. Als je je bij ons
                 aanmeld word je door onze catwalk trainer klaar gestoomd voor de catwalk. Na deze training loop je de
                 modeshow en begeleid je de jongste modellen.
             </p>
@@ -57,17 +57,17 @@
 {% endcomment %}
 
         </article>
-    </div>
 
-    <div class="prevent-collapsing">.</div>
+        <div class="prevent-collapsing">.</div>
 
-    <div id="fashion-registration-form" >
-        <form action=".#fashion-registration-form" method="post">{% csrf_token %}
-{#            {{ form.as_p }}#}
-            {% include 'includes/forms/form-snippet.html' %}
-            <input type="submit" value="Aanmelden" class="purple-button"/>
-        </form>
+        <div id="fashion-registration-form" >
+            <form action=".#fashion-registration-form" method="post">{% csrf_token %}
+    {#            {{ form.as_p }}#}
+                {% include 'includes/forms/form-snippet.html' %}
+                <input type="submit" value="Aanmelden" class="purple-button"/>
+            </form>
 
+        </div>
     </div>
 
 {% endblock page-content %}

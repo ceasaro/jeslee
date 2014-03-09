@@ -42,7 +42,7 @@ class FashionRegistrationUpdateView(UpdateView):
     model = FashionRegistration
 
 
-class FashionShowsView(FashionRegistrationCreateView, FashionShowsMixin):
+class FashionShowsView(FashionRegistrationCreateView, FashionShowsMixin, UpcomingFashionShowMixin):
     pass
 
 

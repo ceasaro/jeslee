@@ -150,24 +150,38 @@ form label {
 form input[type=text], form select {
   border: none;
   background-color: #a38fa7;
-  font-size: 14pt;
+  font-family: "Times New Roman";
+  font-size: 12pt;
   height: 30px;
   margin-bottom: 20px;
-  width: 450px;
+  width: 456px;
   padding-left: 20px;
 }
-/* line 141, ../style.scss */
+/* line 142, ../style.scss */
 form select {
   font-size: 12pt;
-  width: 470px;
+  width: 476px;
+}
+/* line 146, ../style.scss */
+form textarea {
+  font-family: "Times New Roman";
+  font-size: 12pt;
+  font-weight: normal;
+  padding: 10px 20px;
+  width: 438px;
 }
 
-/* line 147, ../style.scss */
+/* line 155, ../style.scss */
+.small-text {
+  font-size: 10pt;
+}
+
+/* line 159, ../style.scss */
 .errorlist {
   color: #F84637;
 }
 
-/* line 151, ../style.scss */
+/* line 163, ../style.scss */
 .img-title {
   font-size: 10pt;
   font-style: italic;
@@ -176,7 +190,7 @@ form select {
 /***********************
  * header
  **********************/
-/* line 158, ../style.scss */
+/* line 171, ../style.scss */
 #jeslee-header {
   background: #390e41 url("../../gfx/background/header-bottom.png") no-repeat center bottom;
   height: 140px;
@@ -184,7 +198,7 @@ form select {
   position: relative;
   width: 100%;
 }
-/* line 165, ../style.scss */
+/* line 178, ../style.scss */
 #jeslee-header .header-left-background {
   background: url("../../gfx/background/background-top-left.png") no-repeat scroll left top transparent;
   height: 144px;
@@ -193,50 +207,50 @@ form select {
   top: -18px;
   left: 0;
 }
-/* line 173, ../style.scss */
+/* line 186, ../style.scss */
 #jeslee-header .header-content {
   margin: 0 auto;
 }
-/* line 175, ../style.scss */
+/* line 188, ../style.scss */
 #jeslee-header .header-content .jeslee-logo {
   float: left;
   margin-left: 20px;
 }
-/* line 180, ../style.scss */
+/* line 193, ../style.scss */
 #jeslee-header .header-content #header-menu {
   float: right;
   margin-top: 15px;
 }
-/* line 183, ../style.scss */
+/* line 196, ../style.scss */
 #jeslee-header .header-content #header-menu ul {
   float: left;
   margin-top: 26px;
 }
-/* line 186, ../style.scss */
+/* line 199, ../style.scss */
 #jeslee-header .header-content #header-menu ul li {
   display: inline;
 }
-/* line 188, ../style.scss */
+/* line 201, ../style.scss */
 #jeslee-header .header-content #header-menu ul li a {
   border-right: 1px solid #FFF;
   color: #ebdc78;
   padding: 0 10px;
   text-decoration: none;
 }
-/* line 194, ../style.scss */
+/* line 207, ../style.scss */
 #jeslee-header .header-content #header-menu ul li a:hover {
   text-decoration: underline;
 }
-/* line 198, ../style.scss */
+/* line 211, ../style.scss */
 #jeslee-header .header-content #header-menu ul li:last-child {
   border-right: none;
 }
-/* line 202, ../style.scss */
+/* line 215, ../style.scss */
 #jeslee-header .header-content #header-menu a.link-shopping-bag {
   height: 59px;
   width: 36px;
 }
-/* line 208, ../style.scss */
+/* line 221, ../style.scss */
 #jeslee-header #main-site-menu {
   background-color: #ebe7ec;
   bottom: 1px;
@@ -244,29 +258,29 @@ form select {
   position: absolute;
   width: 100%;
 }
-/* line 215, ../style.scss */
+/* line 228, ../style.scss */
 #jeslee-header #main-site-menu ul {
   margin: 10px auto 0 auto;
 }
-/* line 217, ../style.scss */
+/* line 230, ../style.scss */
 #jeslee-header #main-site-menu ul li {
   display: inline;
 }
-/* line 220, ../style.scss */
+/* line 233, ../style.scss */
 #jeslee-header #main-site-menu ul li a {
   padding: 11px 20px;
   text-decoration: none;
 }
-/* line 224, ../style.scss */
+/* line 237, ../style.scss */
 #jeslee-header #main-site-menu ul li a:hover, #jeslee-header #main-site-menu ul li a.selected {
   background-color: #390e41;
   color: #ebdc78;
 }
-/* line 231, ../style.scss */
+/* line 244, ../style.scss */
 #jeslee-header #main-site-menu ul li:last-child {
   border-right: none;
 }
-/* line 236, ../style.scss */
+/* line 249, ../style.scss */
 #jeslee-header .header-right-background {
   background: url("../../gfx/background/background-top-right.png") no-repeat scroll right top transparent;
   height: 144px;
@@ -279,7 +293,7 @@ form select {
 /***********************
  * body
  **********************/
-/* line 249, ../style.scss */
+/* line 262, ../style.scss */
 #jeslee-body {
   margin: 0 auto;
   min-height: 400px;
@@ -288,13 +302,13 @@ form select {
 /***********************
  * footer
  **********************/
-/* line 257, ../style.scss */
+/* line 270, ../style.scss */
 #jeslee-footer {
   margin-top: 20px;
   min-height: 150px;
   widows: 100%;
 }
-/* line 261, ../style.scss */
+/* line 274, ../style.scss */
 #jeslee-footer hr {
   background-color: #390e41;
   opacity: 0.4;
@@ -303,12 +317,12 @@ form select {
   border-bottom: 1px solid #390e41;
   padding-top: 10px;
 }
-/* line 269, ../style.scss */
+/* line 282, ../style.scss */
 #jeslee-footer #footer-menu ul {
   color: #000;
   margin: 10px 10px 0 10px;
 }
-/* line 272, ../style.scss */
+/* line 285, ../style.scss */
 #jeslee-footer #footer-menu ul li {
   display: inline;
   padding: 0 20px;
@@ -317,19 +331,21 @@ form select {
 /***********************
  * banners and planes
  **********************/
-/* line 284, ../style.scss */
+/* line 297, ../style.scss */
 input[type=submit].purple-button {
   color: #ebdc78;
   font-size: 16pt;
   line-height: 11pt;
   float: right;
+  margin-right: 40px;
+  margin-top: 20px;
 }
-/* line 289, ../style.scss */
+/* line 304, ../style.scss */
 input[type=submit].purple-button:hover {
   color: #ad9d30;
 }
 
-/* line 293, ../style.scss */
+/* line 309, ../style.scss */
 .purple-button {
   background-color: #64124d;
   border: 6px solid #ad9d30;
@@ -338,35 +354,35 @@ input[type=submit].purple-button:hover {
   padding: 20px;
   text-decoration: none;
 }
-/* line 300, ../style.scss */
+/* line 316, ../style.scss */
 .purple-button.inactive {
   border: none;
   background-color: #A38FA7;
 }
-/* line 303, ../style.scss */
+/* line 319, ../style.scss */
 .purple-button.inactive .purple-button-content {
   width: 100%;
 }
-/* line 309, ../style.scss */
+/* line 325, ../style.scss */
 .purple-button:hover .purple-button-header {
   color: #ad9d30;
 }
-/* line 316, ../style.scss */
+/* line 332, ../style.scss */
 .purple-button:hover .button-change {
   font-size: 90pt;
 }
-/* line 320, ../style.scss */
+/* line 336, ../style.scss */
 .purple-button .purple-button-left-column {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 324, ../style.scss */
+/* line 340, ../style.scss */
 .purple-button .purple-button-right-column {
   display: table-cell;
   text-align: center;
   vertical-align: middle;
 }
-/* line 329, ../style.scss */
+/* line 345, ../style.scss */
 .purple-button .button-change {
   color: #ad9d30;
   float: right;
@@ -374,7 +390,7 @@ input[type=submit].purple-button:hover {
   font-weight: bold;
   width: 90px;
 }
-/* line 336, ../style.scss */
+/* line 352, ../style.scss */
 .purple-button .purple-button-header {
   color: #ebdc78;
   font-size: 18pt;
@@ -383,21 +399,21 @@ input[type=submit].purple-button:hover {
   text-align: center;
   width: 100%;
 }
-/* line 344, ../style.scss */
+/* line 360, ../style.scss */
 .purple-button .purple-button-content {
   color: #fff;
   font-size: 15pt;
   width: 205px;
 }
 
-/* line 351, ../style.scss */
+/* line 367, ../style.scss */
 .white-plane {
   background-color: #fff;
   display: block;
   padding: 10px;
 }
 
-/* line 358, ../style.scss */
+/* line 374, ../style.scss */
 .company-logo {
   display: table-cell;
   height: 128px;
@@ -409,53 +425,53 @@ input[type=submit].purple-button:hover {
 /***********************
  * layouts
  **********************/
-/* line 370, ../style.scss */
+/* line 387, ../style.scss */
 table.definition-list tr td {
   padding: 5px;
 }
-/* line 373, ../style.scss */
+/* line 390, ../style.scss */
 table.definition-list tr td.definition-key {
   font-weight: bold;
 }
 
-/* line 387, ../style.scss */
+/* line 405, ../style.scss */
 dl dd {
   padding-left: 20px;
 }
 
-/* line 391, ../style.scss */
+/* line 410, ../style.scss */
 em {
   font-style: italic;
 }
-/* line 393, ../style.scss */
+/* line 412, ../style.scss */
 em a {
   font-style: italic;
 }
 
-/* line 398, ../style.scss */
+/* line 418, ../style.scss */
 sup a {
   text-decoration: none;
 }
 
-/* line 402, ../style.scss */
+/* line 423, ../style.scss */
 .footnotes {
   margin-top: 40px;
 }
-/* line 404, ../style.scss */
+/* line 425, ../style.scss */
 .footnotes .footnote {
   margin-top: 10px;
 }
-/* line 408, ../style.scss */
+/* line 429, ../style.scss */
 .footnotes .footnote a {
   font-size: 10pt;
 }
 
-/* line 413, ../style.scss */
+/* line 435, ../style.scss */
 .full-out-wrapper {
   display: table;
   width: 1000%;
 }
-/* line 416, ../style.scss */
+/* line 438, ../style.scss */
 .full-out-wrapper .full-out-right {
   background-color: #390e41;
   display: table-cell;
@@ -467,30 +483,41 @@ sup a {
 /***********************
  * utility
  **********************/
-/* line 428, ../style.scss */
+/* line 450, ../style.scss */
 a.disabled {
   cursor: default !important;
   color: #000 !important;
   text-decoration: line-through !important;
 }
 
-/* line 434, ../style.scss */
+/* line 456, ../style.scss */
 .prevent-collapsing {
   height: 0;
   overflow: hidden;
   width: 0;
 }
 
-/* line 440, ../style.scss */
+/* line 462, ../style.scss */
 .todo {
   background-color: #ffff00;
   border: 5px solid #ff00ff;
 }
 
-/* line 445, ../style.scss */
-.page-uc-message {
+/* line 467, ../style.scss */
+.page-uc {
+  margin-top: 60px;
+  text-align: center;
+}
+/* line 470, ../style.scss */
+.page-uc .page-announcement {
+  margin-bottom: 50px;
+}
+
+/* line 477, ../style.scss */
+.page-announcement {
   color: #390e41;
   font-size: 18pt;
-  margin-top: 200px;
+  font-style: italic;
+  line-height: 26pt;
   text-align: center;
 }

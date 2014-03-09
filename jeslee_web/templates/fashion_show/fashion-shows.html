@@ -1,5 +1,5 @@
 {% extends 'fashion_show/fashion-show-base.html' %}
-
+{% load static from staticfiles %}
 {% block menu_modeshows_class %}selected{% endblock %}
 
 {% block title %}Modeshows {% endblock %}
@@ -11,17 +11,25 @@
 {% block page-content %}
     <article>
         <p>
-            Gedurende het hele jaar houden wij een aantal modeshows in de omgeving van noord nederland. Zie onze
-            agenda hier rechts op de pagina voor de locaties en de datums waar onze modeshows plaatsvinden. Voor meer
-            informatie en voor het kopen van een toegangskaartje kun u op een evenement uit de agenda klikken.
+            Dit jaar houden wij een aantal modeshows in de omgeving van noord Nederland. Zie onze
+            agenda hier rechts voor de locaties en de datums van onze modeshows. Voor meer
+            informatie en voor het kopen van een
+            <a href="{% url 'fashion-show' upcoming_fashion_show.pk %}">toegangskaartje</a> kun je op een evenement
+            uit de agenda klikken.
+        </p>
+        <p>
+            <img src="{% static 'gfx/photos/catwalk_fashion_show.jpg' %}"
+        </p>
+        <h2>Meedoen als model?</h2>
+        <p>
+            Lijkt het je leuk om een keer als model mee te doen aan een van onze modeshows? Klik dan hieronder
+            voor meer informatie en hoe je je kunt opgeven.
         </p>
     <a href="{% url 'fashion-participate' %}" class="purple-button" id="banner-registration-fashion-show">
         <div class="purple-button-left-column">
 {#            <div class="purple-button-header">Meedoen</div>#}
             <div class="purple-button-content">
-                Wil je ook meedoen aan een van onze shows<br/>
-                Klik dan hier
-
+                Meedoen aan een van onze shows
             </div>
         </div>
         <div class="purple-button-right-column">

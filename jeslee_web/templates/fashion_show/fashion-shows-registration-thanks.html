@@ -6,8 +6,14 @@
     Bedankt voor je aanmelding!
 {% endblock %}
 
-{% block jeslee-content %}
+{% block jeslee-page-header  %}
+    Bedankt voor je aanmelding!
+{% endblock %}
+
+{% block page-content %}
     <p>
-    Bedankt dat je {{ registration.name }} hebt aangemeld voor onze modeshow in <span class="todo">TODO</span>
+        Hallo {{ registration.name }},<br/>
+        Leuk dat je mee wilt doen aan een van onze modeshows. We nemen zo snel mogelijk contact met je op hoe
+        het verder gaat.
     </p>
 {% endblock %}

@@ -32,13 +32,13 @@
 **********************/
 #fashion_show_agenda {
   background-color: $dark-background-color;
-  display:table-cell;
-  color:$background-color-site;
-  padding:20px 0 20px 30px;
+  display: table-cell;
+  color: $background-color-site;
+  padding: 20px 0 20px 30px;
   width: 300px;
 
   h3 {
-    color:$light-text-color;
+    color: $light-text-color;
     font-family: university_roman;
     font-size: 20pt;
     margin-bottom: 30px;
@@ -46,10 +46,10 @@
   }
 
   a {
-    color:$background-color-site;
+    color: $background-color-site;
     text-decoration: none;
     &:hover, &.selected {
-      color:$light-text-color;
+      color: $light-text-color;
       text-decoration: none;
     }
     &:visited {
@@ -71,7 +71,7 @@
         font-size: 24pt;
       }
       .month {
-        font-size:18pt
+        font-size: 18pt
       }
     }
     .fashion_show_location {
@@ -85,13 +85,13 @@
 
 #fashion-show-detail {
   .fashion-show-time {
-//    background-color: $dark-text-color;
-//    color:$light-text-color;
+    //    background-color: $dark-text-color;
+    //    color:$light-text-color;
     float: left;
     font-size: 12pt;
     font-weight: bold;
     line-height: px;
-    padding:5px 5px 5px 20px;
+    padding: 5px 5px 5px 20px;
     width: 150px;
   }
 
@@ -110,11 +110,20 @@
   }
 }
 
+#fashion-show-participate {
+  form {
+    label[for=id_remarks] {
+      float: left;
+      margin-top: 40px;
+    }
+  }
+}
+
 /***********************
 * about
 **********************/
 #about-jeslee-right-column {
-  margin-left:50px;
+  margin-left: 50px;
 }
 
 /***********************
@@ -133,9 +142,9 @@
 **********************/
 #sales-points {
   .shopping-bags-row {
-    margin:85px 0 40px 0;
+    margin: 85px 0 40px 0;
     img {
-      margin-right:49px;
+      margin-right: 49px;
     }
   }
 }

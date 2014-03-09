@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-08 18:24+0100\n"
+"POT-Creation-Date: 2014-03-09 12:07+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,7 +30,7 @@ msgstr "postcode"
 
 #: jeslee_web/base/models.py:18
 msgid "city"
-msgstr "plaats"
+msgstr "woonplaats"
 
 #: jeslee_web/base/models.py:19
 msgid "country"
@@ -46,7 +45,7 @@ msgid "longitude"
 msgstr ""
 
 #: jeslee_web/base/models.py:42 jeslee_web/base/models.py:61
-#: jeslee_web/fashion_show/models.py:36 jeslee_web/fashion_show/models.py:48
+#: jeslee_web/fashion_show/models.py:37 jeslee_web/fashion_show/models.py:49
 msgid "name"
 msgstr "naam"
 
@@ -58,31 +57,81 @@ msgstr "Geboortedatum"
 msgid "email"
 msgstr "e-mail"
 
-#: jeslee_web/fashion_show/forms.py:11
-msgid "Choose a fashion show"
-msgstr "Kies een modeshow"
+#: jeslee_web/fashion_show/forms.py:14
+msgid "Choose a fashion show to participate"
+msgstr "Kies een modeshow waaraan je wilt meedoen"
 
-#: jeslee_web/fashion_show/forms.py:11
+#: jeslee_web/fashion_show/forms.py:15
 msgid "Fashion show"
 msgstr "Modeshow"
 
-#: jeslee_web/fashion_show/forms.py:12
+#: jeslee_web/fashion_show/forms.py:16
 msgid "We need to know which show you like to participate"
-msgstr "We willen graag weten aan welke modeshow(s) je mee zou willen doen."
+msgstr "Kies a.u.b. een modeshow"
 
-#: jeslee_web/fashion_show/forms.py:13
+#: jeslee_web/fashion_show/forms.py:17
+#: jeslee_web/templates/lfs/cart/added_to_cart.html:55
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:200
+#: jeslee_web/templates/lfs/catalog/products/product_inline.html:293
+#: jeslee_web/templates/lfs/mail/order_details.html:178
+#: jeslee_web/templates/lfs/mail/order_details.txt:50
+#: jeslee_web/templates/lfs/mail/review_added_mail.html:12
+#: jeslee_web/templates/lfs/mail/review_added_mail.txt:5
+#: jeslee_web/templates/lfs/order/lfs_order_tmpl.html:166
+#: jeslee_web/templates/manage/category/products_inline.html:47
+#: jeslee_web/templates/manage/category/selected_products.html:42
+#: jeslee_web/templates/manage/customer/customer_filters_inline.html:12
+#: jeslee_web/templates/manage/customer/customers_filters_inline.html:10
+#: jeslee_web/templates/manage/marketing/featured_inline.html:44
+#: jeslee_web/templates/manage/marketing/featured_inline.html:102
+#: jeslee_web/templates/manage/marketing/rating_mails.html:48
+#: jeslee_web/templates/manage/marketing/topseller_inline.html:44
+#: jeslee_web/templates/manage/marketing/topseller_inline.html:103
+#: jeslee_web/templates/manage/order/order_filters_inline.html:15
+#: jeslee_web/templates/manage/order/order_inline.html:165
+#: jeslee_web/templates/manage/order/orders_filter.html:11
+#: jeslee_web/templates/manage/order/orders_filters_inline.html:11
+#: jeslee_web/templates/manage/order/orders_inline.html:18
+#: jeslee_web/templates/manage/product/accessories_inline.html:48
+#: jeslee_web/templates/manage/product/accessories_inline.html:107
+#: jeslee_web/templates/manage/product/products_inline.html:17
+#: jeslee_web/templates/manage/product/related_products_inline.html:47
+#: jeslee_web/templates/manage/product/related_products_inline.html:107
+#: jeslee_web/templates/manage/product/variants.html:107
+#: jeslee_web/templates/manage/product/variants.html:174
+#: jeslee_web/templates/manage/properties/options_inline.html:13
+#: jeslee_web/templates/manage/property_groups/products_inline.html:45
+#: jeslee_web/templates/manage/property_groups/products_inline.html:105
+#: jeslee_web/templates/manage/property_groups/properties_inline.html:18
+#: jeslee_web/templates/manage/property_groups/properties_inline.html:68
+#: jeslee_web/templates/manage/reviews/review_filters_inline.html:11
+#: jeslee_web/templates/manage/reviews/review_inline.html:41
+#: jeslee_web/templates/manage/reviews/reviews_filters_inline.html:9
+#: jeslee_web/templates/manage/reviews/reviews_inline.html:26
+msgid "Name"
+msgstr "Naam"
+
+#: jeslee_web/fashion_show/forms.py:18
 msgid "We would like to have your name"
 msgstr "We willen graag je naam weten"
 
-#: jeslee_web/fashion_show/forms.py:14
+#: jeslee_web/fashion_show/forms.py:19
+msgid "Age"
+msgstr "Leeftijd"
+
+#: jeslee_web/fashion_show/forms.py:20
 msgid "We need your age to know which model can fit"
-msgstr "We willen graag je leeftijd weten, om kijken in welk model past."
+msgstr "We willen graag je leeftijd weten, om kijken welk model bij je past."
 
-#: jeslee_web/fashion_show/forms.py:15
-msgid "Your age should be a number between "
-msgstr ""
+#: jeslee_web/fashion_show/forms.py:21
+msgid "We don't recognize your age?"
+msgstr "Deze leeftijd is niet geldig"
 
-#: jeslee_web/fashion_show/forms.py:16
+#: jeslee_web/fashion_show/forms.py:22
+msgid "Email"
+msgstr "E-mail"
+
+#: jeslee_web/fashion_show/forms.py:23
 msgid "We need your email to get back to you :-)"
 msgstr "We zijn je e-mail nodig om weer met je in contact te komen."
 
@@ -90,19 +139,27 @@ msgstr "We zijn je e-mail nodig om weer met je in contact te komen."
 msgid "age"
 msgstr "leeftijd"
 
-#: jeslee_web/fashion_show/models.py:50
+#: jeslee_web/fashion_show/models.py:15
+msgid "fashion show"
+msgstr "Modeshow"
+
+#: jeslee_web/fashion_show/models.py:16
+msgid "remarks"
+msgstr "opmerking"
+
+#: jeslee_web/fashion_show/models.py:51
 msgid "website"
 msgstr ""
 
-#: jeslee_web/fashion_show/models.py:80
+#: jeslee_web/fashion_show/models.py:81
 msgid "start time"
 msgstr "start tijdstip"
 
-#: jeslee_web/fashion_show/models.py:81
+#: jeslee_web/fashion_show/models.py:82
 msgid "end time"
 msgstr "eind tijdstip"
 
-#: jeslee_web/fashion_show/models.py:82
+#: jeslee_web/fashion_show/models.py:83
 msgid "ticket order url"
 msgstr "Url voro het kopen van een Toegangskaartje"
 
@@ -190,47 +247,6 @@ msgstr "Ga verder met winkelen"
 #: jeslee_web/templates/manage/product/product.html:107
 msgid "Accessories"
 msgstr "Accessoires"
-
-#: jeslee_web/templates/lfs/cart/added_to_cart.html:55
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:200
-#: jeslee_web/templates/lfs/catalog/products/product_inline.html:293
-#: jeslee_web/templates/lfs/mail/order_details.html:178
-#: jeslee_web/templates/lfs/mail/order_details.txt:50
-#: jeslee_web/templates/lfs/mail/review_added_mail.html:12
-#: jeslee_web/templates/lfs/mail/review_added_mail.txt:5
-#: jeslee_web/templates/lfs/order/lfs_order_tmpl.html:166
-#: jeslee_web/templates/manage/category/products_inline.html:47
-#: jeslee_web/templates/manage/category/selected_products.html:42
-#: jeslee_web/templates/manage/customer/customer_filters_inline.html:12
-#: jeslee_web/templates/manage/customer/customers_filters_inline.html:10
-#: jeslee_web/templates/manage/marketing/featured_inline.html:44
-#: jeslee_web/templates/manage/marketing/featured_inline.html:102
-#: jeslee_web/templates/manage/marketing/rating_mails.html:48
-#: jeslee_web/templates/manage/marketing/topseller_inline.html:44
-#: jeslee_web/templates/manage/marketing/topseller_inline.html:103
-#: jeslee_web/templates/manage/order/order_filters_inline.html:15
-#: jeslee_web/templates/manage/order/order_inline.html:165
-#: jeslee_web/templates/manage/order/orders_filter.html:11
-#: jeslee_web/templates/manage/order/orders_filters_inline.html:11
-#: jeslee_web/templates/manage/order/orders_inline.html:18
-#: jeslee_web/templates/manage/product/accessories_inline.html:48
-#: jeslee_web/templates/manage/product/accessories_inline.html:107
-#: jeslee_web/templates/manage/product/products_inline.html:17
-#: jeslee_web/templates/manage/product/related_products_inline.html:47
-#: jeslee_web/templates/manage/product/related_products_inline.html:107
-#: jeslee_web/templates/manage/product/variants.html:107
-#: jeslee_web/templates/manage/product/variants.html:174
-#: jeslee_web/templates/manage/properties/options_inline.html:13
-#: jeslee_web/templates/manage/property_groups/products_inline.html:45
-#: jeslee_web/templates/manage/property_groups/products_inline.html:105
-#: jeslee_web/templates/manage/property_groups/properties_inline.html:18
-#: jeslee_web/templates/manage/property_groups/properties_inline.html:68
-#: jeslee_web/templates/manage/reviews/review_filters_inline.html:11
-#: jeslee_web/templates/manage/reviews/review_inline.html:41
-#: jeslee_web/templates/manage/reviews/reviews_filters_inline.html:9
-#: jeslee_web/templates/manage/reviews/reviews_inline.html:26
-msgid "Name"
-msgstr "Naam"
 
 #: jeslee_web/templates/lfs/cart/added_to_cart.html:58
 #: jeslee_web/templates/lfs/cart/added_to_cart_items.html:12
@@ -3840,6 +3856,9 @@ msgstr ""
 #: jeslee_web/templates/tagging/related_products_by_tags_portlet.html:4
 msgid "Products with same Tags"
 msgstr ""
+
+#~ msgid "We are looking for persons with there age between {} and {}"
+#~ msgstr "We zoeken naar personen met de leeftijd tussen {} and {}"
 
 #~ msgid "Your Cart"
 #~ msgstr "Jouw winkelmandje"

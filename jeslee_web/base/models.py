@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 from django.db import models
 
 # Create your models here.
@@ -40,7 +40,7 @@ class Registration(TimeStampedModel, Address):
         abstract = True
 
     name = models.CharField(_(u'name'), max_length=50)
-    birth_date = models.DateField(_(u'birth date'), blank=True, max_length=10)
+    birth_date = models.DateField(_(u'birth date'), blank=True, null=True, max_length=10)
     email = models.CharField(_(u'email'), max_length=100)
 
     def __repr__(self):
