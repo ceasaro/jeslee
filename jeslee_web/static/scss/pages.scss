@@ -47,21 +47,42 @@
 
   a {
     color: $background-color-site;
+    position: relative;
     text-decoration: none;
+    z-index: 10;
     &:hover, &.selected {
       color: $light-text-color;
       text-decoration: none;
+    }
+    &:hover {
+      .ticket {
+        left:-110px;
+      }
     }
     &:visited {
       text-decoration: none;
     }
 
   }
+  .ticket {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    -webkit-transition: all 0.7s ease-out;
+       -moz-transition: all 0.7s ease-out;
+        -ms-transition: all 0.7s ease-out;
+         -o-transition: all 0.7s ease-out;
+            transition: all 0.7s ease-out;
+  }
   .fashion_show {
+    background-color: $dark-background-color;
     border-bottom: 1px solid;
     height: 60px;
     margin-bottom: 10px;
     padding-bottom: 10px;
+    position: relative;
+    z-index: 10;
     .fashion_show_start_time {
       display: inline-block;
       margin-top: 10px;

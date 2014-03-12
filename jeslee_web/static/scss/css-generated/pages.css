@@ -46,40 +46,61 @@
 /* line 48, ../pages.scss */
 #fashion_show_agenda a {
   color: #ebe7ec;
+  position: relative;
   text-decoration: none;
+  z-index: 10;
 }
-/* line 51, ../pages.scss */
+/* line 53, ../pages.scss */
 #fashion_show_agenda a:hover, #fashion_show_agenda a.selected {
   color: #ebdc78;
   text-decoration: none;
 }
-/* line 55, ../pages.scss */
+/* line 58, ../pages.scss */
+#fashion_show_agenda a:hover .ticket {
+  left: -110px;
+}
+/* line 62, ../pages.scss */
 #fashion_show_agenda a:visited {
   text-decoration: none;
 }
-/* line 60, ../pages.scss */
+/* line 67, ../pages.scss */
+#fashion_show_agenda .ticket {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  -webkit-transition: all 0.7s ease-out;
+  -moz-transition: all 0.7s ease-out;
+  -ms-transition: all 0.7s ease-out;
+  -o-transition: all 0.7s ease-out;
+  transition: all 0.7s ease-out;
+}
+/* line 78, ../pages.scss */
 #fashion_show_agenda .fashion_show {
+  background-color: #390e41;
   border-bottom: 1px solid;
   height: 60px;
   margin-bottom: 10px;
   padding-bottom: 10px;
+  position: relative;
+  z-index: 10;
 }
-/* line 65, ../pages.scss */
+/* line 86, ../pages.scss */
 #fashion_show_agenda .fashion_show .fashion_show_start_time {
   display: inline-block;
   margin-top: 10px;
   vertical-align: top;
   width: 100px;
 }
-/* line 70, ../pages.scss */
+/* line 91, ../pages.scss */
 #fashion_show_agenda .fashion_show .fashion_show_start_time .day {
   font-size: 24pt;
 }
-/* line 73, ../pages.scss */
+/* line 94, ../pages.scss */
 #fashion_show_agenda .fashion_show .fashion_show_start_time .month {
   font-size: 18pt;
 }
-/* line 77, ../pages.scss */
+/* line 98, ../pages.scss */
 #fashion_show_agenda .fashion_show .fashion_show_location {
   display: inline-block;
   height: 60px;
@@ -87,7 +108,7 @@
   width: 195px;
 }
 
-/* line 87, ../pages.scss */
+/* line 108, ../pages.scss */
 #fashion-show-detail .fashion-show-time {
   float: left;
   font-size: 12pt;
@@ -96,29 +117,29 @@
   padding: 5px 5px 5px 20px;
   width: 150px;
 }
-/* line 98, ../pages.scss */
+/* line 119, ../pages.scss */
 #fashion-show-detail .company-logo {
   bottom: 0;
   float: right;
   right: 0;
 }
-/* line 104, ../pages.scss */
+/* line 125, ../pages.scss */
 #fashion-show-detail .purple-button.by-ticket .purple-button-content {
   color: #fff;
   font-size: 15pt;
   width: 118px;
 }
-/* line 111, ../pages.scss */
+/* line 132, ../pages.scss */
 #fashion-show-detail .fashion-show-route {
   margin-top: 20px;
 }
-/* line 114, ../pages.scss */
+/* line 135, ../pages.scss */
 #fashion-show-detail #map_canvas {
   width: 590px;
   height: 400px;
 }
 
-/* line 122, ../pages.scss */
+/* line 143, ../pages.scss */
 #fashion-show-participate form label[for=id_remarks] {
   float: left;
   margin-top: 40px;
@@ -127,7 +148,7 @@
 /***********************
 * about
 **********************/
-/* line 132, ../pages.scss */
+/* line 153, ../pages.scss */
 #about-jeslee-right-column {
   margin-left: 50px;
 }
@@ -135,11 +156,11 @@
 /***********************
 * sponsors
 **********************/
-/* line 139, ../pages.scss */
+/* line 160, ../pages.scss */
 #jeslee-sponsors {
   margin-left: -10px;
 }
-/* line 141, ../pages.scss */
+/* line 162, ../pages.scss */
 #jeslee-sponsors .sponsor {
   margin-bottom: 10px;
   width: 230px;
@@ -148,11 +169,11 @@
 /***********************
 * sales points
 **********************/
-/* line 151, ../pages.scss */
+/* line 172, ../pages.scss */
 #sales-points .shopping-bags-row {
   margin: 85px 0 40px 0;
 }
-/* line 153, ../pages.scss */
+/* line 174, ../pages.scss */
 #sales-points .shopping-bags-row img {
   margin-right: 49px;
 }
@@ -160,7 +181,7 @@
 /***********************
 * voorwaarden
 **********************/
-/* line 164, ../pages.scss */
+/* line 185, ../pages.scss */
 #conditions-page .list-definition {
   width: 100px;
 }
