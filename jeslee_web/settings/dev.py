@@ -72,3 +72,11 @@ LOGGING = {
         },
     }
 }
+
+# Try and load local_settings.py
+try:
+    # pylint: disable-msg=F0401
+    from jeslee_web.settings.local_settings import *
+    # pylint: enable-msg=F0401
+except ImportError:
+    pass

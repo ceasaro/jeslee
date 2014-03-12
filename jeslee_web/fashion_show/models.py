@@ -65,11 +65,11 @@ class FashionShowManager(Manager):
         """
         return self.get_query_set().filter(start_time__gte=date_from)
 
-    def get_upcoming_show(self):
+    def get_upcoming_show(self, date_from=date.today()):
         """
         Returns the next upcoming fashion show
         """
-        qs = self.get_upcoming_shows()
+        qs = self.get_upcoming_shows(date_from)
         shows = list(qs[:1])
         if shows:
             return shows[0]
