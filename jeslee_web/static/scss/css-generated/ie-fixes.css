@@ -4,40 +4,60 @@
 /***********************
  * SIZES
  **********************/
+/* line 3, ../ie-fixes.scss */
 body {
-  font-size: 70%; }
+  font-size: 70%;
+}
 
+/* line 7, ../ie-fixes.scss */
 #livesearch-result {
-  margin-top: 30px; }
+  margin-top: 30px;
+}
 
 /* Remove image because of the z-index bug */
+/* line 12, ../ie-fixes.scss */
 .cart-portlet .portlet-body {
-  padding: 10px; }
+  padding: 10px;
+}
 
+/* line 16, ../ie-fixes.scss */
 .cart-portlet .portlet-header img {
-  display: none; }
+  display: none;
+}
 
+/* line 23, ../ie-fixes.scss */
 #id_username,
 #id_password_1,
 #id_password_2,
 #id_password {
-  width: 150px; }
+  width: 150px;
+}
 
+/* line 30, ../ie-fixes.scss */
 #shop-container .navigation-button {
   zoom: 1;
-  *display: inline; }
+  *display: inline;
+}
+/* line 38, ../ie-fixes.scss */
 #shop-container #shop-above-content .product-navigation .left-triangle {
   zoom: 1;
-  *display: inline; }
+  *display: inline;
+}
+/* line 43, ../ie-fixes.scss */
 #shop-container #shop-above-content .product-navigation .right-triangle {
   zoom: 1;
-  *display: inline; }
+  *display: inline;
+}
 
+/* line 52, ../ie-fixes.scss */
 .jeslee-form-container {
   background: #390e41;
   color: #ebdc78;
   margin-bottom: 20px;
-  padding: 20px; }
-  .jeslee-form-container ul li label {
-    zoom: 1;
-    *display: inline; }
+  padding: 20px;
+}
+/* line 59, ../ie-fixes.scss */
+.jeslee-form-container ul li label {
+  zoom: 1;
+  *display: inline;
+}

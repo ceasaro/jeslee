@@ -17,7 +17,7 @@
             {% for show in fashion_shows|slice:":7" %}
                 <a href="{% url 'fashion-show' show.pk %}" class="{% if fashion_show.pk == show.pk %}selected{% endif %}">
                     <div class="ticket">
-                        <img src="{% static 'gfx/general/ticket.png' %}" alt="ticket Jeslee"/>
+                        <img src="{% static 'gfx/general/ticket-107x60.png' %}" alt="ticket Jeslee"/>
                     </div>
                     <div class="fashion_show">
                         <div class="fashion_show_start_time">
