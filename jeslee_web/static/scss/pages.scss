@@ -121,17 +121,22 @@
     float: right;
     right: 0;
   }
-  .buy-ticket {
-    background-image: url('../../gfx/general/ticket-213x120.png');
+  .jeslee-ticket {
     background-repeat: no-repeat;
     background-position: center;
     display: block;
     height:140px;
     width: 213px;
-    &:hover {
-      background-image: url('../../gfx/general/ticket-213x120-hover.png');
+    &.buy-ticket {
+      background-image: url('../../gfx/general/ticket-213x120.png');
+      &:hover {
+        background-image: url('../../gfx/general/ticket-213x120-hover.png');
+      }
     }
-    .buy-ticket-title {
+    &.no-tickets-for-sale {
+      background-image: url('../../gfx/general/ticket-213x120-no-sale.png');
+    }
+    .jeslee-ticket-title {
       margin-left:9px;
     }
   }

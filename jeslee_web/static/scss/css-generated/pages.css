@@ -124,33 +124,40 @@
   right: 0;
 }
 /* line 124, ../pages.scss */
-#fashion-show-detail .buy-ticket {
-  background-image: url("../../gfx/general/ticket-213x120.png");
+#fashion-show-detail .jeslee-ticket {
   background-repeat: no-repeat;
   background-position: center;
   display: block;
   height: 140px;
   width: 213px;
 }
-/* line 131, ../pages.scss */
-#fashion-show-detail .buy-ticket:hover {
+/* line 130, ../pages.scss */
+#fashion-show-detail .jeslee-ticket.buy-ticket {
+  background-image: url("../../gfx/general/ticket-213x120.png");
+}
+/* line 132, ../pages.scss */
+#fashion-show-detail .jeslee-ticket.buy-ticket:hover {
   background-image: url("../../gfx/general/ticket-213x120-hover.png");
 }
-/* line 134, ../pages.scss */
-#fashion-show-detail .buy-ticket .buy-ticket-title {
-  margin-left: 9px;
+/* line 136, ../pages.scss */
+#fashion-show-detail .jeslee-ticket.no-tickets-for-sale {
+  background-image: url("../../gfx/general/ticket-213x120-no-sale.png");
 }
 /* line 139, ../pages.scss */
+#fashion-show-detail .jeslee-ticket .jeslee-ticket-title {
+  margin-left: 9px;
+}
+/* line 144, ../pages.scss */
 #fashion-show-detail .fashion-show-route {
   margin-top: 20px;
 }
-/* line 142, ../pages.scss */
+/* line 147, ../pages.scss */
 #fashion-show-detail #map_canvas {
   width: 590px;
   height: 400px;
 }
 
-/* line 150, ../pages.scss */
+/* line 155, ../pages.scss */
 #fashion-show-participate form label[for=id_remarks] {
   float: left;
   margin-top: 40px;
@@ -159,7 +166,7 @@
 /***********************
 * about
 **********************/
-/* line 160, ../pages.scss */
+/* line 165, ../pages.scss */
 #about-jeslee-right-column {
   margin-left: 50px;
 }
@@ -167,11 +174,11 @@
 /***********************
 * sponsors
 **********************/
-/* line 167, ../pages.scss */
+/* line 172, ../pages.scss */
 #jeslee-sponsors {
   margin-left: -10px;
 }
-/* line 169, ../pages.scss */
+/* line 174, ../pages.scss */
 #jeslee-sponsors .sponsor {
   margin-bottom: 10px;
   width: 230px;
@@ -180,11 +187,11 @@
 /***********************
 * sales points
 **********************/
-/* line 179, ../pages.scss */
+/* line 184, ../pages.scss */
 #sales-points .shopping-bags-row {
   margin: 85px 0 40px 0;
 }
-/* line 181, ../pages.scss */
+/* line 186, ../pages.scss */
 #sales-points .shopping-bags-row img {
   margin-right: 49px;
 }
@@ -192,7 +199,7 @@
 /***********************
 * voorwaarden
 **********************/
-/* line 192, ../pages.scss */
+/* line 197, ../pages.scss */
 #conditions-page .list-definition {
   width: 100px;
 }

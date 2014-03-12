@@ -41,24 +41,14 @@
         </p>
         {% if fashion_show.ticket_order_url %}
             <a href="{{ fashion_show.ticket_order_url }}" title="Klik hier om uw kaarten te kopen" target="_blank"
-               class="buy-ticket ">
+               class="jeslee-ticket buy-ticket ">
 {#                <img src="{% static 'gfx/general/ticket-213x120.png' %}" alt="ticket" />#}
 
-                <span class="buy-ticket-title">Klik hier om kaarten te kopen!</span>
+                <span class="jeslee-ticket-title">Klik hier om kaarten te kopen!</span>
             </a>
         {% else %}
-            <div class="inactive no-tickets-for-sale">
-                <div class="purple-button-left-column">
-                    {#            <div class="purple-button-header">Meedoen</div>#}
-                    <div class="purple-button-content">
-                        <span>De kaart verkoop is nog niet gestart.</span>
-                    </div>
-                </div>
-                {% comment %}
-            <div class="purple-button-right-column">
-                <div class="button-change">!</div>
-            </div>
-{% endcomment %}
+            <span class="jeslee-ticket-title">De kaart verkoop is nog niet gestart.</span>
+            <div class="jeslee-ticket no-tickets-for-sale">
             </div>
         {% endif %}
 
