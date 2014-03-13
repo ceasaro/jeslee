@@ -50,6 +50,21 @@ def test():
     django_settings_to_env()
     env.django_developing = True
 
+@task()
+def acceptation():
+    '''Configuration for production server'''
+    env.hosts = ['beta.jeslee.com']
+    env.install_dir = '/sites-acc/django/jeslee-beta/'
+    env.install_user = 'jeslee'
+    #    env.django_media_root = '/opt/caire_media'
+    env.requirements_file = join(env.project_root,
+                                 'requirements/acceptation.txt')
+    env.virtualenv_dir = '/opt/virtualenvs/jeslee-beta/'
+    env.django_settings = 'jeslee_web.settings.acceptation'
+    django_settings_to_env()
+    env.django_developing = False
+
+
 # @task(alias='prod')
 @task()
 def production():
