@@ -24,7 +24,7 @@ DATABASES = {
 #    }
 }
 
-MEDIA_ROOT = '/sites/django/jeslee_media/'
+MEDIA_ROOT = '/sites-acc/django/jeslee-beta_media/'
 
 _dev_apps = list(INSTALLED_APPS)
 #_dev_apps.append('debug_toolbar')
@@ -58,7 +58,7 @@ LOGGING = {
         'logfile': {
             'level':'DEBUG',
             'class':'logging.handlers.RotatingFileHandler',
-            'filename': SITE_ROOT + "/jeslee.log",
+            'filename': SITE_ROOT + "/jeslee-beta.log",
             'maxBytes': 50000,
             'backupCount': 2,
             'formatter': 'simple',
