@@ -27,6 +27,10 @@
                             <span class="month">
                             {{ show.start_time|date:"b" }}
                             </span>
+                            <br/>
+                            <span class="day-of-week">
+                            {{ show.start_time|date:"D" }}
+                            </span>
                             <span class="time">
                             {{ show.start_time|date:"G:i" }}
                             </span>

@@ -100,7 +100,11 @@
 #fashion_show_agenda .fashion_show .fashion_show_start_time .month {
   font-size: 18pt;
 }
-/* line 98, ../pages.scss */
+/* line 97, ../pages.scss */
+#fashion_show_agenda .fashion_show .fashion_show_start_time .day-of-week {
+  margin-right: 5px;
+}
+/* line 101, ../pages.scss */
 #fashion_show_agenda .fashion_show .fashion_show_location {
   display: inline-block;
   height: 60px;
@@ -108,7 +112,7 @@
   width: 195px;
 }
 
-/* line 108, ../pages.scss */
+/* line 111, ../pages.scss */
 #fashion-show-detail .fashion-show-time {
   float: left;
   font-size: 12pt;
@@ -117,13 +121,13 @@
   padding: 5px 5px 5px 20px;
   width: 150px;
 }
-/* line 119, ../pages.scss */
+/* line 122, ../pages.scss */
 #fashion-show-detail .company-logo {
   bottom: 0;
   float: right;
   right: 0;
 }
-/* line 124, ../pages.scss */
+/* line 127, ../pages.scss */
 #fashion-show-detail .jeslee-ticket {
   background-repeat: no-repeat;
   background-position: center;
@@ -131,33 +135,33 @@
   height: 140px;
   width: 213px;
 }
-/* line 130, ../pages.scss */
+/* line 133, ../pages.scss */
 #fashion-show-detail .jeslee-ticket.buy-ticket {
   background-image: url("../../gfx/general/ticket-213x120.png");
 }
-/* line 132, ../pages.scss */
+/* line 135, ../pages.scss */
 #fashion-show-detail .jeslee-ticket.buy-ticket:hover {
   background-image: url("../../gfx/general/ticket-213x120-hover.png");
 }
-/* line 136, ../pages.scss */
+/* line 139, ../pages.scss */
 #fashion-show-detail .jeslee-ticket.no-tickets-for-sale {
   background-image: url("../../gfx/general/ticket-213x120-no-sale.png");
 }
-/* line 139, ../pages.scss */
+/* line 142, ../pages.scss */
 #fashion-show-detail .jeslee-ticket .jeslee-ticket-title {
   margin-left: 9px;
 }
-/* line 144, ../pages.scss */
+/* line 147, ../pages.scss */
 #fashion-show-detail .fashion-show-route {
   margin-top: 20px;
 }
-/* line 147, ../pages.scss */
+/* line 150, ../pages.scss */
 #fashion-show-detail #map_canvas {
   width: 590px;
   height: 400px;
 }
 
-/* line 155, ../pages.scss */
+/* line 158, ../pages.scss */
 #fashion-show-participate form label[for=id_remarks] {
   float: left;
   margin-top: 40px;
@@ -166,7 +170,7 @@
 /***********************
 * about
 **********************/
-/* line 165, ../pages.scss */
+/* line 168, ../pages.scss */
 #about-jeslee-right-column {
   margin-left: 50px;
 }
@@ -174,11 +178,11 @@
 /***********************
 * sponsors
 **********************/
-/* line 172, ../pages.scss */
+/* line 175, ../pages.scss */
 #jeslee-sponsors {
   margin-left: -10px;
 }
-/* line 174, ../pages.scss */
+/* line 177, ../pages.scss */
 #jeslee-sponsors .sponsor {
   margin-bottom: 10px;
   width: 230px;
@@ -187,11 +191,11 @@
 /***********************
 * sales points
 **********************/
-/* line 184, ../pages.scss */
+/* line 187, ../pages.scss */
 #sales-points .shopping-bags-row {
   margin: 85px 0 40px 0;
 }
-/* line 186, ../pages.scss */
+/* line 189, ../pages.scss */
 #sales-points .shopping-bags-row img {
   margin-right: 49px;
 }
@@ -199,7 +203,7 @@
 /***********************
 * voorwaarden
 **********************/
-/* line 197, ../pages.scss */
+/* line 200, ../pages.scss */
 #conditions-page .list-definition {
   width: 100px;
 }
