@@ -16,7 +16,8 @@ env.project_django_root = join(env.project_root, '')
 
 env.repository = AttrDict(
     type='git',
-    url='https://github.com/ceasaro/jeslee'
+    url='https://github.com/ceasaro/jeslee',
+    branch='release-0.5'
 )
 
 env.django_project = 'jeslee'  # default django project (dir)
@@ -61,6 +62,7 @@ def acceptation():
                                  'requirements/acceptation.txt')
     env.virtualenv_dir = '/opt/virtualenvs/jeslee-beta/'
     env.django_settings = 'jeslee_web.settings.acceptation'
+    env.repository.branch = 'webshop'
     django_settings_to_env()
     env.django_developing = False
 
@@ -77,6 +79,7 @@ def production():
                                  'requirements/production.txt')
     env.virtualenv_dir = '/opt/virtualenvs/jeslee/'
     env.django_settings = 'jeslee_web.settings.production'
+    env.repository.branch = 'release-0.5'
     django_settings_to_env()
     env.django_developing = False
 
