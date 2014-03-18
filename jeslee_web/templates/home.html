@@ -9,6 +9,17 @@
     <link rel="stylesheet" type="text/css" media="screen" href="{% static 'scss/css-generated/home.css' %}"/>
 {% endblock %}
 
+{% block javascript %}
+    <script src="{% static 'js/utils/jpan-spriteAnimation.js' %}" type="text/javascript"></script>
+    <script>
+        $(document).ready(function() {
+            {% block jquery-document-ready %}
+                jpan.stardust({spriteImage:'{% static 'gfx/sprites/stardust.png' %}'});
+            {% endblock %}
+        });
+    </script>
+{% endblock %}
+
 {% block menu_home_class %}selected{% endblock %}
 
 {% block jeslee-content %}
