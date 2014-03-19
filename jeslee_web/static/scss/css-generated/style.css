@@ -27,7 +27,7 @@ html {
 body {
   background: url("../../gfx/background/background-right.png") no-repeat scroll right top 178px transparent;
   height: auto;
-  overflow-x: hide;
+  overflow-x: hidden;
 }
 
 /* line 28, ../style.scss */
