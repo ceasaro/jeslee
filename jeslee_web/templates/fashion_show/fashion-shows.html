@@ -18,7 +18,8 @@
             uit de agenda klikken.
         </p>
         <h2>Wat is er te zien in onze unieke shows?</h2>
-        <ul>
+        <img src="{% static 'gfx/photos/catwalk_fashion_show_350x223.jpg' %}" class="text-wrap-left"/>
+        <ul class="text-wrap-right">
             <li>Prinsessenjurkjes</li>
             <li>Feestkleding voor tieners</li>
             <li>Gelegenheidskleding voor kinderen</li>
@@ -26,37 +27,28 @@
             <li>Jeslee's Catwalk Models</li>
             <li>En diverse verrassingsacts</li>
         </ul>
-        <p>
-            <img src="{% static 'gfx/photos/catwalk_fashion_show.jpg' %}"
-        </p>
-        <h2>Meedoen als model?</h2>
+    </article>
+    <article>
+
+        <h2 id="meedoen">Meedoen als model?</h2>
         <p>
             Lijkt het je leuk om een keer als model mee te doen aan een van onze modeshows? Klik dan hieronder
             voor meer informatie en hoe je je kunt opgeven.
         </p>
-    <a href="{% url 'fashion-participate' %}" class="purple-button" id="banner-registration-fashion-show">
-        <div class="purple-button-left-column">
-{#            <div class="purple-button-header">Meedoen</div>#}
-            <div class="purple-button-content">
-                Meedoen aan een van onze shows
+
+        <a href="{% url 'fashion-participate' %}" class="purple-button" id="banner-registration-fashion-show">
+            <div class="purple-button-left-column">
+                {#            <div class="purple-button-header">Meedoen</div>#}
+                <div class="purple-button-content">
+                    Meedoen aan een van onze shows
+                </div>
             </div>
-        </div>
-        <div class="purple-button-right-column">
-            <div class="button-change">?</div>
-        </div>
-    </a>
+            <div class="purple-button-right-column">
+                <div class="button-change">?</div>
+            </div>
+        </a>
 
     </article>
 
-    <div class="prevent-collapsing">.</div>
-    <div class="prevent-collapsing">.</div>
-
-    <div id="fashion-registration-form" style="display:none;">
-        <form action="." method="post">{% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Submit" />
-        </form>
-
-    </div>
 
 {% endblock page-content %}

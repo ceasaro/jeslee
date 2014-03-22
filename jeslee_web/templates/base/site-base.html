@@ -26,7 +26,7 @@
         </div>
     </div>
     <div id="main-site-menu" >
-        <ul class="container_12">
+        <ul class="container_12 main-menu">
             <li><a href="{% url 'home' %}"
                    class="{% block menu_home_class %}{% endblock %}">Home</a>
             </li>
@@ -54,6 +54,10 @@
 {% endcomment %}
             <li><a href="{% url 'fashion-shows' %}"
                    class="{% block menu_modeshows_class %}{% endblock %}">Modeshows</a>
+            </li>
+            <li>
+                <a href="{% url 'fashion-participate' %}"
+                   class="{% block menu_meedoen_class %}{% endblock %}">Meedoen?</a>
             </li>
 {% comment %}
     <li><a href="{% url 'fotogalerij' %}"

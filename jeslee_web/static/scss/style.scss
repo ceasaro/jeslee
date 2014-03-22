@@ -21,7 +21,7 @@ html {
 body {
   background: url('../../gfx/background/background-right.png') no-repeat scroll right top 178px transparent;
   height: auto;
-  overflow-x: hide;
+  overflow-x: hidden;
   //min-height: 100%;
 }
 
@@ -59,6 +59,7 @@ p {
 }
 
 article {
+  clear: both;
   ul {
     list-style: disc;
     margin-left: 40px;
@@ -232,7 +233,8 @@ form {
     height: 40px;
     position: absolute;
     width: 100%;
-    ul {
+    ul.main-menu {
+      height: 30px;
       margin: 10px auto 0 auto;
       li {
         //border-right: 1px solid $dark-text-color;
@@ -251,6 +253,15 @@ form {
       li:last-child {
         border-right: none;
       }
+    }
+    ul.sub-menu {
+      li {
+        display: inline;
+        a {
+          padding: 11px 20px;
+        }
+      }
+
     }
   }
   .header-right-background {
@@ -429,11 +440,11 @@ sup {
 
 .text-wrap-right {
   float:right;
-  margin: 0 0 20px 20px;
+  margin: 20px 0 20px 20px;
 }
 .text-wrap-left {
   float:left;
-  margin: 20px 20px 0 0;
+  margin: 20px 20px 20px 0;
 }
 
 .footnotes {
