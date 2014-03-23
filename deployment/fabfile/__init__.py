@@ -31,8 +31,8 @@ def upgrade():
     require('install_user')
     require('hosts')
     # require('repository.url')
-    if not prompt('Upgrading {} with {}. Sure? CTRL-C to abort'.format(
-            env.hosts, env.repository.url), default='y'):
+    if not prompt('Upgrading {} with {} -b {}. Sure? CTRL-C to abort'.format(
+            env.hosts, env.repository.url, env.repository.branch), default='y'):
         abort('Abort')
     pack()
     upload()
