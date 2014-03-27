@@ -19,7 +19,7 @@ class FashionRegistration(Registration):
         return self.__repr__()
 
     def __repr__(self):
-        return "FashionRegistration[{pk}] {{{name}, {email}}}".format(pk=self.pk, name=self.name, email=self.email)
+        return u"FashionRegistration[{pk}] {{{name}, {email}}}".format(pk=self.pk, name=self.name, email=self.email)
 
 
 class FashionGarment(TimeStampedModel):
@@ -30,7 +30,7 @@ class FashionGarment(TimeStampedModel):
         return self.__repr__()
 
     def __repr__(self):
-        return "FashionGarment[{pk}] {{{name}, {size}}}".format(pk=self.pk, name=self.garment.name, size=self.size)
+        return u"FashionGarment[{pk}] {{{name}, {size}}}".format(pk=self.pk, name=self.garment.name, size=self.size)
 
 
 class FashionModel(TimeStampedModel, Address):
@@ -42,7 +42,7 @@ class FashionModel(TimeStampedModel, Address):
         return self.__repr__()
 
     def __repr__(self):
-        return "FashionModel[{pk}] {{{name}, {size}}}".format(pk=self.pk, name=self.name, size=self.size)
+        return u"FashionModel[{pk}] {{{name}, {size}}}".format(pk=self.pk, name=self.name, size=self.size)
 
 
 class FashionLocation(TimeStampedModel, Address, Location):
@@ -54,7 +54,7 @@ class FashionLocation(TimeStampedModel, Address, Location):
         return self.__repr__()
 
     def __repr__(self):
-        return "FashionLocation[{pk}] {{{name}}}".format(pk=self.pk, name=self.name)
+        return u"FashionLocation[{pk}] {{{name}}}".format(pk=self.pk, name=self.name)
 
 
 class FashionShowManager(Manager):
@@ -98,7 +98,7 @@ class FashionShow(TimeStampedModel):
 
     def __unicode__(self):
         start_time_strftime = self.start_time.strftime(settings.STRING_TO_DATE_FORMAT).lstrip('0')
-        return "{start_time}, {location}, {place}".format(start_time=start_time_strftime,
+        return u"{start_time}, {location}, {place}".format(start_time=start_time_strftime,
                                                           location=self.location.name,
                                                           place=self.location.city)
 
@@ -106,5 +106,5 @@ class FashionShow(TimeStampedModel):
         return self.__repr__()
 
     def __repr__(self):
-        return "FashionShow[{pk}] {{{location}}}".format(pk=self.pk, location=self.location)
+        return u"FashionShow[{pk}] {{{location}}}".format(pk=self.pk, location=self.location)
 
