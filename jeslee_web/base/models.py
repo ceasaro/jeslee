@@ -50,6 +50,9 @@ class Registration(TimeStampedModel, Address):
 class ClothingSize(models.Model):
     size = models.CharField(u"clothing size", max_length=100)
 
+    def __unicode__(self):
+        return u"{}".format(self.size)
+
     def __str__(self):
         return self.__repr__()
 

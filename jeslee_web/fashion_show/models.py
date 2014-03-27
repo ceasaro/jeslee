@@ -14,6 +14,7 @@ class FashionRegistration(Registration):
     age = models.CharField(_(u'age'), null=True, max_length=5, error_messages={'required': 'Enter a valid phone number'})
     fashion_show = models.CharField(_(u'fashion show'), max_length=100)
     remarks = models.TextField(_(u'remarks'), null=True, blank=True)
+    size = models.ForeignKey(ClothingSize, null=True, blank=True)
 
     def __str__(self):
         return self.__repr__()

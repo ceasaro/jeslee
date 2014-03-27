@@ -4,6 +4,8 @@ from jeslee_web.fashion_show.models import FashionRegistration, FashionLocation\
 
 
 class FashionRegistrationAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'age', 'size', 'fashion_show')
+    list_filter = ('fashion_show', 'age', 'size')
     pass
 
 admin.site.register(FashionRegistration, FashionRegistrationAdmin)

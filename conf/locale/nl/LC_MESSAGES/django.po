@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-09 12:07+0100\n"
+"POT-Creation-Date: 2014-03-27 15:47+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,8 +44,8 @@ msgstr ""
 msgid "longitude"
 msgstr ""
 
-#: jeslee_web/base/models.py:42 jeslee_web/base/models.py:61
-#: jeslee_web/fashion_show/models.py:37 jeslee_web/fashion_show/models.py:49
+#: jeslee_web/base/models.py:42 jeslee_web/base/models.py:64
+#: jeslee_web/fashion_show/models.py:38 jeslee_web/fashion_show/models.py:50
 msgid "name"
 msgstr "naam"
 
@@ -57,19 +57,19 @@ msgstr "Geboortedatum"
 msgid "email"
 msgstr "e-mail"
 
-#: jeslee_web/fashion_show/forms.py:14
-msgid "Choose a fashion show to participate"
-msgstr "Kies een modeshow waaraan je wilt meedoen"
-
 #: jeslee_web/fashion_show/forms.py:15
+msgid "Choose a fashion show"
+msgstr "Kies een modeshow"
+
+#: jeslee_web/fashion_show/forms.py:16
 msgid "Fashion show"
 msgstr "Modeshow"
 
-#: jeslee_web/fashion_show/forms.py:16
+#: jeslee_web/fashion_show/forms.py:17
 msgid "We need to know which show you like to participate"
 msgstr "Kies a.u.b. een modeshow"
 
-#: jeslee_web/fashion_show/forms.py:17
+#: jeslee_web/fashion_show/forms.py:18
 #: jeslee_web/templates/lfs/cart/added_to_cart.html:55
 #: jeslee_web/templates/lfs/catalog/products/product_inline.html:200
 #: jeslee_web/templates/lfs/catalog/products/product_inline.html:293
@@ -111,27 +111,43 @@ msgstr "Kies a.u.b. een modeshow"
 msgid "Name"
 msgstr "Naam"
 
-#: jeslee_web/fashion_show/forms.py:18
+#: jeslee_web/fashion_show/forms.py:19
 msgid "We would like to have your name"
 msgstr "We willen graag je naam weten"
 
-#: jeslee_web/fashion_show/forms.py:19
+#: jeslee_web/fashion_show/forms.py:20
 msgid "Age"
 msgstr "Leeftijd"
 
-#: jeslee_web/fashion_show/forms.py:20
+#: jeslee_web/fashion_show/forms.py:21
 msgid "We need your age to know which model can fit"
 msgstr "We willen graag je leeftijd weten, om kijken welk model bij je past."
 
-#: jeslee_web/fashion_show/forms.py:21
+#: jeslee_web/fashion_show/forms.py:22
 msgid "We don't recognize your age?"
 msgstr "Deze leeftijd is niet geldig"
 
-#: jeslee_web/fashion_show/forms.py:22
+#: jeslee_web/fashion_show/forms.py:24
+msgid "Choose your clothing size"
+msgstr "Kies een kledingmaat"
+
+#: jeslee_web/fashion_show/forms.py:25
+msgid "Size"
+msgstr "Maat"
+
+#: jeslee_web/fashion_show/forms.py:26
+msgid "We need your size to know which model can fit"
+msgstr "We willen graag je maat weten, om kijken welk model bij je past."
+
+#: jeslee_web/fashion_show/forms.py:27
+msgid "We don't recognize the size?"
+msgstr "Deze kleding maat is niet geldig"
+
+#: jeslee_web/fashion_show/forms.py:28
 msgid "Email"
 msgstr "E-mail"
 
-#: jeslee_web/fashion_show/forms.py:23
+#: jeslee_web/fashion_show/forms.py:29
 msgid "We need your email to get back to you :-)"
 msgstr "We zijn je e-mail nodig om weer met je in contact te komen."
 
@@ -147,19 +163,19 @@ msgstr "Modeshow"
 msgid "remarks"
 msgstr "opmerking"
 
-#: jeslee_web/fashion_show/models.py:51
+#: jeslee_web/fashion_show/models.py:52
 msgid "website"
 msgstr ""
 
-#: jeslee_web/fashion_show/models.py:81
+#: jeslee_web/fashion_show/models.py:82
 msgid "start time"
 msgstr "start tijdstip"
 
-#: jeslee_web/fashion_show/models.py:82
+#: jeslee_web/fashion_show/models.py:83
 msgid "end time"
 msgstr "eind tijdstip"
 
-#: jeslee_web/fashion_show/models.py:83
+#: jeslee_web/fashion_show/models.py:84
 msgid "ticket order url"
 msgstr "Url voro het kopen van een Toegangskaartje"
 
@@ -3856,69 +3872,3 @@ msgstr ""
 #: jeslee_web/templates/tagging/related_products_by_tags_portlet.html:4
 msgid "Products with same Tags"
 msgstr ""
-
-#~ msgid "We are looking for persons with there age between {} and {}"
-#~ msgstr "We zoeken naar personen met de leeftijd tussen {} and {}"
-
-#~ msgid "Your Cart"
-#~ msgstr "Jouw winkelmandje"
-
-#~ msgid "Voucher code"
-#~ msgstr "Kortingscode"
-
-#~ msgid "Your cart"
-#~ msgstr "Jouw winkelmandje"
-
-#~ msgid "Net Price"
-#~ msgstr "Netto prijs"
-
-#~ msgid "VAT"
-#~ msgstr "BTW"
-
-#~ msgid "This products have been added to cart"
-#~ msgstr "Deze producten zijn toegevoegd"
-
-#~ msgid "This product has been added to cart"
-#~ msgstr "Dit product is toegevoegd"
-
-#~ msgid "Next product"
-#~ msgstr "Volgend produkt"
-
-#, fuzzy
-#~ msgid "Back to"
-#~ msgstr "Terug naar"
-
-#~ msgid "Add to cart"
-#~ msgstr "Toevoegen aan winkelmandje"
-
-#, fuzzy
-#~ msgid "month"
-#~ msgid_plural "months"
-#~ msgstr[0] ""
-#~ "#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-#~ "#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-#~ msgstr[1] "#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-
-#, fuzzy
-#~ msgid "week"
-#~ msgid_plural "weeks"
-#~ msgstr[0] ""
-#~ "#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-#~ "#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-#~ msgstr[1] "#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-
-#, fuzzy
-#~ msgid "day"
-#~ msgid_plural "days"
-#~ msgstr[0] ""
-#~ "#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-#~ "#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-#~ msgstr[1] "#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-
-#, fuzzy
-#~ msgid "hour"
-#~ msgid_plural "hours"
-#~ msgstr[0] ""
-#~ "#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-#~ "#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-#~ msgstr[1] "#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
