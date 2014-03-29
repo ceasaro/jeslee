@@ -65,13 +65,16 @@ LOGGING = {
             'level': 'INFO',
             'propagate': True,
         },
-        'accounts_web': {
+        'jeslee_web': {
             'handlers': ['console'],
             'level': 'DEBUG',
             'propagate': True,
         },
     }
 }
+
+# test settings
+TEST_RUNNER = 'django_patches.test.NoDatabaseRunner.NoDatabaseRunner'
 
 # Try and load local_settings.py
 try:

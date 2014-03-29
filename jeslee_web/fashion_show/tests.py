@@ -6,11 +6,11 @@ Replace this with more appropriate tests for your application.
 """
 from datetime import datetime
 
-from django.test import TestCase
+from django.test import TransactionTestCase, SimpleTestCase
 from jeslee_web.fashion_show.models import FashionShow, FashionLocation
 
 
-class SimpleTest(TestCase):
+class SimpleTest(SimpleTestCase):
     def test_basic_addition(self):
         """
         Tests that 1 + 1 always equals 2.
@@ -18,7 +18,7 @@ class SimpleTest(TestCase):
         self.assertEqual(1 + 1, 2)
 
 
-class FashionShowTestCase(TestCase):
+class FashionShowTestCase(TransactionTestCase):
 
     def setUp(self):
         location_1 = FashionLocation.objects.create(name="location_1")

@@ -6,6 +6,7 @@ django-debug-toolbar
 django-nose
 fudge
 pysqlite
+mock==1.0.1
 
 # for runserver_plus
 werkzeug

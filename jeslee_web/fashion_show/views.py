@@ -30,6 +30,7 @@ class FashionRegistrationCreateView(CreateView):
     model = FashionRegistration
 
     def get_success_url(self):
+
         return reverse('fashion-registration-thanks', args=(self.object.id, ))
 
 
