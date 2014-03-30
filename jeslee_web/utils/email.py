@@ -1,5 +1,6 @@
 import logging
 from django.conf import settings
+from django.contrib.sites.models import Site
 from django.core.mail import send_mail
 from django.template import Context, TemplateDoesNotExist
 from django.template.loader import get_template
@@ -25,7 +26,8 @@ def send_email(email_template_name=None, subject=None, recipient_list=None, cont
     """
     print "from_email = {} ".format(from_email)
     if email_template_name:
-        default_context_dict = {}
+        default_context_dict = {'email_from':settings.DEFAULT_FROM_EMAIL,
+                                'site_domain': Site.objects.get_current()}
         if context_dict:
             context_dict.update(default_context_dict)
         else:
