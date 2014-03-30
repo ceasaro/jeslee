@@ -27,7 +27,7 @@ class EmailTest(SimpleTestCase):
         send_email(email_template_name='unittest/mail/email-with-context',
                    recipient_list=['to@example.com'],
                    context_dict={'context_var_1':'value_1', 'context_var_2':'value_2'})
-        self.assertEquals(len(mail.outbox), 2)
+        self.assertEquals(len(mail.outbox), 1)
         self.assertEquals(mail.outbox[0].subject, 'Test email with context value_1')
         self.assertEquals(mail.outbox[0].body, 'Message with context value_2\nDomain is: mock.jeslee.com')
         self.assertEquals(mail.outbox[0].from_email, 'info@jeslee.com')
@@ -35,9 +35,9 @@ class EmailTest(SimpleTestCase):
 
     @patch.object(SiteManager, 'get_current', return_value='mock.jeslee.com')
     def test_send_email(self, mock_site_manager):
-        send_email(email_template_name='email/fashion_show/registration', subject='Subject here',
+        send_email(email_template_name='unittest/mail/email-with-context', subject='Subject here',
                    from_email='from@example.com', recipient_list=['to@example.com'])
-        self.assertEquals(len(mail.outbox), 2)
+        self.assertEquals(len(mail.outbox), 1)
         self.assertEquals(mail.outbox[0].subject, 'Subject here')
 
     @patch.object(SiteManager, 'get_current', return_value='mock.jeslee.com')

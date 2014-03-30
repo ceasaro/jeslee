@@ -1,0 +1,12 @@
+Hallo {{ name }},
+
+Wij hebben je inschrijving als model bij Jeslee goed ontvangen !
+
+We nemen tijdig contact op over hoe het verder gaat.
+
+Je ingevulde gegevens waren:
+naam: {{ name }}
+leeftijd: {{ age }}
+maat: {{ size }}
+e-mail: {{ email }}
+modeshow: {{ fashion_show }}

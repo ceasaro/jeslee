@@ -1,9 +1,10 @@
 # Create your views here.
 from django.core.urlresolvers import reverse
-from django.views.generic import View, CreateView, UpdateView, DetailView
+from django.views.generic import  CreateView, UpdateView, DetailView
 from django.views.generic.base import ContextMixin
 from jeslee_web.fashion_show.forms import FashionRegistrationForm
 from jeslee_web.fashion_show.models import FashionRegistration, FashionShow
+from jeslee_web.utils.email import send_email
 
 
 class UpcomingFashionShowMixin(ContextMixin):
@@ -31,6 +32,12 @@ class FashionRegistrationCreateView(CreateView):
 
     def get_success_url(self):
 
+        email_context = self.object.__dict__
+        email_context['size'] = self.object.size.size
+        email_context['fashion_show'] = self.object.fashion_show
+        send_email(email_template_name='email/fashion_show/registration-confirmation',
+                   recipient_list=[self.object.email],
+                   context_dict=email_context)
         return reverse('fashion-registration-thanks', args=(self.object.id, ))
 
 

@@ -1,7 +1,7 @@
 import logging
 from django.conf import settings
 from django.contrib.sites.models import Site
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMultiAlternatives
 from django.template import Context, TemplateDoesNotExist
 from django.template.loader import get_template
 
@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 
 def send_email(email_template_name=None, subject=None, recipient_list=None, context_dict=None,
-               from_email=settings.DEFAULT_FROM_EMAIL):
+               from_email=None, fail_silently=True, files=None):
     """
     Sends out an email
     @email_template_name: string: the template name of the e-mail it looks for a email_template_name+'.txt' file for a
@@ -23,7 +23,12 @@ def send_email(email_template_name=None, subject=None, recipient_list=None, cont
     @recipient_list:      list of string:each an email address. Each member of recipient_list will see the other
                           recipients in the "To:" field of the email message.
     @from_email:          string: this address is used a the sender address, defaults to settings.DEFAULT_FROM_EMAIL
+    @fail_silently        is passed to Django's mail routine. Set to 'True' to ignore any errors at send time.
+    @files                can be a list of file paths to be attached, or it can be left blank.
+                          eg ('/tmp/file1.txt', '/tmp/image.png')
     """
+    if not from_email:
+        from_email = settings.DEFAULT_FROM_EMAIL
     print "from_email = {} ".format(from_email)
     if email_template_name:
         default_context_dict = {'email_from':settings.DEFAULT_FROM_EMAIL,
@@ -53,14 +58,20 @@ def send_email(email_template_name=None, subject=None, recipient_list=None, cont
             html_message = None
 
         if subject and (text_message or html_message):
-            if text_message:
-                send_mail(subject=subject, message=text_message, from_email=from_email, recipient_list=recipient_list)
-            else:
-                logger.info("no plaintext email send with subject '{subject}'.".format(subject=subject))
-            if html_message:
-                send_mail(subject=subject, message=html_message, from_email=from_email, recipient_list=recipient_list)
-            else:
-                logger.info("no html email send with subject '{subject}'.".format(subject=subject))
+            msg = EmailMultiAlternatives(subject,
+                                         text_message,
+                                         from_email,
+                                         recipient_list)
+            msg.attach_alternative(html_message, "text/html")
+
+            if files:
+                if type(files) != list:
+                    files = [files,]
+
+                for file in files:
+                    msg.attach_file(file)
+
+            return msg.send(fail_silently)
         else:
             logger.warn("can't send message without subject or message, "
                         "may be no email templates found for {template}".format(template=email_template_name))

@@ -73,6 +73,8 @@ LOGGING = {
     }
 }
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 # test settings
 TEST_RUNNER = 'django_patches.test.NoDatabaseRunner.NoDatabaseRunner'
 
