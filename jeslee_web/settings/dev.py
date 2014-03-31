@@ -65,13 +65,18 @@ LOGGING = {
             'level': 'INFO',
             'propagate': True,
         },
-        'accounts_web': {
+        'jeslee_web': {
             'handlers': ['console'],
             'level': 'DEBUG',
             'propagate': True,
         },
     }
 }
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# test settings
+TEST_RUNNER = 'django_patches.test.NoDatabaseRunner.NoDatabaseRunner'
 
 # Try and load local_settings.py
 try:

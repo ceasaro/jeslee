@@ -1,0 +1,2 @@
+Message with context {{ context_var_2 }}
+Domain is: {{ site_domain }}
