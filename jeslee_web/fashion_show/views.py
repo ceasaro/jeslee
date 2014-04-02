@@ -32,9 +32,8 @@ class FashionRegistrationCreateView(CreateView):
 
     def get_success_url(self):
 
-        email_context = self.object.__dict__
-        email_context['size'] = self.object.size.size
-        email_context['fashion_show'] = self.object.fashion_show
+        email_context = dict()
+        email_context['registration'] = self.object
         send_email(email_template_name='email/fashion_show/registration-confirmation',
                    recipient_list=[self.object.email],
                    context_dict=email_context)

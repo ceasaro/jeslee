@@ -29,7 +29,6 @@ def send_email(email_template_name=None, subject=None, recipient_list=None, cont
     """
     if not from_email:
         from_email = settings.DEFAULT_FROM_EMAIL
-    print "from_email = {} ".format(from_email)
     if email_template_name:
         default_context_dict = {'email_from':settings.DEFAULT_FROM_EMAIL,
                                 'site_domain': Site.objects.get_current()}

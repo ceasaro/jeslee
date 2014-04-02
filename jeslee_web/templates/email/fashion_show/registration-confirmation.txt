@@ -1,12 +1,12 @@
-Hallo {{ name }},
+Beste {{ registration.name }},
 
-Wij hebben je inschrijving als model bij Jeslee goed ontvangen!
+{% with show=registration.fashion_show %}
+Bedankt voor je inschrijving als model bij het modeshowspektakel van {{ show.start_time|date:"l" }} {{ show.start_time|date:"d" }} {{ show.start_time|date:"b" }} {{ show.start_time|date:"Y" }}, {{ show.location.name }} in {{ show.location.city }}!
+{% endwith %}
 
-We nemen tijdig contact op om te vertellen hoe het verder gaat.
+Binnen alle leeftijdscategorieën is er per locatie een beperkt aantal plaatsen beschikbaar.
+Binnenkort hoor je per mail van ons of jij een plek op de lijst hebt gekregen.
+Als je op de lijst staat ontvang je tevens alle benodigde details. Samen kunnen we van deze unieke ervaring een geweldig succes maken!
 
-Je ingevulde gegevens zijn:
-naam: {{ name }}
-leeftijd: {{ age }}
-maat: {{ size }}
-e-mail: {{ email }}
-modeshow: {{ fashion_show }}
+Tot gauw, Yasmine
+
