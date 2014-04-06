@@ -4,6 +4,8 @@ from jeslee_web.fashion_show.models import FashionRegistration, FashionLocation\
 
 
 class FashionRegistrationAdmin(admin.ModelAdmin):
+    fields = ('name', 'email', 'age', 'size', 'fashion_show', 'remarks', 'created')  # 'street', 'street_nr', 'zip', 'city'
+    readonly_fields = ('created', )
     list_display = ('name', 'email', 'age', 'size', 'fashion_show')
     list_filter = ('fashion_show', 'age', 'size')
     pass
