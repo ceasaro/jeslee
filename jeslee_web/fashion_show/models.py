@@ -104,6 +104,9 @@ class FashionRegistration(Registration):
     remarks = models.TextField(_(u'remarks'), null=True, blank=True)
     size = models.ForeignKey(ClothingSize, null=True, blank=True)
 
+    def __unicode__(self):
+        return u"{name}, {email}".format(pk=self.pk, name=self.name, email=self.email)
+
     def __str__(self):
         return self.__repr__()
 
