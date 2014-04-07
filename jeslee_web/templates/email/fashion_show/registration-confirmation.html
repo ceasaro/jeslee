@@ -7,22 +7,24 @@ Beste {{ registration.name }},<br/>
 <br/>
 <p>
 {% with show=registration.fashion_show %}
-Bedankt voor je inschrijving als model bij het modeshowspektakel van {{ show.start_time|date:"l" }}
-    {{ show.start_time|date:"d" }} {{ show.start_time|date:"b" }} {{ show.start_time|date:"Y" }},
-    {{ show.location.name }} in {{ show.location.city }}!
+    Bedankt voor je inschrijving als model bij het modeshowspektakel van {{ show.start_time|date:"l" }}
+    {{ show.start_time|date:"d" }} {{ show.start_time|date:"b" }} {{ show.start_time|date:"Y" }} in
+    {{ show.location.name }} te {{ show.location.city }}!
 {% endwith %}
 </p>
 
 <p>
-Binnen alle leeftijdscategorieën is er per locatie een beperkt aantal plaatsen beschikbaar.
-Binnenkort hoor je per mail van ons of jij een plek op de lijst hebt gekregen.
-Als je op de lijst staat ontvang je tevens alle benodigde details. Samen kunnen we van deze unieke ervaring een geweldig succes maken!
+    Binnen alle leeftijdscategorie&euml;n is er per locatie een beperkt aantal plaatsen beschikbaar.
+    Binnenkort hoor je per mail van ons of jij een plek op de lijst hebt gekregen.
+    Als je op de lijst staat ontvang je tevens alle benodigde details.
 </p>
 
 <p>
-Tot gauw, Yasmine
+    Tot gauw, <br/>
+    Team Jeslee & Yasmine van Wieringen<br/>
 </p>
 {% comment %}
+<!--
 <p>
 De bij ons bekende gegevens:
 </p>
@@ -45,6 +47,7 @@ De bij ons bekende gegevens:
         </tr>
     </tbody>
 </table>
+-->
 {% endcomment %}
 
 </body>
