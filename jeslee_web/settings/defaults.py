@@ -162,6 +162,7 @@ INSTALLED_APPS = (
     'jeslee_web.base',
     'jeslee_web.lfs_patch',
     'jeslee_web.fashion_show',
+    'jeslee_web.ideal',
     #    'jeslee_web.account'
 
     # none default django apps
@@ -265,7 +266,7 @@ LFS_PAYPAL_REDIRECT = True
 LFS_AFTER_ADD_TO_CART = "lfs_cart"
 LFS_RECENT_PRODUCTS_LIMIT = 5
 
-LFS_ORDER_NUMBER_GENERATOR = "lfs_order_numbers.models.OrderNumberGenerator"
+LFS_ORDER_NUMBER_GENERATOR = "jeslee_web.lfs_patch.models.OrderNumberGenerator"
 LFS_DOCS = "http://docs.getlfs.com/en/latest/"
 
 LFS_INVOICE_COMPANY_NAME_REQUIRED = False
@@ -276,6 +277,9 @@ LFS_SHIPPING_COMPANY_NAME_REQUIRED = False
 LFS_SHIPPING_EMAIL_REQUIRED = False
 LFS_SHIPPING_PHONE_REQUIRED = False
 
+LFS_PAYMENT_METHOD_PROCESSORS = [
+    ["jeslee_web.ideal.lfs_ideal.IdealPaymentMethodProcessor", _(u"iDEAL payment")],
+]
 LFS_PRICE_CALCULATORS = [
     ['lfs.gross_price.GrossPriceCalculator', _(u'Price includes tax')],
     ['lfs.net_price.NetPriceCalculator', _(u'Price excludes tax')],
@@ -303,6 +307,14 @@ LFS_PRICE_UNITS = LFS_BASE_PRICE_UNITS = LFS_PACKING_UNITS = LFS_UNITS
 LFS_LOG_FILE = SITE_ROOT + "/../lfs.log"
 
 LFS_THUMBNAIL_SIZES = ((208, 270), (450, 584), (104,135), (60, 60), (100, 100), (200, 200), (300, 300), (400, 400))
+
+#
+# iDEAL settings
+#
+IDEAL_MERCHANT_ID = '005081894'
+IDEAL_HASH_KEY = 'j1wNV6GJHSSaZTeI'
+IDEAL_DEFAULT_SUB_ID = '0'
+IDEAL_PAYMENT_TYPE = 'ideal'
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error.

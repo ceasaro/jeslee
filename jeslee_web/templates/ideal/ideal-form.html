@@ -1,0 +1,44 @@
+{% extends 'lfs/base.html' %}
+
+{% block shop-content %}
+    owner = {{ order.user }}<br/>
+    merchant_id = {{ merchant_id }}<br/>
+    amount = {{ amount_in_cents }}<br/>
+    purchaseID = {{ order.number }}<br/>
+    currency = {{ currency }}<br/>
+    description = {{ description }}<br/>
+    hash = {{ hash }}<br/>
+    payment_type = {{ payment_type }}<br/>
+    valid_util = {{ valid_util }}<br/>
+    <br/>
+    <br/>
+    urlSuccess = {{ success_url }}<br/>
+    urlCancel = {{ cancel_url }}<br/>
+    urlError = {{ error_url }}<br/>
+    <br/>
+    <br/>
+    <form method="post" action="https://idealtest.secure-ing.com/ideal/mpiPayInitIng.do" name="ideal-pay-form">
+        <input type="hidden" name="merchantID" value="{{ merchant_id }}"/>
+        <input type="hidden" name="subID" value="{{ sub_id }}"/>
+        <input type="hidden" name="amount" value="{{ amount_in_cents }}"/>
+        <input type="hidden" name="purchaseID" value="{{ order.number }}"/>
+        <input type="hidden" name="language" value=""/>
+        <input type="hidden" name="currency" value="{{ currency }}"/>
+        <input type="hidden" name="description" value="{{ description }}"/>
+        <input type="hidden" name="hash" value="{{ hash }}"/>
+        <input type="hidden" name="paymentType" value="{{ payment_type }}"/>
+        <input type="hidden" name="validUntil" value="{{ valid_util }}"/>
+
+{#        loop over items #}
+        <input type="hidden" name="itemNumber1" value="{{ order.number }}"/>
+        <input type="hidden" name="itemDescription1" value="{{ item_description }}"/>
+        <input type="hidden" name="itemQuantity1" value="{{ item_quantity }}"/>
+        <input type="hidden" name="itemPrice1" value="{{ amount_in_cents }}"/>
+
+
+        <input type="hidden" name="urlSuccess" value="{{ success_url }}"/>
+        <input type="hidden" name="urlCancel" value="{{ cancel_url }}"/>
+        <input type="hidden" name="urlError" value="{{ error_url }}"/>
+        <input type="submit" name="submit2" value="Betaal met iDEAL"/>
+    </form>
+{% endblock %}

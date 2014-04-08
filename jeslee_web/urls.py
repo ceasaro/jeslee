@@ -20,8 +20,8 @@ urlpatterns = patterns('',
 
     # pages
     url(r'^over-jeslee/$', TemplateView.as_view(template_name='pages/about-jeslee.html'), name='about'),
-    # url(r'^winkel/$', HomeView.as_view(template_name="lfs/collections.html"), name='winkel'),
-    url(r'^winkel/$', HomeView.as_view(template_name="pages/web-shop-uc.html"), name='winkel'),
+    url(r'^winkel/$', HomeView.as_view(template_name="lfs/collections.html"), name='winkel'),
+    # url(r'^winkel/$', HomeView.as_view(template_name="pages/web-shop-uc.html"), name='winkel'),
     url(r'^modeshows/', include('jeslee_web.fashion_show.urls')),
 #    url(r'evenementen', TemplateView.as_view(template_name='pages/evenementen.html'), name='evenementen'),
 #    url(r'fotogalerij', TemplateView.as_view(template_name='pages/fotogalerij.html'), name='fotogalerij'),
@@ -46,6 +46,8 @@ urlpatterns = patterns('',
     url(r'^onderhoud/$', TemplateView.as_view(template_name='pages/footer/maintenance.html'),
         name='maintenance'),
 
+    url(r'^ideal/', include('jeslee_web.ideal.urls')),
+
     url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': "auth/login.html"}, name='login'),
     url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': "/"}, name='logout'),
 
@@ -59,7 +61,7 @@ DIRNAME = os.path.dirname(__file__)
 handler500 = 'lfs.core.views.server_error'
 
 urlpatterns += patterns("",
-    (r'^shop/', include('jeslee_web.lfs_patch.core.urls')),
+    (r'^winkel/', include('jeslee_web.lfs_patch.core.urls')),
     (r'^manage/', include('jeslee_web.lfs_patch.manage.urls')),
 )
 

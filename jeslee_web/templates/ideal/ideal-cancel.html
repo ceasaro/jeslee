@@ -1,0 +1,18 @@
+{% extends 'lfs/base.html' %}
+{% load lfs_tags %}
+{% load lfs_portlets_tags %}
+
+{% block section %}page{% endblock %}
+
+{% block left-slot %}
+    {% lfs_pages_portlet %}
+{% endblock %}
+
+{% block content %}
+
+<h1>De betaling is geannuleerd.</h1>
+
+<p>{{ status }} Uw betaling is geannuleerd.</p>
+
+{% endblock %}
+
