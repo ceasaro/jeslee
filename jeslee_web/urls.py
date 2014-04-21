@@ -47,6 +47,7 @@ urlpatterns = patterns('',
         name='maintenance'),
 
     url(r'^ideal/', include('jeslee_web.ideal.urls')),
+    url(r'^ideal/ing/', include('jeslee_web.ideal.ing_tests.urls')),
 
     url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': "auth/login.html"}, name='login'),
     url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': "/"}, name='logout'),

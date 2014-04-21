@@ -1,0 +1,9 @@
+{% extends 'ideal/ideal-form.html' %}
+{% block ideal-header %}
+    <h2>{{ order.test_name }}</h2>
+    <p>
+        {{ order.message }}
+    </p>
+{% endblock %}
+
+{% block ideal-form-submit-text %}Start {{ order.test_name }}{% endblock %}

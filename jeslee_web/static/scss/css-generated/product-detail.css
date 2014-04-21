@@ -8,14 +8,6 @@
 #shop-container #shop-above-content .product-navigation {
   float: right;
 }
-/* line 10, ../product-detail.scss */
-#shop-container #shop-above-content .navigation-button.previous-product {
-  width: 54px;
-}
-/* line 13, ../product-detail.scss */
-#shop-container #shop-above-content .navigation-button.next-product {
-  width: 70px;
-}
 /* line 20, ../product-detail.scss */
 #shop-container #product-form .product-images #product-impression-slide-show {
   position: relative;

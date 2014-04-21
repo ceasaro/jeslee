@@ -78,6 +78,11 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # test settings
 TEST_RUNNER = 'django_patches.test.NoDatabaseRunner.NoDatabaseRunner'
 
+#
+# iDEAL settings
+#
+IDEAL_HASH_KEY = 'gxfE9kiasIyZ2yZU'
+
 # Try and load local_settings.py
 try:
     # pylint: disable-msg=F0401

@@ -63,6 +63,8 @@
                             {{ product|get_base_price_gross:request|currency:request }} / {{ product.get_base_price_unit }}*
                         </div>
                     {% endif %}
+                    PROPERTIES = {{ product.properties.all|length }}
+{% comment %}
                     <div class="price-disclaimer">
                         {% if price_includes_tax %}
                             {% trans 'inc. VAT' %}
@@ -70,6 +72,7 @@
                             {% trans 'exc. VAT' %}
                         {% endif %}
                     </div>
+{% endcomment %}
                 {% else %}
                     <div class="standard-price"
                           nowrap="nowrap">
@@ -80,6 +83,7 @@
                             {{ product|get_base_price_gross:request|currency:request }} / {{ product.get_base_price_unit }}*
                         </div>
                     {% endif %}
+{% comment %}
                     <div class="price-disclaimer">
                         {% if price_includes_tax %}
                             {% trans 'inc. VAT' %}
@@ -87,9 +91,10 @@
                             {% trans 'exc. VAT' %}
                         {% endif %}
                     </div>
+{% endcomment %}
                 {% endif %}
             </div> <!-- .prices -->
-            {% shipping product %}
+{#            {% shipping product %}#}
 
             <hr class="separator"/>
 
@@ -121,8 +126,9 @@
                     <span>{% trans 'Store favorite' %}</span>
                 </div>
                 <div class="social-share-product">
-                    <img src="{{ STATIC_URL }}gfx/icons/icon-mail.png" class="share-icon" title="{% trans 'Share product through e-mail' %}"/>
-                    <img src="{{ STATIC_URL }}gfx/icons/icon-hives.png" class="share-icon" title="{% trans 'Share product on hives' %}"/>
+                    <a href="mailto?subject=http://jeslee.com, {{ product.get_name }}">
+                        <img src="{{ STATIC_URL }}gfx/icons/icon-mail.png" class="share-icon" title="{% trans 'Share product through e-mail' %}"/>
+                    </a>
                     <img src="{{ STATIC_URL }}gfx/icons/icon-facebook.png" class="share-icon" title="{% trans 'Share product on facebook' %}"/>
                     <img src="{{ STATIC_URL }}gfx/icons/icon-twitter.png" class="share-icon" title="{% trans 'Share product on twitter' %}"/>
                     <span>{% trans 'Share' %}</span>
@@ -139,7 +145,7 @@
                id="cp-url"
                data="{% url 'lfs_calculate_price' product.id %}">
 
-            {% for property in properties %}
+            {% for property in product.properties.all %}
                 <tr>
                     {% if property.obj.is_select_field %}
                         <td class="property-label">

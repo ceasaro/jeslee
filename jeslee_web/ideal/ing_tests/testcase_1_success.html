@@ -1,8 +1,6 @@
 {% extends 'lfs/base.html' %}
 
 {% block shop-content %}
-    {% block ideal-header %}
-    {% endblock %}
     <form method="post" action="https://idealtest.secure-ing.com/ideal/mpiPayInitIng.do" name="ideal-pay-form">
         <input type="hidden" name="merchantID" value="{{ merchant_id }}"/>
         <input type="hidden" name="subID" value="{{ sub_id }}"/>
@@ -22,9 +20,9 @@
         <input type="hidden" name="itemPrice1" value="{{ amount_in_cents }}"/>
 
 
-        <input type="hidden" name="urlSuccess" value="http://jeslee.cees{{ success_url }}"/>
-        <input type="hidden" name="urlCancel" value="http://jeslee.cees{{ cancel_url }}"/>
-        <input type="hidden" name="urlError" value="http://jeslee.cees{{ error_url }}"/>
-        <input type="submit" name="submit2" value="{% block ideal-form-submit-text %}Betaal met iDEAL{% endblock %}"/>
+        <input type="hidden" name="urlSuccess" value="{{ success_url }}"/>
+        <input type="hidden" name="urlCancel" value="{{ cancel_url }}"/>
+        <input type="hidden" name="urlError" value="{{ error_url }}"/>
+        <input type="submit" name="submit2" value="Betaal met iDEAL"/>
     </form>
 {% endblock %}
