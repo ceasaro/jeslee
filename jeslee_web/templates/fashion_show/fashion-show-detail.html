@@ -44,12 +44,22 @@
                class="jeslee-ticket buy-ticket ">
 {#                <img src="{% static 'gfx/general/ticket-213x120.png' %}" alt="ticket" />#}
 
-                <span class="jeslee-ticket-title">Klik hier om kaarten te kopen!</span>
+                <span class="jeslee-ticket-title">Klik hier om online kaarten te kopen!</span>
             </a>
+            <h3>Liever geen kaarten online kopen?</h3>
+            <p>
+                Het is ook mogelijk om kaarten aan de kassa te kopen,
+                alleen kunnen wij dan niet garanderen dat er nog plaatsen beschikbaar zijn. <br/>
+                De kassa is {{ fashion_show.start_time|date:"l j F" }} vanaf 10:00 uur s'ochtends geopend.
+            </p>
         {% else %}
-            <span class="jeslee-ticket-title">De kaart verkoop is nog niet gestart.</span>
+            <span class="jeslee-ticket-title">De online kaart verkoop is nog niet gestart.</span>
             <div class="jeslee-ticket no-tickets-for-sale">
             </div>
+            <p>
+                U kunt ook op de dag zelf kaarten aan de kassa te kopen.
+            </p>
+
         {% endif %}
 
 {% comment %}
