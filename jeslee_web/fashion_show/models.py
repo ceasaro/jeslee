@@ -69,6 +69,7 @@ class FashionShow(TimeStampedModel):
     start_time = models.DateTimeField(_(u'start time'), blank=True, null=True)
     end_time = models.DateTimeField(_(u'end time'), blank=True, null=True)
     ticket_order_url = models.URLField(_(u'ticket order url'), blank=True, null=True)
+    participate = models.BooleanField(_(u'participate'), default=True)
     models = models.ManyToManyField(FashionModel, related_name=u'fashion_shows', blank=True, null=True)
 
     objects = FashionShowManager()

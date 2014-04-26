@@ -1,6 +1,6 @@
 # Create your views here.
 from django.core.urlresolvers import reverse
-from django.views.generic import  CreateView, UpdateView, DetailView
+from django.views.generic import  CreateView, UpdateView, DetailView, TemplateView
 from django.views.generic.base import ContextMixin
 from jeslee_web.fashion_show.forms import FashionRegistrationForm
 from jeslee_web.fashion_show.models import FashionRegistration, FashionShow
@@ -49,7 +49,11 @@ class FashionRegistrationUpdateView(UpdateView):
     model = FashionRegistration
 
 
-class FashionShowsView(FashionRegistrationCreateView, FashionShowsMixin, UpcomingFashionShowMixin):
+class FashionShowsView(TemplateView, FashionShowsMixin, UpcomingFashionShowMixin):
+    pass
+
+
+class FashionShowRegistrationView(FashionRegistrationCreateView, FashionShowsMixin, UpcomingFashionShowMixin):
     pass
 
 

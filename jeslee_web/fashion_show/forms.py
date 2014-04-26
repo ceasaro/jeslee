@@ -11,7 +11,7 @@ class FashionRegistrationForm(ModelForm):
     MIN_AGE = 3
     MAX_AGE = 125
 
-    fashion_show = forms.ModelChoiceField(queryset=FashionShow.objects.get_upcoming_shows(),
+    fashion_show = forms.ModelChoiceField(queryset=FashionShow.objects.get_upcoming_shows().filter(participate=True),
                                           empty_label=_(u"Choose a fashion show"),
                                           label=_(u"Fashion show"),
                                           error_messages={'required': _(u'We need to know which show you like to participate')})
