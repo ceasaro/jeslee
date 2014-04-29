@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, url
 from jeslee_web.fashion_show.views import FashionRegistrationCreateView, FashionRegistrationDetailView\
-    , FashionShowsView, FashionShowDetailView
+    , FashionShowsView, FashionShowDetailView, FashionShowRegistrationView
 
 __author__ = 'ceasaro'
 urlpatterns = patterns(
@@ -9,7 +9,7 @@ urlpatterns = patterns(
         name='fashion-shows'),
     url(r'^(?P<pk>\d+)$', FashionShowDetailView.as_view(template_name='fashion_show/fashion-show-detail.html'),
         name='fashion-show'),
-    url(r'^meedoen/$', FashionShowsView.as_view(template_name='fashion_show/fashion-show-participate.html'),
+    url(r'^meedoen/$', FashionShowRegistrationView.as_view(template_name='fashion_show/fashion-show-participate.html'),
         name='fashion-participate'),
     url(r'^aanmelden/$', FashionRegistrationCreateView.as_view(
         template_name='fashion_show/fashion-shows-registration.html'),
