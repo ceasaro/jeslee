@@ -3,6 +3,7 @@ from django import forms
 from django.utils.translation import ugettext_lazy as _
 from jeslee_web.base.models import ClothingSize
 from jeslee_web.fashion_show.models import FashionRegistration, FashionShow
+from jeslee_web.utils.forms.widgets import SelectFashionShow
 
 __author__ = 'ceasaro'
 
@@ -11,10 +12,11 @@ class FashionRegistrationForm(ModelForm):
     MIN_AGE = 3
     MAX_AGE = 125
 
-    fashion_show = forms.ModelChoiceField(queryset=FashionShow.objects.get_upcoming_shows().filter(participate=True),
+    fashion_show = forms.ModelChoiceField(queryset=FashionShow.objects.get_upcoming_shows(),
                                           empty_label=_(u"Choose a fashion show"),
                                           label=_(u"Fashion show"),
-                                          error_messages={'required': _(u'We need to know which show you like to participate')})
+                                          error_messages={'required': _(u'We need to know which show you like to participate')},
+                                          widget=SelectFashionShow)
     name = forms.CharField(label=_(u'Name'),
                            error_messages={'required': _(u'We would like to have your name')})
     age = forms.IntegerField(label=_(u'Age'),
