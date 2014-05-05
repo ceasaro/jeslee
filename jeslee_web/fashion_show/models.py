@@ -51,7 +51,7 @@ class FashionShowManager(Manager):
         """
         Returns all upcoming fashion shows ordered
         """
-        return self.get_query_set().filter(start_time__gte=date_from)
+        return self.get_query_set().filter(cancelled=False).filter(start_time__gte=date_from)
 
     def get_upcoming_show(self, date_from=date.today()):
         """
@@ -70,6 +70,7 @@ class FashionShow(TimeStampedModel):
     end_time = models.DateTimeField(_(u'end time'), blank=True, null=True)
     ticket_order_url = models.URLField(_(u'ticket order url'), blank=True, null=True)
     participate = models.BooleanField(_(u'participate'), default=True)
+    cancelled = models.BooleanField(_(u'cancelled'), default=False)
     models = models.ManyToManyField(FashionModel, related_name=u'fashion_shows', blank=True, null=True)
 
     objects = FashionShowManager()
