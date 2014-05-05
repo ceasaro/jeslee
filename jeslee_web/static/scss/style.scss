@@ -113,18 +113,23 @@ table.lfs-default {
   padding: 20px;
   ul {
     li {
+      height: 45px;
       .label {
         display: inline-block;
-        height: 45px;
         width: 50%;
       }
       input {
         display: inline-block;
-        float: right;
-        width: 200px;
+//        float: right;
+        width: 184px;
+        &[type=radio] {
+          float: right;
+          width: 20px;
+          margin-right: 250px;
+        }
       }
       select {
-        float: right;
+//        float: right;
         width: 204px;
       }
     }

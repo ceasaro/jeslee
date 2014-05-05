@@ -85,7 +85,7 @@
 }
 /* line 100, ../cart.scss */
 #checkout-form-container ul.address li label {
-  width: 200px;
+  width: auto;
 }
 /* line 104, ../cart.scss */
 #checkout-form-container ul.address li .required {

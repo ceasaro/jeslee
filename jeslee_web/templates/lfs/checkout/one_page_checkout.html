@@ -148,7 +148,8 @@
                              {{ form.credit_card_verification }}
                          </td>
                 </div>
-            <div id="checkout-form-bank-account" class="payment-method-form jeslee-form-container" style="{% if not display_bank_account %}display: none;{% endif %}">
+{#            <div id="checkout-form-bank-account" class="payment-method-form jeslee-form-container" style="{% if not display_bank_account %}display: none;{% endif %}">#}
+            <div id="checkout-form-bank-account" class="payment-method-form jeslee-form-container" style="display: none;">
                 <div class="jeslee-form-container-header">
                     {% trans 'Please enter your bank information' %}
                     <noscript>
