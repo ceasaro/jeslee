@@ -1,6 +1,6 @@
 <ul>
-    <li>
-        {% for shipping_method in shipping_methods %}
+    {% for shipping_method in shipping_methods %}
+        <li>
             <div class="shipping-method container">
                 <div class="span-1">
                     <input type="radio"
@@ -10,21 +10,18 @@
                            value="{{shipping_method.id}}"
                            id="shipping-method-{{shipping_method.id}}" />
                 </div>
-                <div class="span-3">
+                <div class="span-6">
+                    <label for="shipping-method-{{shipping_method.id}}">{{ shipping_method.name }}</label>
                     {% if shipping_method.image %}
                         <img class="payment-method"
                              src="{{ shipping_method.image.url }}"
                              alt="{{ shipping_method.name }}">
                     {% endif %}
                 </div>
-
-                <div class="span-6">
-                    <label for="shipping-method-{{shipping_method.id}}">{{ shipping_method.name }}</label>
-                </div>
-                <div class="span-14 last">
+                <div class="span-14 last extra_info">
                     {{ shipping_method.description|safe }}
                 </div>
             </div>
-        {% endfor %}
-    </li>
+        </li>
+    {% endfor %}
 </ul>

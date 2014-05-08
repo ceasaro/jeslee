@@ -85,12 +85,24 @@
   .jeslee-form-container-header {
     .shipping-same-as-invoice {
       font-size: $font-size-small;
+      label {
+        width: auto;
+      }
     }
   }
   #invoice-address-inline {
   }
   #shipping-address-inline {
     display: none;
+  }
+  .jeslee-form-container {
+    .extra_info {
+      display: none;
+    }
+    #shipping-inline {
+    }
+    #payment-inline {
+    }
   }
   ul.address {
     li {

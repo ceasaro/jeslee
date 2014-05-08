@@ -75,19 +75,27 @@
 #checkout-form-container .jeslee-form-container-header .shipping-same-as-invoice {
   font-size: 8pt;
 }
-/* line 92, ../cart.scss */
+/* line 88, ../cart.scss */
+#checkout-form-container .jeslee-form-container-header .shipping-same-as-invoice label {
+  width: auto;
+}
+/* line 95, ../cart.scss */
 #checkout-form-container #shipping-address-inline {
   display: none;
 }
-/* line 97, ../cart.scss */
+/* line 99, ../cart.scss */
+#checkout-form-container .jeslee-form-container .extra_info {
+  display: none;
+}
+/* line 109, ../cart.scss */
 #checkout-form-container ul.address li#form_invoice_line2, #checkout-form-container ul.address li#form_shipping_line2 {
   display: none;
 }
-/* line 100, ../cart.scss */
+/* line 112, ../cart.scss */
 #checkout-form-container ul.address li label {
   width: auto;
 }
-/* line 104, ../cart.scss */
+/* line 116, ../cart.scss */
 #checkout-form-container ul.address li .required {
   float: right;
 }

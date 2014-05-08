@@ -173,6 +173,8 @@
                 </tr>
             {% endif %}
 
+{% comment %}
+            <!-- COUNTRY -->
             <tr>
                 <td></td>
                 <td></td>
@@ -194,6 +196,10 @@
                 <td colspan="2"></td>
                 <td></td>
             </tr>
+{% endcomment %}
+
+            <!-- SHIPPING -->
+{% comment %}
             <tr>
                 <td></td>
                 <td></td>
@@ -202,24 +208,27 @@
                     {% trans 'Shipping' %}:
                 </td>
                 <td>
-                    <select class="cart-shipping-method"
+                    <select class="cart-shipping-method" id="cart-select-shipping-method"
                             name="shipping_method">
                         {% for shipping_method in shipping_methods %}
                             <option {% ifequal shipping_method.id selected_shipping_method.id  %}selected="selected"{% endifequal %}
-                                    value="{{ shipping_method.id }}">
+                                    value="{{ shipping_method.id }}" data-price="{{ shipping_method.price|currency }}">
                                 {{ shipping_method.name }}
                             </option>
                         {% endfor %}
                     </select>
                 </td>
                 <td></td>
-                <td class="number"
+                <td class="number " id="cart-shipping-method-price"
                     nowrap="nowrap">
                     {{ shipping_price|currency:request }}
                 </td>
                 <td></td>
             </tr>
+{% endcomment %}
 
+            <!-- PAYMENT METHOD -->
+{% comment %}
             <tr>
                 <td></td>
                 <td></td>
@@ -228,7 +237,7 @@
                     {% trans 'Payment' %}:
                 </td>
                 <td>
-                    <select class="cart-payment-method"
+                    <select class="cart-payment-method" id="cart-select-payment-method"
                             name="payment_method">
                         {% for payment_method in payment_methods %}
                             <option {% ifequal payment_method.id selected_payment_method.id  %}selected="selected"{% endifequal %}
@@ -245,6 +254,7 @@
                 </td>
                 <td></td>
             </tr>
+{% endcomment %}
 
             <tr>
                 <td></td>
@@ -252,7 +262,8 @@
                 <td></td>
                 <td colspan="3"
                     class="total left padding-top">
-                    {% trans 'Total' %}:
+                    {% trans 'Total' %}:<br/>
+                    <span class="small-text">{% trans 'Inclusive VAT' %}</span>
                 </td>
                 <td class="total number padding-top"
                     nowrap="nowrap">
@@ -260,6 +271,7 @@
                 </td>
                 <td></td>
             </tr>
+{% comment %}
             <tr>
                 <td></td>
                 <td></td>
@@ -274,6 +286,8 @@
                 </td>
                 <td></td>
             </tr>
+{% endcomment %}
+{% comment %}
             <tr>
                 <td></td>
                 <td></td>
@@ -283,6 +297,7 @@
                     {% trans 'Total delivery time' %}: {{ max_delivery_time }}
                 </td>
             </tr>
+{% endcomment %}
         </table>
     </form>
 {% else %}

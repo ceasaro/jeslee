@@ -148,13 +148,17 @@ form {
     font-family: "Times New Roman";
     font-size: 12pt;
     height: 30px;
-    margin-bottom: 20px;
+    margin: 10px 0 10px 0;
     width: 456px;
     padding-left: 20px;
   }
   select {
     font-size: 12pt;
     width: 476px;
+    option {
+      background-color: #CEB4D3;
+//      border: 1px solid #F00;
+    }
   }
   textarea {
     font-family: "Times New Roman";

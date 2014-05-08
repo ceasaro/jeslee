@@ -17,17 +17,15 @@
                            value="{{payment_method.id}}" />
                 </div>
 
-                <div class="payment-method-image-wrapper">
+                <div class="payment-method-name">
+                    <label for="payment-method-{{ payment_method.id }}">{{ payment_method.name }}</label>
                     {% if payment_method.image %}
                         <img class="payment-method-image"
                              src="{{ payment_method.image.url }}"
                              alt="{{ payment_method.name }}">
                     {% endif %}
                 </div>
-                <div class="payment-method-name">
-                    <label for="payment-method-{{ payment_method.id }}">{{ payment_method.name }}</label>
-                </div>
-                <div class="payment-method-description">
+                <div class="payment-method-description extra_info">
                     {{ payment_method.description|safe }}
                 </div>
             </div>

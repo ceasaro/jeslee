@@ -20,7 +20,8 @@ jeslee.cart || (function($) {
                 }
             });
 
-            $('input[name="payment_method"]').click(function(event) {
+            $('#cart-select-payment-method').click(function(event) {
+                event.preventDefault();
                 var $clicked_radio = $(this),
                     $clicked_method_id = $(this).data('payment-method');
                 $('.payment-method-form').slideUp();
@@ -32,6 +33,16 @@ jeslee.cart || (function($) {
 //                }
 
             });
+
+            $('#cart-select-shipping-method').change(function(event) {
+                event.preventDefault();
+                var $selectInput = $(this);
+                $('option:selected', $selectInput).each(function() {
+                    var $paymentOption = $(this),
+                        price = $paymentOption.data('price');
+                        $('#cart-shipping-method-price').html(price);
+                })
+            })
 
         }
     };
