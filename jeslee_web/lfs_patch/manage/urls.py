@@ -75,7 +75,7 @@ urlpatterns += patterns('lfs.manage.product.product',
     url(r'^product/(?P<product_id>\d*)$', "manage_product", name="lfs_manage_product"),
     url(r'^product-data-form/(?P<product_id>\d*)$', "product_data_form"),
     url(r'^add-product$', "add_product", name="lfs_manage_add_product"),
-    url(r'^edit-product-data/(?P<product_id>\d*)$', "edit_product_data", name="lfs_manage_edit_product_data"),
+    # url(r'^edit-product-data/(?P<product_id>\d*)$', "edit_product_data", name="lfs_manage_edit_product_data"),
     url(r'^delete-product/(?P<product_id>\d*)$', "delete_product", name="lfs_manage_delete_product"),
     url(r'^selectable-products-inline$', "selectable_products_inline", name="lfs_manage_selectable_products_inline"),
     url(r'^save-product-stock/(?P<product_id>\d*)$', "stock", name="lfs_save_product_stock"),
@@ -89,6 +89,11 @@ urlpatterns += patterns('lfs.manage.product.product',
     url(r'^set-products-page$', "set_products_page", name="lfs_set_products_page"),
     url(r'^no-products$', "no_products", name="lfs_manage_no_products"),
 )
+# Product patches
+urlpatterns += patterns('jeslee_web.lfs_patch.manage.product.product',
+    url(r'^edit-product-data/(?P<product_id>\d*)$', "edit_product_data_patch", name="lfs_manage_edit_product_data"),
+)
+
 
 urlpatterns += patterns('lfs.manage.product',
     url(r'^product-categories-tab/(?P<product_id>\d*)$', "categories.manage_categories", name="lfs_product_categories_tab"),
