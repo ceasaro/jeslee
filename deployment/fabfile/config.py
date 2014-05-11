@@ -79,7 +79,7 @@ def production():
                                  'requirements/production.txt')
     env.virtualenv_dir = '/opt/virtualenvs/jeslee/'
     env.django_settings = 'jeslee_web.settings.production'
-    env.repository.branch = 'release-0.5'
+    env.repository.branch = 'release-0.6'
     django_settings_to_env()
     env.django_developing = False
 
