@@ -17,7 +17,7 @@ env.project_django_root = join(env.project_root, '')
 env.repository = AttrDict(
     type='git',
     url='https://github.com/ceasaro/jeslee',
-    branch='release-0.5'
+    branch='release-0.6'
 )
 
 env.django_project = 'jeslee'  # default django project (dir)
