@@ -20,8 +20,8 @@ urlpatterns = patterns('',
 
     # pages
     url(r'^over-jeslee/$', TemplateView.as_view(template_name='pages/about-jeslee.html'), name='about'),
-    url(r'^winkel/$', HomeView.as_view(template_name="lfs/collections.html"), name='winkel'),
-    # url(r'^winkel/$', HomeView.as_view(template_name="pages/web-shop-uc.html"), name='winkel'),
+    # url(r'^winkel/$', HomeView.as_view(template_name="lfs/collections.html"), name='winkel'),
+    url(r'^winkel/$', HomeView.as_view(template_name="pages/web-shop-uc.html"), name='winkel'),
     url(r'^modeshows/', include('jeslee_web.fashion_show.urls')),
 #    url(r'evenementen', TemplateView.as_view(template_name='pages/evenementen.html'), name='evenementen'),
 #    url(r'fotogalerij', TemplateView.as_view(template_name='pages/fotogalerij.html'), name='fotogalerij'),
