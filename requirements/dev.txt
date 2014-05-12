@@ -5,7 +5,7 @@ django-debug-toolbar
 # for teseting
 django-nose
 fudge
-pysqlite
+# pysqlite
 
 # for runserver_plus
 werkzeug
