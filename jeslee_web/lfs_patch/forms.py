@@ -1,6 +1,4 @@
-from django import forms
 from django.forms.util import flatatt
-from django.utils import six
 from django.utils.encoding import force_text
 from django.utils.html import format_html
 from floppyforms.widgets import Widget
