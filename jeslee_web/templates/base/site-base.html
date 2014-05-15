@@ -11,15 +11,14 @@
             <img src="{% static 'gfx/logo-jeslee-transparent.png' %}" title="logo Jeslee"/>
         </div>
         <div id="header-menu">
-{#            <ul>#}
-{#                {% if user.is_authenticated %}#}
-{#                <li><a href="{% url 'logout' %}">Uitloggen</a></li>#}
-{#                {% else %}#}
-{#                <li><a href="{% url 'login' %}">Inloggen</a></li>#}
-{#                {% endif %}#}
-{#                <li><a href="#" class="disabled">Aanmelden</a></li>#}
-{#                <li><a href="{% url 'lfs.cart.views.cart' %}">Je aankopen</a></li>#}
-{#            </ul>#}
+            <ul>
+                {% if user.is_authenticated %}
+                <li>welkom {{ user }}<a href="{% url 'logout' %}">Uitloggen</a></li>
+                {% else %}
+                <li><a href="{% url 'login' %}">Inloggen</a></li>
+                {% endif %}
+                <li><a href="{% url 'lfs.cart.views.cart' %}">Je aankopen</a></li>
+            </ul>
             <a href="{% url 'lfs.cart.views.cart' %}" class="link-shopping-bag" title="winkel tasje">
                 <img src="{% static 'gfx/shopping-bag.png' %}" class="shopping-bag" title="winkel tasje"/>
             </a>
@@ -36,14 +35,6 @@
             <li><a href="{% url 'winkel' %}"
                    class="{% block menu_shop_class %}{% endblock %}">Winkel</a>
             </li>
-{% comment %}
-            <li><a href="/winkel/collectie-meisjes"
-                   class="{% block menu_girls_class %}{% endblock %}">Meisjes</a>
-            </li>
-            <li><a href="/winkel/collectie-jongens"
-                   class="{% block menu_boys_class %}{% endblock %}">Jongens</a>
-            </li>
-{% endcomment %}
             <li><a href="{% url 'fashion-shows' %}"
                    class="{% block menu_modeshows_class %}{% endblock %}">Modeshows</a>
             </li>

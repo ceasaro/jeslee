@@ -202,3 +202,23 @@
   }
 }
 
+/***********************
+* login
+**********************/
+#auth-login-form {
+  td {
+    vertical-align: middle;
+    label {
+      width: 200px;
+    }
+    input {
+      width: 350px;
+    }
+  }
+  .login-button {
+    font-size: $font-size-strong;
+    margin-left: 420px;
+    width: 150px;
+  }
+}
+

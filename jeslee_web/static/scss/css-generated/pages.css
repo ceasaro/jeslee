@@ -207,3 +207,25 @@
 #conditions-page .list-definition {
   width: 100px;
 }
+
+/***********************
+* login
+**********************/
+/* line 209, ../pages.scss */
+#auth-login-form td {
+  vertical-align: middle;
+}
+/* line 211, ../pages.scss */
+#auth-login-form td label {
+  width: 200px;
+}
+/* line 214, ../pages.scss */
+#auth-login-form td input {
+  width: 350px;
+}
+/* line 218, ../pages.scss */
+#auth-login-form .login-button {
+  font-size: 14pt;
+  margin-left: 420px;
+  width: 150px;
+}

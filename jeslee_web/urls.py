@@ -22,6 +22,7 @@ urlpatterns = patterns('',
     url(r'^over-jeslee/$', TemplateView.as_view(template_name='pages/about-jeslee.html'), name='about'),
     # url(r'^winkel/$', HomeView.as_view(template_name="lfs/collections.html"), name='winkel'),
     url(r'^winkel/$', HomeView.as_view(template_name="pages/web-shop-uc.html"), name='winkel'),
+    (r'^winkel_/', include('jeslee_web.lfs_patch.core.urls')),
     url(r'^modeshows/', include('jeslee_web.fashion_show.urls')),
 #    url(r'evenementen', TemplateView.as_view(template_name='pages/evenementen.html'), name='evenementen'),
 #    url(r'fotogalerij', TemplateView.as_view(template_name='pages/fotogalerij.html'), name='fotogalerij'),
@@ -62,7 +63,6 @@ DIRNAME = os.path.dirname(__file__)
 handler500 = 'lfs.core.views.server_error'
 
 urlpatterns += patterns("",
-    (r'^winkel/', include('jeslee_web.lfs_patch.core.urls')),
     (r'^manage/', include('jeslee_web.lfs_patch.manage.urls')),
 )
 

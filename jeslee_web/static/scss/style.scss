@@ -141,7 +141,7 @@ form {
     display: inline-block;
     width: 100px;
   }
-  input[type=text], select {
+  input[type=text], input[type=password], select {
     border: none;
     background-color: $transparent-purple;
     //    color: ;
@@ -151,6 +151,14 @@ form {
     margin: 10px 0 10px 0;
     width: 456px;
     padding-left: 20px;
+  }
+  button, input[type=submit] {
+    background-color: $action-color;
+    color:$light-text-color;
+    display: inline-block;
+    padding:10px;
+    margin:10px 15px 0 0;
+    text-decoration: none;
   }
   select {
     font-size: 12pt;

@@ -3,25 +3,48 @@
 #shop-container {
 
   //commen shop style classes
-  .navigation-button, .navigation-button-right {
-    background-color: $action-color;
-    color:$light-text-color;
-    display: inline-block;
-    padding:5px;
-    margin:10px 15px 0 0;
-    text-decoration: none;
-  }
   .navigation-button-right {
     float: right;
-    margin:10px 0 0 15px;
-
+    margin:20px 0 0 15px;
   }
+
+  #checkout-form-container {
+    margin-top: 20px;
+  }
+
   #checkout-login-container {
     h2 {
+      color:$light-text-color;
       margin-bottom: 20px;
+      text-decoration: none;
     }
     form {
       margin-top: 20px;
+      width:452px;
+      label {
+        width:300px;
+      }
+      .navigation-button, .navigation-button-right {
+        font-size: $font-size-strong;
+        width: 205px;
+        margin-left: 244px;
+        &.register-button {
+          margin-top:35px;
+        }
+      }
+    }
+    .navigation-button.checkout-button {
+      font-size: $font-size-strong;
+      text-align: center;
+      width: 205px;
+    }
+    a.checkout-button {
+      background-color: $action-color;
+      color:$light-text-color;
+      display: inline-block;
+      padding:10px;
+      margin:10px 15px 0 0;
+      text-decoration: none;
     }
   }
 
