@@ -36,6 +36,14 @@
         {% block javascript %}
         {% endblock %}
 
+    <script>
+        $(document).ready(function() {
+            {% block jquery-document-ready %}
+                jpan.stardust({spriteImage:'{% static 'gfx/sprites/stardust.png' %}'});
+            {% endblock %}
+        });
+    </script>
+
     {% endcompress %}
 
     <script>
@@ -46,6 +54,9 @@
       ga('create', 'UA-48883057-1', 'jeslee.com');
       ga('send', 'pageview');
     </script>
+
+    <!-- google plus link -->
+    <a href="https://plus.google.com/118433124890271934480" rel="publisher">Google+</a>
 </head>
 <body class="{% block section %}lfs{% endblock %}">
 
