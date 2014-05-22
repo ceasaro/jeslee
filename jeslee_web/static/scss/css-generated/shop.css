@@ -6,45 +6,51 @@
  **********************/
 /* line 6, ../shop.scss */
 #shop-container .navigation-button-right {
+  background-color: #64124d;
+  color: #ebdc78;
+  display: inline-block;
+  padding: 10px;
+  margin: 10px 15px 0 0;
+  text-decoration: none;
   float: right;
-  margin: 20px 0 0 15px;
+  margin: 10px 0 0 15px;
 }
-/* line 11, ../shop.scss */
+/* line 17, ../shop.scss */
 #shop-container #checkout-form-container {
   margin-top: 20px;
 }
-/* line 16, ../shop.scss */
+/* line 22, ../shop.scss */
 #shop-container #checkout-login-container h2 {
   color: #ebdc78;
   margin-bottom: 20px;
   text-decoration: none;
 }
-/* line 21, ../shop.scss */
+/* line 27, ../shop.scss */
 #shop-container #checkout-login-container form {
   margin-top: 20px;
   width: 452px;
 }
-/* line 24, ../shop.scss */
+/* line 30, ../shop.scss */
 #shop-container #checkout-login-container form label {
   width: 300px;
 }
-/* line 27, ../shop.scss */
+/* line 33, ../shop.scss */
 #shop-container #checkout-login-container form .navigation-button, #shop-container #checkout-login-container form .navigation-button-right {
   font-size: 14pt;
   width: 205px;
   margin-left: 244px;
 }
-/* line 31, ../shop.scss */
+/* line 37, ../shop.scss */
 #shop-container #checkout-login-container form .navigation-button.register-button, #shop-container #checkout-login-container form .navigation-button-right.register-button {
   margin-top: 35px;
 }
-/* line 36, ../shop.scss */
+/* line 42, ../shop.scss */
 #shop-container #checkout-login-container .navigation-button.checkout-button {
   font-size: 14pt;
   text-align: center;
   width: 205px;
 }
-/* line 41, ../shop.scss */
+/* line 47, ../shop.scss */
 #shop-container #checkout-login-container a.checkout-button {
   background-color: #64124d;
   color: #ebdc78;
@@ -53,11 +59,11 @@
   margin: 10px 15px 0 0;
   text-decoration: none;
 }
-/* line 51, ../shop.scss */
+/* line 57, ../shop.scss */
 #shop-container #shop-above-content, #shop-container #shop-below-content {
   height: 61px;
 }
-/* line 54, ../shop.scss */
+/* line 60, ../shop.scss */
 #shop-container #shop-above-content .left-triangle, #shop-container #shop-below-content .left-triangle {
   display: inline-block;
   width: 0px;
@@ -66,7 +72,7 @@
   border-width: 5px 10px 5px 0;
   border-color: transparent #ebdc78 transparent transparent;
 }
-/* line 63, ../shop.scss */
+/* line 69, ../shop.scss */
 #shop-container #shop-above-content .right-triangle, #shop-container #shop-below-content .right-triangle {
   display: inline-block;
   width: 0px;
@@ -75,17 +81,17 @@
   border-width: 5px 0 5px 10px;
   border-color: transparent transparent transparent #ebdc78;
 }
-/* line 72, ../shop.scss */
+/* line 78, ../shop.scss */
 #shop-container #shop-above-content .category-name, #shop-container #shop-below-content .category-name {
   float: left;
   font-size: 16pt;
   margin-top: 14px;
 }
-/* line 78, ../shop.scss */
+/* line 84, ../shop.scss */
 #shop-container #shop-above-content .sorting, #shop-container #shop-below-content .sorting {
   float: right;
 }
-/* line 81, ../shop.scss */
+/* line 87, ../shop.scss */
 #shop-container #shop-above-content .sorting select, #shop-container #shop-below-content .sorting select {
   background-color: #390e41;
   border: none;
@@ -93,53 +99,53 @@
   margin-top: 11px;
   padding: 5px;
 }
-/* line 88, ../shop.scss */
+/* line 94, ../shop.scss */
 #shop-container #shop-above-content .sorting select option, #shop-container #shop-below-content .sorting select option {
   background-color: #390e41;
 }
-/* line 95, ../shop.scss */
+/* line 101, ../shop.scss */
 #shop-container #category-menu {
   border: 6px solid #390e41;
   padding: 10px;
   min-height: 292px;
 }
-/* line 101, ../shop.scss */
+/* line 107, ../shop.scss */
 #shop-container #category-menu > ul.root > li > a {
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 105, ../shop.scss */
+/* line 111, ../shop.scss */
 #shop-container #category-menu > ul.root > li li:first-child {
   margin-top: 2px;
 }
-/* line 110, ../shop.scss */
+/* line 116, ../shop.scss */
 #shop-container #category-menu li {
   margin-bottom: 2px;
 }
-/* line 112, ../shop.scss */
+/* line 118, ../shop.scss */
 #shop-container #category-menu li a {
   width: 180px;
   display: block;
   padding: 4px;
   text-decoration: none;
 }
-/* line 118, ../shop.scss */
+/* line 124, ../shop.scss */
 #shop-container #category-menu li a .product-count {
   color: #ca1e69;
 }
-/* line 122, ../shop.scss */
+/* line 128, ../shop.scss */
 #shop-container #category-menu li a.current {
   background-color: #BFAFC1;
 }
-/* line 126, ../shop.scss */
+/* line 132, ../shop.scss */
 #shop-container #category-menu li.level-1 {
   margin-left: 10px;
 }
-/* line 128, ../shop.scss */
+/* line 134, ../shop.scss */
 #shop-container #category-menu li.level-1 a {
   width: 170px;
 }
-/* line 134, ../shop.scss */
+/* line 140, ../shop.scss */
 #shop-container .for-sale-standard-price {
   text-decoration: line-through;
 }
