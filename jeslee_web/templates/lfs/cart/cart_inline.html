@@ -76,19 +76,22 @@
                             </div>
                         {% endfor %}
 
+{% comment %}
                         {% for property in cart_item.product.get_displayed_properties %}
                             <div>
                                 {{ property.title }}: {{ property.value }} {{ property.unit|safe }}
                             </div>
                         {% endfor %}
-
+{% endcomment %}
                         {% if cart_item.product.is_configurable_product %}
-                            {% for property in cart_item.obj.get_properties %}
+                            {% for p in cart_item.obj.properties.all %}
                                 <div>
-                                    {{ property.title }}: {{ property.value }} {{ property.unit|safe }}
-                                    {% if property.obj.is_select_field and property.display_price %}
-                                        ({{ property.price|currency:request }})
-                                    {% endif %}
+                                    {{ p.property }}:
+                                    {% for option in p.property.options.all %}
+                                        {% if option.id|slugify == p.value %}
+                                            {{ option }}
+                                        {% endif %}
+                                    {% endfor %}
                                 </div>
                             {% endfor %}
                         {% endif %}

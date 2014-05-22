@@ -204,11 +204,13 @@
                 {% else %}
                     {{ item.product_name }}
                 {% endif %}
+{% comment %}
                 {% for property in item.product.get_displayed_properties %}
                     <div>
                         {{ property.title }} : {{ property.value }} {{ property.unit|safe }}
                     </div>
                 {% endfor %}
+{% endcomment %}
 
                 {% for property in item.product.get_variant_properties %}
                     <div>

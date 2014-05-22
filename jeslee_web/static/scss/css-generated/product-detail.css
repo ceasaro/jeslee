@@ -88,7 +88,7 @@
   margin-bottom: 20px;
 }
 /* line 93, ../product-detail.scss */
-#shop-container #product-form .order-info .size-and-order #size-selector {
+#shop-container #product-form .order-info .size-and-order select {
   width: 100%;
 }
 /* line 97, ../product-detail.scss */

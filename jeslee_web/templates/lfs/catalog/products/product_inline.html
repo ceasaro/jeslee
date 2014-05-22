@@ -21,6 +21,7 @@
             </h1>
 
             {# Displayed Properties #}
+{% comment %}
             <div class="product-properties">
                 {% for property in product.get_displayed_properties %}
                     <div>
@@ -28,6 +29,7 @@
                     </div>
                 {% endfor %}
             </div>
+{% endcomment %}
 
             <p class="product-description">
                 {{ product.get_description|safe}}
@@ -60,10 +62,10 @@
                     </div>
                     {% if product.get_active_base_price %}
                         <div class="base-price">
-                            {{ product|get_base_price_gross:request|currency:request }} / {{ product.get_base_price_unit }}*
+                            {{ product|get_base_price_gross:request|currency:request }}
+{#                            / {{ product.get_base_price_unit }}*#}
                         </div>
                     {% endif %}
-                    PROPERTIES = {{ product.properties.all|length }}
 {% comment %}
                     <div class="price-disclaimer">
                         {% if price_includes_tax %}
@@ -80,7 +82,8 @@
                     </div>
                     {% if product.get_active_base_price %}
                         <div class="base-price">
-                            {{ product|get_base_price_gross:request|currency:request }} / {{ product.get_base_price_unit }}*
+                            {{ product|get_base_price_gross:request|currency:request }}
+                            / {{ product.get_base_price_unit }}*
                         </div>
                     {% endif %}
 {% comment %}
@@ -99,9 +102,24 @@
             <hr class="separator"/>
 
             <div class="size-and-order">
-                <select id="size-selector" name="size" disabled="disabled">
-                    <option>???</option>
-                </select>
+                {% for property in properties %}
+                    <div>{{ property.name }}</div>
+                    {% if property.options|length > 0 %}
+                        <select name="property-{{ property.id }}">
+                            {% for option in property.options %}
+                                <option value="{{ option.id }}"
+                                        {% if option.selected %}selected="selected"{% endif %}>{{ option.name }}</option>
+                            {% endfor %}
+                        </select>
+                    {% else %}
+                        <span class="todo">TODO</span>
+                    {% endif %}
+                    <div>
+                        <div>
+
+                        </div>
+                    </div>
+                {% endfor %}
 
                 {% if product.is_deliverable %}
                     <div class="order-block">
