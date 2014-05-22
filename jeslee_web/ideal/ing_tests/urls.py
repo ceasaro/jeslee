@@ -4,7 +4,7 @@ from jeslee_web.fashion_show.views import FashionRegistrationCreateView, Fashion
     , FashionShowsView, FashionShowDetailView
 from jeslee_web.ideal.ing_tests.views import IngTest1View, IngTest2View, IngTest3View, IngTest4View, IngTest5View, \
     IngTest6View, IngTest7View
-from jeslee_web.ideal.views import IdealOrder
+from jeslee_web.ideal.views import IdealOrderView
 
 __author__ = 'ceasaro'
 urlpatterns = patterns(

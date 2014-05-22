@@ -25,6 +25,12 @@
         <input type="hidden" name="urlSuccess" value="http://jeslee.cees{{ success_url }}"/>
         <input type="hidden" name="urlCancel" value="http://jeslee.cees{{ cancel_url }}"/>
         <input type="hidden" name="urlError" value="http://jeslee.cees{{ error_url }}"/>
+
+        <ul>
+            <li>success: {{ success_url }}</li>
+            <li>cancel: {{ cancel_url }}</li>
+            <li>error: {{ error_url }}</li>
+        </ul>
         <input type="submit" name="submit2" value="{% block ideal-form-submit-text %}Betaal met iDEAL{% endblock %}"/>
     </form>
 {% endblock %}
