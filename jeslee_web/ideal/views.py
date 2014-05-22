@@ -4,8 +4,7 @@ from django.conf import settings
 from django.contrib.sites.models import Site
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.urlresolvers import reverse
-from django.views.generic import DetailView, TemplateView, UpdateView
-from django.views.generic.base import ContextMixin
+from django.views.generic import DetailView, TemplateView
 from lfs.order.models import Order
 from lfs.order.settings import PAID, CANCELED, PAYMENT_FAILED, SUBMITTED
 from jeslee_web.ideal.utils import calculate_hash, amount_in_cents
