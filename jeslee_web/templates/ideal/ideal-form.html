@@ -1,9 +1,32 @@
 {% extends 'lfs/base.html' %}
+{% load static from staticfiles %}
+
+{% block javascript %}
+    <script src="{% static 'js/ideal/ideal-order.js' %}" type="text/javascript"></script>
+{% endblock %}
+
+{% block jquery-document-ready %}
+    jeslee.ideal_order.init();
+{% endblock %}
+
+{% block shop-above-content %}
+    <div class="category-name">Betaling met iDEAL</div>
+{% endblock %}
 
 {% block shop-content %}
     {% block ideal-header %}
     {% endblock %}
-    <form method="post" action="https://idealtest.secure-ing.com/ideal/mpiPayInitIng.do" name="ideal-pay-form">
+    <p>
+        <a href="http://www.ideal.nl/" target="_blank">
+            <img src="{% static 'gfx/logos/iDEAL_96x96.png' %}" title="iDEAL logo"/>
+        </a>
+    </p>
+    <p>
+        Je word over enkele seconden door gestuurd naar iDEAL, om de betaling af te ronden.<br/>
+        Wordt je niet door gestuurd, klik dan op de knop 'Betaal met iDEAL'.
+    </p>
+    <form action="https://idealtest.secure-ing.com/ideal/mpiPayInitIng.do"
+          id="ideal-pay-form" name="ideal-pay-form" method="post" >
         <input type="hidden" name="merchantID" value="{{ merchant_id }}"/>
         <input type="hidden" name="subID" value="{{ sub_id }}"/>
         <input type="hidden" name="amount" value="{{ amount_in_cents }}"/>
@@ -26,11 +49,6 @@
         <input type="hidden" name="urlCancel" value="http://jeslee.cees{{ cancel_url }}"/>
         <input type="hidden" name="urlError" value="http://jeslee.cees{{ error_url }}"/>
 
-        <ul>
-            <li>success: {{ success_url }}</li>
-            <li>cancel: {{ cancel_url }}</li>
-            <li>error: {{ error_url }}</li>
-        </ul>
         <input type="submit" name="submit2" value="{% block ideal-form-submit-text %}Betaal met iDEAL{% endblock %}"/>
     </form>
 {% endblock %}
