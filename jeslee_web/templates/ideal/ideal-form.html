@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block jquery-document-ready %}
-    jeslee.ideal_order.init();
+{#    jeslee.ideal_order.init();#}
 {% endblock %}
 
 {% block shop-above-content %}
@@ -25,7 +25,7 @@
         Je word over enkele seconden door gestuurd naar iDEAL, om de betaling af te ronden.<br/>
         Wordt je niet door gestuurd, klik dan op de knop 'Betaal met iDEAL'.
     </p>
-    <form action="https://idealtest.secure-ing.com/ideal/mpiPayInitIng.do"
+    <form action="{{ payment_url }}"
           id="ideal-pay-form" name="ideal-pay-form" method="post" >
         <input type="hidden" name="merchantID" value="{{ merchant_id }}"/>
         <input type="hidden" name="subID" value="{{ sub_id }}"/>
@@ -51,4 +51,7 @@
 
         <input type="submit" name="submit2" value="{% block ideal-form-submit-text %}Betaal met iDEAL{% endblock %}"/>
     </form>
+    <ul>
+        <li>{{ hash_key }}</li>
+    </ul>
 {% endblock %}

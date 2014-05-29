@@ -16,6 +16,7 @@ class IdealOrderView(DetailView):
 
     def get_context_data(self, **kwargs):
         context_data = super(IdealOrderView, self).get_context_data(**kwargs)
+        context_data['payment_url'] = settings.IDEAL_PAYMENT_URL
         context_data['merchant_id'] = settings.IDEAL_MERCHANT_ID
         context_data['sub_id'] = settings.IDEAL_DEFAULT_SUB_ID
         context_data['amount_in_cents'] = amount_in_cents(self.object)

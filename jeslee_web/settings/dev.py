@@ -82,8 +82,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 TEST_RUNNER = 'django_patches.test.NoDatabaseRunner.NoDatabaseRunner'
 
 #
-# iDEAL settings
+# iDEAL settings (TEST environment)
 #
+IDEAL_PAYMENT_URL = 'https://idealtest.secure-ing.com/ideal/mpiPayInitIng.do'
 IDEAL_HASH_KEY = 'gxfE9kiasIyZ2yZU'
 
 # Try and load local_settings.py

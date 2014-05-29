@@ -310,10 +310,11 @@ LFS_LOG_FILE = SITE_ROOT + "/../lfs.log"
 LFS_THUMBNAIL_SIZES = ((208, 270), (450, 584), (104,135), (60, 60), (100, 100), (200, 200), (300, 300), (400, 400))
 
 #
-# iDEAL settings
+# iDEAL settings (TEST environment)
 #
+IDEAL_PAYMENT_URL = 'https://idealtest.secure-ing.com/ideal/mpiPayInitIng.do'
 IDEAL_MERCHANT_ID = '005081894'
-IDEAL_HASH_KEY = 'j1wNV6GJHSSaZTeI'
+IDEAL_HASH_KEY = 'gxfE9kiasIyZ2yZU'
 IDEAL_DEFAULT_SUB_ID = '0'
 IDEAL_PAYMENT_TYPE = 'ideal'
 # A sample logging configuration. The only tangible logging

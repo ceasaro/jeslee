@@ -9,7 +9,7 @@ def calculate_hash(order, valid_util):
 
     string_to_encode = settings.IDEAL_HASH_KEY         # iDEAL hash key
     string_to_encode += settings.IDEAL_MERCHANT_ID     # acceptant ID / merchant ID
-    string_to_encode += '0'                            # sub_id
+    string_to_encode += settings.IDEAL_DEFAULT_SUB_ID  # sub_id
     amount = amount_in_cents(order)
     string_to_encode += str(amount)                    # total amount in cents
     string_to_encode += order.number                   # purchase ID

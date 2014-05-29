@@ -33,6 +33,12 @@ _dev_apps = list(INSTALLED_APPS)
 #_dev_apps.append('rosetta')
 INSTALLED_APPS = tuple(_dev_apps)
 
+#
+# iDEAL settings (LIVE environment)
+#
+IDEAL_PAYMENT_URL = 'https://ideal.secure-ing.com/ideal/mpiPayInitIng.do'
+IDEAL_HASH_KEY = 'j1wNV6GJHSSaZTeI'
+
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error.
