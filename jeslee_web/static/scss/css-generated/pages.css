@@ -229,3 +229,24 @@
   margin-left: 420px;
   width: 150px;
 }
+
+/***********************
+* under construction page
+**********************/
+/* line 228, ../pages.scss */
+.page-uc {
+  margin-top: 60px;
+  text-align: center;
+}
+/* line 231, ../pages.scss */
+.page-uc .page-announcement {
+  margin-bottom: 50px;
+}
+/* line 234, ../pages.scss */
+.page-uc img {
+  margin-bottom: 20px;
+}
+/* line 237, ../pages.scss */
+.page-uc p {
+  text-align: center;
+}

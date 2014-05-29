@@ -35,13 +35,14 @@
 }
 /* line 40, ../home.scss */
 #home-page .sponsors a {
+  margin: 0 5px 5px 5px;
   display: inline-block;
 }
-/* line 42, ../home.scss */
+/* line 43, ../home.scss */
 #home-page .sponsors a .white-plane {
   padding: 6px;
 }
-/* line 45, ../home.scss */
+/* line 46, ../home.scss */
 #home-page .sponsors a .company-logo {
   height: 75px;
   width: auto;

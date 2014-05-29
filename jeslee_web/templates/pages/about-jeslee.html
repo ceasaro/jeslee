@@ -15,8 +15,8 @@
 
 {% block jquery-document-ready %}
     $('.expandable').expander({
-    slicePoint: 1488,
-    expandPrefix: '...',
+    slicePoint: 1513,
+    expandPrefix: '..',
     expandText: 'lees meer',
     userCollapseText: 'verberg',
     });
@@ -40,13 +40,15 @@
             </p>
 
             <p>
-                Al onze kleding zijn speciaal ontworpen voor Jeslee. De artikelen zijn van hoge kwaliteit en worden in
-                Nederland gemaakt. Dit betekent dat er geen sprake is van kinderarbeid of slechte arbeidsomstandigheden.
+                Al onze kleding zijn speciaal ontworpen door eigen ontwerpers van Jeslee. De artikelen zijn van hoge
+                kwaliteit en worden in Nederland gemaakt. Dit betekent dat er geen sprake is van kinderarbeid of
+                slechte arbeidsomstandigheden.
             </p>
 
             <p>
-                Wilt u liever onze kleding in het echt bekijken? Bel dan <a href="tel:06-15948090">06 - 15 94 80 90</a>
-                of stuur een e-mail naar <a href="mailto:info@jeslee.com">info@jeslee.com</a> om een afspraak te maken.
+                Wilt u liever onze kleding in het echt bekijken? Neem dan gerust <a href="{% url 'contact' %}">contact</a>
+                met ons op of stuur een e-mail naar <a href="mailto:info@jeslee.com">info@jeslee.com</a> om een
+                afspraak te maken.
             </p>
 
             <p>
@@ -64,8 +66,8 @@
             </p>
 
             <p>
-                Wilt u meer weten of heeft u vragen of opmerkingen dan kunt u gerust een e-mail naar ons sturen of
-                bellen om <a href="{% url 'contact' %}">contact</a> met ons op te nemen.
+                Wilt u meer weten of heeft u vragen of opmerkingen over onze modeshows dan kunt u gerust
+                <a href="{% url 'contact' %}">contact</a> met ons op nemen.
             </p>
 
 {% comment %}
@@ -76,11 +78,11 @@
             </p>
 {% endcomment %}
             <p>
-                Uw kind als een echt model op de catwalk!
+                <div class="page-announcement">Uw kind als een echt model op de catwalk!</div>
             </p>
 
             <p>
-                <strong>Alle kinderen van 3 tot en met 15 jaar zijn welkom op onze catwalk</strong>. Ieder meisje heeft haar
+                Alle kinderen van 3 tot en met 15 jaar zijn welkom op onze catwalk. Ieder meisje heeft haar
                 eigen charme en dat ontdekken ze zelf na deze bijzondere belevenis. Het is een ware boost voor hun
                 zelfvertrouwen. Het haar van de modellen wordt prachtig gestyled en alle meisjes worden als een echt
                 model voor de show opgemaakt zodat ze nog meer schitteren. Dankzij de catwalk-training zullen ze vol
@@ -95,10 +97,9 @@
                 <li>Een training van een catwalk docent en expressie specialist,</li>
                 <li>Make-up door professionele visagistes,</li>
                 <li>Kapsel door professionele kapsters,</li>
-                <li>Kapsel door professionele kapsters,</li>
                 <li>Lunch,</li>
                 <li>1 volwassene entree ticket (voor 1 van de ouders/begeleiders)</li>
-                <li>Een professionele herinneringsfoto op de carwalk</li>
+                <li>Een professionele herinneringsfoto op de catwalk</li>
             </ul>
 
             <p>
@@ -109,8 +110,8 @@
 
             <p>
                 Lijkt het je leuk om mee te doen met een van de shows?
-                Vul het <a href="{% url 'fashion-participate' %}#aanmeld-formulier">aanmeld formulier</a> in dan krijg je van ons bericht
-                of er nog plek is.
+                Vul het <a href="{% url 'fashion-participate' %}#aanmeld-formulier">aanmeld formulier</a> in, dan nemen
+                we contact met je op.
             </p>
 
         </div>

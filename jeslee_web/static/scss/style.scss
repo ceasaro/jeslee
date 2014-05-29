@@ -508,19 +508,16 @@ a.disabled {
   border: 5px solid #ff00ff;
 }
 
-.page-uc {
-  margin-top: 60px;
-  text-align: center;
-  .page-announcement {
-      margin-bottom: 50px;
-  }
-  img {
-  }
-}
-
-.page-announcement {
+.page-announcement-title {
   color: $dark-text-color;
   font-size: 18pt;
+  font-style: italic;
+  line-height: 26pt;
+  text-align: center;
+}
+.page-announcement {
+  color: $dark-text-color;
+  font-size: 14pt;
   font-style: italic;
   line-height: 26pt;
   text-align: center;

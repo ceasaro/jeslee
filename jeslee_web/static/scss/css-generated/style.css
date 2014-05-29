@@ -556,19 +556,18 @@ a.disabled {
 }
 
 /* line 511, ../style.scss */
-.page-uc {
-  margin-top: 60px;
-  text-align: center;
-}
-/* line 514, ../style.scss */
-.page-uc .page-announcement {
-  margin-bottom: 50px;
-}
-
-/* line 521, ../style.scss */
-.page-announcement {
+.page-announcement-title {
   color: #390e41;
   font-size: 18pt;
+  font-style: italic;
+  line-height: 26pt;
+  text-align: center;
+}
+
+/* line 518, ../style.scss */
+.page-announcement {
+  color: #390e41;
+  font-size: 14pt;
   font-style: italic;
   line-height: 26pt;
   text-align: center;
