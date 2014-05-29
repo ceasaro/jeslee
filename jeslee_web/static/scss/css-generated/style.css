@@ -549,13 +549,18 @@ a.disabled {
   width: 0;
 }
 
-/* line 506, ../style.scss */
+/* line 505, ../style.scss */
+.quote {
+  font-style: italic;
+}
+
+/* line 508, ../style.scss */
 .todo {
   background-color: #ffff00;
   border: 5px solid #ff00ff;
 }
 
-/* line 511, ../style.scss */
+/* line 513, ../style.scss */
 .page-announcement-title {
   color: #390e41;
   font-size: 18pt;
@@ -564,7 +569,7 @@ a.disabled {
   text-align: center;
 }
 
-/* line 518, ../style.scss */
+/* line 520, ../style.scss */
 .page-announcement {
   color: #390e41;
   font-size: 14pt;

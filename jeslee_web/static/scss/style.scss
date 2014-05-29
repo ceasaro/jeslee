@@ -502,7 +502,9 @@ a.disabled {
   overflow: hidden;
   width: 0;
 }
-
+.quote {
+  font-style: italic;
+}
 .todo {
   background-color: #ffff00;
   border: 5px solid #ff00ff;
