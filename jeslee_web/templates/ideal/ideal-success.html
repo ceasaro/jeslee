@@ -12,9 +12,15 @@
 
 <h1>Bedankt!</h1>
 
-<p>Uw betaling van <b>{{ amount }}</b> voor ordernummer <b>{{ order.id }}</b> is geslaagd.</p>
-<p>We hebben een bevestiging naar uw e-mailadres gestuurd.</p>
+<p>Uw betaling van <b>{{ order.price|currency:request }}</b> voor ordernummer <b>{{ order.number }}</b> is geslaagd.</p>
+<p>
+    We hebben een bevestiging naar uw e-mailadres ({{ order.user.email }}) gestuurd.<br/>
+    De verstuurde e-mail is tevens je garantie bewijs.
+</p>
+<p>
+uuid={{ order.uuid }}
+</p>
 
-<p>Status: {{ trx.get_status_display }} {{ trx.status }}</p>
+
 {% endblock %}
 

@@ -14,6 +14,16 @@ class IdealOrderView(DetailView):
     model = Order
     context_object_name = 'order'
 
+    def get_object(self, queryset=None):
+        order_uuid = self.kwargs.get('uuid', None)
+        try:
+            order = Order.objects.get(uuid=order_uuid)
+        except ObjectDoesNotExist:
+            order = None
+        return order
+
+
+
     def get_context_data(self, **kwargs):
         context_data = super(IdealOrderView, self).get_context_data(**kwargs)
         context_data['payment_url'] = settings.IDEAL_PAYMENT_URL
@@ -29,9 +39,9 @@ class IdealOrderView(DetailView):
         context_data['payment_type'] = settings.IDEAL_PAYMENT_TYPE
         context_data['valid_util'] = valid_util
 
-        context_data['success_url'] = reverse('ideal-success', kwargs={'pk': self.object.id})
-        context_data['cancel_url'] = reverse('ideal-cancel', kwargs={'pk': self.object.id})
-        context_data['error_url'] = reverse('ideal-error', kwargs={'pk': self.object.id})
+        context_data['success_url'] = reverse('ideal-success', kwargs={'uuid': self.object.uuid})
+        context_data['cancel_url'] = reverse('ideal-cancel', kwargs={'uuid': self.object.uuid})
+        context_data['error_url'] = reverse('ideal-error', kwargs={'uuid': self.object.uuid})
         return context_data
 
 
@@ -39,17 +49,17 @@ class OrderStateUpdateView(TemplateView):
     order_state = SUBMITTED
 
     def get(self, request, *args, **kwargs):
-        order_id = kwargs['pk']
-        print "updating order {} to {}".format(order_id, self.order_state)
+        order_uuid = kwargs.get('uuid', None)
+        print "updating order {} to {}".format(order_uuid, self.order_state)
         try:
-            order = Order.objects.get(pk=order_id)
+            order = Order.objects.get(uuid=order_uuid)
             order.state = self.order_state
             order.save()
         except ObjectDoesNotExist:
             order= None
-            print "order with id {} not found!".format(order_id)
+            print "order with id {} not found!".format(order_uuid)
 
-        context = self.get_context_data(object=order)
+        context = self.get_context_data(order=order)
         return self.render_to_response(context)
 
 
