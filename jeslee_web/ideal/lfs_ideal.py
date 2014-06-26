@@ -1,6 +1,5 @@
-import urllib
 from lfs.plugins import PaymentMethodProcessor
-from lfs.payment.settings import PM_ORDER_ACCEPTED, PM_ORDER_IMMEDIATELY
+from lfs.payment.settings import PM_ORDER_IMMEDIATELY
 
 __author__ = 'ceasaro'
 
@@ -61,6 +60,6 @@ class IdealPaymentMethodProcessor(PaymentMethodProcessor):
         # iDEAL requires a POST while LFS performs a GET
         # We redirect to a form that performs a POST to iDEAL
 
-        return "/ideal/order/%s" % self.order.id
+        return "/ideal/order/%s" % self.order.uuid
 
 

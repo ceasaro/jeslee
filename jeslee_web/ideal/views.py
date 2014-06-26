@@ -22,8 +22,6 @@ class IdealOrderView(DetailView):
             order = None
         return order
 
-
-
     def get_context_data(self, **kwargs):
         context_data = super(IdealOrderView, self).get_context_data(**kwargs)
         context_data['payment_url'] = settings.IDEAL_PAYMENT_URL
