@@ -1023,7 +1023,7 @@ msgstr "Bevestig wachtwoord"
 
 #: jeslee_web/templates/lfs/mail/contact_mail.html:13
 msgid "A new mail has been received:"
-msgstr ""
+msgstr "We hebben een nieuwe e-mail ontvangen"
 
 #: jeslee_web/templates/lfs/mail/contact_mail.html:16
 #: jeslee_web/templates/manage/manage_base.html:72
@@ -1172,34 +1172,34 @@ msgstr "Bericht"
 #: jeslee_web/templates/lfs/mail/order_sent_mail.txt:2
 #, python-format
 msgid "Dear %(firstname)s %(lastname)s"
-msgstr ""
+msgstr "Beste %(firstname)s %(lastname)s"
 
 #: jeslee_web/templates/lfs/mail/order_paid_mail.html:11
 #: jeslee_web/templates/lfs/mail/order_paid_mail.txt:4
 msgid "your order has been paid."
-msgstr ""
+msgstr "ye bestelling is bestaald."
 
 #: jeslee_web/templates/lfs/mail/order_paid_subject.txt:1
 msgid "Your order has been paid."
-msgstr ""
+msgstr "Je bestelling is bestaald."
 
 #: jeslee_web/templates/lfs/mail/order_received_mail.html:11
 #: jeslee_web/templates/lfs/mail/order_received_mail.txt:4
 msgid "your order has been received."
-msgstr ""
+msgstr "we hebben je bestelling goed ontvangen"
 
 #: jeslee_web/templates/lfs/mail/order_received_subject.txt:1
 msgid "Your order has been received"
-msgstr ""
+msgstr "We hebben je bestelling goed ontvangen"
 
 #: jeslee_web/templates/lfs/mail/order_sent_mail.html:11
 #: jeslee_web/templates/lfs/mail/order_sent_mail.txt:4
 msgid "your order has been sent."
-msgstr ""
+msgstr "we hebben je bestelling op de post gedaan."
 
 #: jeslee_web/templates/lfs/mail/order_sent_subject.txt:1
 msgid "Your order has been sent"
-msgstr "Je bestelling is verstuurd"
+msgstr "We hebben je bestelling op de post gedaan."
 
 #: jeslee_web/templates/lfs/mail/review_added_mail.html:7
 #: jeslee_web/templates/lfs/mail/review_added_mail.txt:2
@@ -1249,7 +1249,7 @@ msgstr "Geen toelichting"
 #: jeslee_web/templates/manage/product/images.html:34
 #: jeslee_web/templates/tagging/product_list.html:13
 msgid "Image"
-msgstr ""
+msgstr "Foto"
 
 #: jeslee_web/templates/lfs/order/lfs_order_tmpl.html:280
 #: jeslee_web/templates/manage/order/order_inline.html:321
