@@ -58,7 +58,11 @@
       .large-image {
         border:1px solid $action-color;
         height: 584px;
-        width: 460px;
+        width: 389px;
+        img {
+          display: block;
+          margin: 0 auto;
+        }
       }
       .sub-images {
         padding:10px 0 10px 0;

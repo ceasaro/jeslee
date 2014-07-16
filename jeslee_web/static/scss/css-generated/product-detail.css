@@ -56,42 +56,47 @@
 #shop-container #product-form .product-images .large-image {
   border: 1px solid #64124d;
   height: 584px;
-  width: 460px;
+  width: 389px;
 }
-/* line 63, ../product-detail.scss */
+/* line 62, ../product-detail.scss */
+#shop-container #product-form .product-images .large-image img {
+  display: block;
+  margin: 0 auto;
+}
+/* line 67, ../product-detail.scss */
 #shop-container #product-form .product-images .sub-images {
   padding: 10px 0 10px 0;
 }
-/* line 65, ../product-detail.scss */
+/* line 69, ../product-detail.scss */
 #shop-container #product-form .product-images .sub-images .sub-image.cycle-slide-active {
   border: 1px solid #64124d;
 }
-/* line 68, ../product-detail.scss */
+/* line 72, ../product-detail.scss */
 #shop-container #product-form .product-images .sub-images .sub-image {
   display: inline-block;
   height: 100px;
   margin-right: 10px;
   width: 100px;
 }
-/* line 77, ../product-detail.scss */
+/* line 81, ../product-detail.scss */
 #shop-container #product-form .order-info {
   background-color: #390e41;
   color: #ebdc78;
   padding: 30px 20px 20px 20px;
 }
-/* line 83, ../product-detail.scss */
+/* line 87, ../product-detail.scss */
 #shop-container #product-form .order-info .prices .for-sale-price {
   font-size: 14pt;
 }
-/* line 86, ../product-detail.scss */
+/* line 90, ../product-detail.scss */
 #shop-container #product-form .order-info .prices .product-price {
   margin-bottom: 20px;
 }
-/* line 93, ../product-detail.scss */
+/* line 97, ../product-detail.scss */
 #shop-container #product-form .order-info .size-and-order select {
   width: 100%;
 }
-/* line 97, ../product-detail.scss */
+/* line 101, ../product-detail.scss */
 #shop-container #product-form .order-info .size-and-order .add-to-cart-button {
   background: url("../../gfx/shopping-bag-small.png") no-repeat 5px center;
   border: none;
@@ -102,11 +107,11 @@
   padding: 17px 3px 3px 35px;
   width: 100px;
 }
-/* line 112, ../product-detail.scss */
+/* line 116, ../product-detail.scss */
 #shop-container #product-form .order-info .share-product .save-product {
   margin-bottom: 15px;
 }
-/* line 116, ../product-detail.scss */
+/* line 120, ../product-detail.scss */
 #shop-container #product-form .order-info .separator {
   border-top: 1px solid #ebdc78;
   margin: 20px -10px 20px -10px;
