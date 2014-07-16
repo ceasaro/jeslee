@@ -44,44 +44,45 @@
   background-color: #ebe7ec;
   color: #390e41;
   height: 270px;
+  overflow: hidden;
 }
-/* line 40, ../content.scss */
+/* line 41, ../content.scss */
 .product-card .product-card-content a {
   color: #390e41;
 }
-/* line 44, ../content.scss */
+/* line 45, ../content.scss */
 .product-card .product-card-content .product-card-text {
   padding: 20px;
 }
-/* line 47, ../content.scss */
+/* line 48, ../content.scss */
 .product-card .product-card-content .product-card-text strong {
   display: block;
   margin-bottom: 15px;
 }
-/* line 51, ../content.scss */
+/* line 52, ../content.scss */
 .product-card .product-card-content .product-card-text p {
   margin: 10px 0;
   line-height: 1.1;
 }
-/* line 55, ../content.scss */
+/* line 56, ../content.scss */
 .product-card .product-card-content .product-card-text form {
   margin-top: 20px;
 }
-/* line 58, ../content.scss */
+/* line 59, ../content.scss */
 .product-card .product-card-content .product-card-text form input {
   margin: 10px 0;
   width: 100%;
 }
-/* line 62, ../content.scss */
+/* line 63, ../content.scss */
 .product-card .product-card-content .product-card-text form input[type=submit] {
   background-color: #390e41;
 }
-/* line 69, ../content.scss */
+/* line 70, ../content.scss */
 .product-card .product-card-teaser {
   margin: 6px 14px 0 14px;
 }
 
-/* line 73, ../content.scss */
+/* line 74, ../content.scss */
 .product-card:hover {
   -webkit-box-shadow: 0px 0px 15px 5px #ebdc78;
   -moz-box-shadow: 0px 0px 15px 5px #ebdc78;
