@@ -10,11 +10,11 @@
     {% csrf_token %}
 
     {# Images #}
-    <div class="grid_6">
+    <div class="grid_5">
         {% product_image_slide product %}
     </div>
 
-    <div class="grid_3">
+    <div class="grid_4">
         <div class="product-info">
             <h1 class="product-title">
                 {{ product.get_name }}

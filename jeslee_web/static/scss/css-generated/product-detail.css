@@ -79,24 +79,28 @@
   width: 100px;
 }
 /* line 81, ../product-detail.scss */
+#shop-container #product-form .product-info {
+  margin: 0 10px 0 20px;
+}
+/* line 84, ../product-detail.scss */
 #shop-container #product-form .order-info {
   background-color: #390e41;
   color: #ebdc78;
   padding: 30px 20px 20px 20px;
 }
-/* line 87, ../product-detail.scss */
+/* line 90, ../product-detail.scss */
 #shop-container #product-form .order-info .prices .for-sale-price {
   font-size: 14pt;
 }
-/* line 90, ../product-detail.scss */
+/* line 93, ../product-detail.scss */
 #shop-container #product-form .order-info .prices .product-price {
   margin-bottom: 20px;
 }
-/* line 97, ../product-detail.scss */
+/* line 100, ../product-detail.scss */
 #shop-container #product-form .order-info .size-and-order select {
   width: 100%;
 }
-/* line 101, ../product-detail.scss */
+/* line 104, ../product-detail.scss */
 #shop-container #product-form .order-info .size-and-order .add-to-cart-button {
   background: url("../../gfx/shopping-bag-small.png") no-repeat 5px center;
   border: none;
@@ -107,11 +111,11 @@
   padding: 17px 3px 3px 35px;
   width: 100px;
 }
-/* line 116, ../product-detail.scss */
+/* line 119, ../product-detail.scss */
 #shop-container #product-form .order-info .share-product .save-product {
   margin-bottom: 15px;
 }
-/* line 120, ../product-detail.scss */
+/* line 123, ../product-detail.scss */
 #shop-container #product-form .order-info .separator {
   border-top: 1px solid #ebdc78;
   margin: 20px -10px 20px -10px;
