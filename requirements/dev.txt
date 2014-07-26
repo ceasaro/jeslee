@@ -5,8 +5,12 @@ django-debug-toolbar
 # for teseting
 django-nose
 fudge
+<<<<<<< HEAD
 pysqlite
 mock==1.0.1
+=======
+# pysqlite
+>>>>>>> e64569914e3f2fb4d2632e0fda40917ffbe80fd0
 
 # for runserver_plus
 werkzeug
