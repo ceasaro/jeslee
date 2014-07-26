@@ -1,7 +1,8 @@
 # Django settings for JesLee project.
-import locale
 import os
+
 from django.core.urlresolvers import reverse_lazy
+
 # django imports
 from django.utils.translation import gettext_lazy as _
 
@@ -165,6 +166,9 @@ INSTALLED_APPS = (
     'jeslee_web.fashion_show',
     'jeslee_web.ideal',
     #    'jeslee_web.account'
+
+    # bookkeeping
+    'bookkeeping.transactions',
 
     # none default django apps
     'django_extensions',
