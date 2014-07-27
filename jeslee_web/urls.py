@@ -77,6 +77,6 @@ urlpatterns += patterns("",
     (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': os.path.join(DIRNAME, "media"), 'show_indexes': True }),
 )
 
-urlpatterns += patterns("bookkeeping",
-                        (r'^bookkeeping/', include('bookkeeping.transactions.urls')),
-                        )
+urlpatterns += patterns("",
+    (r'^bookkeeping/', include('bookkeeping.transactions.urls')),
+    )

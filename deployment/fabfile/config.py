@@ -2,11 +2,13 @@
 """
 import os
 from os.path import normpath, dirname, join, expandvars
+
 from fabric.api import env, require, abort
+from fabric.decorators import task
 
 from . import django
-from fabric.decorators import task
 from .utils import AttrDict
+
 
 env.use_ssh_config = True # try and use some settings from $HOME/.ssh/config
 
@@ -17,7 +19,7 @@ env.project_django_root = join(env.project_root, '')
 env.repository = AttrDict(
     type='git',
     url='https://github.com/ceasaro/jeslee',
-    branch='release-0.6'
+    branch='master'
 )
 
 env.django_project = 'jeslee'  # default django project (dir)
@@ -62,7 +64,7 @@ def acceptation():
                                  'requirements/acceptation.txt')
     env.virtualenv_dir = '/opt/virtualenvs/jeslee-beta/'
     env.django_settings = 'jeslee_web.settings.acceptation'
-    env.repository.branch = 'webshop'
+    env.repository.branch = 'bookkeeping'
     django_settings_to_env()
     env.django_developing = False
 
