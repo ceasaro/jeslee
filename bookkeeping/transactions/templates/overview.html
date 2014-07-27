@@ -1,18 +1,48 @@
 {% extends 'transaction-base.html' %}
 
 {% block page-content %}
-    <h1>Overzicht</h1>
 
-    belasting={{ payments.sum_tax }}<br/>
-    total betaling: {{ payments.sum_amount }}<br/>
+    <div>
+        <dl class="financial-summary">
+            <dt>total betaald in {{ request.financial_year }}</dt>
+                <dd>€ {{ payments.sum_amount|floatformat:"2" }}</dd>
+            <dt>belasting betaald in {{ request.financial_year }}</dt>
+                <dd>€ {{ payments.sum_tax|floatformat:"2" }}</dd>
+        </dl>
+    </div>
 
-{% comment %}
-    <ul>
-        {% for payment in payments.list %}
-            <li>
-                payment: {{ payment }}
-            </li>
-        {% endfor %}
-    </ul>
-{% endcomment %}
+    <h2>Overzicht betalingen</h2>
+
+    <table class="payment-list" >
+        <thead>
+            <tr>
+                <th>
+                    <a href="?year={{ request.financial_year }}&ob={% if payments.ordered_by == 'pay_date' %}-{% endif %}pay_date">datum</a>
+                </th>
+                <th>
+                    <a href="?year={{ request.financial_year }}&ob={% if payments.ordered_by == 'client' %}-{% endif %}client">klant</a>
+                </th>
+                <th>
+                    <a href="?year={{ request.financial_year }}&ob={% if payments.ordered_by == 'category' %}-{% endif %}category">categorie</a>
+                </th>
+                <th>
+                    bedrag
+                </th>
+                <th>
+                    belasting
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for payment in payments.list %}
+                <tr>
+                    <td>{{ payment.pay_date }}</td>
+                    <td>{{ payment.client }}</td>
+                    <td>{{ payment.category }}</td>
+                    <td>€ {{ payment.amount|floatformat:"2" }}</td>
+                    <td>€ {{ payment.tax|floatformat:"2" }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

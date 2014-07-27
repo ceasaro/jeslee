@@ -31,3 +31,32 @@ body {
       width: 339px; }
     .regular-form p select {
       width: 339px; }
+
+.payment-list tr {
+  padding: 5px; }
+  .payment-list tr:hover td {
+    background-color: #ff0f07; }
+  .payment-list tr th {
+    background-color: #FFC200;
+    border: 1px solid #3c3c3c;
+    padding: 10px; }
+  .payment-list tr td {
+    background-color: #FFD140;
+    border: 1px solid #4c4c4c;
+    margin: 5px;
+    padding: 10px; }
+    .payment-list tr td:hover {
+      background-color: #0006ff; }
+
+.financial-summary {
+  background-color: #FFD140;
+  padding: 20px;
+  width: 200px; }
+
+#weslee-pixel {
+  width: 1px;
+  height: 1px;
+  background-color: #ff00ff;
+  position: absolute;
+  bottom: 10px;
+  right: 10px; }

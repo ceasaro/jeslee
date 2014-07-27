@@ -19,7 +19,7 @@ class FinancialYearMixin(object):
         return: the financial year form to request GET params if not found the current year is returned.
         """
         this_year = date.today().year
-        financial_year = int(self.request.GET['year']) if 'year' in self.request.GET else this_year
+        financial_year = int(self.request.GET.get('year', this_year))
         self.request.financial_year = financial_year
         self.request.financial_years = range(this_year-5, this_year+1)
         return financial_year
@@ -27,16 +27,27 @@ class FinancialYearMixin(object):
 
 class PaymentOverviewView(TemplateView, FinancialYearMixin):
 
+    default_order_by = 'pay_date'
+
+    def get_order_by(self):
+        return self.request.GET.get('ob', self.default_order_by)
+
+    def get_payments(self):
+        year = self.financial_year()
+        order_by = self.get_order_by()
+        return Payment.objects.of_year(year).order_by(order_by)
+
     def get_context_data(self, **kwargs):
         context_data = super(PaymentOverviewView, self).get_context_data(**kwargs)
-        year = self.financial_year()
-        payments = Payment.objects.of_year(year)
+        payments = self.get_payments()
         sum_tax = sum(payment.tax for payment in payments)
         sum_amount = payments.aggregate(Sum('amount'))
         context_data.update({
             'payments': {
+                'list': payments,
                 'sum_amount': sum_amount['amount__sum'],
-                'sum_tax': sum_tax
+                'sum_tax': sum_tax,
+                'ordered_by': self.get_order_by()
             },
         })
         return context_data
