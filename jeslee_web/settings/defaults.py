@@ -1,7 +1,8 @@
 # Django settings for JesLee project.
-import locale
 import os
+
 from django.core.urlresolvers import reverse_lazy
+
 # django imports
 from django.utils.translation import gettext_lazy as _
 
@@ -102,6 +103,7 @@ STATICFILES_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(SITE_ROOT, 'static'), #Our custom static files for this site.
+    os.path.join(PROJECT_DIR, 'bookkeeping/static')
     # os.path.join(SITE_ROOT, '../lfs/lfs_project/sitestatic'), #static from LFS
 )
 
@@ -165,6 +167,10 @@ INSTALLED_APPS = (
     'jeslee_web.fashion_show',
     'jeslee_web.ideal',
     #    'jeslee_web.account'
+
+    # bookkeeping
+    'bookkeeping.core',
+    'bookkeeping.transactions',
 
     # none default django apps
     'django_extensions',

@@ -1,0 +1,18 @@
+{% extends 'transaction-base.html' %}
+
+{% block page-content %}
+    <h1>Overzicht</h1>
+
+    belasting={{ payments.sum_tax }}<br/>
+    total betaling: {{ payments.sum_amount }}<br/>
+
+{% comment %}
+    <ul>
+        {% for payment in payments.list %}
+            <li>
+                payment: {{ payment }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endcomment %}
+{% endblock %}

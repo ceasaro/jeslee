@@ -1,0 +1,38 @@
+{% extends 'bookkeeping-base.html' %}
+{% block body %}
+    {% block menu %}
+        <ul class="main-menu">
+            <li class="main-menu-item">
+                <a href="{% url 'bookkeeping_home' %}" class="main-menu-item-link">Overzicht</a>
+            </li>
+            <li class="main-menu-item">
+                <a href="{% url 'new_payment' %}" class="main-menu-item-link">Nieuw bonnetje</a>
+            </li>
+            <li class="main-menu-item">
+                <a href="{% url 'new_client' %}" class="main-menu-item-link">Nieuwe klant</a>
+            </li>
+            <li class="main-menu-item">
+                <a href="{% url 'new_category' %}" class="main-menu-item-link">Nieuwe category</a>
+            </li>
+        </ul>
+    {% endblock %}
+
+    {% if request.financial_years %}
+        <div class="financial-year">
+            <form action="" method="get">
+                <label for="financial-year-select">Boekjaar</label>
+                <select name="year" id="financial-year-select">
+                    {% for year in request.financial_years %}
+                        <option {% if year == request.financial_year %}selected="selected"{% endif %}>{{ year }}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="Kies"/>
+            </form>
+        </div>
+    {% endif %}
+
+    <div>
+        {% block page-content %}
+        {% endblock %}
+    </div>
+{% endblock %}
