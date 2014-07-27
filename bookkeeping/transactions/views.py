@@ -10,10 +10,19 @@ from bookkeeping.transactions.models import Payment
 
 __author__ = 'ceasaro'
 
+
 class FinancialYearMixin(object):
 
     def financial_year(self):
-        return int(self.request.GET['year']) if 'year' in self.request.GET else date.today().year
+        """
+        The financial year bound to the request as 'request.financial_year'
+        return: the financial year form to request GET params if not found the current year is returned.
+        """
+        this_year = date.today().year
+        financial_year = int(self.request.GET['year']) if 'year' in self.request.GET else this_year
+        self.request.financial_year = financial_year
+        self.request.financial_years = range(this_year-5, this_year+1)
+        return financial_year
 
 
 class PaymentOverviewView(TemplateView, FinancialYearMixin):
@@ -25,7 +34,6 @@ class PaymentOverviewView(TemplateView, FinancialYearMixin):
         sum_tax = sum(payment.tax for payment in payments)
         sum_amount = payments.aggregate(Sum('amount'))
         context_data.update({
-            'year': year,
             'payments': {
                 'sum_amount': sum_amount['amount__sum'],
                 'sum_tax': sum_tax

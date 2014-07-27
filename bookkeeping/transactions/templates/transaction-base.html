@@ -17,6 +17,20 @@
         </ul>
     {% endblock %}
 
+    {% if request.financial_years %}
+        <div class="financial-year">
+            <form action="" method="get">
+                <label for="financial-year-select">Boekjaar</label>
+                <select name="year" id="financial-year-select">
+                    {% for year in request.financial_years %}
+                        <option {% if year == request.financial_year %}selected="selected"{% endif %}>{{ year }}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="Kies"/>
+            </form>
+        </div>
+    {% endif %}
+
     <div>
         {% block page-content %}
         {% endblock %}
