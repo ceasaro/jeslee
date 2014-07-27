@@ -12,6 +12,12 @@ TEMPLATE_DEBUG = DEBUG
 SITE_ROOT = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 PROJECT_DIR = os.path.dirname(SITE_ROOT) # this is not Django setting.
 
+print ('############################################################')
+print ('SITE_ROOT = {}'.format(SITE_ROOT))
+print ('PROJECT_DIR = {}'.format(PROJECT_DIR))
+print ('############################################################')
+
+
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
@@ -103,6 +109,7 @@ STATICFILES_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(SITE_ROOT, 'static'), #Our custom static files for this site.
+    os.path.join(PROJECT_DIR, 'bookkeeping/static')
     # os.path.join(SITE_ROOT, '../lfs/lfs_project/sitestatic'), #static from LFS
 )
 
@@ -168,6 +175,7 @@ INSTALLED_APPS = (
     #    'jeslee_web.account'
 
     # bookkeeping
+    'bookkeeping.core',
     'bookkeeping.transactions',
 
     # none default django apps

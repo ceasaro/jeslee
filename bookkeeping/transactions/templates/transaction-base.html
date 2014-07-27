@@ -1,24 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-    <div>
-        <ul>
-            <li>
-                <a href="{% url 'bookkeeping_home' %}">Overzicht</a>
+{% extends 'bookkeeping-base.html' %}
+{% block body %}
+    {% block menu %}
+        <ul class="main-menu">
+            <li class="main-menu-item">
+                <a href="{% url 'bookkeeping_home' %}" class="main-menu-item-link">Overzicht</a>
             </li>
-            <li>
-                <a href="{% url 'new_payment' %}">Nieuw bonnetje</a>
+            <li class="main-menu-item">
+                <a href="{% url 'new_payment' %}" class="main-menu-item-link">Nieuw bonnetje</a>
             </li>
-            <li>
-                <a href="{% url 'new_client' %}">Nieuw klant</a>
+            <li class="main-menu-item">
+                <a href="{% url 'new_client' %}" class="main-menu-item-link">Nieuw klant</a>
             </li>
         </ul>
-    </div>
-    {% block body %}
     {% endblock %}
-</body>
-</html>
+
+    <div>
+        {% block page-content %}
+        {% endblock %}
+    </div>
+{% endblock %}

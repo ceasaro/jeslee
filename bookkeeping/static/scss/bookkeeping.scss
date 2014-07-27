@@ -1,0 +1,23 @@
+@import "settings";
+
+body {
+    background-color: $background-color-site;
+}
+
+.main-menu {
+  background-color: $background-color;
+  .main-menu-item {
+    display: inline-block;
+    margin:10px;
+    padding:10px;
+    &:hover {
+      background-color: $background-color-site;
+      .main-menu-item-link {
+        color: $background-color-dark;
+      }
+    }
+    .main-menu-item-link {
+      color: #FFFFFF;
+    }
+  }
+}

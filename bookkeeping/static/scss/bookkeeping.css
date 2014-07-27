@@ -1,0 +1,21 @@
+/***********************
+ * COLORS
+ **********************/
+/***********************
+ * SIZES
+ **********************/
+body {
+  background-color: #c7ddf0; }
+
+.main-menu {
+  background-color: #61a0c2; }
+  .main-menu .main-menu-item {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px; }
+    .main-menu .main-menu-item:hover {
+      background-color: #c7ddf0; }
+      .main-menu .main-menu-item:hover .main-menu-item-link {
+        color: #0066bb; }
+    .main-menu .main-menu-item .main-menu-item-link {
+      color: #FFFFFF; }
