@@ -1,5 +1,6 @@
 from datetime import date
 
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.core.urlresolvers import reverse
 from django.db.models import Sum
 from django.views.generic import CreateView, TemplateView
@@ -28,6 +29,7 @@ class FinancialYearMixin(object):
 class PaymentOverviewView(TemplateView, FinancialYearMixin):
 
     default_order_by = 'pay_date'
+    payments_on_page = 20
 
     def get_order_by(self):
         return self.request.GET.get('ob', self.default_order_by)
@@ -39,9 +41,19 @@ class PaymentOverviewView(TemplateView, FinancialYearMixin):
 
     def get_context_data(self, **kwargs):
         context_data = super(PaymentOverviewView, self).get_context_data(**kwargs)
-        payments = self.get_payments()
-        sum_tax = sum(payment.tax for payment in payments)
-        sum_amount = payments.aggregate(Sum('amount'))
+        payment_list = self.get_payments()
+        payment_paginator = Paginator(payment_list, self.payments_on_page)
+        page = self.request.GET.get('page')
+        try:
+            payments = payment_paginator.page(page)
+        except PageNotAnInteger:
+            # If page is not an integer, deliver first page.
+            payments = payment_paginator.page(1)
+        except EmptyPage:
+            # If page is out of range (e.g. 9999), deliver last page of results.
+            payments = payment_paginator.page(payment_paginator.num_pages)
+        sum_tax = sum(payment.tax for payment in payment_list)
+        sum_amount = payment_list.aggregate(Sum('amount'))
         context_data.update({
             'payments': {
                 'list': payments,
