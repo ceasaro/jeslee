@@ -81,7 +81,7 @@ def production():
                                  'requirements/production.txt')
     env.virtualenv_dir = '/opt/virtualenvs/jeslee/'
     env.django_settings = 'jeslee_web.settings.production'
-    env.repository.branch = 'webshop'
+    # env.repository.branch = 'master'
     django_settings_to_env()
     env.django_developing = False
 
