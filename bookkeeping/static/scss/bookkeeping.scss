@@ -21,3 +21,20 @@ body {
     }
   }
 }
+
+.regular-form {
+  margin: 20px;
+  p {
+    margin-top: 20px;
+    label {
+      display: inline-block;
+      width: 150px;
+    }
+    input[type=text] {
+      width: 339px;
+    }
+    select {
+      width: 339px;
+    }
+  }
+}

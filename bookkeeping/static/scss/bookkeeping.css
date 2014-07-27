@@ -19,3 +19,15 @@ body {
         color: #0066bb; }
     .main-menu .main-menu-item .main-menu-item-link {
       color: #FFFFFF; }
+
+.regular-form {
+  margin: 20px; }
+  .regular-form p {
+    margin-top: 20px; }
+    .regular-form p label {
+      display: inline-block;
+      width: 150px; }
+    .regular-form p input[type=text] {
+      width: 339px; }
+    .regular-form p select {
+      width: 339px; }

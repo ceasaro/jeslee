@@ -1,7 +1,7 @@
 {% extends 'transaction-base.html' %}
 
 {% block page-content %}
-    <form action="" method="post">
+    <form action="" method="post" class="regular-form">
     {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Opslaan">
