@@ -12,12 +12,6 @@ TEMPLATE_DEBUG = DEBUG
 SITE_ROOT = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 PROJECT_DIR = os.path.dirname(SITE_ROOT) # this is not Django setting.
 
-print ('############################################################')
-print ('SITE_ROOT = {}'.format(SITE_ROOT))
-print ('PROJECT_DIR = {}'.format(PROJECT_DIR))
-print ('############################################################')
-
-
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
