@@ -2,10 +2,9 @@ from datetime import date
 
 from django.core.urlresolvers import reverse
 from django.db.models import Sum
-
 from django.views.generic import CreateView, TemplateView
 
-from bookkeeping.transactions.forms import PaymentForm, ClientForm
+from bookkeeping.transactions.forms import PaymentForm, ClientForm, CategoryForm
 from bookkeeping.transactions.models import Payment
 
 
@@ -35,18 +34,11 @@ class PaymentOverviewView(TemplateView, FinancialYearMixin):
         return context_data
 
 
-class ClientView(CreateView):
-    form_class = ClientForm
-
-    def get_success_url(self):
-        return reverse('new_payment')
-
-
-class PaymentView(CreateView, FinancialYearMixin):
+class PaymentCreateView(CreateView, FinancialYearMixin):
     form_class = PaymentForm
 
     def get_form_kwargs(self):
-        form_kwargs = super(PaymentView, self).get_form_kwargs()
+        form_kwargs = super(PaymentCreateView, self).get_form_kwargs()
         form_kwargs['year'] = self.financial_year()
 
         return form_kwargs
@@ -54,3 +46,17 @@ class PaymentView(CreateView, FinancialYearMixin):
 
     def get_success_url(self):
         return reverse('bookkeeping_home')
+
+
+class ClientCreateView(CreateView):
+    form_class = ClientForm
+
+    def get_success_url(self):
+        return reverse('new_payment')
+
+
+class CategoryCreateView(CreateView):
+    form_class = CategoryForm
+
+    def get_success_url(self):
+        return reverse('new_payment')

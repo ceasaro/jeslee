@@ -22,6 +22,12 @@ class Client(TimeStampedModel):
 class Category(TimeStampedModel):
     name = models.CharField(_('name'), max_length=128)
 
+    def __repr__(self):
+        return self.name
+
+    def __str__(self):
+        return self.name
+
 
 class Transaction(TimeStampedModel):
 
