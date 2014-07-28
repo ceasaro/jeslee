@@ -63,7 +63,7 @@ DIRNAME = os.path.dirname(__file__)
 handler500 = 'lfs.core.views.server_error'
 
 urlpatterns += patterns("",
-    (r'^manage/', include('jeslee_web.lfs_patch.manage.urls')),
+    (r'^manage/?', include('jeslee_web.lfs_patch.manage.urls')),
 )
 
 urlpatterns += patterns("",
@@ -73,10 +73,10 @@ urlpatterns += patterns("",
 )
 
 urlpatterns += patterns("",
-    (r'^admin/', include(admin.site.urls)),
+    (r'^admin/?', include(admin.site.urls)),
     (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': os.path.join(DIRNAME, "media"), 'show_indexes': True }),
 )
 
 urlpatterns += patterns("",
-    (r'^financial/', include('bookkeeping.transactions.urls')),
+    (r'^financial/?', include('bookkeeping.transactions.urls')),
     )
