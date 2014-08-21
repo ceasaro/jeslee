@@ -14,27 +14,27 @@
         </tr>
         <tr>
             <td class="definition-key">KVK nummer:</td>
-            <td class="definition-value">01131652</td>
+            <td class="definition-value">{{ COMPANY.kvk_nr }}</td>
         </tr>
         <tr>
             <td class="definition-key">BTW nummer:</td>
-            <td class="definition-value">NL238283057B01</td>
+            <td class="definition-value">{{ COMPANY.btw_nr }}</td>
         </tr>
         <tr>
             <td class="definition-key">Adres:</td>
             <td class="definition-value">
-                Hoofdstraat 51 <br/>
-                9635 AT Noordbroek<br/>
-                Nederland
+                {{ COMPANY.street }}<br/>
+                {{ COMPANY.zip }} {{ COMPANY.city }}<br/>
+                {{ COMPANY.country|upper }}
             </td>
         </tr>
         <tr>
             <td class="definition-key">E-mail:</td>
-            <td class="definition-value"><a href="mailto:info@jeslee.com?subject=contact">info@jeslee.com</a></td>
+            <td class="definition-value"><a href="mailto:{{ COMPANY.email }}?subject=contact">{{ COMPANY.email }}</a></td>
         </tr>
         <tr>
             <td class="definition-key">Telefoon:</td>
-            <td class="definition-value">06 - 15 94 80 90</td>
+            <td class="definition-value">{{ COMPANY.mobile }}</td>
         </tr>
     </table>
 {% endblock %}
