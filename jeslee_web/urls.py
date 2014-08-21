@@ -78,5 +78,5 @@ urlpatterns += patterns("",
 )
 
 urlpatterns += patterns("",
-    (r'^financial/?', include('bookkeeping.transactions.urls')),
+    (r'^financial/', include('bookkeeping.urls')),
     )

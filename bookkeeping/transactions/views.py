@@ -76,7 +76,7 @@ class PaymentCreateView(CreateView, FinancialYearMixin):
 
 
     def get_success_url(self):
-        return reverse('bookkeeping_home')
+        return reverse('transaction_home')
 
 
 class ClientCreateView(CreateView):

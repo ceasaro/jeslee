@@ -169,8 +169,10 @@ INSTALLED_APPS = (
     #    'jeslee_web.account'
 
     # bookkeeping
+    'bookkeeping',
     'bookkeeping.core',
     'bookkeeping.transactions',
+    'bookkeeping.invoice',
 
     # none default django apps
     'django_extensions',
