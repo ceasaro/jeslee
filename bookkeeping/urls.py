@@ -7,4 +7,5 @@ urlpatterns = patterns(
     'bookkeeping',
     url(r'^$', TemplateView.as_view(template_name='bookkeeping/bookkeeping-index.html'), name='bookkeeping_home'),
     url(r'^transactions/', include('bookkeeping.transactions.urls')),
+    url(r'^invoice/', include('bookkeeping.invoice.urls')),
 )

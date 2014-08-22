@@ -170,7 +170,7 @@ INSTALLED_APPS = (
 
     # bookkeeping
     'bookkeeping',
-    'bookkeeping.core',
+    'bookkeeping.bookkeeping_core',
     'bookkeeping.transactions',
     'bookkeeping.invoice',
 
