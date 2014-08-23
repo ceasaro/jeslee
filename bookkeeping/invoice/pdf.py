@@ -10,6 +10,7 @@ TOP_PAGE_MARGIN = 17.0
 LEFT_PAGE_MARGIN = 17.0
 RIGHT_PAGE_MARGIN = 192.0
 START_TABLE_Y = 130.0
+PAGE_BOTTOM_Y = 265
 TABLE_ROW_HIGH = 5.0
 COLUMN_1_WIDTH = 30  # code
 COLUMN_2_WIDTH = 72  # description
@@ -41,6 +42,10 @@ def invoice_to_PDF(client, order):
     pdf.add_font('Verdana', 'I', fname='/usr/share/fonts/truetype/msttcorefonts/Verdana_Italic.ttf', uni=True)
     pdf.add_font('Verdana', 'BI', fname='/usr/share/fonts/truetype/msttcorefonts/Verdana_Bold_Italic.ttf', uni=True)
 
+    def check_for_new_page():
+        if pdf.get_y() > PAGE_BOTTOM_Y:
+            pdf.add_page()
+
     def text_fonts():
         pdf.set_font('Verdana', '', 11.0)
 
@@ -51,7 +56,9 @@ def invoice_to_PDF(client, order):
         cell_margin_left = 2
         cell_margin_right = 2
 
-        row_y = pdf.get_y() if pdf.get_y() > START_TABLE_Y else START_TABLE_Y
+        check_for_new_page()
+        last_y = START_TABLE_Y if pdf.page_no() == 1 else TOP_PAGE_MARGIN
+        row_y = pdf.get_y() if pdf.get_y() > last_y else last_y
         max_y = row_y  # max_y is used to check if multi cell is wrapping text and so uses more rows.
 
         next_x = LEFT_PAGE_MARGIN
@@ -68,10 +75,26 @@ def invoice_to_PDF(client, order):
         pdf.set_y(max_y)
 
     def add_row_line():
-        line_y = pdf.get_y() if pdf.get_y() > START_TABLE_Y else START_TABLE_Y - 2
+        last_y = START_TABLE_Y if pdf.page_no() == 1 else TOP_PAGE_MARGIN
+        line_y = pdf.get_y() if pdf.get_y() > last_y else last_y - 2
         pdf.set_xy(LEFT_PAGE_MARGIN + 1, line_y)
         pdf.line(LEFT_PAGE_MARGIN, line_y+2, RIGHT_PAGE_MARGIN, line_y+2)
         pdf.set_y(line_y+5)
+
+    def draw_vertical_lines_around_columns(columns = COLUMNS, top_y=TOP_PAGE_MARGIN, bottom_y=PAGE_BOTTOM_Y):
+        ####
+        # draw table vertical lines
+        ####
+        line_y = pdf.get_y() - 3
+        line_x = LEFT_PAGE_MARGIN
+        first = True
+        for column in columns:
+            if first:
+                pdf.line(line_x, START_TABLE_Y, line_x, line_y)  # vertical line in front of table
+                first = False
+
+            line_x += column[0]
+            pdf.line(line_x, START_TABLE_Y, line_x, line_y)  # vertical line after column
 
     pdf.add_page()
     text_fonts()
@@ -95,7 +118,6 @@ def invoice_to_PDF(client, order):
     pdf.set_xy(LEFT_PAGE_MARGIN, 75)
     pdf.set_left_margin(LEFT_PAGE_MARGIN)
     pdf.set_font('Verdana', 'B', 14.0)
-    # pdf.write(6, 'Factuur {number}'.format(number='2014-0003'))
     pdf.write(6, 'Factuur {number}'.format(number=order.number))
     text_fonts()
     pdf.set_xy(125, 75)
@@ -121,10 +143,6 @@ def invoice_to_PDF(client, order):
     add_row(['Artikelcode', 'Omschrijving', '#', 'Bedrag ¹', 'Totaal ¹', 'Btw'])
     add_row_line()
     for item in order.items.all():
-        print ('############################################################')
-        print ('item={0}'.format(item))
-        print ('############################################################')
-
         add_row(['22-01-2014',
                  item.product.name,
                  "{:.0f}".format(item.product_amount),
@@ -133,23 +151,11 @@ def invoice_to_PDF(client, order):
                  str(item.product.tax if item.product.tax else "")])
 
     add_row_line()
-    ####
-    # draw table vertical lines
-    ####
-    line_y = pdf.get_y() - 3
-    line_x = LEFT_PAGE_MARGIN
-    first = True
-    for column in COLUMNS:
-        if first:
-            pdf.line(line_x, START_TABLE_Y, line_x, line_y)  # vertical line in front of table
-            first = False
 
-        line_x += column[0]
-        pdf.line(line_x, START_TABLE_Y, line_x, line_y)  # vertical line after column
-
-    columns_below_items = [(COLUMN_1_WIDTH + COLUMN_2_WIDTH + COLUMN_3_WIDTH, 'L'), (COLUMN_4_WIDTH + COLUMN_5_WIDTH, 'R'),
+    columns_below_items = [(COLUMN_1_WIDTH + COLUMN_2_WIDTH + COLUMN_3_WIDTH+COLUMN_4_WIDTH , 'R'),
+                           (COLUMN_5_WIDTH, 'R'),
           (COLUMN_6_WIDTH, 'L')]
-    add_row(['Subtotaal excl. btw', to_currency(order.price-order.tax)], columns=columns_below_items)
+    add_row(['Subtotaal²', to_currency(order.price-order.tax)], columns=columns_below_items)
     add_row(['Btw.', to_currency(order.tax)], columns=columns_below_items)
     add_row_line()
     pdf.set_font('Verdana', 'B', 10.0)
@@ -162,7 +168,10 @@ def invoice_to_PDF(client, order):
 
     pdf.set_draw_color(80)
     pdf.set_text_color(80)
-    pdf.line(LEFT_PAGE_MARGIN, 270, RIGHT_PAGE_MARGIN, 270)  # bottom horizontal line
-    pdf.set_xy(LEFT_PAGE_MARGIN+5, 272)
+    pdf.line(LEFT_PAGE_MARGIN, PAGE_BOTTOM_Y, RIGHT_PAGE_MARGIN, PAGE_BOTTOM_Y)  # bottom horizontal line
+    pdf.set_xy(LEFT_PAGE_MARGIN+5, PAGE_BOTTOM_Y+2)
+    pdf.set_font('Verdana', '', 8.0)
     pdf.write(4, '¹) Bedragen zijn inclusief btw.')
-    pdf.output('/tmp/invoice.pdf', 'F')
+    pdf.set_xy(LEFT_PAGE_MARGIN+5, PAGE_BOTTOM_Y+6)
+    pdf.write(4, '²) Bedrag is exclusief btw.')
+    return pdf.output('/tmp/invoice.pdf', 'S')
