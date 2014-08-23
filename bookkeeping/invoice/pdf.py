@@ -35,7 +35,7 @@ def to_currency(float):
     return currency
 
 
-def invoice_to_PDF(client, order):
+def invoice_to_PDF(order, client):
     pdf = FPDF()
     pdf.add_font('Verdana', '', fname='/usr/share/fonts/truetype/msttcorefonts/Verdana.ttf', uni=True)
     pdf.add_font('Verdana', 'B', fname='/usr/share/fonts/truetype/msttcorefonts/Verdana_Bold.ttf', uni=True)

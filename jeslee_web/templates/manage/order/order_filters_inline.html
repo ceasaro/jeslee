@@ -62,6 +62,9 @@
                 <a href="{% url 'lfs_reset_order_filters' %}?came-from=order;order-id={{ current_order.id }}"
                    class="ajax-link reset">&nbsp;</a>
             </td>
+            <td>
+                <div><a href="{% url 'download_invoice' current_order.uuid %}">Download factuur</a></div>
+            </td>
         </tr>
     </table>
 </form>
