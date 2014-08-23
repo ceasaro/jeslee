@@ -12,7 +12,7 @@ class InvoiceCreateView(TemplateView):
 
     def get(self, request, *args, **kwargs):
         client = Client.objects.all()[0]
-        order= Order.objects.all()[0]
+        order = Order.objects.get(id=1)
         invoice_to_PDF(client=client, order=order)
         return super(InvoiceCreateView, self).get(request, *args, **kwargs)
 

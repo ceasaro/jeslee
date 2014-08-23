@@ -1,19 +1,21 @@
 # -*- coding: UTF-8 -*-
 from datetime import datetime
+import locale
 
 from django.conf import settings
 from fpdf import FPDF
+
 
 TOP_PAGE_MARGIN = 17.0
 LEFT_PAGE_MARGIN = 17.0
 RIGHT_PAGE_MARGIN = 192.0
 START_TABLE_Y = 130.0
 TABLE_ROW_HIGH = 5.0
-COLUMN_1_WIDTH = 23  # date
-COLUMN_2_WIDTH = 82  # description
-COLUMN_3_WIDTH = 15  # count
-COLUMN_4_WIDTH = 20  # amount
-COLUMN_5_WIDTH = 20  # total
+COLUMN_1_WIDTH = 30  # code
+COLUMN_2_WIDTH = 72  # description
+COLUMN_3_WIDTH = 8   # count
+COLUMN_4_WIDTH = 25  # amount
+COLUMN_5_WIDTH = 25  # total
 COLUMN_6_WIDTH = 15  # tax
 
 COLUMNS = [(COLUMN_1_WIDTH, 'L'),
@@ -24,13 +26,25 @@ COLUMNS = [(COLUMN_1_WIDTH, 'L'),
            (COLUMN_6_WIDTH, 'L')]
 
 
+def to_currency(float):
+    currency = locale.currency(float, grouping=True).strip()
+    if ' ' in currency:
+        tuple = currency.split(' ', 1)
+        return "{0} {1}".format(tuple[0], tuple[1].replace(' ', '.'))
+    return currency
+
+
 def invoice_to_PDF(client, order):
     pdf = FPDF()
+    pdf.add_font('Verdana', '', fname='/usr/share/fonts/truetype/msttcorefonts/Verdana.ttf', uni=True)
+    pdf.add_font('Verdana', 'B', fname='/usr/share/fonts/truetype/msttcorefonts/Verdana_Bold.ttf', uni=True)
+    pdf.add_font('Verdana', 'I', fname='/usr/share/fonts/truetype/msttcorefonts/Verdana_Italic.ttf', uni=True)
+    pdf.add_font('Verdana', 'BI', fname='/usr/share/fonts/truetype/msttcorefonts/Verdana_Bold_Italic.ttf', uni=True)
 
     def text_fonts():
-        pdf.set_font('Arial', '', 13.0)
+        pdf.set_font('Verdana', '', 11.0)
 
-    def add_row(column_data):
+    def add_row(column_data, columns=COLUMNS, border=0):
         """
         add a row to the pdf
         """
@@ -41,11 +55,13 @@ def invoice_to_PDF(client, order):
         max_y = row_y  # max_y is used to check if multi cell is wrapping text and so uses more rows.
 
         next_x = LEFT_PAGE_MARGIN
-        for i, column in enumerate(COLUMNS):
+        for i, column in enumerate(columns):
             width = column[0]
             align = column[1]
             pdf.set_xy(next_x+cell_margin_left, row_y)
-            pdf.multi_cell(w=width-cell_margin_right, h=TABLE_ROW_HIGH, txt=column_data[i] if len(column_data) > i else '', align=align)
+            pdf.multi_cell(w=width-cell_margin_right,
+                           h=TABLE_ROW_HIGH,
+                           txt=column_data[i] if len(column_data) > i else '', align=align, border=border)
             max_y = max(max_y, pdf.get_y())  # keep track if multi cell wrapped text
             next_x += width
 
@@ -78,32 +94,44 @@ def invoice_to_PDF(client, order):
     ####
     pdf.set_xy(LEFT_PAGE_MARGIN, 75)
     pdf.set_left_margin(LEFT_PAGE_MARGIN)
-    pdf.set_font('helvetica', 'B', 15.0)
-    pdf.write(6, 'Factuur {number}'.format(number='2014-0003'))
+    pdf.set_font('Verdana', 'B', 14.0)
+    # pdf.write(6, 'Factuur {number}'.format(number='2014-0003'))
+    pdf.write(6, 'Factuur {number}'.format(number=order.number))
     text_fonts()
     pdf.set_xy(125, 75)
     pdf.write(6, 'Factuurdatum: {date}'.format(date=datetime.now().strftime("%d %B %Y")))
     pdf.set_xy(LEFT_PAGE_MARGIN, 85)
-    pdf.write(5, 'Referentie: {reference}'.format(reference='Wens pak voor ...'))
+    pdf.write(5, 'Referentie: {reference}'.format(reference=order.message if order.message else 'Uw bestelling bij Jeslee'))
     pdf.set_xy(LEFT_PAGE_MARGIN, 100)
-    pdf.write(6, '{company}\n{street} {street_nr}\n{zip} {city}'.format(
-        company=client.name, street=client.street, street_nr=client.street_nr,
-        zip=client.zip, city=client.city
+    name = order.invoice_company_name \
+        if order.invoice_company_name \
+        else "{0} {1}".format(order.invoice_firstname, order.invoice_lastname)
+    address = "{0} {1}".format(order.invoice_line1, order.invoice_line2)
+    pdf.write(6, '{name}\n{address}\n{zip} {city}'.format(
+        name=name.strip(), address=address.strip(),
+        zip=order.invoice_code, city=order.invoice_city
     ))
 
 
     ####
     # Article data
     ####
-    pdf.set_font('Arial', '', 10.0)
+    pdf.set_font('Verdana', '', 9.0)
     add_row_line()
-    add_row(['Datum', 'Omschrijving', 'Aantal', 'Bedrag', 'Totaal', 'Btw'])
+    add_row(['Artikelcode', 'Omschrijving', '#', 'Bedrag ¹', 'Totaal ¹', 'Btw'])
     add_row_line()
-    add_row(['22-01-2014', 'jurk Princes Daisy (4,75 uur) lorum ipsum Doler latemsitu', '1', u'83,12', u'83,12', '21%'])
-    add_row(['22-01-2014', 'jurk Princes Peach (5,75 uur)', '1', u'19293,45', u'19293,45', '21%'])
-    add_row(['22-01-2014', 'jurk Princes Daisy (4,75 uur) lorum ipsum Doler latemsitu lorum ipsum Doler latemsitu lorum ipsum Doler latemsitu lorum ipsum Doler latemsitu', '1', u'83,12', u'83,12', '21%'])
-    add_row(['22-01-2014', 'jurk Princes Peach (5,75 uur)', '1', u'19293,45', u'19293,45', '21%'])
-    add_row(['22-01-2014', 'jurk Princes Peach (5,75 uur)', '1', u'19293,45', u'19293,45', '21%'])
+    for item in order.items.all():
+        print ('############################################################')
+        print ('item={0}'.format(item))
+        print ('############################################################')
+
+        add_row(['22-01-2014',
+                 item.product.name,
+                 "{:.0f}".format(item.product_amount),
+                 to_currency(item.product_price_gross),
+                 to_currency(item.price_gross),
+                 str(item.product.tax if item.product.tax else "")])
+
     add_row_line()
     ####
     # draw table vertical lines
@@ -119,16 +147,22 @@ def invoice_to_PDF(client, order):
         line_x += column[0]
         pdf.line(line_x, START_TABLE_Y, line_x, line_y)  # vertical line after column
 
-    add_row(['', 'Subtotaal excl. btw', '', '', '19293,45', ''])
-    add_row(['', 'Btw', '', '', '1783,34', ''])
+    columns_below_items = [(COLUMN_1_WIDTH + COLUMN_2_WIDTH + COLUMN_3_WIDTH, 'L'), (COLUMN_4_WIDTH + COLUMN_5_WIDTH, 'R'),
+          (COLUMN_6_WIDTH, 'L')]
+    add_row(['Subtotaal excl. btw', to_currency(order.price-order.tax)], columns=columns_below_items)
+    add_row(['Btw.', to_currency(order.tax)], columns=columns_below_items)
     add_row_line()
-    pdf.set_font('Arial', 'B', 10.0)
-    add_row(['', 'Totaal', '', '', '21783,34', ''])
+    pdf.set_font('Verdana', 'B', 10.0)
+    add_row(['Totaal', to_currency(order.price)], columns=columns_below_items)
 
 
     table_bottom = pdf.get_y() + 2
     pdf.line(LEFT_PAGE_MARGIN, table_bottom, RIGHT_PAGE_MARGIN, table_bottom)  # bottom horizontal line
 
 
-
+    pdf.set_draw_color(80)
+    pdf.set_text_color(80)
+    pdf.line(LEFT_PAGE_MARGIN, 270, RIGHT_PAGE_MARGIN, 270)  # bottom horizontal line
+    pdf.set_xy(LEFT_PAGE_MARGIN+5, 272)
+    pdf.write(4, '¹) Bedragen zijn inclusief btw.')
     pdf.output('/tmp/invoice.pdf', 'F')
