@@ -1,0 +1,28 @@
+{% extends 'bookkeeping/bookkeeping-base.html' %}
+
+{% block page-content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ wizard.management_form }}
+        {% if wizard.form.forms %}
+            {{ wizard.form.management_form }}
+            {% for form in wizard.form.forms %}
+                {{ form }}
+            {% endfor %}
+        {% else %}
+            {{ wizard.form }}
+        {% endif %}
+
+        {% if wizard.steps.prev %}
+            <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.first }}">
+                Pas factuurgegevens aan
+            </button>
+        {% endif %}
+        <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.second }}">
+            Voeg product toe
+        </button>
+
+        <input type="submit" value="Bewaar factuur"/>
+
+    </form>
+{% endblock %}

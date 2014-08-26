@@ -35,7 +35,14 @@ def to_currency(float):
     return currency
 
 
-def invoice_to_PDF(order, client):
+def invoice_to_PDF(order, client, filename=None):
+    """
+    creates and pdf invoice of the order, and returns the pfd as a string buffer.
+    @order: the order used to create a invoice
+    @client: if specified this data is used for the client address, otherwise the address is taken from the order
+    @filename: if specified the pdf is written to disk with the given filename,
+               filename can contains a complete path
+    """
     pdf = FPDF()
     pdf.add_font('Verdana', '', fname='/usr/share/fonts/truetype/msttcorefonts/Verdana.ttf', uni=True)
     pdf.add_font('Verdana', 'B', fname='/usr/share/fonts/truetype/msttcorefonts/Verdana_Bold.ttf', uni=True)
@@ -174,4 +181,6 @@ def invoice_to_PDF(order, client):
     pdf.write(4, '¹) Bedragen zijn inclusief btw.')
     pdf.set_xy(LEFT_PAGE_MARGIN+5, PAGE_BOTTOM_Y+6)
     pdf.write(4, '²) Bedrag is exclusief btw.')
-    return pdf.output('/tmp/invoice.pdf', 'S')
+    if filename:
+        pdf.output(filename, 'F')
+    return pdf.output('invoice.pdf', 'S')
