@@ -12,7 +12,14 @@ class InvoiceForm(forms.Form):
     reference = forms.CharField(max_length=128)
 
 
-class InvoiceItemForm(forms.ModelForm):
+class InvoiceItemForm(forms.Form):
+
+    article_code = forms.CharField(max_length=32)
+    name = forms.CharField(max_length=80)
+    article_count = forms.IntegerField(initial=1)
+    article_price = forms.DecimalField(decimal_places=2)
+    tax = forms.ChoiceField(choices=((0.21,'21 %'), (0.06, '6%')))
+
     class Meta:
         model = OrderItem
-        fields = ['product_name', 'product_amount', 'product_price_gross', 'price_gross', ]
+        fields = ['article_code', 'name', 'article_count', 'article_price', 'tax']

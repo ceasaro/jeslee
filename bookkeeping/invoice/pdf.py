@@ -151,11 +151,11 @@ def invoice_to_PDF(order, client, filename=None):
     add_row_line()
     for item in order.items.all():
         add_row(['22-01-2014',
-                 item.product.name,
+                 item.product.name if item.product else '',
                  "{:.0f}".format(item.product_amount),
                  to_currency(item.product_price_gross),
                  to_currency(item.price_gross),
-                 str(item.product.tax if item.product.tax else "")])
+                 str(item.product.tax if item.product and item.product.tax else "")])
 
     add_row_line()
 

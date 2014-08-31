@@ -5,11 +5,13 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.core.files.base import ContentFile
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.utils.decorators import method_decorator
+from django.utils.text import slugify
 from django.views.generic import View, DetailView
 from django.utils.translation import ugettext as _
+from lfs.catalog.models import Product
 from lfs.core.models import Country
 from lfs.core.utils import import_symbol
-from lfs.order.models import Order
+from lfs.order.models import Order, OrderItem
 
 from jeslee_web.settings import reverse_lazy
 from bookkeeping.bookkeeping_core.models import Client
@@ -73,33 +75,60 @@ class CreateInvoiceWizard(SessionWizardView):
     def get_template_names(self):
         return [self.template_list[self.steps.current]]
 
+    def get_context_data(self, form, **kwargs):
+        context_data = super(CreateInvoiceWizard, self).get_context_data(form, **kwargs)
+        context_data.update({'form_data': self.get_all_cleaned_data() })
+        return context_data
+
     def done(self, form_list, **kwargs):
         data = self.get_all_cleaned_data()
-        client = data['client']
-        print ('############################################################')
-        print 'date = {data}'.format(data=data)
-        print 'client {0}'.format(client.street)
-        print ('############################################################')
 
         order = create_order(data, self.request)
-
+        add_order_item(order, data)
         success_url = reverse_lazy('view_invoice',
                                    kwargs={'uuid': order.uuid})
         return HttpResponseRedirect(success_url)
 
 
+def add_order_item(order, data):
+    article_price = float(data['article_price'])
+    article_count = float(data['article_count'])
+    item_price = article_price * article_count
+    tax_percentage = float(data['tax'])
+    item_tax = item_price * tax_percentage
+    product = Product.objects.create(
+        name=data['name'],
+        slug=slugify(data['name']),
+        sku=data['article_code'],
+    )
+    OrderItem.objects.create(
+        order=order,
+        price_gross=item_price,
+        price_net=item_price * (1 - tax_percentage),
+        tax=item_tax,
+        product=product,
+        product_amount=article_count,
+        product_price_net=article_price * (1-tax_percentage),
+        product_price_gross=article_price,
+        product_tax=article_price * tax_percentage,
+    )
+    order.price += item_price
+    order.tax += item_tax
+    order.save()
+
+
 def create_order(form_data, request):
     client = form_data['client']
     order = Order.objects.create(
-        user=request.user,
+        user=client.user,
+        message=form_data['reference'],
 
         session=request.session.session_key,
-        price=form_data['product_price_gross'],
         # tax=form_data['product_price_gross'] * form_data['product_tax'],
 
         customer_firstname=client.name,
         customer_lastname='',
-        customer_email='',
+        customer_email=client.user.email,
 
         invoice_firstname=client.name,
         invoice_lastname='',
@@ -127,5 +156,6 @@ def create_order(form_data, request):
         pass
 
     order.number = order_numbers.get_next()
+    order.save()
     return order
 
