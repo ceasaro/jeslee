@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.utils.translation import ugettext as _
 from django_extensions.db.models import TimeStampedModel
@@ -10,6 +11,7 @@ __author__ = 'ceasaro'
 
 class Client(TimeStampedModel, Address):
     name = models.CharField(_('name'), max_length=128, unique=True)
+    user = models.ForeignKey(User, verbose_name=_(u"user"), blank=False, null=False)
 
     def __repr__(self):
         return self.name

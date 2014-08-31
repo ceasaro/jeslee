@@ -44,17 +44,17 @@ def invoice_to_PDF(order, client, filename=None):
                filename can contains a complete path
     """
     pdf = FPDF()
-    pdf.add_font('Verdana', '', fname='/usr/share/fonts/truetype/msttcorefonts/Verdana.ttf', uni=True)
-    pdf.add_font('Verdana', 'B', fname='/usr/share/fonts/truetype/msttcorefonts/Verdana_Bold.ttf', uni=True)
-    pdf.add_font('Verdana', 'I', fname='/usr/share/fonts/truetype/msttcorefonts/Verdana_Italic.ttf', uni=True)
-    pdf.add_font('Verdana', 'BI', fname='/usr/share/fonts/truetype/msttcorefonts/Verdana_Bold_Italic.ttf', uni=True)
+    pdf.add_font('DejaVu', '', fname='{0}/fonts/ttf-dejavu/DejaVuSerif.ttf'.format(settings.STATIC_ROOT), uni=True)
+    pdf.add_font('DejaVu', 'B', fname='{0}/fonts/ttf-dejavu/DejaVuSerif-Bold.ttf'.format(settings.STATIC_ROOT), uni=True)
+    pdf.add_font('DejaVu', 'I', fname='{0}/fonts/ttf-dejavu/DejaVuSerif-Italic.ttf'.format(settings.STATIC_ROOT), uni=True)
+    pdf.add_font('DejaVu', 'BI', fname='{0}/fonts/ttf-dejavu/DejaVuSerif-BoldItalic.ttf'.format(settings.STATIC_ROOT), uni=True)
 
     def check_for_new_page():
         if pdf.get_y() > PAGE_BOTTOM_Y:
             pdf.add_page()
 
     def text_fonts():
-        pdf.set_font('Verdana', '', 11.0)
+        pdf.set_font('DejaVu', '', 11.0)
 
     def add_row(column_data, columns=COLUMNS, border=0):
         """
@@ -124,7 +124,7 @@ def invoice_to_PDF(order, client, filename=None):
     ####
     pdf.set_xy(LEFT_PAGE_MARGIN, 75)
     pdf.set_left_margin(LEFT_PAGE_MARGIN)
-    pdf.set_font('Verdana', 'B', 14.0)
+    pdf.set_font('DejaVu', 'B', 14.0)
     pdf.write(6, 'Factuur {number}'.format(number=order.number))
     text_fonts()
     pdf.set_xy(125, 75)
@@ -145,7 +145,7 @@ def invoice_to_PDF(order, client, filename=None):
     ####
     # Article data
     ####
-    pdf.set_font('Verdana', '', 9.0)
+    pdf.set_font('DejaVu', '', 9.0)
     add_row_line()
     add_row(['Artikelcode', 'Omschrijving', '#', 'Bedrag ¹', 'Totaal ¹', 'Btw'])
     add_row_line()
@@ -165,7 +165,7 @@ def invoice_to_PDF(order, client, filename=None):
     add_row(['Subtotaal²', to_currency(order.price-order.tax)], columns=columns_below_items)
     add_row(['Btw.', to_currency(order.tax)], columns=columns_below_items)
     add_row_line()
-    pdf.set_font('Verdana', 'B', 10.0)
+    pdf.set_font('DejaVu', 'B', 10.0)
     add_row(['Totaal', to_currency(order.price)], columns=columns_below_items)
 
 
@@ -177,7 +177,7 @@ def invoice_to_PDF(order, client, filename=None):
     pdf.set_text_color(80)
     pdf.line(LEFT_PAGE_MARGIN, PAGE_BOTTOM_Y, RIGHT_PAGE_MARGIN, PAGE_BOTTOM_Y)  # bottom horizontal line
     pdf.set_xy(LEFT_PAGE_MARGIN+5, PAGE_BOTTOM_Y+2)
-    pdf.set_font('Verdana', '', 8.0)
+    pdf.set_font('DejaVu', '', 8.0)
     pdf.write(4, '¹) Bedragen zijn inclusief btw.')
     pdf.set_xy(LEFT_PAGE_MARGIN+5, PAGE_BOTTOM_Y+6)
     pdf.write(4, '²) Bedrag is exclusief btw.')

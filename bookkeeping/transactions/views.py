@@ -1,11 +1,13 @@
 from datetime import date
 
+from django.contrib.admin.views.decorators import staff_member_required
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.core.urlresolvers import reverse
 from django.db.models import Sum
+from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, TemplateView
 
-from bookkeeping.transactions.forms import PaymentForm, ClientForm, CategoryForm
+from bookkeeping.transactions.forms import PaymentForm, CategoryForm
 from bookkeeping.transactions.models import Payment
 
 
@@ -30,6 +32,10 @@ class PaymentOverviewView(TemplateView, FinancialYearMixin):
 
     default_order_by = 'pay_date'
     payments_on_page = 20
+
+    @method_decorator(staff_member_required)
+    def dispatch(self, *args, **kwargs):
+        return super(PaymentOverviewView, self).dispatch(*args, **kwargs)
 
     def get_order_by(self):
         return self.request.GET.get('ob', self.default_order_by)
@@ -68,6 +74,10 @@ class PaymentOverviewView(TemplateView, FinancialYearMixin):
 class PaymentCreateView(CreateView, FinancialYearMixin):
     form_class = PaymentForm
 
+    @method_decorator(staff_member_required)
+    def dispatch(self, *args, **kwargs):
+        return super(PaymentCreateView, self).dispatch(*args, **kwargs)
+
     def get_form_kwargs(self):
         form_kwargs = super(PaymentCreateView, self).get_form_kwargs()
         form_kwargs['year'] = self.financial_year()
@@ -79,15 +89,12 @@ class PaymentCreateView(CreateView, FinancialYearMixin):
         return reverse('transaction_home')
 
 
-class ClientCreateView(CreateView):
-    form_class = ClientForm
-
-    def get_success_url(self):
-        return reverse('new_payment')
-
-
 class CategoryCreateView(CreateView):
     form_class = CategoryForm
+
+    @method_decorator(staff_member_required)
+    def dispatch(self, *args, **kwargs):
+        return super(CategoryCreateView, self).dispatch(*args, **kwargs)
 
     def get_success_url(self):
         return reverse('new_payment')
