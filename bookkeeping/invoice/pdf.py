@@ -1,10 +1,12 @@
 # -*- coding: UTF-8 -*-
-from datetime import datetime
+from datetime import datetime, timedelta
 import locale
 
 from django.conf import settings
 from fpdf import FPDF
 
+
+PAY_INVOICE_WITHIN_DAYS = 14
 
 TOP_PAGE_MARGIN = 17.0
 LEFT_PAGE_MARGIN = 17.0
@@ -162,7 +164,7 @@ def invoice_to_PDF(order, client, filename=None):
     columns_below_items = [(COLUMN_1_WIDTH + COLUMN_2_WIDTH + COLUMN_3_WIDTH+COLUMN_4_WIDTH , 'R'),
                            (COLUMN_5_WIDTH, 'R'),
           (COLUMN_6_WIDTH, 'L')]
-    add_row(['Subtotaal²', to_currency(order.price-order.tax)], columns=columns_below_items)
+    add_row(['Subtotaal ²', to_currency(order.price-order.tax)], columns=columns_below_items)
     add_row(['Btw.', to_currency(order.tax)], columns=columns_below_items)
     add_row_line()
     pdf.set_font('DejaVu', 'B', 10.0)
@@ -172,6 +174,18 @@ def invoice_to_PDF(order, client, filename=None):
     table_bottom = pdf.get_y() + 2
     pdf.line(LEFT_PAGE_MARGIN, table_bottom, RIGHT_PAGE_MARGIN, table_bottom)  # bottom horizontal line
 
+
+    pdf.set_font('DejaVu', '', 10.0)
+    pdf.set_xy(LEFT_PAGE_MARGIN, PAGE_BOTTOM_Y-18)
+    pay_date = datetime.now() + timedelta(PAY_INVOICE_WITHIN_DAYS)
+    pdf.write(5, 'We verzoeken u vriendelijk het bovenstaande bedrag van {order_price} voor '
+                 '{pay_date} te voldoen op onze bankrekening onder vermelding van het '
+                 'factuurnummer {invoice_number}.'.
+              format(order_price=to_currency(order.price),
+                     pay_date=pay_date.strftime("%d %B %Y"),
+                     invoice_number=order.number))
+    pdf.set_xy(LEFT_PAGE_MARGIN, PAGE_BOTTOM_Y-6)
+    pdf.write(5, 'Voor vragen kunt u contact opnemen per e­mail.')
 
     pdf.set_draw_color(80)
     pdf.set_text_color(80)
