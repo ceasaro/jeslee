@@ -1,11 +1,12 @@
 {% extends 'bookkeeping/bookkeeping-base.html' %}
 
 {% block page-content %}
-    <form action="" method="post">
+    <form action="" method="post" class="financial-form">
         {% csrf_token %}
+        <h2>Nieuwe factuur</h2>
         <div>
             <p>
-                <span>Voeg goederen toe voor klant: {{ client }}</span>
+                <span>Voor klant: {{ client }}</span>
             </p>
             <p>
                 <span>referentie: {{ order.message }}</span>
@@ -20,6 +21,7 @@
         </div>
 
         {% if items %}
+            <h3>artikellen</h3>
             <table class="order-item-table">
                 <thead>
                     <tr>
@@ -44,14 +46,15 @@
             </table>
         {% endif %}
 
+        <h3>Nieuw artikel</h3>
         {{ wizard.management_form }}
         {% if wizard.form.forms %}
             {{ wizard.form.management_form }}
             {% for form in wizard.form.forms %}
-                {{ form }}
+                {{ form.as_p }}
             {% endfor %}
         {% else %}
-            {{ wizard.form }}
+            {{ wizard.form.as_p }}
         {% endif %}
 
         <button name="wizard_rerun_step" type="submit" value="true">

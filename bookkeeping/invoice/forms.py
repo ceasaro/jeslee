@@ -24,3 +24,10 @@ class InvoiceItemForm(forms.Form):
     class Meta:
         fields = ['article_code', 'name', 'description', 'article_count', 'article_price', 'tax']
 
+    def __init__(self, *args, **kwargs):
+        super(InvoiceItemForm, self).__init__(*args, **kwargs)
+        self.fields['tax'].initial = Tax.objects.all()[0]
+
+
+class InvoiceCheckForm(forms.Form):
+    pass

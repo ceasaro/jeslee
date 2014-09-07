@@ -15,7 +15,7 @@ from lfs.order.models import Order, OrderItem
 
 from jeslee_web.settings import reverse_lazy
 from bookkeeping.bookkeeping_core.models import Client
-from bookkeeping.invoice.forms import InvoiceForm, InvoiceItemForm
+from bookkeeping.invoice.forms import InvoiceForm, InvoiceItemForm, InvoiceCheckForm
 from bookkeeping.invoice.pdf import invoice_to_PDF
 
 
@@ -66,9 +66,13 @@ class CreateInvoiceWizard(SessionWizardView):
     ITEMS_SESSION_KEY = 'invoice_wizard_items'
     form_step_1 = 'invoice'
     form_step_2 = 'invoice_item'
-    form_list = [(form_step_1, InvoiceForm), (form_step_2, InvoiceItemForm)]
+    form_step_3 = 'invoice_check'
+    form_list = [(form_step_1, InvoiceForm),
+                 (form_step_2, InvoiceItemForm),
+                 (form_step_3, InvoiceCheckForm)]
     template_list = {form_step_1: "bookkeeping/invoice/create_invoice.html",
-                     form_step_2: "bookkeeping/invoice/create_invoice_item.html"}
+                     form_step_2: "bookkeeping/invoice/create_invoice_item.html",
+                     form_step_3: "bookkeeping/invoice/check_invoice.html"}
     order = None
 
     def post(self, *args, **kwargs):
@@ -106,19 +110,25 @@ class CreateInvoiceWizard(SessionWizardView):
         return context_data
 
     def process_step(self, form):
+        form_data = form.cleaned_data
         if self.steps.current == self.form_step_1:
-            self.request.session[self.ORDER_SESSION_KEY] = \
-                create_order(form.cleaned_data, self.request)
+            if self.ORDER_SESSION_KEY in self.request.session:
+                # update order
+                self.request.session[self.ORDER_SESSION_KEY].user = form_data['client'].user
+                self.request.session[self.ORDER_SESSION_KEY].message = form_data['reference']
+            else:
+                # create new order
+                self.request.session[self.ORDER_SESSION_KEY] = \
+                    create_order(form_data, self.request)
         elif self.steps.current == self.form_step_2:
             if not self.request.POST.get('check_invoice', None):
                 item, order = \
-                    add_order_item(self.request.session[self.ORDER_SESSION_KEY], form.cleaned_data)
+                    add_order_item(self.request.session[self.ORDER_SESSION_KEY], form_data)
 
                 if not self.ITEMS_SESSION_KEY in self.request.session:
                     self.request.session[self.ITEMS_SESSION_KEY] = []
                 self.request.session[self.ITEMS_SESSION_KEY].append(item)
                 self.request.session[self.ORDER_SESSION_KEY] = order
-
 
         return super(CreateInvoiceWizard, self).process_step(form)
 

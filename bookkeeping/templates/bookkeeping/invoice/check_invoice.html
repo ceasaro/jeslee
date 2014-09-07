@@ -1,0 +1,53 @@
+{% extends 'bookkeeping/bookkeeping-base.html' %}
+
+{% block page-content %}
+    <div>
+        <p>
+            <span>Klant: {{ order.user }}</span>
+        </p>
+        <p>
+            <span>referentie: {{ order.message }}</span>
+            <br/>
+        </p>
+
+    </div>
+
+    <div>
+        <table class="order-item-table">
+            <thead>
+                <tr>
+                    <th>Article code</th>
+                    <th>beschrijving</th>
+                    <th>aantal</th>
+                    <th>bedrag</th>
+                    <th>totaal</th>
+                    <th>btw</th>
+                </tr>
+            </thead>
+            {% for item in items %}
+                <tr>
+                    <td>{{ item.product_sku  }}</td>
+                    <td>{{ item.product.description }}</td>
+                    <td>{{ item.product_amount }}</td>
+                    <td>{{ item.product_price_gross }}</td>
+                    <td>{{ item.price_gross }}</td>
+                    <td>{{ item.tax }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <form action="." method="post">
+        {% csrf_token %}
+        {{ wizard.management_form }}
+        {% if wizard.steps.prev %}
+            <button name="wizard_goto_step" type="submit" value="invoice_item">
+                Pas factuurgegevens aan
+            </button>
+        {% endif %}
+        <button name="check_invoice" type="submit" value="true">
+            Factuur bewaren
+        </button>
+
+    </form>
+{% endblock %}
