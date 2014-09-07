@@ -1,5 +1,48 @@
 {% extends 'bookkeeping/bookkeeping-base.html' %}
 
 {% block page-content %}
-    <a href="{% url 'download_invoice' order.uuid %}">Download factuur {{ order.uuid }}</a>
+    <div>
+        <p>
+            <span>Klant: {{ order.user }}</span>
+        </p>
+        <p>
+            <span>referentie: {{ order.message }}</span>
+            <br/>
+        </p>
+
+        {% if wizard.steps.prev %}
+            <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.first }}">
+                Pas factuurgegevens aan
+            </button>
+        {% endif %}
+    </div>
+
+    <div>
+        <table class="order-item-table">
+            <thead>
+                <tr>
+                    <th>Article code</th>
+                    <th>beschrijving</th>
+                    <th>aantal</th>
+                    <th>bedrag</th>
+                    <th>totaal</th>
+                    <th>btw</th>
+                </tr>
+            </thead>
+            {% for item in order.items.all %}
+                <tr>
+                    <td>{{ item.product_sku  }}</td>
+                    <td>{{ item.product.description }}</td>
+                    <td>{{ item.product_amount }}</td>
+                    <td>{{ item.product_price_gross }}</td>
+                    <td>{{ item.price_gross }}</td>
+                    <td>{{ item.tax }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div>
+        <a href="{% url 'download_invoice' order.uuid %}">Download factuur</a>
+    </div>
 {% endblock %}
