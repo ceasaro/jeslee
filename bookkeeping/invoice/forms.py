@@ -1,5 +1,5 @@
 from django import forms
-from lfs.order.models import OrderItem
+from lfs.tax.models import Tax
 
 from bookkeeping.bookkeeping_core.models import Client
 
@@ -16,10 +16,11 @@ class InvoiceItemForm(forms.Form):
 
     article_code = forms.CharField(max_length=32)
     name = forms.CharField(max_length=80)
+    description = forms.CharField(widget=forms.Textarea)
     article_count = forms.IntegerField(initial=1)
     article_price = forms.DecimalField(decimal_places=2)
-    tax = forms.ChoiceField(choices=((0.21,'21 %'), (0.06, '6%')))
+    tax = forms.ModelChoiceField(queryset=Tax.objects.all())
 
     class Meta:
-        model = OrderItem
-        fields = ['article_code', 'name', 'article_count', 'article_price', 'tax']
+        fields = ['article_code', 'name', 'description', 'article_count', 'article_price', 'tax']
+

@@ -152,8 +152,14 @@ def invoice_to_PDF(order, client, filename=None):
     add_row(['Artikelcode', 'Omschrijving', '#', 'Bedrag ¹', 'Totaal ¹', 'Btw'])
     add_row_line()
     for item in order.items.all():
-        add_row(['22-01-2014',
-                 item.product.name if item.product else '',
+        code = ''
+        description = ''
+        if item.product:
+            code = item.product.sku
+            description = item.product.description if item.product.description else item.product.name
+            str(item.product.tax if item.product.tax else '')
+        add_row([code,
+                 description,
                  "{:.0f}".format(item.product_amount),
                  to_currency(item.product_price_gross),
                  to_currency(item.price_gross),

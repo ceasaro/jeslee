@@ -1,22 +1,49 @@
 {% extends 'bookkeeping/bookkeeping-base.html' %}
 
 {% block page-content %}
-    <div>
-        <p>
-            <span>Voeg goederen toe voor klant: {{ form_data.client }}</span>
-        </p>
-        <p>
-            <span>referentie: {{ form_data.reference }}</span>
-        </p>
-        {% if wizard.steps.prev %}
-            <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.first }}">
-                Pas factuurgegevens aan
-            </button>
-        {% endif %}
-    </div>
-
     <form action="" method="post">
         {% csrf_token %}
+        <div>
+            <p>
+                <span>Voeg goederen toe voor klant: {{ client }}</span>
+            </p>
+            <p>
+                <span>referentie: {{ order.message }}</span>
+                <br/>
+            </p>
+
+            {% if wizard.steps.prev %}
+                <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.first }}">
+                    Pas factuurgegevens aan
+                </button>
+            {% endif %}
+        </div>
+
+        {% if items %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Article code</th>
+                        <th>beschrijving</th>
+                        <th>aantal</th>
+                        <th>bedrag</th>
+                        <th>totaal</th>
+                        <th>btw</th>
+                    </tr>
+                </thead>
+                {% for item in items %}
+                    <tr>
+                        <td>{{ item.product_sku  }}</td>
+                        <td>{{ item.product.description }}</td>
+                        <td>{{ item.product_amount }}</td>
+                        <td>{{ item.product_price_gross }}</td>
+                        <td>{{ item.price_gross }}</td>
+                        <td>{{ item.tax }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+
         {{ wizard.management_form }}
         {% if wizard.form.forms %}
             {{ wizard.form.management_form }}
@@ -27,11 +54,13 @@
             {{ wizard.form }}
         {% endif %}
 
-        <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.second }}">
-            Voeg product toe
+        <button name="wizard_rerun_step" type="submit" value="true">
+            Artikel toevoegen.
         </button>
 
-        <input type="submit" value="Bewaar factuur"/>
+        <button name="check_invoice" type="submit" value="true">
+            Controleer gegevens
+        </button>
 
     </form>
 {% endblock %}

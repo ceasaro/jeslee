@@ -62,11 +62,27 @@ class InvoiceView(DetailView):
 
 
 class CreateInvoiceWizard(SessionWizardView):
-    form_1 = 'invoice'
-    form_2 = 'invoice_item'
-    form_list = [(form_1, InvoiceForm), (form_2, InvoiceItemForm)]
-    template_list = {form_1: "bookkeeping/invoice/create_invoice.html",
-                     form_2: "bookkeeping/invoice/create_invoice_item.html"}
+    ORDER_SESSION_KEY = 'invoice_wizard_order'
+    ITEMS_SESSION_KEY = 'invoice_wizard_items'
+    form_step_1 = 'invoice'
+    form_step_2 = 'invoice_item'
+    form_list = [(form_step_1, InvoiceForm), (form_step_2, InvoiceItemForm)]
+    template_list = {form_step_1: "bookkeeping/invoice/create_invoice.html",
+                     form_step_2: "bookkeeping/invoice/create_invoice_item.html"}
+    order = None
+
+    def post(self, *args, **kwargs):
+        """ extends wizard with the option to rerun a certain step.
+        """
+        wizard_rerun_step= self.request.POST.get('wizard_rerun_step', None)
+        if wizard_rerun_step:
+            # self.storage.current_step =
+            form = self.get_form(data=self.request.POST, files=self.request.FILES)
+            if form.is_valid():
+                # if the form is valid, store the cleaned data and files.
+                self.storage.set_step_data(self.steps.current, self.process_step(form))
+            return self.render(form)
+        return super(CreateInvoiceWizard, self).post(*args, **kwargs)
 
     @method_decorator(staff_member_required)
     def dispatch(self, *args, **kwargs):
@@ -77,16 +93,42 @@ class CreateInvoiceWizard(SessionWizardView):
 
     def get_context_data(self, form, **kwargs):
         context_data = super(CreateInvoiceWizard, self).get_context_data(form, **kwargs)
-        context_data.update({'form_data': self.get_all_cleaned_data() })
+        client= self.get_all_cleaned_data()['client'] if 'client' in self.get_all_cleaned_data() else None
+        order = self.request.session[self.ORDER_SESSION_KEY] \
+            if self.ORDER_SESSION_KEY in self.request.session else None
+        items = self.request.session[self.ITEMS_SESSION_KEY] \
+            if self.ITEMS_SESSION_KEY in self.request.session else []
+        context_data.update({
+            'order': order,
+            'items': items,
+            'client': client
+        })
         return context_data
 
-    def done(self, form_list, **kwargs):
-        data = self.get_all_cleaned_data()
+    def process_step(self, form):
+        if self.steps.current == self.form_step_1:
+            self.request.session[self.ORDER_SESSION_KEY] = \
+                create_order(form.cleaned_data, self.request)
+        elif self.steps.current == self.form_step_2:
+            if not self.request.POST.get('check_invoice', None):
+                item, order = \
+                    add_order_item(self.request.session[self.ORDER_SESSION_KEY], form.cleaned_data)
 
-        order = create_order(data, self.request)
-        add_order_item(order, data)
+                if not self.ITEMS_SESSION_KEY in self.request.session:
+                    self.request.session[self.ITEMS_SESSION_KEY] = []
+                self.request.session[self.ITEMS_SESSION_KEY].append(item)
+                self.request.session[self.ORDER_SESSION_KEY] = order
+
+
+        return super(CreateInvoiceWizard, self).process_step(form)
+
+    def done(self, form_list, **kwargs):
+        self.request.session[self.ORDER_SESSION_KEY].save()
         success_url = reverse_lazy('view_invoice',
-                                   kwargs={'uuid': order.uuid})
+                                   kwargs={'uuid': self.request.session[self.ORDER_SESSION_KEY].uuid})
+        # remove order from session
+        del self.request.session[self.ORDER_SESSION_KEY]
+        del self.request.session[self.ITEMS_SESSION_KEY]
         return HttpResponseRedirect(success_url)
 
 
@@ -94,27 +136,34 @@ def add_order_item(order, data):
     article_price = float(data['article_price'])
     article_count = float(data['article_count'])
     item_price = article_price * article_count
-    tax_percentage = float(data['tax'])
-    item_tax = item_price * tax_percentage
-    product = Product.objects.create(
-        name=data['name'],
-        slug=slugify(data['name']),
-        sku=data['article_code'],
-    )
-    OrderItem.objects.create(
+    tax = data['tax']
+    item_tax = item_price * tax.rate / 100
+    try:
+        product = Product.objects.get(name=data['name'])
+    except Product.DoesNotExist:
+        product = Product.objects.create(
+            name=data['name'],
+            slug=slugify(data['name']),
+            sku=data['article_code'],
+            description=data['description'],
+            tax=tax,
+        )
+    item = OrderItem.objects.create(
         order=order,
         price_gross=item_price,
-        price_net=item_price * (1 - tax_percentage),
+        price_net=item_price * (100 - tax.rate) / 100,
         tax=item_tax,
         product=product,
+        product_sku=data['article_code'],
         product_amount=article_count,
-        product_price_net=article_price * (1-tax_percentage),
+        product_name=data['name'],
+        product_price_net=article_price * (100-tax.rate) / 100,
         product_price_gross=article_price,
-        product_tax=article_price * tax_percentage,
+        product_tax=article_price * tax.rate / 100,
     )
     order.price += item_price
     order.tax += item_tax
-    order.save()
+    return item, order
 
 
 def create_order(form_data, request):
@@ -156,6 +205,5 @@ def create_order(form_data, request):
         pass
 
     order.number = order_numbers.get_next()
-    order.save()
     return order
 
