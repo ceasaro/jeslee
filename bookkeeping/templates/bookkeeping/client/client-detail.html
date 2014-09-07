@@ -1,0 +1,29 @@
+{% extends 'bookkeeping/client/client-base.html' %}
+
+{% block page-content %}
+
+    <div>
+        <a href="{% url 'client_update' client.id %}">edit</a>
+    </div>
+
+    <div class="client_data">
+        <ul class="client_address">
+            <li>Naam: {{ client.name }}</li>
+            <li>E-mail: {{ client.email }}</li>
+            <li>Straat: {{ client.street }}</li>
+            <li>Huisnummer: {{ client.street_nr }}</li>
+            <li>Postcode: {{ client.zip }}</li>
+            <li>Plaats: {{ client.city }}</li>
+            <li>Land: {{ client.country }}</li>
+        </ul>
+
+        <div>
+            <h2>Facturen</h2>
+        </div>
+        <ul class="client_orders">
+            {% for order in orders %}
+                <li><a href="{% url 'view_invoice' order.uuid %}">{{ order.number }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
