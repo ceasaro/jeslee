@@ -75,6 +75,11 @@ class CreateInvoiceWizard(SessionWizardView):
                      form_step_3: "bookkeeping/invoice/check_invoice.html"}
     order = None
 
+    def get_form_kwargs(self, step=None):
+        if step == self.form_step_2:
+            return {'request': self.request}
+        return super(CreateInvoiceWizard, self).get_form_kwargs(step)
+
     def post(self, *args, **kwargs):
         """ extends wizard with the option to rerun a certain step.
         """
@@ -121,6 +126,11 @@ class CreateInvoiceWizard(SessionWizardView):
                 self.request.session[self.ORDER_SESSION_KEY] = \
                     create_order(form_data, self.request)
         elif self.steps.current == self.form_step_2:
+            # remove items if specified
+            item_ids_to_remove = [int(i) for i in self.request.POST.getlist('remove_items')]  # convert list if str to id's
+            stored_items = self.request.session[self.ITEMS_SESSION_KEY]  # create new list of items to keep
+            items_to_keep = [i for i in stored_items if i.id not in item_ids_to_remove]  # store items to keep in session
+            self.request.session[self.ITEMS_SESSION_KEY] = items_to_keep
             if not self.request.POST.get('check_invoice', None):
                 item, order = \
                     add_order_item(self.request.session[self.ORDER_SESSION_KEY], form_data)

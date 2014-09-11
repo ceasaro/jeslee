@@ -7,26 +7,32 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: Arial, Helvetica, sans-serif;
 }
+
 h1 {
   font-size: 2em;
   margin: 30px 0 20px 0;
 }
+
 h2 {
   font-size: 1.5em;
   margin: 15px 0 15px 0;
 }
+
 h3 {
-  font-size: 1.2em ;
+  font-size: 1.2em;
   margin: 10px 0 10px 0;
 }
+
 h4 {
   font-size: 1.0em;
   margin: 5px 0 5px 0;
 }
+
 h5 {
   font-size: 0.9em;
   margin: 5px 0 5px 0;
 }
+
 h6 {
   font-size: 0.8em;
   margin: 5px 0 5px 0;
@@ -107,6 +113,7 @@ h6 {
     width: 339px;
   }
 }
+
 /***********************
  * TABLES
  **********************/
@@ -199,22 +206,39 @@ h6 {
 
   }
 
-  tr:last-child td:last-child {
+  tr {
+    &:last-child td:last-child {
+    }
     -moz-border-radius-bottomright: 0;
     -webkit-border-bottom-right-radius: 0;
     border-bottom-right-radius: 0;
-  }
 
-  tr:hover td {
+    &:nth-child(odd) {
+      background-color: #aad4ff;
+    }
 
-  }
+    &:nth-child(even) {
+      background-color: #ffffff;
+    }
 
-  tr:nth-child(odd) {
-    background-color: #aad4ff;
-  }
+    &:last-child td, &:last-child th {
+      border-width: 0 1px 0 0;
+    }
 
-  tr:nth-child(even) {
-    background-color: #ffffff;
+    &td:last-child, &th:last-child {
+      border-width: 0 0 1px 0;
+    }
+
+    &:last-child td:last-child, &:last-child th:last-child {
+      border-width: 0 0 0 0;
+    }
+
+    &.disabled {
+      td {
+        opacity: 0.4; /* Real browsers */
+        filter: alpha(opacity=40); /* MSIE */
+      }
+    }
   }
 
   td, th {
@@ -228,18 +252,6 @@ h6 {
     font-family: arial;
     font-weight: normal;
     color: #000000;
-  }
-
-  tr:last-child td, tr:last-child th {
-    border-width: 0 1px 0 0;
-  }
-
-  tr td:last-child, tr th:last-child {
-    border-width: 0 0 1px 0;
-  }
-
-  tr:last-child td:last-child, tr:last-child th:last-child {
-    border-width: 0 0 0 0;
   }
 
 }
