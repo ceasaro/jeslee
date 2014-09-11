@@ -5,29 +5,10 @@ from django.db.models import Manager
 from django.utils.translation import ugettext as _
 from django_extensions.db.models import TimeStampedModel
 
+from bookkeeping.bookkeeping_core.models import Client, Category
+
 
 __author__ = 'ceasaro'
-
-
-class Client(TimeStampedModel):
-    name = models.CharField(_('name'), max_length=128, unique=True)
-
-    def __repr__(self):
-        return self.name
-
-    def __str__(self):
-        return self.name
-
-
-class Category(TimeStampedModel):
-    name = models.CharField(_('name'), max_length=128)
-
-    def __repr__(self):
-        return self.name
-
-    def __str__(self):
-        return self.name
-
 
 class Transaction(TimeStampedModel):
 
@@ -56,11 +37,9 @@ class PaymentManager(Manager):
         return self.get_query_set().filter(pay_date__range=(first_date_of_year, last_date_of_year))
 
 
-
 class Payment(Transaction):
 
     objects = PaymentManager()
-
 
 
 class Receipt(Transaction):

@@ -42,7 +42,7 @@ class OrderNumberGenerator(Base):
         """
         self.last += 1
         self.save()
-        number_length = 8
+        number_length = 5
         last_length = len(str(self.last))
         number_prefix = '0'*(number_length - last_length)
         prefixed_number = number_prefix + str(self.last)
@@ -50,5 +50,5 @@ class OrderNumberGenerator(Base):
         if formatted and self.format:
             formatted_id = self.format % prefixed_number
         else:
-            formatted_id = 'YCJW_{year}_{number}'.format(year=date.today().year, number=prefixed_number)
+            formatted_id = '{year}-{number}'.format(year=date.today().year, number=prefixed_number)
         return formatted_id

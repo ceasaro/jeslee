@@ -33,18 +33,18 @@
                 <h3>Jeslee</h3>
 
                 <p>
-                    Hoofdstraat 51 <br/>
-                    9635 AT Noordbroek<br/>
-                    Nederland
+                    {{ COMPANY.street }}<br/>
+                    {{ COMPANY.zip }} {{ COMPANY.city }}<br/>
+                    {{ COMPANY.country|upper }}
                 </p>
                 <ul>
                     <li>
                         <span>E-mail</span>
-                        <span><a href="mailto:info@jeslee.com">info@jeslee.com</a></span>
+                        <span><a href="mailto:{{ COMPANY.email }}">{{ COMPANY.email }}</a></span>
                     </li>
                     <li>
                         <span>Mobiel</span>
-                        <span>06 - 15 94 80 90</span>
+                        <span>{{ COMPANY.mobile }}</span>
                     </li>
                 </ul>
             </div>

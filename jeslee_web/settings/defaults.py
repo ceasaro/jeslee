@@ -169,8 +169,10 @@ INSTALLED_APPS = (
     #    'jeslee_web.account'
 
     # bookkeeping
-    'bookkeeping.core',
+    'bookkeeping',
+    'bookkeeping.bookkeeping_core',
     'bookkeeping.transactions',
+    'bookkeeping.invoice',
 
     # none default django apps
     'django_extensions',
@@ -237,6 +239,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
     'django.core.context_processors.static',
     'lfs.core.context_processors.main',
+    'jeslee_web.base.context_processors.company_context',
 )
 
 AUTHENTICATION_BACKENDS = (
@@ -315,14 +318,6 @@ LFS_LOG_FILE = SITE_ROOT + "/../lfs.log"
 
 LFS_THUMBNAIL_SIZES = ((208, 270), (450, 584), (104,135), (60, 60), (100, 100), (200, 200), (300, 300), (400, 400))
 
-#
-# iDEAL settings (TEST environment)
-#
-IDEAL_PAYMENT_URL = 'https://idealtest.secure-ing.com/ideal/mpiPayInitIng.do'
-IDEAL_MERCHANT_ID = '005081894'
-IDEAL_HASH_KEY = 'gxfE9kiasIyZ2yZU'
-IDEAL_DEFAULT_SUB_ID = '0'
-IDEAL_PAYMENT_TYPE = 'ideal'
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error.
@@ -371,5 +366,10 @@ REVIEWS_IS_MODERATED = False
 
 try:
     from local_settings import *
+except ImportError:
+    pass
+
+try:
+    from jeslee_settings import *
 except ImportError:
     pass

@@ -55,7 +55,7 @@ def test():
 
 @task()
 def acceptation():
-    '''Configuration for production server'''
+    '''Configuration for acceptation server'''
     env.hosts = ['beta.jeslee.com']
     env.install_dir = '/sites-acc/django/jeslee-beta/'
     env.install_user = 'jeslee'

@@ -7,6 +7,7 @@ PIL==1.1.7
 django-compressor==1.1.1
 MySQL-python
 South==0.8.4
+fpdf==1.7 # for pdf generation
 
 # lfs works only with django_countries 1.5 and django_1.5 install version 2.0
 django_countries==1.5

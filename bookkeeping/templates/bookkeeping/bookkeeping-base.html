@@ -60,6 +60,46 @@
 <body class="{% block section %}lfs{% endblock %}">
 
 {% block body %}
+    {% block menu %}
+        <ul class="main-menu">
+            <li class="main-menu-item">
+                <a href="{% url 'bookkeeping_home' %}" class="main-menu-item-link">Home</a>
+            </li>
+            <li class="main-menu-item">
+                <a href="{% url 'transaction_home' %}" class="main-menu-item-link">Bonnetjes</a>
+            </li>
+            <li class="main-menu-item">
+                <a href="{% url 'invoice_home' %}" class="main-menu-item-link">Facturen</a>
+            </li>
+            <li class="main-menu-item">
+                <a href="{% url 'client_home' %}" class="main-menu-item-link">Klanten</a>
+            </li>
+        </ul>
+        {% block submenu %}
+        {% endblock %}
+    {% endblock %}
+
+    {% if request.financial_years %}
+        <div class="financial-year">
+            <form action="" method="get">
+                <label for="financial-year-select">Boekjaar</label>
+                <select name="year" id="financial-year-select">
+                    {% for year in request.financial_years %}
+                        <option {% if year == request.financial_year %}selected="selected"{% endif %}>{{ year }}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="Kies"/>
+            </form>
+        </div>
+    {% endif %}
+
+    <div>
+        {% block page-content %}
+        {% endblock %}
+    </div>
+
+    <div id="weslee-pixel"></div>
+
 {% endblock %}
 
 {% block google-analytics-ecommerce %}{% endblock %}

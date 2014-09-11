@@ -3,7 +3,7 @@ from datetime import date
 from django import forms
 from django.forms.widgets import DateInput as DjangoDateInput
 
-from bookkeeping.transactions.models import Payment, Client, Category
+from bookkeeping.transactions.models import Payment, Category
 
 
 __author__ = 'ceasaro'
@@ -11,11 +11,6 @@ __author__ = 'ceasaro'
 
 class DateInput(DjangoDateInput):
     input_type = 'date'
-
-
-class ClientForm(forms.ModelForm):
-    class Meta:
-        model = Client
 
 
 class CategoryForm(forms.ModelForm):

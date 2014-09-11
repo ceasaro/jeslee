@@ -1,0 +1,86 @@
+{% extends 'bookkeeping/bookkeeping-base.html' %}
+{% load static from staticfiles %}
+
+{% block javascript %}
+    <script src="{% static 'js/bookkeeping.js' %}" type="text/javascript"></script>
+{% endblock %}
+
+{% block page-content %}
+    <form action="" method="post" class="financial-form" data-remove-items-name="{{ form.remove_items.name }}">
+        {% csrf_token %}
+        <h2>Nieuwe factuur</h2>
+        <div>
+            <p>
+                <span>Voor klant: {{ client }}</span>
+            </p>
+            <p>
+                <span>referentie: {{ order.message }}</span>
+                <br/>
+            </p>
+
+            {% if wizard.steps.prev %}
+                <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.first }}">
+                    Pas factuurgegevens aan
+                </button>
+            {% endif %}
+        </div>
+
+        {% if items %}
+            <h3>artikellen</h3>
+            <table class="order-item-table">
+                <thead>
+                    <tr>
+                        <th>Article code</th>
+                        <th>beschrijving</th>
+                        <th>aantal</th>
+                        <th>bedrag</th>
+                        <th>totaal</th>
+                        <th>btw</th>
+                    </tr>
+                </thead>
+                {% for id, item in items %}
+                    <tr>
+                        <td>
+                            <span class="product_sku">{{ item.article_code }}</span>
+{% comment %}
+                            &nbsp;&nbsp;
+                            <a href="#" data-edit-item-id="{{ item.id }}">
+                                <img src="{{ STATIC_URL }}icons/pencil.png"/>
+                            </a>
+{% endcomment %}
+                            &nbsp;&nbsp;
+                            <a href="#" data-remove-item-id="{{ id }}">
+                                <img src="{{ STATIC_URL }}icons/cross.png"/>
+                            </a>
+                        </td>
+                        <td class="description">{{ item.description }}</td>
+                        <td class="product_amount">{{ item.article_count }}</td>
+                        <td class="product_price_gross">{{ item.article_price }}</td>
+                        <td class="price_gross">{{ item.price_gross }}</td>
+                        <td class="tax">{{ item.tax }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+
+        <h3>Nieuw artikel</h3>
+        {{ wizard.management_form }}
+        {% if wizard.form.forms %}
+            {{ wizard.form.management_form }}
+            {% for form in wizard.form.forms %}
+                {{ form.as_p }}
+            {% endfor %}
+        {% else %}
+            {{ wizard.form.as_p }}
+        {% endif %}
+
+        <button name="wizard_rerun_step" type="submit" value="true">
+            Artikel toevoegen.
+        </button>
+
+        <button name="check_invoice" type="submit" value="true">
+            Controleer gegevens
+        </button>
+
+    </form>
+{% endblock %}

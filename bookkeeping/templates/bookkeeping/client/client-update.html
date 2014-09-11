@@ -1,6 +1,7 @@
-{% extends 'transaction-base.html' %}
+{% extends 'bookkeeping/client/client-base.html' %}
 
 {% block page-content %}
+
     <form action="" method="post" class="regular-form">
     {% csrf_token %}
         {{ form.as_p }}
