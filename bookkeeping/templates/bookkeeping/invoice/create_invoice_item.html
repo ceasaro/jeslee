@@ -38,10 +38,10 @@
                         <th>btw</th>
                     </tr>
                 </thead>
-                {% for item in items %}
+                {% for id, item in items %}
                     <tr>
                         <td>
-                            <span class="product_sku">{{ item.product_sku  }}</span>
+                            <span class="product_sku">{{ item.article_code }}</span>
 {% comment %}
                             &nbsp;&nbsp;
                             <a href="#" data-edit-item-id="{{ item.id }}">
@@ -49,13 +49,13 @@
                             </a>
 {% endcomment %}
                             &nbsp;&nbsp;
-                            <a href="#" data-remove-item-id="{{ item.id }}">
+                            <a href="#" data-remove-item-id="{{ id }}">
                                 <img src="{{ STATIC_URL }}icons/cross.png"/>
                             </a>
                         </td>
-                        <td class="description">{{ item.product.description }}</td>
-                        <td class="product_amount">{{ item.product_amount }}</td>
-                        <td class="product_price_gross">{{ item.product_price_gross }}</td>
+                        <td class="description">{{ item.description }}</td>
+                        <td class="product_amount">{{ item.article_count }}</td>
+                        <td class="product_price_gross">{{ item.article_price }}</td>
                         <td class="price_gross">{{ item.price_gross }}</td>
                         <td class="tax">{{ item.tax }}</td>
                     </tr>

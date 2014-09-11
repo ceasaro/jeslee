@@ -131,19 +131,21 @@ class CreateInvoiceWizard(SessionWizardView):
             # remove items if specified
             item_ids_to_remove = [int(i) for i in self.request.POST.getlist('remove_items')]  # convert list if str to id's
             stored_items = self.request.session[self.ITEMS_SESSION_KEY]  # create new list of items to keep
-            items_to_keep = [i for i in stored_items if i.id not in item_ids_to_remove]  # store items to keep in session
+            items_to_keep = [(i,j) for i,j in stored_items if i not in item_ids_to_remove]  # store items to keep in session
             self.request.session[self.ITEMS_SESSION_KEY] = items_to_keep
             if not self.request.POST.get('check_invoice', None):
-                item, order = \
-                    add_order_item(self.request.session[self.ORDER_SESSION_KEY], form_data)
-
-                self.request.session[self.ITEMS_SESSION_KEY].append(item)
-                self.request.session[self.ORDER_SESSION_KEY] = order
+                # only store form data if user doesn't want to check the invoice
+                item_id = len(self.request.session[self.ITEMS_SESSION_KEY]) + 1
+                form_data['price_gross'] = float(form_data['article_price']) * float(form_data['article_count'])
+                self.request.session[self.ITEMS_SESSION_KEY].append((item_id, form_data))
 
         return super(CreateInvoiceWizard, self).process_step(form)
 
     def done(self, form_list, **kwargs):
-        self.request.session[self.ORDER_SESSION_KEY].save()
+        order = self.request.session[self.ORDER_SESSION_KEY]
+        for i, item_form_data in self.request.session[self.ITEMS_SESSION_KEY]:
+            add_order_item(order, item_form_data)
+        order.save()
         success_url = reverse_lazy('view_invoice',
                                    kwargs={'uuid': self.request.session[self.ORDER_SESSION_KEY].uuid})
         # remove order from session
