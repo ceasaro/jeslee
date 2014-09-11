@@ -44,6 +44,8 @@ def get_settings():
     # mimic Django's dual path :/ 
     if env.project_root not in sys.path:
         sys.path.append(os.path.join(env.project_root))
+        sys.path.append('/home/ceasaro/.virtualenvs/jeslee/bin/python')
+        sys.path.append('/home/ceasaro/.virtualenvs/jeslee/lib/python2.7/site-packages/')
     print sys.path
 
     from django.conf import settings
