@@ -126,9 +126,9 @@ class CreateInvoiceWizard(SessionWizardView):
                 self.request.session[self.ORDER_SESSION_KEY] = \
                     create_order(form_data, self.request)
         elif self.steps.current == self.form_step_2:
-            # remove items if specified
             if not self.ITEMS_SESSION_KEY in self.request.session:
                 self.request.session[self.ITEMS_SESSION_KEY] = []
+            # remove items if specified
             item_ids_to_remove = [int(i) for i in self.request.POST.getlist('remove_items')]  # convert list if str to id's
             stored_items = self.request.session[self.ITEMS_SESSION_KEY]  # create new list of items to keep
             items_to_keep = [i for i in stored_items if i.id not in item_ids_to_remove]  # store items to keep in session
