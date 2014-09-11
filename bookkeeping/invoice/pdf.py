@@ -160,7 +160,7 @@ def invoice_to_PDF(order, client, filename=None):
             str(item.product.tax if item.product.tax else '')
         add_row([code,
                  description,
-                 "{:.0f}".format(item.product_amount) if item.product_amount else 0,
+                 "{:.0f}".format(item.product_amount) if item.product_amount else "",
                  to_currency(item.product_price_gross),
                  to_currency(item.price_gross),
                  str(item.product.tax if item.product and item.product.tax else "")])
