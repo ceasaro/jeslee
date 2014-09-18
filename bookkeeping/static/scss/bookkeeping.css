@@ -279,3 +279,23 @@ h6 {
 .errorlist li {
   font-size: 10pt;
 }
+
+/* line 275, bookkeeping.scss */
+.financial-info {
+  margin: 20px 0 20px 0;
+}
+
+/* line 279, bookkeeping.scss */
+.payment-filter {
+  margin: 20px 0 20px 0;
+}
+
+/* line 283, bookkeeping.scss */
+.pagination {
+  margin: 20px 0 20px 0;
+}
+/* line 285, bookkeeping.scss */
+.pagination li {
+  display: inline-block;
+  margin: 0 3px 0 3px;
+}

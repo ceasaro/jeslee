@@ -7,6 +7,8 @@ from django.db.models import Sum
 from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, TemplateView, UpdateView
 
+from bookkeeping.bookkeeping_core.models import Category
+
 from bookkeeping.transactions.forms import PaymentForm, CategoryForm
 from bookkeeping.transactions.models import Payment
 
@@ -32,6 +34,7 @@ class PaymentOverviewView(TemplateView, FinancialYearMixin):
 
     default_order_by = 'pay_date'
     payments_on_page = 20
+    selected_category = None
 
     @method_decorator(staff_member_required)
     def dispatch(self, *args, **kwargs):
@@ -43,7 +46,17 @@ class PaymentOverviewView(TemplateView, FinancialYearMixin):
     def get_payments(self):
         year = self.financial_year()
         order_by = self.get_order_by()
-        return Payment.objects.of_year(year).order_by(order_by)
+        category = self.request.GET.get('category', None)
+        payments = Payment.objects.of_year(year).order_by(order_by)
+        if category:
+            try:
+                self.selected_category = Category.objects.get(id=int(category))
+                payments = payments.filter(category=self.selected_category)
+            except ValueError:
+                pass
+            except Category.DoesNotExist:
+                pass
+        return payments
 
     def get_context_data(self, **kwargs):
         context_data = super(PaymentOverviewView, self).get_context_data(**kwargs)
@@ -67,6 +80,8 @@ class PaymentOverviewView(TemplateView, FinancialYearMixin):
                 'sum_tax': sum_tax,
                 'ordered_by': self.get_order_by()
             },
+            'categories': Category.objects.viewable(),
+            'selected_category': self.selected_category,
         })
         return context_data
 
