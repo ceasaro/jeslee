@@ -7,7 +7,7 @@ from django.db.models import Sum
 from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, TemplateView, UpdateView
 
-from bookkeeping.bookkeeping_core.models import Category
+from bookkeeping.bookkeeping_core.models import Category, Client
 
 from bookkeeping.transactions.forms import PaymentForm, CategoryForm
 from bookkeeping.transactions.models import Payment
@@ -35,6 +35,7 @@ class PaymentOverviewView(TemplateView, FinancialYearMixin):
     default_order_by = 'pay_date'
     payments_on_page = 20
     selected_category = None
+    selected_client = None
 
     @method_decorator(staff_member_required)
     def dispatch(self, *args, **kwargs):
@@ -43,11 +44,8 @@ class PaymentOverviewView(TemplateView, FinancialYearMixin):
     def get_order_by(self):
         return self.request.GET.get('ob', self.default_order_by)
 
-    def get_payments(self):
-        year = self.financial_year()
-        order_by = self.get_order_by()
+    def filter_on_category(self, payments):
         category = self.request.GET.get('category', None)
-        payments = Payment.objects.of_year(year).order_by(order_by)
         if category:
             try:
                 self.selected_category = Category.objects.get(id=int(category))
@@ -56,6 +54,34 @@ class PaymentOverviewView(TemplateView, FinancialYearMixin):
                 pass
             except Category.DoesNotExist:
                 pass
+        return payments
+
+    def filter_on_client(self, payments):
+        client = self.request.GET.get('client', None)
+        if client:
+            try:
+                self.selected_client = Client.objects.get(id=int(client))
+                payments = payments.filter(client=self.selected_client)
+            except ValueError:
+                pass
+            except Client.DoesNotExist:
+                pass
+        return payments
+
+    def get_payments(self):
+        year = self.financial_year()
+        order_by = self.get_order_by()
+        payments = Payment.objects.of_year(year).order_by(order_by)
+
+        # filter on category
+        payments = self.filter_on_category(payments)
+        print '########################################################'
+        print 'payments categories len:{0}'.format(len(payments))
+        # filter on client
+        payments = self.filter_on_client(payments)
+        print 'payments clients len:{0}'.format(len(payments))
+        print '########################################################'
+
         return payments
 
     def get_context_data(self, **kwargs):
@@ -82,6 +108,8 @@ class PaymentOverviewView(TemplateView, FinancialYearMixin):
             },
             'categories': Category.objects.viewable(),
             'selected_category': self.selected_category,
+            'clients': Client.objects.viewable(),
+            'selected_client': self.selected_client,
         })
         return context_data
 
