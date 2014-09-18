@@ -64,7 +64,7 @@ def acceptation():
                                  'requirements/acceptation.txt')
     env.virtualenv_dir = '/opt/virtualenvs/jeslee-beta/'
     env.django_settings = 'jeslee_web.settings.acceptation'
-    # env.repository.branch = 'bookkeeping'
+    env.repository.branch = 'bookkeeping'
     django_settings_to_env()
     env.django_developing = False
 

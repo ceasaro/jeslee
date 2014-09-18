@@ -75,12 +75,8 @@ class PaymentOverviewView(TemplateView, FinancialYearMixin):
 
         # filter on category
         payments = self.filter_on_category(payments)
-        print '########################################################'
-        print 'payments categories len:{0}'.format(len(payments))
         # filter on client
         payments = self.filter_on_client(payments)
-        print 'payments clients len:{0}'.format(len(payments))
-        print '########################################################'
 
         return payments
 
