@@ -23,6 +23,9 @@ class Client(TimeStampedModel, Address):
     user = models.ForeignKey(User, verbose_name=_(u"user"), blank=False, null=False)
     objects = ClientManager()
 
+    class Meta:
+        ordering = ['name']
+
     def __repr__(self):
         return self.name
 
@@ -41,6 +44,9 @@ class CategoryManager(Manager):
 class Category(TimeStampedModel):
     name = models.CharField(_('name'), max_length=128)
     objects = CategoryManager()
+
+    class Meta:
+        ordering = ['name']
 
     def __repr__(self):
         return self.name

@@ -36,8 +36,10 @@ class PaymentManager(Manager):
 
 
 class Payment(Transaction):
-
     objects = PaymentManager()
+
+    class Meta:
+        ordering = ['pay_date']
 
 
 class Receipt(Transaction):
