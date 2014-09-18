@@ -5,7 +5,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.core.urlresolvers import reverse
 from django.db.models import Sum
 from django.utils.decorators import method_decorator
-from django.views.generic import CreateView, TemplateView
+from django.views.generic import CreateView, TemplateView, UpdateView
 
 from bookkeeping.transactions.forms import PaymentForm, CategoryForm
 from bookkeeping.transactions.models import Payment
@@ -81,9 +81,24 @@ class PaymentCreateView(CreateView, FinancialYearMixin):
     def get_form_kwargs(self):
         form_kwargs = super(PaymentCreateView, self).get_form_kwargs()
         form_kwargs['year'] = self.financial_year()
-
         return form_kwargs
 
+    def get_success_url(self):
+        return reverse('transaction_home')
+
+
+class PaymentUpdateView(UpdateView, FinancialYearMixin):
+    model = Payment
+    form_class = PaymentForm
+
+    @method_decorator(staff_member_required)
+    def dispatch(self, *args, **kwargs):
+        return super(PaymentUpdateView, self).dispatch(*args, **kwargs)
+
+    def get_form_kwargs(self):
+        form_kwargs = super(PaymentUpdateView, self).get_form_kwargs()
+        form_kwargs['year'] = self.financial_year()
+        return form_kwargs
 
     def get_success_url(self):
         return reverse('transaction_home')

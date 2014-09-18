@@ -16,6 +16,7 @@
     <table class="payment-list" >
         <thead>
             <tr>
+                <th>&nbsp;</th>
                 <th>
                     <a href="?year={{ request.financial_year }}&ob={% if payments.ordered_by == 'pay_date' %}-{% endif %}pay_date">datum</a>
                 </th>
@@ -36,6 +37,9 @@
         <tbody>
             {% for payment in payments.list %}
                 <tr>
+                    <td>
+                        <a href="{% url 'update_payment' payment.id %}"><img src="{{ STATIC_URL }}icons/pencil.png"/></a>
+                    </td>
                     <td>{{ payment.pay_date }}</td>
                     <td>{{ payment.client }}</td>
                     <td>{{ payment.category }}</td>

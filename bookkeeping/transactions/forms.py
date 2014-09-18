@@ -25,10 +25,10 @@ class PaymentForm(forms.ModelForm):
         super(PaymentForm, self).__init__(*args, **kwargs)
         if year:
             self.fields['pay_date'].initial = date(year, 1, 1)
-        self.fields['tax_percentage'].initial = 21
 
     class Meta:
         model = Payment
         widgets = {
             'pay_date': DateInput,
         }
+        fields = ['pay_date', 'amount', 'description', 'client', 'category', 'tax']
