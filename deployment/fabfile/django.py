@@ -44,6 +44,7 @@ def get_settings():
     # mimic Django's dual path :/ 
     if env.project_root not in sys.path:
         sys.path.append(os.path.join(env.project_root))
+        # TODO for some reason fab doesn't add the correct virtual envs to the sys path
         sys.path.append('/home/ceasaro/.virtualenvs/jeslee/bin/python')
         sys.path.append('/home/ceasaro/.virtualenvs/jeslee/lib/python2.7/site-packages/')
     print sys.path
