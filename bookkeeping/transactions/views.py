@@ -3,12 +3,10 @@ from datetime import date
 from django.contrib.admin.views.decorators import staff_member_required
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.core.urlresolvers import reverse
-from django.db.models import Sum
 from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, TemplateView, UpdateView
 
 from bookkeeping.bookkeeping_core.models import Category, Client
-
 from bookkeeping.transactions.forms import PaymentForm, CategoryForm
 from bookkeeping.transactions.models import Payment
 
@@ -93,15 +91,42 @@ class PaymentOverviewView(TemplateView, FinancialYearMixin):
         except EmptyPage:
             # If page is out of range (e.g. 9999), deliver last page of results.
             payments = payment_paginator.page(payment_paginator.num_pages)
-        sum_tax = sum(payment.tax for payment in payment_list)
-        sum_amount = payment_list.aggregate(Sum('amount'))
+        # sum_tax = sum(payment.tax for payment in payment_list)
+        # sum_amount = payment_list.aggregate(Sum('amount'))
+        payment_data = {
+            'list': payments,
+            'ordered_by': self.get_order_by(),
+            'total': 0,          # total of all amounts
+            'total_tax': 0,      # total of all tax
+            'q1_total': 0,       # total of all amounts in quarter 1 (jan, feb, mar)
+            'q1_total_tax': 0,   # total of all tax in quarter 1 (jan, feb, mar)
+            'q2_total': 0,       # total of all amounts in quarter 2 (apr, may, jun)
+            'q2_total_tax': 0,   # total of all tax in quarter 2 (apr, may, jun)
+            'q3_total': 0,       # total of all amounts in quarter 3 (jul, aug, sep)
+            'q3_total_tax': 0,   # total of all tax in quarter 3 (jul, aug, sep)
+            'q4_total': 0,       # total of all amounts in quarter 4 (okt, nov, dec)
+            'q4_total_tax': 0,   # total of all tax in quarter 4 (okt, nov, dec)
+        }
+        for payment in payment_list:
+            payment_data['total'] += payment.amount
+            payment_data['total_tax'] += payment.tax
+            if payment.pay_date.month in (1,2,3):  # quarter 1 (jan, feb, mar)
+                payment_data['q1_total'] += payment.amount
+                payment_data['q1_total_tax'] += payment.tax
+            if payment.pay_date.month in (4,5,6):  # quarter 2 (apr, may, jun)
+                payment_data['q2_total'] += payment.amount
+                payment_data['q2_total_tax'] += payment.tax
+            if payment.pay_date.month in (7,8,9):  # quarter 3 (jul, aug, sep)
+                payment_data['q3_total'] += payment.amount
+                payment_data['q3_total_tax'] += payment.tax
+            if payment.pay_date.month in (10,11,12):  # quarter 4 (okt, nov, dec)
+                payment_data['q4_total'] += payment.amount
+                payment_data['q4_total_tax'] += payment.tax
+
+
+            # k1_amount =
         context_data.update({
-            'payments': {
-                'list': payments,
-                'sum_amount': sum_amount['amount__sum'],
-                'sum_tax': sum_tax,
-                'ordered_by': self.get_order_by()
-            },
+            'payments': payment_data,
             'categories': Category.objects.viewable(),
             'selected_category': self.selected_category,
             'clients': Client.objects.viewable(),

@@ -2,15 +2,6 @@
 
 {% block page-content %}
 
-    <div class="financial-info">
-        <dl class="financial-summary">
-            <dt>total betaald in {{ request.financial_year }}</dt>
-                <dd>€ {{ payments.sum_amount|floatformat:"2" }}</dd>
-            <dt>belasting betaald in {{ request.financial_year }}</dt>
-                <dd>€ {{ payments.sum_tax|floatformat:"2" }}</dd>
-        </dl>
-    </div>
-
     <h2>Overzicht betalingen</h2>
 
     <div class="payment-filter">
@@ -34,7 +25,46 @@
     </div>
 
     <div class="payment-list-container">
-        <table class="payment-list" >
+        <a href="#" onclick="$('.show_on_click').toggle(); return false;">toon kwartalen</a>
+        <table class="payment-table">
+            <thead>
+                <tr>
+                    <th>periode</th>
+                    <th>betaald</th>
+                    <th>btw</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Totaal</td>
+                    <td>€ {{ payments.total|floatformat:"2" }}</td>
+                    <td>€ {{ payments.total_tax|floatformat:"2" }}</td>
+                </tr>
+            </tbody>
+            <tbody class="show_on_click">
+                <tr>
+                    <td>kwartaal 1 (jan, feb, mrt)</td>
+                    <td>€ {{ payments.q1_total|floatformat:"2" }}</td>
+                    <td>€ {{ payments.q1_total_tax|floatformat:"2" }}</td>
+                </tr>
+                <tr>
+                    <td>kwartaal 2 (apr, mei, jun)</td>
+                    <td>€ {{ payments.q2_total|floatformat:"2" }}</td>
+                    <td>€ {{ payments.q2_total_tax|floatformat:"2" }}</td>
+                </tr>
+                <tr>
+                    <td>kwartaal 3 (jul, aug, sep)</td>
+                    <td>€ {{ payments.q3_total|floatformat:"2" }}</td>
+                    <td>€ {{ payments.q3_total_tax|floatformat:"2" }}</td>
+                </tr>
+                <tr>
+                    <td>kwartaal 4 (okt, nov, dec)</td>
+                    <td>€ {{ payments.q4_total|floatformat:"2" }}</td>
+                    <td>€ {{ payments.q4_total_tax|floatformat:"2" }}</td>
+            </tbody>
+        </table>
+
+        <table class="payment-table" >
             <thead>
                 <tr>
                     <th>&nbsp;</th>

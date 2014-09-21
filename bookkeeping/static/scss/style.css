@@ -4,63 +4,6 @@
 /***********************
  * SIZES
  **********************/
-/* line 1, html_elements.scss */
-body {
-  background-color: #C7DDF0;
-}
-
-/* line 5, html_elements.scss */
-h1, h2, h3, h4, h5, h6 {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* line 9, html_elements.scss */
-h1 {
-  font-size: 2em;
-  margin: 30px 0 20px 0;
-}
-
-/* line 14, html_elements.scss */
-h2 {
-  font-size: 1.5em;
-  margin: 15px 0 15px 0;
-}
-
-/* line 19, html_elements.scss */
-h3 {
-  font-size: 1.2em;
-  margin: 10px 0 10px 0;
-}
-
-/* line 24, html_elements.scss */
-h4 {
-  font-size: 1.0em;
-  margin: 5px 0 5px 0;
-}
-
-/* line 29, html_elements.scss */
-h5 {
-  font-size: 0.9em;
-  margin: 5px 0 5px 0;
-}
-
-/* line 34, html_elements.scss */
-h6 {
-  font-size: 0.8em;
-  margin: 5px 0 5px 0;
-}
-
-/* line 1, functional.scss */
-.show_on_click {
-  display: none;
-}
-
-/***********************
- * COLORS
- **********************/
-/***********************
- * SIZES
- **********************/
 /* line 3, style.scss */
 .main-menu {
   background-color: #61A0C2;
@@ -309,14 +252,4 @@ h6 {
 .pagination li {
   display: inline-block;
   margin: 0 3px 0 3px;
-}
-
-/* line 9, bookkeeping.scss */
-#weslee-pixel {
-  width: 1px;
-  height: 1px;
-  background-color: #ff00ff;
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
 }
