@@ -12,6 +12,7 @@ COMPANY = {
     'country': 'Nederland',
     'email': 'info@jeslee.com',
     'mobile': '06 - 15 94 80 90',
+    'bank_account': 'NL51 INGB 0657 7504 76',
     'kvk_nr': '01131652',
     'btw_nr': 'NL238283057b01',
 }

@@ -5,6 +5,8 @@ import locale
 from django.conf import settings
 from fpdf import FPDF
 
+from jeslee_web.lfs_patch.order.utils import tax_per_percentage
+
 
 PAY_INVOICE_WITHIN_DAYS = 14
 
@@ -15,18 +17,17 @@ START_TABLE_Y = 130.0
 PAGE_BOTTOM_Y = 265
 TABLE_ROW_HIGH = 5.0
 COLUMN_1_WIDTH = 30  # code
-COLUMN_2_WIDTH = 72  # description
-COLUMN_3_WIDTH = 8   # count
+COLUMN_2_WIDTH = 80  # description
+COLUMN_3_WIDTH = 13   # count
 COLUMN_4_WIDTH = 25  # amount
 COLUMN_5_WIDTH = 25  # total
-COLUMN_6_WIDTH = 15  # tax
+# COLUMN_6_WIDTH = 15  # tax
 
 COLUMNS = [(COLUMN_1_WIDTH, 'L'),
            (COLUMN_2_WIDTH, 'L'),
            (COLUMN_3_WIDTH, 'L'),
            (COLUMN_4_WIDTH, 'R'),
-           (COLUMN_5_WIDTH, 'R'),
-           (COLUMN_6_WIDTH, 'L')]
+           (COLUMN_5_WIDTH, 'R')]
 
 
 def to_currency(float):
@@ -35,7 +36,6 @@ def to_currency(float):
         tuple = currency.split(' ', 1)
         return "{0} {1}".format(tuple[0], tuple[1].replace(' ', '.'))
     return currency
-
 
 def invoice_to_PDF(order, client, filename=None):
     """
@@ -115,10 +115,10 @@ def invoice_to_PDF(order, client, filename=None):
     pdf.set_xy(125.0, TOP_PAGE_MARGIN)
     # pdf.set_font('arial', 'B', 13.0)
     pdf.set_left_margin(125.0)
-    pdf.write(6, '{company}\n{street}\n{zip} {city}\n{email}\nKvk: {kvk}\nBTW: {btw}'.format(
+    pdf.write(6, '{company}\n{street}\n{zip} {city}\n{email}\n\nBank: {bank_account}\nKvk: {kvk}\nBTW: {btw}'.format(
         company=settings.COMPANY['business_name'],
         street=settings.COMPANY['street'], zip=settings.COMPANY['zip'], city=settings.COMPANY['city'],
-        email=settings.COMPANY['email'], kvk=settings.COMPANY['kvk_nr'], btw=settings.COMPANY['btw_nr']
+        email=settings.COMPANY['email'], bank_account=settings.COMPANY['bank_account'], kvk=settings.COMPANY['kvk_nr'], btw=settings.COMPANY['btw_nr']
     ))
 
     ####
@@ -149,7 +149,7 @@ def invoice_to_PDF(order, client, filename=None):
     ####
     pdf.set_font('DejaVu', '', 9.0)
     add_row_line()
-    add_row(['Artikelcode', 'Omschrijving', '#', 'Bedrag ¹', 'Totaal ¹', 'Btw'])
+    add_row(['Artikelcode', 'Omschrijving', '', 'Bedrag\nincl. btw', 'Totaal'])
     add_row_line()
     for item in order.items.all():
         code = ''
@@ -160,18 +160,19 @@ def invoice_to_PDF(order, client, filename=None):
             str(item.product.tax if item.product.tax else '')
         add_row([code,
                  description,
-                 '%.0f' % item.product_amount,
+                 '%.0f x' % item.product_amount,
                  to_currency(item.product_price_gross),
-                 to_currency(item.price_gross),
-                 str(item.product.tax if item.product and item.product.tax else "")])
+                 to_currency(item.price_gross)])
 
     add_row_line()
 
     columns_below_items = [(COLUMN_1_WIDTH + COLUMN_2_WIDTH + COLUMN_3_WIDTH+COLUMN_4_WIDTH , 'R'),
-                           (COLUMN_5_WIDTH, 'R'),
-          (COLUMN_6_WIDTH, 'L')]
-    add_row(['Subtotaal ²', to_currency(order.price-order.tax)], columns=columns_below_items)
-    add_row(['Btw.', to_currency(order.tax)], columns=columns_below_items)
+                           (COLUMN_5_WIDTH, 'R')]
+    add_row(['Subtotaal', to_currency(order.price-order.tax)], columns=columns_below_items)
+    taxes = tax_per_percentage(order)
+
+    for tax_percentage, tax in taxes.iteritems():
+        add_row(['Btw {0}%'.format(tax_percentage), to_currency(tax)], columns=columns_below_items)
     add_row_line()
     pdf.set_font('DejaVu', 'B', 10.0)
     add_row(['Totaal', to_currency(order.price)], columns=columns_below_items)
@@ -197,10 +198,6 @@ def invoice_to_PDF(order, client, filename=None):
     pdf.set_text_color(80)
     pdf.line(LEFT_PAGE_MARGIN, PAGE_BOTTOM_Y, RIGHT_PAGE_MARGIN, PAGE_BOTTOM_Y)  # bottom horizontal line
     pdf.set_xy(LEFT_PAGE_MARGIN+5, PAGE_BOTTOM_Y+2)
-    pdf.set_font('DejaVu', '', 8.0)
-    pdf.write(4, '¹) Bedragen zijn inclusief btw.')
-    pdf.set_xy(LEFT_PAGE_MARGIN+5, PAGE_BOTTOM_Y+6)
-    pdf.write(4, '²) Bedrag is exclusief btw.')
     if filename:
         pdf.output(filename, 'F')
     return pdf.output('invoice.pdf', 'S')

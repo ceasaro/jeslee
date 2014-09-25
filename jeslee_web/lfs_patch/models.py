@@ -29,7 +29,7 @@ class OrderNumberGenerator(Base):
     format
         The format of the integer part of the order number.
     """
-    last = models.IntegerField(_(u"Last order number"), default=2014)
+    last = models.IntegerField(_(u"Last order number"), default=0)
     format = models.CharField(blank=True, max_length=20)
 
     def get_next(self, formatted=True):
