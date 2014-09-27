@@ -191,16 +191,15 @@ def invoice_to_PDF(order, client, filename=None):
 
 
     pdf.set_font('DejaVu', '', 10.0)
-    pdf.set_xy(LEFT_PAGE_MARGIN, PAGE_BOTTOM_Y-18)
+    pdf.set_xy(LEFT_PAGE_MARGIN, PAGE_BOTTOM_Y-14)
     pay_date = datetime.now() + timedelta(PAY_INVOICE_WITHIN_DAYS)
     pdf.write(4, 'We verzoeken u vriendelijk het bovenstaande bedrag van {order_price} voor '
                  '{pay_date} te voldoen op onze bankrekening onder vermelding van het '
-                 'factuurnummer {invoice_number}.'.
+                 'factuurnummer {invoice_number}.\nVoor vragen kunt u contact opnemen per e­mail ({email}).'.
               format(order_price=to_currency(order.price),
                      pay_date=pay_date.strftime("%d %B %Y"),
-                     invoice_number=order.number))
-    pdf.set_xy(LEFT_PAGE_MARGIN, PAGE_BOTTOM_Y-6)
-    pdf.write(4, 'Voor vragen kunt u contact opnemen per e­mail ({0}).'.format(settings.COMPANY['email']))
+                     invoice_number=order.number,
+                     email=settings.COMPANY['email']))
 
     pdf.set_draw_color(80)
     pdf.set_text_color(80)
