@@ -35,7 +35,8 @@ class DownloadInvoiceView(View):
             order = Order.objects.get(uuid=order_uuid)
         except ObjectDoesNotExist:
             raise Http404
-        invoice_data = invoice_to_PDF(order=order, client=client, filename='/tmp/testcees.pdf')
+        # invoice_data = invoice_to_PDF(order=order, client=client, filename='/tmp/testcees.pdf')
+        invoice_data = invoice_to_PDF(order=order, client=client)
         pdf_file = ContentFile(invoice_data)
         response = HttpResponse(pdf_file, mimetype="application/pdf")
         response['Content-Length'] = pdf_file.size
