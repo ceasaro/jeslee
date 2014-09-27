@@ -120,7 +120,8 @@ class CreateInvoiceWizard(SessionWizardView):
             if self.ORDER_SESSION_KEY in self.request.session:
                 # update order
                 self.request.session[self.ORDER_SESSION_KEY].user = form_data['client'].user
-                self.request.session[self.ORDER_SESSION_KEY].message = form_data['reference']
+                self.request.session[self.ORDER_SESSION_KEY].invoice_line2 = form_data['reference']
+                self.request.session[self.ORDER_SESSION_KEY].message = form_data['message']
             else:
                 # create new order
                 self.request.session[self.ORDER_SESSION_KEY] = \
@@ -192,7 +193,8 @@ def create_order(form_data, request):
     client = form_data['client']
     order = Order.objects.create(
         user=client.user,
-        message=form_data['reference'],
+        invoice_line2=form_data['reference'],
+        message=form_data['message'],
 
         session=request.session.session_key,
         # tax=form_data['product_price_gross'] * form_data['product_tax'],
@@ -205,15 +207,13 @@ def create_order(form_data, request):
         invoice_lastname='',
         invoice_company_name=client.name,
         invoice_line1='{street} {nr}'.format(street=client.street, nr=client.street_nr),
-        invoice_line2='',
+        # invoice_line2='', used for the invoice reference
         invoice_city=client.city,
         invoice_state='',
         invoice_code=client.zip,
         invoice_country=Country.objects.get(code='nl'),
         invoice_phone='',
 
-
-        # message=request.POST.get("message", ""),
     )
     ong = import_symbol(settings.LFS_ORDER_NUMBER_GENERATOR)
     try:

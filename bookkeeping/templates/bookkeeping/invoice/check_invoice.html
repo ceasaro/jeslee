@@ -6,7 +6,7 @@
             <span>Klant: {{ order.user }}</span>
         </p>
         <p>
-            <span>referentie: {{ order.message }}</span>
+            <span>referentie: {{ order.invoice_line2 }}</span>
             <br/>
         </p>
 
@@ -38,6 +38,15 @@
             </tbody>
         </table>
     </div>
+
+    {% if order.message %}
+        <div>
+            <p>
+                {{ order.message }}
+            </p>
+        </div>
+    {% endif %}
+
 
     <form action="." method="post">
         {% csrf_token %}

@@ -14,7 +14,7 @@ TOP_PAGE_MARGIN = 17.0
 LEFT_PAGE_MARGIN = 17.0
 RIGHT_PAGE_MARGIN = 192.0
 START_TABLE_Y = 130.0
-PAGE_BOTTOM_Y = 265
+PAGE_BOTTOM_Y = 278
 TABLE_ROW_HIGH = 5.0
 COLUMN_1_WIDTH = 30  # code
 COLUMN_2_WIDTH = 80  # description
@@ -132,12 +132,12 @@ def invoice_to_PDF(order, client, filename=None):
     pdf.set_xy(125, 75)
     pdf.write(6, 'Factuurdatum: {date}'.format(date=datetime.now().strftime("%d %B %Y")))
     pdf.set_xy(LEFT_PAGE_MARGIN, 85)
-    pdf.write(5, 'Referentie: {reference}'.format(reference=order.message if order.message else 'Uw bestelling bij Jeslee'))
+    pdf.write(5, 'Referentie: {reference}'.format(reference=order.invoice_line2 if order.invoice_line2 else 'Uw bestelling bij Jeslee'))
     pdf.set_xy(LEFT_PAGE_MARGIN, 100)
     name = order.invoice_company_name \
         if order.invoice_company_name \
         else "{0} {1}".format(order.invoice_firstname, order.invoice_lastname)
-    address = "{0} {1}".format(order.invoice_line1, order.invoice_line2)
+    address = order.invoice_line1
     pdf.write(6, '{name}\n{address}\n{zip} {city}'.format(
         name=name.strip(), address=address.strip(),
         zip=order.invoice_code, city=order.invoice_city
@@ -176,23 +176,31 @@ def invoice_to_PDF(order, client, filename=None):
     add_row_line()
     pdf.set_font('DejaVu', 'B', 10.0)
     add_row(['Totaal', to_currency(order.price)], columns=columns_below_items)
-
-
     table_bottom = pdf.get_y() + 2
-    pdf.line(LEFT_PAGE_MARGIN, table_bottom, RIGHT_PAGE_MARGIN, table_bottom)  # bottom horizontal line
+    pdf.line(LEFT_PAGE_MARGIN, table_bottom, RIGHT_PAGE_MARGIN, table_bottom)  # bottom horizontal line of table
+
+    pdf.set_font('DejaVu', '', 10.0)
+    pdf.set_y(pdf.get_y() + 10)
+    check_for_new_page()
+    pdf.set_x(LEFT_PAGE_MARGIN)
+    pdf.multi_cell(w=COLUMN_1_WIDTH + COLUMN_2_WIDTH + COLUMN_3_WIDTH+COLUMN_4_WIDTH+COLUMN_5_WIDTH,
+                   h=TABLE_ROW_HIGH,
+                   txt=order.message, align='L', border=0)
+
+
 
 
     pdf.set_font('DejaVu', '', 10.0)
     pdf.set_xy(LEFT_PAGE_MARGIN, PAGE_BOTTOM_Y-18)
     pay_date = datetime.now() + timedelta(PAY_INVOICE_WITHIN_DAYS)
-    pdf.write(5, 'We verzoeken u vriendelijk het bovenstaande bedrag van {order_price} voor '
+    pdf.write(4, 'We verzoeken u vriendelijk het bovenstaande bedrag van {order_price} voor '
                  '{pay_date} te voldoen op onze bankrekening onder vermelding van het '
                  'factuurnummer {invoice_number}.'.
               format(order_price=to_currency(order.price),
                      pay_date=pay_date.strftime("%d %B %Y"),
                      invoice_number=order.number))
     pdf.set_xy(LEFT_PAGE_MARGIN, PAGE_BOTTOM_Y-6)
-    pdf.write(5, 'Voor vragen kunt u contact opnemen per e­mail.')
+    pdf.write(4, 'Voor vragen kunt u contact opnemen per e­mail ({0}).'.format(settings.COMPANY['email']))
 
     pdf.set_draw_color(80)
     pdf.set_text_color(80)

@@ -10,6 +10,7 @@ __author__ = 'ceasaro'
 class InvoiceForm(forms.Form):
     client = forms.ModelChoiceField(queryset=Client.objects.all(), required=True)
     reference = forms.CharField(max_length=128)
+    message = forms.CharField(max_length=2014, widget=forms.Textarea)
 
 
 class InvoiceItemForm(forms.Form):
