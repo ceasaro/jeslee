@@ -19,3 +19,4 @@ lfs.db
 jeslee_web/static/.sass-cache
 testing
 jeslee_web/static/js/tmp/
+.sass-cache
