@@ -1,5 +1,3 @@
-import collections
-
 __author__ = 'ceasaro'
 
 
@@ -18,4 +16,4 @@ def tax_per_percentage(order):
                 taxes[tax_percentage] += item.tax
             else:
                 taxes[tax_percentage] = item.tax
-    return collections.OrderedDict(taxes)
+    return taxes
