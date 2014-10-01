@@ -9,4 +9,5 @@ urlpatterns = patterns(
     url(r'^transactions/', include('bookkeeping.transactions.urls')),
     url(r'^invoice/', include('bookkeeping.invoice.urls')),
     url(r'^client/', include('bookkeeping.client.urls')),
+    url(r'^revenue/', include('bookkeeping.revenue.urls')),
 )
