@@ -28,7 +28,9 @@
         {% if upcoming_fashion_show %}
             <div class="grid_6">
                 <a href="{% url 'fashion-show' upcoming_fashion_show.pk %}" id="upcoming_fashion_show" class="purple-button ">
-                    <div class="purple-button-header">Eerst volgende modeshowspektakel!</div>
+                    <div class="purple-button-header">
+                        <span>Eerst volgende modeshowspektakel!</span>
+                    </div>
                     <div class="purple-button-content">
                         <div class="fashion_show_start_time">
                             <span class="day">
@@ -49,6 +51,9 @@
                             {{ upcoming_fashion_show.location.city }}
 
                         </div>
+                    </div>
+                    <div class="purple-button-header">
+                        <span>De entreekaarten voor Groningen zijn in prijs verlaagd</span>
                     </div>
                 </a>
             </div>
