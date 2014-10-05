@@ -3,6 +3,9 @@ django-lfs==0.7.7
 django-guardian==1.0.3
 django-userena==1.0.2
 django-floppyforms==0.4.7
+
+--allow-external PIL
+--allow-unverified PIL
 PIL==1.1.7
 django-compressor==1.1.1
 MySQL-python
