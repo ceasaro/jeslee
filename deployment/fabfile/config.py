@@ -106,6 +106,7 @@ def django_settings_to_env():
         user=db_user,
         password=db_password
     )
+    env.media_root = settings.MEDIA_ROOT
 
 
 def _django_engine_to_type(engine):

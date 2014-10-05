@@ -6,6 +6,7 @@ from fabric.api import *
 from fabric import colors
 from fabric.utils import abort
 
+
 # fabric hosts + configuration is set in:
 import config
 
@@ -117,13 +118,20 @@ def backup():
     require('install_dir', provided_by=provided_by_config)
     with TmpDirectory(prefix='jeslee-backup') as tmp_dir:
         backup_base_dir = os.path.normpath(os.path.join(env.install_dir, '..', 'backups'))
-        backup_dir = os.path.normpath(os.path.join(backup_base_dir, time.strftime('%Y%m%d%H%M%S')))
-        sudo('mkdir -p {}'.format(backup_dir))
+        backup_dir_name = "{0}-{1}".format(env.hosts[0], time.strftime('%Y%m%d%H%M%S'))
+        backup_dir = os.path.normpath(os.path.join(backup_base_dir, backup_dir_name))
+        sudo('mkdir -p {0}'.format(backup_dir))
         with cd(backup_dir):
             db.backup(exec_cmd=sudo)
-            sudo('tar -cjf {}.tar.bz2 {}'.format(env.project_name, env.install_dir))
-        #            sudo('tar -cjf caire_media.tar.bz2 {}'.format(env.django_media_root))
+            sudo('tar -cjf {0}.tar.bz2 {1}'.format(env.project_name, env.install_dir))
+            sudo('tar -cjf {0}_media.tar.bz2 {1}'.format(env.project_name, env.media_root))
         print(colors.red('TODO: enable coping backup to local machine', bold=True))
+        if prompt('Copy backup to local machine? CTRL-C to abort'.format(
+                env.hosts, env.repository.url, env.repository.branch), default='y'):
+            local_path = '~/backup/{0}'.format(env.hosts[0])
+            print(colors.green('Copying backup to local machine {0}'.format(local_path)))
+            get(backup_dir, local_path=local_path, temp_dir=tmp_dir)
+
         # with lcd('/tmp/'):
         #     get(backup_dir)
 
@@ -143,7 +151,7 @@ def pack(**kwargs):
 
 @task
 def upload():
-    '''Upload the packed project files to remote server'''
+    """Upload the packed project files to remote server"""
     require('packed_file', provided_by=pack)
     puts = put(env.packed_file, '/tmp/')
     env.uploaded_packed_file = puts[0]
