@@ -1,2 +1,63 @@
 {% extends 'bookkeeping/invoice/invoice-base.html' %}
 
+{% load bookkeeping_tags %}
+
+{% block page-content %}
+    Aantal facturen: {{ orders.count}}
+
+
+    <div class="payment-list-container">
+        <a href="#" onclick="$('.show_on_click').toggle(); return false;">toon kwartalen</a>
+        <table class="payment-table">
+            <thead>
+                <tr>
+                    <th>periode</th>
+                    <th>betaald</th>
+                    {% for tax_percentage, tax in orders.total_taxes.items %}
+                        <th>btw {{ tax_percentage }}%</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Totaal</td>
+                    <td>€ {{ orders.total|floatformat:"2" }}</td>
+                    {% for tax_percentage, tax in orders.total_taxes.items %}
+                        <td>€ {{ tax|floatformat:"2" }}</td>
+                    {% endfor %}
+                </tr>
+            </tbody>
+            <tbody class="show_on_click">
+                <tr>
+                    <td>kwartaal 1 (jan, feb, mrt)</td>
+                    <td>€ {{ orders.q1_total|floatformat:"2" }}</td>
+                    {% for tax_percentage in orders.total_taxes.keys %}
+                        <td>€ {{ orders.q1_total_taxes|key_value:tax_percentage|floatformat:"2" }}</td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <td>kwartaal 2 (apr, mei, jun)</td>
+                    <td>€ {{ orders.q2_total|floatformat:"2" }}</td>
+                    {% for tax_percentage in orders.total_taxes.keys %}
+                        <td>€ {{ orders.q2_total_taxes|key_value:tax_percentage|floatformat:"2" }}</td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <td>kwartaal 3 (jul, aug, sep)</td>
+                    <td>€ {{ orders.q3_total|floatformat:"2" }}</td>
+                    {% for tax_percentage in orders.total_taxes.keys %}
+                        <td>€ {{ orders.q3_total_taxes|key_value:tax_percentage|floatformat:"2" }}</td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <td>kwartaal 4 (okt, nov, dec)</td>
+                    <td>€ {{ orders.q4_total|floatformat:"2" }}</td>
+                    {% for tax_percentage in orders.total_taxes.keys %}
+                        <td>€ {{ orders.q4_total_taxes|key_value:tax_percentage|floatformat:"2" }}</td>
+                    {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{#    {{ orders.total_taxes }}#}
+{% endblock %}
+

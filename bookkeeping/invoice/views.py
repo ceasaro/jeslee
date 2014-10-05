@@ -1,18 +1,15 @@
-from django.conf import settings
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.formtools.wizard.views import SessionWizardView
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.files.base import ContentFile
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.utils.decorators import method_decorator
-from django.utils.text import slugify
-from django.views.generic import View, DetailView
+from django.views.generic import View, DetailView, TemplateView
 from django.utils.translation import ugettext as _
-from lfs.catalog.models import Product
-from lfs.core.models import Country
-from lfs.core.utils import import_symbol
-from lfs.order.models import Order, OrderItem
+from lfs.order.models import Order
 
+from bookkeeping.bookkeeping_core.mixins import FinancialYearMixin
+from bookkeeping.invoice.utils import add_order_item, create_order, get_invoice_quarter_data
 from jeslee_web.settings import reverse_lazy
 from bookkeeping.bookkeeping_core.models import Client
 from bookkeeping.invoice.forms import InvoiceForm, InvoiceItemForm, InvoiceCheckForm
@@ -20,6 +17,41 @@ from bookkeeping.invoice.pdf import invoice_to_PDF
 
 
 __author__ = 'ceasaro'
+
+
+class OverviewView(FinancialYearMixin, TemplateView):
+    template_name = 'bookkeeping/invoice/overview.html'
+
+    @method_decorator(staff_member_required)
+    def dispatch(self, request, *args, **kwargs):
+        return super(OverviewView, self).dispatch(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context_data = super(OverviewView, self).get_context_data(**kwargs)
+        year = self.financial_year()
+        orders = Order.objects.filter(created__year=str(year))
+        orders_data = get_invoice_quarter_data(orders)
+        orders_data['count'] = len(orders)
+        context_data['orders'] = orders_data
+        return context_data
+
+
+class InvoiceView(DetailView):
+    model = Order
+    template_name = 'bookkeeping/invoice/detail_invoice.html'
+
+    @method_decorator(staff_member_required)
+    def dispatch(self, *args, **kwargs):
+        return super(InvoiceView, self).dispatch(*args, **kwargs)
+
+    def get_object(self, queryset=None):
+        uuid = self.kwargs.get('uuid', None)
+        try:
+            # Get the single item from the filtered queryset
+            obj = Order.objects.get(uuid=uuid)
+        except ObjectDoesNotExist:
+            raise Http404(_("No order found matching the query"))
+        return obj
 
 
 class DownloadInvoiceView(View):
@@ -42,24 +74,6 @@ class DownloadInvoiceView(View):
         response['Content-Length'] = pdf_file.size
         response["Content-Disposition"] = "attachment; filename=factuur_jeslee_{0}.pdf".format(order.number)
         return response
-
-
-class InvoiceView(DetailView):
-    model = Order
-    template_name = 'bookkeeping/invoice/detail_invoice.html'
-
-    @method_decorator(staff_member_required)
-    def dispatch(self, *args, **kwargs):
-        return super(InvoiceView, self).dispatch(*args, **kwargs)
-
-    def get_object(self, queryset=None):
-        uuid = self.kwargs.get('uuid', None)
-        try:
-            # Get the single item from the filtered queryset
-            obj = Order.objects.get(uuid=uuid)
-        except ObjectDoesNotExist:
-            raise Http404(_("No order found matching the query"))
-        return obj
 
 
 class CreateInvoiceWizard(SessionWizardView):
@@ -154,79 +168,3 @@ class CreateInvoiceWizard(SessionWizardView):
         del self.request.session[self.ORDER_SESSION_KEY]
         del self.request.session[self.ITEMS_SESSION_KEY]
         return HttpResponseRedirect(success_url)
-
-
-def add_order_item(order, data):
-    article_price = float(data['article_price'])
-    article_count = float(data['article_count'])
-    item_price = article_price * article_count
-    tax = data['tax']
-    item_tax = item_price * tax.rate / 100
-    try:
-        product = Product.objects.get(name=data['name'])
-    except Product.DoesNotExist:
-        product = Product.objects.create(
-            name=data['name'],
-            slug=slugify(data['name']),
-            sku=data['article_code'],
-            description=data['description'],
-            tax=tax,
-        )
-    item = OrderItem.objects.create(
-        order=order,
-        price_gross=item_price,
-        price_net=item_price * (100 - tax.rate) / 100,
-        tax=item_tax,
-        product=product,
-        product_sku=data['article_code'],
-        product_amount=article_count,
-        product_name=data['name'],
-        product_price_net=article_price * (100-tax.rate) / 100,
-        product_price_gross=article_price,
-        product_tax=article_price * tax.rate / 100,
-    )
-    order.price += item_price
-    order.tax += item_tax
-    return item, order
-
-
-def create_order(form_data, request):
-    client = form_data['client']
-    order = Order.objects.create(
-        user=client.user,
-        invoice_line2=form_data['reference'],
-        message=form_data['message'],
-
-        session=request.session.session_key,
-        # tax=form_data['product_price_gross'] * form_data['product_tax'],
-
-        customer_firstname=client.name,
-        customer_lastname='',
-        customer_email=client.user.email,
-
-        invoice_firstname=client.name,
-        invoice_lastname='',
-        invoice_company_name=client.name,
-        invoice_line1='{street} {nr}'.format(street=client.street, nr=client.street_nr),
-        # invoice_line2='', used for the invoice reference
-        invoice_city=client.city,
-        invoice_state='',
-        invoice_code=client.zip,
-        invoice_country=Country.objects.get(code='nl'),
-        invoice_phone='',
-
-    )
-    ong = import_symbol(settings.LFS_ORDER_NUMBER_GENERATOR)
-    try:
-        order_numbers = ong.objects.get(id="order_number")
-    except ong.DoesNotExist:
-        order_numbers = ong.objects.create(id="order_number")
-
-    try:
-        order_numbers.init(request, order)
-    except AttributeError:
-        pass
-
-    order.number = order_numbers.get_next()
-    return order
-
