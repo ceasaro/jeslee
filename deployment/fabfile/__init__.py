@@ -7,6 +7,7 @@ from fabric import colors
 from fabric.utils import abort
 
 
+
 # fabric hosts + configuration is set in:
 import config
 
@@ -113,7 +114,7 @@ def new_install():
 
 
 @task
-def backup():
+def backup(copy_to_local=False):
     ''' Backup existing installation'''
     require('install_dir', provided_by=provided_by_config)
     with TmpDirectory(prefix='jeslee-backup') as tmp_dir:
@@ -126,8 +127,7 @@ def backup():
             sudo('tar -cjf {0}.tar.bz2 {1}'.format(env.project_name, env.install_dir))
             sudo('tar -cjf {0}_media.tar.bz2 {1}'.format(env.project_name, env.media_root))
         print(colors.red('TODO: enable coping backup to local machine', bold=True))
-        if prompt('Copy backup to local machine? CTRL-C to abort'.format(
-                env.hosts, env.repository.url, env.repository.branch), default='y'):
+        if copy_to_local:
             local_path = '~/backup/{0}'.format(env.hosts[0])
             print(colors.green('Copying backup to local machine {0}'.format(local_path)))
             get(backup_dir, local_path=local_path, temp_dir=tmp_dir)
@@ -135,6 +135,9 @@ def backup():
         # with lcd('/tmp/'):
         #     get(backup_dir)
 
+@task
+def backup_to_local():
+    backup(copy_to_local=True)
 
 @task
 def pack(**kwargs):
