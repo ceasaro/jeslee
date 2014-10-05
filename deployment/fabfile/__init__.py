@@ -8,6 +8,7 @@ from fabric.utils import abort
 
 
 
+
 # fabric hosts + configuration is set in:
 import config
 
@@ -64,7 +65,7 @@ def upgrade():
         install_dir=env.install_dir,
         install_backup_dir=install_backup_dir,
         tmp_install_dir=tmp_install_dir))
-    sudo('uwsgi --reload /tmp/jeslee-master.pid')
+    sudo('uwsgi --reload {0}'.format(env.uwsgi_pid))
 
 
 @task
