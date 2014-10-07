@@ -39,6 +39,24 @@
             {{ fashion_show.location.city }}
 
         </p>
+
+        <p>
+            De prijzen zijn:<br/>
+            <table>
+                <tr>
+                    <td>Volwassenen:</td>
+                    <td>&nbsp;&nbsp;<strong>€ 10,-</strong></td>
+                </tr>
+                <tr>
+                    <td>Kinderen (t/m 16):</td>
+                    <td>&nbsp;&nbsp;<strong>€ 5,-</strong></td>
+                </tr>
+                <tr>
+                    <td>Kinderen (0 to 4):</td>
+                    <td>&nbsp;&nbsp;<strong>Gratis</strong></td>
+                </tr>
+            </table>
+        </p>
         {% if fashion_show.ticket_order_url %}
             <a href="{{ fashion_show.ticket_order_url }}" title="Klik hier om uw kaarten te kopen" target="_blank"
                class="jeslee-ticket buy-ticket ">
