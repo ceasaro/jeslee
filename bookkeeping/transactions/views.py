@@ -1,8 +1,13 @@
+import StringIO
+from abc import ABCMeta
+import csv
+
 from django.contrib.admin.views.decorators import staff_member_required
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.core.urlresolvers import reverse
+from django.http import HttpResponse
 from django.utils.decorators import method_decorator
-from django.views.generic import CreateView, TemplateView, UpdateView
+from django.views.generic import CreateView, TemplateView, UpdateView, View
 
 from bookkeeping.bookkeeping_core.models import Category, Client
 from bookkeeping.bookkeeping_core.mixins import FinancialYearMixin
@@ -14,16 +19,9 @@ from bookkeeping.transactions.utils import get_payment_quarter_data
 __author__ = 'ceasaro'
 
 
-class PaymentOverviewView(TemplateView, FinancialYearMixin):
-
+class AbstractPaymentView(FinancialYearMixin):
+    __metaclass__ = ABCMeta
     default_order_by = 'pay_date'
-    payments_on_page = 20
-    selected_category = None
-    selected_client = None
-
-    @method_decorator(staff_member_required)
-    def dispatch(self, *args, **kwargs):
-        return super(PaymentOverviewView, self).dispatch(*args, **kwargs)
 
     def get_order_by(self):
         return self.request.GET.get('ob', self.default_order_by)
@@ -63,6 +61,17 @@ class PaymentOverviewView(TemplateView, FinancialYearMixin):
         payments = self.filter_on_client(payments)
 
         return payments
+
+
+class PaymentOverviewView(TemplateView, AbstractPaymentView):
+
+    payments_on_page = 20
+    selected_category = None
+    selected_client = None
+
+    @method_decorator(staff_member_required)
+    def dispatch(self, *args, **kwargs):
+        return super(PaymentOverviewView, self).dispatch(*args, **kwargs)
 
     def get_context_data(self, **kwargs):
         context_data = super(PaymentOverviewView, self).get_context_data(**kwargs)
@@ -140,3 +149,35 @@ class CategoryCreateView(CreateView):
 
     def get_success_url(self):
         return reverse('new_payment')
+
+
+class DownloadPaymentsView(View, AbstractPaymentView):
+
+    header_row = ["datum", "klant", "categorie", "bedrag", "belasting", "omschrijving"]
+    @method_decorator(staff_member_required)
+    def dispatch(self, *args, **kwargs):
+        return super(DownloadPaymentsView, self).dispatch(*args, **kwargs)
+
+    def get(self, request, *args, **kwargs):
+        tmp_csv_file = StringIO.StringIO()
+        tmp_csv_file.write(u'\ufeff'.encode('utf8'))
+        csv_writer = csv.writer(tmp_csv_file, delimiter=',', quotechar='"')
+        csv_writer.writerow(self.header_row)
+
+        def data():
+            payments = self.get_payments()
+            for payment in payments:
+                row = [payment.pay_date,            # datum
+                       payment.client,              # klant
+                       payment.category,            # categorie
+                       payment.amount,              # bedrag
+                       payment.tax,                 # belasting
+                       payment.description]         # omschrijving
+                csv_writer.writerow(row)
+            yield tmp_csv_file.getvalue()
+
+        response = HttpResponse(data(), mimetype="text/csv")
+        response["Content-Disposition"] = "attachment; filename=transactions.csv"
+        return response
+
+

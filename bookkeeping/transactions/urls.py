@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, url
 
-from bookkeeping.transactions.views import PaymentCreateView, PaymentOverviewView, CategoryCreateView, PaymentUpdateView
+from bookkeeping.transactions.views import PaymentCreateView, PaymentOverviewView, CategoryCreateView, PaymentUpdateView, \
+    DownloadPaymentsView
 
 __author__ = 'ceasaro'
 urlpatterns = patterns(
@@ -13,4 +14,7 @@ urlpatterns = patterns(
         name='update_payment'),
     url(r'^category/new$', CategoryCreateView.as_view(template_name='bookkeeping/transactions/category_new.html'),
         name='new_category'),
+    url(r'^download$', DownloadPaymentsView.as_view(),
+        name='download_transactions'),
+
 )
