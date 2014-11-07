@@ -22,6 +22,9 @@
             </select>
             <button type="submit">Filter bonnetjes</button>
         </form>
+        <span>
+            <a href="{% url 'download_transactions' %}?category={{ selected_category.id }}&client={{ selected_client.id }}">download</a>
+        </span>
     </div>
 
     <div class="payment-list-container">

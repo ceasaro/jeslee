@@ -41,6 +41,7 @@ class CategoryManager(Manager):
         """
         return self.get_query_set().all()
 
+
 class Category(TimeStampedModel):
     name = models.CharField(_('name'), max_length=128)
     objects = CategoryManager()
