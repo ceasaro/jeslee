@@ -9,44 +9,59 @@
 {% endblock %}
 
 {% block page-content %}
-    <article>
-        <p>
-            Dit jaar houden wij een aantal modeshows in de omgeving van noord Nederland. Zie onze
-            agenda hier rechts voor de locaties en de datums van onze modeshows. Voor meer
-            informatie en voor het kopen van een
-            <a href="{% url 'fashion-show' upcoming_fashion_show.pk %}">toegangskaartje</a> kun je op een evenement
-            uit de agenda klikken.
-        </p>
-        <h2>Wat is er te zien in onze unieke shows?</h2>
-        <img src="{% static 'gfx/photos/catwalk_fashion_show_350x223.jpg' %}" class="text-wrap-left"/>
-        <ul class="text-wrap-right">
-            <li>Prinsessenjurkjes</li>
-            <li>Feestkleding voor tieners</li>
-            <li>Gelegenheidskleding voor kinderen,<br/> o.a. bruidsmeisjes</li>
-            <li>En diverse verrassingsacts<br/> o.a. Jeslee's Catwalk Models</li>
-        </ul>
-    </article>
-    <article>
+    {% if upcoming_fashion_show %}
+        <article>
+            <p>
+                Dit jaar houden wij een aantal modeshows in de omgeving van noord Nederland. Zie onze
+                agenda hier rechts voor de locaties en de datums van onze modeshows. Voor meer
+                informatie en voor het kopen van een
+                <a href="{% url 'fashion-show' upcoming_fashion_show.pk %}">toegangskaartje</a> kun je op een evenement
+                uit de agenda klikken.
+            </p>
+            <h2>Wat is er te zien in onze unieke shows?</h2>
+            <img src="{% static 'gfx/photos/catwalk_fashion_show_350x223.jpg' %}" class="text-wrap-left"/>
+            <ul class="text-wrap-right">
+                <li>Prinsessenjurkjes</li>
+                <li>Feestkleding voor tieners</li>
+                <li>Gelegenheidskleding voor kinderen,<br/> o.a. bruidsmeisjes</li>
+                <li>En diverse verrassingsacts<br/> o.a. Jeslee's Catwalk Models</li>
+            </ul>
+        </article>
+        <article>
 
-        <h2 id="meedoen">Meedoen als model?</h2>
-        <p>
-            Lijkt het je leuk om een keer als model mee te doen aan een van onze modeshows? Klik dan hieronder
-            voor meer informatie en hoe je je kunt opgeven.
-        </p>
+            <h2 id="meedoen">Meedoen als model?</h2>
+            <p>
+                Lijkt het je leuk om een keer als model mee te doen aan een van onze modeshows? Klik dan hieronder
+                voor meer informatie en hoe je je kunt opgeven.
+            </p>
 
-        <a href="{% url 'fashion-participate' %}" class="purple-button" id="banner-registration-fashion-show">
-            <div class="purple-button-left-column">
-                {#            <div class="purple-button-header">Meedoen</div>#}
-                <div class="purple-button-content">
-                    Meedoen aan een van onze shows
+            <a href="{% url 'fashion-participate' %}" class="purple-button" id="banner-registration-fashion-show">
+                <div class="purple-button-left-column">
+                    {#            <div class="purple-button-header">Meedoen</div>#}
+                    <div class="purple-button-content">
+                        Meedoen aan een van onze shows
+                    </div>
                 </div>
-            </div>
-            <div class="purple-button-right-column">
-                <div class="button-change">?</div>
-            </div>
-        </a>
+                <div class="purple-button-right-column">
+                    <div class="button-change">?</div>
+                </div>
+            </a>
 
-    </article>
+        </article>
+    {% else %}
+        <article>
+            <p>
+                We hebben op dit moment helaas geen modeshows.
+            </p>
+            <h2>Wat is er te zien in onze unieke shows?</h2>
+            <img src="{% static 'gfx/photos/catwalk_fashion_show_350x223.jpg' %}" class="text-wrap-left"/>
+            <ul class="text-wrap-right">
+                <li>Prinsessenjurkjes</li>
+                <li>Feestkleding voor tieners</li>
+                <li>Gelegenheidskleding voor kinderen,<br/> o.a. bruidsmeisjes</li>
+                <li>En diverse verrassingsacts<br/> o.a. Jeslee's Catwalk Models</li>
+            </ul>
+        </article>
 
-
+    {% endif %}
 {% endblock page-content %}
