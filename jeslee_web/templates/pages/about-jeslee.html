@@ -30,27 +30,35 @@
         <div class="expandable">
             <p>
                 Jeslee is een speciaalzaak voor feestelijke kinderkleding.<br/>
-                Wij ontwerpen en verkopen sprookjesachtige unieke prinsessenjurkjes, nette kleding voor speciale
-                gelegenheden en jurkjes voor bruidsmeisjes.
+                Wij ontwerpen en verkopen sprookjesachtige unieke prinsessenjurkjes en nette kleding voor speciale
+                gelegenheden. Ook meisjes tot 15 jaar kunnen hun feestelijke kleding bij ons vinden.
             </p>
 
             <p>
-                Meisjes tot 15 jaar kunnen hun mode-hart ophalen aan de feestelijke outfits. Zij zullen schitteren op
-                ieder feestje.
+                Al onze artikelen zijn speciaal ontworpen door eigen ontwerpers van Jeslee. Ze zijn van hoge kwaliteit
+                en worden in Nederland gemaakt. Dit betekent dat er geen sprake is van kinderarbeid of slechte
+                arbeidsomstandigheden.
+            </p>
+
+
+            <p>
+                Bent u op zoek naar een mooi prinsessenjurkje voor een verjaardagscadeau of zoekt u een exclusieve of
+                originele jurkje voor een bijzondere dag dan nodig ik u om <a href="{% url 'winkel' %}">onze collectie
+                te bekijken</a>.
             </p>
 
             <p>
-                Al onze kleding zijn speciaal ontworpen door eigen ontwerpers van Jeslee. De artikelen zijn van hoge
-                kwaliteit en worden in Nederland gemaakt. Dit betekent dat er geen sprake is van kinderarbeid of
-                slechte arbeidsomstandigheden.
+                Hopelijk is er iets tussen die u aanspreekt.
             </p>
-
+{% comment %}
             <p>
                 Wilt u liever onze kleding in het echt bekijken? Neem dan gerust <a href="{% url 'contact' %}">contact</a>
                 met ons op of stuur een e-mail naar <a href="mailto:{{ COMPANY.email }}">{{ COMPANY.email }}</a> om een
                 afspraak te maken.
             </p>
+{% endcomment %}
 
+{% comment %}
             <p>
                 U kunt de kleding ook bewonderen tijdens één van onze modeshowspektakels. Zie voor een show bij u in
                 de buurt onze <a href="{% url 'fashion-shows' %}">agenda</a>.
@@ -70,13 +78,6 @@
                 <a href="{% url 'contact' %}">contact</a> met ons op nemen.
             </p>
 
-{% comment %}
-            <p>
-                info@jeslee.com
-                Tel. 06 - 15 94 80 90
-                www.facebook.com
-            </p>
-{% endcomment %}
             <p>
                 <div class="page-announcement">Uw kind als een echt model op de catwalk!</div>
             </p>
@@ -113,6 +114,7 @@
                 Vul het <a href="{% url 'fashion-participate' %}#aanmeld-formulier">aanmeld formulier</a> in, dan nemen
                 we contact met je op.
             </p>
+{% endcomment %}
 
         </div>
     </article>
