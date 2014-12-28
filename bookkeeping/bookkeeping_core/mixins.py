@@ -16,9 +16,10 @@ class FinancialYearMixin(object):
             requested_year = int(requested_year)
             self.request.session['financial_year'] = requested_year
             financial_year = requested_year
+        elif 'financial_year' in self.request.session:
+            financial_year = self.request.session['financial_year']
         else:
-            session_year = self.request.session['financial_year']
-            financial_year = session_year if session_year else int(this_year)
+            financial_year = int(this_year)
 
         self.request.financial_year = financial_year
         self.request.financial_years = range(this_year-6, this_year+1)
