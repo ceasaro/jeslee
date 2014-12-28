@@ -10,8 +10,6 @@ class FinancialYearMixin(object):
         The financial year bound to the request as 'request.financial_year'
         return: the financial year form to request GET params if not found the current year is returned.
         """
-        import pdb
-        pdb.set_trace()
         this_year = date.today().year
         requested_year = self.request.GET.get('year', None)
         if requested_year:
