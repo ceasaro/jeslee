@@ -22,15 +22,20 @@
 {% endblock %}
 
 {% block page-content %}
-    <p>
-        Zo kunt u de maten opnemen en aan ons doorgeven.
-    </p>
 
     <div class="container_12 ">
+        <div id="generated_measure_url" style="display:none;" data-measure-url="{% url 'maten_nemen_url' %}">
+           url = <span class="direct_url">{{ encoded_measures }}</span>
+        </div>
+        <div class="how_to_use">
+            <p>
+                Zo kunt u de maten opnemen en aan ons doorgeven.
+            </p>
+        </div>
 
         {% for key, measure in measures.items %}
         <div class="grid_5">
-            <div class="measure_explanation">
+            <div class="measure_explanation" data-measure-id="{{ key }}">
                 <div class="measure_title" >
                     <h3>{{ measure.title }}</h3>
                     <div class="explanation_text">
@@ -45,54 +50,6 @@
             </div>
         </div>
         {% endfor %}
-
-{#        {% static 'gfx/photos/maten_nemen/taillewijdte.jpg' as url %}#}
-{#        {% static 'gfx/photos/maten_nemen/taillewijdte_300x400.jpg' as thumb_url %}#}
-{#        {% include 'pages_free/snippets/measure_explanation.html' with title='Taillewijdte' image_url=url image_thumb_url=thumb_url explanation_text='meet deze rondom de taille' %}#}
-{##}
-{#        {% static 'gfx/photos/maten_nemen/bovenwijdte.jpg' as url %}#}
-{#        {% static 'gfx/photos/maten_nemen/bovenwijdte_300x400.jpg' as thumb_url %}#}
-{#        {% include 'pages_free/snippets/measure_explanation.html' with title='Bovenwijdte' image_url=url image_thumb_url=thumb_url explanation_text='meet deze rondom het lijfje onder de oksels' %}#}
-{##}
-{#        {% static 'gfx/photos/maten_nemen/voortaillelengte.jpg' as url %}#}
-{#        {% static 'gfx/photos/maten_nemen/voortaillelengte_300x400.jpg' as thumb_url %}#}
-{#        {% include 'pages_free/snippets/measure_explanation.html' with title='Voortaillelengte' image_url=url image_thumb_url=thumb_url explanation_text='meet deze vanaf de halsaanzet tot de taille' %}#}
-{##}
-{#        {% static 'gfx/photos/maten_nemen/schouderbreedte.jpg' as url %}#}
-{#        {% static 'gfx/photos/maten_nemen/schouderbreedte_300x400.jpg' as thumb_url %}#}
-{#        {% include 'pages_free/snippets/measure_explanation.html' with title='Schouderbreedte' image_url=url image_thumb_url=thumb_url explanation_text='meet deze van schouder tot schouder' %}#}
-{##}
-{#        {% static 'gfx/photos/maten_nemen/lange_rok_lengte.jpg' as url %}#}
-{#        {% static 'gfx/photos/maten_nemen/lange_rok_lengte_300x400.jpg' as thumb_url %}#}
-{#        {% include 'pages_free/snippets/measure_explanation.html' with title='Lange Rok lengte' image_url=url image_thumb_url=thumb_url explanation_text='meet deze vanaf de taille tot aan de gond' %}#}
-{##}
-{#        {% static 'gfx/photos/maten_nemen/totale_voorlengte.jpg' as url %}#}
-{#        {% static 'gfx/photos/maten_nemen/totale_voorlengte_300x400.jpg' as thumb_url %}#}
-{#        {% include 'pages_free/snippets/measure_explanation.html' with title='Totale voorlengte' image_url=url image_thumb_url=thumb_url explanation_text='meet deze vanaf de halsaanzet tot aan de grond' %}#}
-{##}
-{#        {% static 'gfx/photos/maten_nemen/ruglengte.jpg' as url %}#}
-{#        {% static 'gfx/photos/maten_nemen/ruglengte_300x400.jpg' as thumb_url %}#}
-{#        {% include 'pages_free/snippets/measure_explanation.html' with title='Ruglengte' image_url=url image_thumb_url=thumb_url explanation_text='meet deze vanaf de halsknobbel tot aan de taillelijn' %}#}
-{##}
-{##}
-{#        {% static 'gfx/photos/maten_nemen/mouwlengte_2.jpg' as url %}#}
-{#        {% static 'gfx/photos/maten_nemen/mouwlengte_2_300x400.jpg' as thumb_url %}#}
-{#        {% include 'pages_free/snippets/measure_explanation.html' with title='Mouwlengte' image_url=url image_thumb_url=thumb_url explanation_text='meet deze vanaf het schouderpunt tot aan het polsgewricht' %}#}
-{##}
-{#        {% static 'gfx/photos/maten_nemen/bovenarmwijdte.jpg' as url %}#}
-{#        {% static 'gfx/photos/maten_nemen/bovenarmwijdte_300x400.jpg' as thumb_url %}#}
-{#        {% include 'pages_free/snippets/measure_explanation.html' with title='Bovenarmwijdte' image_url=url image_thumb_url=thumb_url explanation_text='meet deze rondom de bovenarm'%}#}
-{##}
-{#        {% static 'gfx/photos/maten_nemen/polswijdte.jpg' as url %}#}
-{#        {% static 'gfx/photos/maten_nemen/polswijdte_300x400.jpg' as thumb_url %}#}
-{#        {% include 'pages_free/snippets/measure_explanation.html' with title='Polswijdte' image_url=url image_thumb_url=thumb_url explanation_text='meet deze rondom het polsgewricht' %}#}
-{##}
-{#        {% static 'gfx/photos/maten_nemen/halsaanzet.jpg' as url %}#}
-{#        {% static 'gfx/photos/maten_nemen/halsaanzet_300x400.jpg' as thumb_url %}#}
-{#        {% include 'pages_free/snippets/measure_explanation.html' with title='Halsaanzet' image_url=url image_thumb_url=thumb_url explanation_text='is het punt tussen de hals en de schouder' %}#}
-{##}
-{#        {% static 'gfx/photos/maten_nemen/tussenbeenlengte.jpg' as url %}#}
-{#        {% static 'gfx/photos/maten_nemen/tussenbeenlengte_300x400.jpg' as thumb_url %} {% include 'pages_free/snippets/measure_explanation.html' with title='Tussenbeenlengte' image_url=url image_thumb_url=thumb_url explanation_text='meet deze van het kruis tot de grond' %}#}
 
     </div>
 {% endblock %}

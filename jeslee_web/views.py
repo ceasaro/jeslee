@@ -5,6 +5,8 @@ from django.templatetags.static import static
 from django.views.generic.base import TemplateView
 
 from jeslee_web.fashion_show.views import UpcomingFashionShowMixin
+from jeslee_web.utils import string_utils
+from jeslee_web.utils.views import JSONResponseMixin
 
 
 class HomeView(UpcomingFashionShowMixin, TemplateView):
@@ -13,18 +15,21 @@ class HomeView(UpcomingFashionShowMixin, TemplateView):
 
 class HowToTakeMeasuresView(TemplateView):
 
-    MEASURE_WAIST = 'WAIST'
-    MEASURE_CHESTSIZE = 'CHESTSIZE'
-    MEASURE_FRONT_WAIST_LENGTH = 'FRONT_WAIST_LENGTH'
-    MEASURE_SHOULDER_WIDTH = 'SHOULDER_WIDTH'
-    MEASURE_LONG_SKIRT_LENGTH = 'LONG_SKIRT_LENGTH'
-    MEASURE_TOTAL_LENGTH_FRONT = 'TOTAL_LENGTH_FRONT'
-    MEASURE_BACK_LENGTH = 'BACK_LENGTH'
-    MEASURE_SLEEVE_LENGTH = 'SLEEVE_LENGTH'
-    MEASURE_UPPER_ARM_WIDTH = 'UPPER_ARM_WIDTH'
-    MEASURE_WRIST_WIDTH = 'WRIST_WIDTH'
-    MEASURE_NECK_SET = 'NECK_SET'
-    MEASURE_BETWEEN_LEG_LENGTH = 'BETWEEN_LEG_LENGTH'
+    ENCODE_KEY = 'pelikaan'
+    ID_SEPARATOR = ','
+
+    MEASURE_WAIST = 'W'
+    MEASURE_CHESTSIZE = 'CS'
+    MEASURE_FRONT_WAIST_LENGTH = 'FWL'
+    MEASURE_SHOULDER_WIDTH = 'SW'
+    MEASURE_LONG_SKIRT_LENGTH = 'LSL'
+    MEASURE_TOTAL_LENGTH_FRONT = 'TLF'
+    MEASURE_BACK_LENGTH = 'BL'
+    MEASURE_SLEEVE_LENGTH = 'SL'
+    MEASURE_UPPER_ARM_WIDTH = 'UAW'
+    MEASURE_WRIST_WIDTH = 'WW'
+    MEASURE_NECK_SET = 'NS'
+    MEASURE_BETWEEN_LEG_LENGTH = 'BLL'
 
     MEASURES = OrderedDict([
         (MEASURE_WAIST, {
@@ -102,12 +107,31 @@ class HowToTakeMeasuresView(TemplateView):
         ]
     )
 
-
     def get_context_data(self, **kwargs):
         context_data = super(HowToTakeMeasuresView, self).get_context_data(**kwargs)
-        context_data['measures'] = self.MEASURES
+        encoded_measures = kwargs.get('encoded_measures', None)
+        if encoded_measures:
+            # find the measure in the hash and return them
+            measures_ids = string_utils.decode(self.ENCODE_KEY, str(encoded_measures))
+            measures_to_show = OrderedDict()
+            for m_id in measures_ids.split(self.ID_SEPARATOR):
+                measures_to_show.update({m_id: self.MEASURES[m_id]})
+        else:
+            # no encoded_measures found return all
+            measures_to_show = self.MEASURES
+
+        context_data['measures'] = measures_to_show
         return context_data
 
 
+class GetMeasureUrl(JSONResponseMixin, TemplateView):
 
-
+    def get_context_data(self, **kwargs):
+        context_data = {}
+        # check request for measure id's to be encoded
+        measure_ids = self.request.GET.getlist('m')
+        if measure_ids:
+            # found some measure ids, encode them in a string and place it in the context
+            measure_ids_str = HowToTakeMeasuresView.ID_SEPARATOR.join(measure_ids)
+            context_data['url'] = string_utils.encode(HowToTakeMeasuresView.ENCODE_KEY, measure_ids_str)
+        return context_data

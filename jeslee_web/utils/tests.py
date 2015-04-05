@@ -2,9 +2,13 @@ from django.contrib.sites.models import SiteManager
 from django.template import TemplateDoesNotExist
 from django.test import SimpleTestCase
 from django.core import mail
-from django.test.utils import override_settings
-from jeslee_web.utils.email import send_email
 from mock import patch
+
+from jeslee_web.utils import string_utils
+from jeslee_web.utils.email import send_email
+from jeslee_web.views import HowToTakeMeasuresView
+
+
 __author__ = 'ceasaro'
 
 
@@ -61,3 +65,22 @@ class EmailTest(SimpleTestCase):
         mail.outbox = []
         super(EmailTest, self).tearDown()
 
+
+class StringUtilsTest(SimpleTestCase):
+
+    def test_encode_string(self):
+        str_to_encode = 'prinsesjurkje'
+        key = 'secret_jeslee'
+        encoded = string_utils.encode(key, str_to_encode)
+        self.assertNotEquals(encoded, str_to_encode, msg="encoded string must not be the same as the original string")
+        decoded = string_utils.decode(key, encoded)
+        self.assertEquals(decoded, str_to_encode, msg="decoded string must be the same as the original string")
+
+    def test_encode_string_measure(self):
+        str_to_encode = HowToTakeMeasuresView.MEASURE_BACK_LENGTH + HowToTakeMeasuresView.ID_SEPARATOR + \
+                        HowToTakeMeasuresView.MEASURE_BETWEEN_LEG_LENGTH + HowToTakeMeasuresView.ID_SEPARATOR + \
+                        HowToTakeMeasuresView.MEASURE_SLEEVE_LENGTH
+        encoded = string_utils.encode(HowToTakeMeasuresView.ENCODE_KEY, str_to_encode)
+        self.assertNotEquals(encoded, str_to_encode, msg="encoded string must not be the same as the original string")
+        decoded = string_utils.decode(HowToTakeMeasuresView.ENCODE_KEY, encoded)
+        self.assertEquals(decoded, str_to_encode, msg="decoded string must be the same as the original string")

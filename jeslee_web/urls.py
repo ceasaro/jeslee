@@ -6,7 +6,7 @@ from django.views.generic.base import TemplateView
 
 admin.autodiscover()
 
-from jeslee_web.views import HomeView, HowToTakeMeasuresView
+from jeslee_web.views import HomeView, HowToTakeMeasuresView, GetMeasureUrl
 
 urlpatterns = patterns('',
     # Examples:
@@ -49,7 +49,10 @@ urlpatterns = patterns('',
 
 
     # free pages
-    url(r'^maten_nemen/$', HowToTakeMeasuresView.as_view(template_name='pages_free/maten-nemen.html'), name='maten_nemen'),
+    url(r'^maten_nemen/get_url$', GetMeasureUrl.as_view(), name='maten_nemen_url'),
+    url(r'^maten_nemen/(?P<encoded_measures>.*)$',
+        HowToTakeMeasuresView.as_view(template_name='pages_free/maten-nemen.html'),
+        name='maten_nemen'),
 
 
     url(r'^ideal/', include('jeslee_web.ideal.urls')),
