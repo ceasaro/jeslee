@@ -10,6 +10,7 @@
         <div class="jeslee-logo">
             <img src="{% static 'gfx/logo-jeslee-transparent.png' %}" title="logo Jeslee"/>
         </div>
+        {% block header-menu %}
         <div id="header-menu">
             <ul>
 {% comment %}
@@ -25,7 +26,9 @@
                 <img src="{% static 'gfx/shopping-bag.png' %}" class="shopping-bag" title="winkel tasje"/>
 {#            </a>#}
         </div>
+        {% endblock %}
     </div>
+    {% block main-site-menu %}
     <div id="main-site-menu" >
         <ul class="container_12 main-menu">
             <li><a href="{% url 'home' %}"
@@ -58,7 +61,8 @@
                    class="{% block menu_contact_class %}{% endblock %}">Contact</a>
             </li>
         </ul>
-    </div>
+    </div
+    {% endblock main-site-menu %}
     <div class="header-right-background"></div>
 </section>
 
@@ -69,8 +73,10 @@
 
 <section id="jeslee-footer">
     <hr/>
+    {% block footer-menu %}
     <div id="footer-menu" class="container_12">
         {% include 'base/menu-footer-snippet.html' %}
     </div>
+    {% endblock footer-menu %}
 </section>
 {% endblock %}

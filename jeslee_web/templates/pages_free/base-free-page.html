@@ -1,0 +1,37 @@
+{% extends 'pages/base-page.html' %}
+
+{% load static from staticfiles %}
+
+{% block css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'scss/css-generated/maten_nemen.css' %}"/>
+{% endblock %}
+
+{% block header-menu %}{% endblock %}  {# string header menu #}
+
+{% block main-site-menu %}{% endblock %}  {# strip menu menu #}
+
+
+{% block jeslee-content %}
+    <div id="jeslee-page-content" class="{% block jeslee-content-class %}{% endblock %} ">
+        <div class="grid_12">
+            {% block page-title-div %}
+            <div class="jeslee-page-header ">
+                <h1>{% block page-title %}{% endblock %}</h1>
+            </div>
+            {% endblock %}
+        </div>
+        <div class="page-content">
+            {% block page-content %}
+            {% endblock %}
+        </div>
+    </div>
+    <div id="jeslee-page-footer">
+        {% block page-footer %}{% endblock %}
+    </div>
+{% endblock %}
+
+{% block footer-menu %}{% endblock %}  {# strip footer menu #}
+
+
+

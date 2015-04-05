@@ -1,0 +1,14 @@
+@import "settings";
+
+.measure_explanation {
+  border: 3px solid $action-color;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 17px;
+  .explanation_text {
+    height: 50px;
+  }
+  .measure_image {
+    text-align: center;
+  }
+}

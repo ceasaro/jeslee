@@ -6,7 +6,7 @@ from django.views.generic.base import TemplateView
 
 admin.autodiscover()
 
-from jeslee_web.views import HomeView
+from jeslee_web.views import HomeView, HowToTakeMeasuresView
 
 urlpatterns = patterns('',
     # Examples:
@@ -46,6 +46,11 @@ urlpatterns = patterns('',
         name='conditions'),
     url(r'^onderhoud/$', TemplateView.as_view(template_name='pages/footer/maintenance.html'),
         name='maintenance'),
+
+
+    # free pages
+    url(r'^maten_nemen/$', HowToTakeMeasuresView.as_view(template_name='pages_free/maten-nemen.html'), name='maten_nemen'),
+
 
     url(r'^ideal/', include('jeslee_web.ideal.urls')),
     url(r'^ideal/ing/', include('jeslee_web.ideal.ing_tests.urls')),

@@ -1,0 +1,21 @@
+/***********************
+ * COLORS
+ **********************/
+/***********************
+ * SIZES
+ **********************/
+/* line 3, ../maten_nemen.scss */
+.measure_explanation {
+  border: 3px solid #64124D;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 17px;
+}
+/* line 8, ../maten_nemen.scss */
+.measure_explanation .explanation_text {
+  height: 50px;
+}
+/* line 11, ../maten_nemen.scss */
+.measure_explanation .measure_image {
+  text-align: center;
+}
