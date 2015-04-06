@@ -1,6 +1,7 @@
 # Create your views here.
 from collections import OrderedDict
 
+from django.core.urlresolvers import reverse_lazy
 from django.templatetags.static import static
 from django.views.generic.base import TemplateView
 
@@ -119,6 +120,7 @@ class HowToTakeMeasuresView(TemplateView):
         else:
             # no encoded_measures found return all
             measures_to_show = self.MEASURES
+            context_data['editable'] = True
 
         context_data['measures'] = measures_to_show
         return context_data
@@ -133,5 +135,6 @@ class GetMeasureUrl(JSONResponseMixin, TemplateView):
         if measure_ids:
             # found some measure ids, encode them in a string and place it in the context
             measure_ids_str = HowToTakeMeasuresView.ID_SEPARATOR.join(measure_ids)
-            context_data['url'] = string_utils.encode(HowToTakeMeasuresView.ENCODE_KEY, measure_ids_str)
+            encoded_ids = string_utils.encode(HowToTakeMeasuresView.ENCODE_KEY, measure_ids_str)
+            context_data['url'] = str(reverse_lazy('taking_measures', kwargs={'encoded_measures': encoded_ids}))
         return context_data

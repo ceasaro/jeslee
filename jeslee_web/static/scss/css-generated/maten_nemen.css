@@ -5,17 +5,38 @@
  * SIZES
  **********************/
 /* line 3, ../maten_nemen.scss */
+#generated_measure_url_container {
+  background-color: #fff;
+  border: 3px solid #64124D;
+  border-radius: 10px;
+  padding: 10px;
+}
+/* line 9, ../maten_nemen.scss */
+#generated_measure_url_container #generated_measure_url:hover {
+  cursor: pointer;
+}
+/* line 12, ../maten_nemen.scss */
+#generated_measure_url_container #generated_measure_url::selection {
+  background: #ffff00;
+  height: 15px;
+}
+
+/* line 19, ../maten_nemen.scss */
 .measure_explanation {
   border: 3px solid #64124D;
   border-radius: 10px;
   margin: 20px;
   padding: 17px;
 }
-/* line 8, ../maten_nemen.scss */
+/* line 24, ../maten_nemen.scss */
+.measure_explanation.selected_for_url {
+  background-color: #A38FA7;
+}
+/* line 27, ../maten_nemen.scss */
 .measure_explanation .explanation_text {
   height: 50px;
 }
-/* line 11, ../maten_nemen.scss */
+/* line 30, ../maten_nemen.scss */
 .measure_explanation .measure_image {
   text-align: center;
 }
