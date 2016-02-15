@@ -12,7 +12,10 @@
     {{ block.super }}
     <!-- Magnific Popup core JS file -->
     <script src="{% static 'js/jquery/jquery.magnific.popup.1.0.0_inline_image_fasttap.js' %}"></script>
-    <script src="{% static 'js/pages_free/measure_explanation.js' %}"></script>
+    <script src="{% static 'js/utils/image_popup.js' %}"></script>
+    {% if editable %}
+        <script src="{% static 'js/pages_free/measure_explanation_editable.js' %}"></script>
+    {% endif %}
 {% endblock %}
 
 {% block title %}Over {% endblock %}
@@ -23,10 +26,10 @@
 
 {% block page-content %}
 
+    <div id="generated_measure_url_container" class="grid_12" style="display:none;" >
+        <span id="generated_measure_url" data-measure-url="{% url 'taking_measures_url' %}"></span>
+    </div>
     <div class="container_12 ">
-        <div id="generated_measure_url" style="display:none;" data-measure-url="{% url 'maten_nemen_url' %}">
-           url = <span class="direct_url">{{ encoded_measures }}</span>
-        </div>
         <div class="how_to_use">
             <p>
                 Zo kunt u de maten opnemen en aan ons doorgeven.

@@ -366,11 +366,12 @@ REVIEWS_IS_EMAIL_REQUIRED = False
 REVIEWS_IS_MODERATED = False
 
 try:
-    from local_settings import *
+    from jeslee_settings import *
 except ImportError:
     pass
 
 try:
-    from jeslee_settings import *
+    from local_settings import *
 except ImportError:
     pass
+

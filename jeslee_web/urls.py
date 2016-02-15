@@ -49,10 +49,10 @@ urlpatterns = patterns('',
 
 
     # free pages
-    url(r'^maten_nemen/get_url$', GetMeasureUrl.as_view(), name='maten_nemen_url'),
+    url(r'^maten_nemen/get_url$', GetMeasureUrl.as_view(), name='taking_measures_url'),
     url(r'^maten_nemen/(?P<encoded_measures>.*)$',
         HowToTakeMeasuresView.as_view(template_name='pages_free/maten-nemen.html'),
-        name='maten_nemen'),
+        name='taking_measures'),
 
 
     url(r'^ideal/', include('jeslee_web.ideal.urls')),

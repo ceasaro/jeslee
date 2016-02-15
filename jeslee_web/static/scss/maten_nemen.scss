@@ -1,10 +1,29 @@
 @import "settings";
 
+#generated_measure_url_container {
+  background-color: #fff;
+  border: 3px solid $action-color;
+  border-radius: 10px;
+  padding: 10px;
+  #generated_measure_url {
+    &:hover {
+      cursor: pointer;
+    }
+    &::selection {
+      background: #ffff00;
+      height: 15px;
+    }
+  }
+}
+
 .measure_explanation {
   border: 3px solid $action-color;
   border-radius: 10px;
   margin: 20px;
   padding: 17px;
+  &.selected_for_url {
+    background-color: #A38FA7;
+  }
   .explanation_text {
     height: 50px;
   }
