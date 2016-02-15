@@ -96,7 +96,7 @@ def new_install():
     db.create()
 
     tmp_install_dir = '{}_new/'.format(env.install_dir[:-1])  # strip '/'
-    sudo('mkdir -p {}'.format(tmp_install_dir))
+    sudo('mkir -p {}'.format(tmp_install_dir))
     sudo('chown {user}.{user} {dir}'.format(user=env.install_user,
                                             dir=tmp_install_dir))
 

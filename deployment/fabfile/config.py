@@ -75,6 +75,7 @@ def acceptation():
 def production():
     '''Configuration for production server'''
     env.hosts = ['jeslee.com']
+    env.user = 'ceasaro'
     env.install_dir = '/sites/django/jeslee/'
     env.install_user = 'jeslee'
     #    env.django_media_root = '/opt/caire_media'
