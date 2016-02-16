@@ -164,7 +164,6 @@ INSTALLED_APPS = (
     # own written django apps
     'jeslee_web.utils',
     'jeslee_web.base',
-    'jeslee_web.lfs_patch',
     'jeslee_web.fashion_show',
     'jeslee_web.ideal',
     #    'jeslee_web.account'
@@ -225,6 +224,7 @@ INSTALLED_APPS = (
     'paypal.standard.pdt',
     'gunicorn',
 #    'lfstheme',
+    'jeslee_web.lfs_patch',
 
     'south',
     )

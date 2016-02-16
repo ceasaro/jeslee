@@ -198,30 +198,31 @@
     </fieldset>
     <fieldset>
         <legend>{% trans "Packing" %}</legend>
-        <div class="field">
-            <div class="label">
-                {{ form.active_packing_unit.label_tag }}:
-            </div>
-
-            {% if form.ordered_at.errors %}
-                <div class="error">
-                    {{ form.active_packing_unit }}
-                    {{ form.active_packing_unit.errors }}
-                </div>
-            {% else %}
-                <div>
-                <input type="hidden" name="active_packing_unit" value="0"/>
+            <input type="hidden" name="active_packing_unit" value="0"/>
+{#        <div class="field">#}
+{#            <div class="label">#}
+{#                {{ form.active_packing_unit.label_tag }}:#}
+{#            </div>#}
+{##}
+{#            {% if form.ordered_at.errors %}#}
+{#                <div class="error">#}
 {#                    {{ form.active_packing_unit }}#}
-                    {% if product.is_variant %}
-                        {% if product.parent.active_packing_unit %}
-                            {% trans "Yes" %}
-                        {% else %}
-                            {% trans "No" %}
-                        {% endif %}
-                    {% endif %}
-                </div>
-            {% endif %}
-        </div>
+{#                    {{ form.active_packing_unit.errors }}#}
+{#                </div>#}
+{#            {% else %}#}
+{#                <div>#}
+{#                <input type="hidden" name="active_packing_unit" value="0"/>#}
+{#                    {{ form.active_packing_unit }}#}
+{#                    {% if product.is_variant %}#}
+{#                        {% if product.parent.active_packing_unit %}#}
+{#                            {% trans "Yes" %}#}
+{#                        {% else %}#}
+{#                            {% trans "No" %}#}
+{#                        {% endif %}#}
+{#                    {% endif %}#}
+{#                </div>#}
+{#            {% endif %}#}
+{#        </div>#}
 
         <div class="field">
             <div class="label">
