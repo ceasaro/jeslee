@@ -99,14 +99,14 @@
   }
 
   #category-menu {
-    border: 6px solid $dark-text-color;
+    //border: 6px solid $dark-text-color;
     padding: 10px;
     min-height: 292px;
     >ul.root {
       >li {
         >a {
-          font-weight: bold;
-          text-transform: uppercase;
+          //font-weight: bold;
+          text-transform: capitalize;
         }
         li:first-child {
           margin-top: 2px;
@@ -123,10 +123,13 @@
 
         .product-count {
           color: $pink;
+          font-size:75%;
         }
       }
       a.current {
         background-color: #BFAFC1;
+        border-radius: 3px;
+        border: 1px solid #A9A9A9;
       }
     }
     li.level-1 {

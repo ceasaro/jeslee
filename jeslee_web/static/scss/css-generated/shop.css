@@ -6,8 +6,8 @@
  **********************/
 /* line 6, ../shop.scss */
 #shop-container .navigation-button-right {
-  background-color: #64124d;
-  color: #ebdc78;
+  background-color: #64124D;
+  color: #EBDC78;
   display: inline-block;
   padding: 10px;
   margin: 10px 15px 0 0;
@@ -21,7 +21,7 @@
 }
 /* line 22, ../shop.scss */
 #shop-container #checkout-login-container h2 {
-  color: #ebdc78;
+  color: #EBDC78;
   margin-bottom: 20px;
   text-decoration: none;
 }
@@ -52,8 +52,8 @@
 }
 /* line 47, ../shop.scss */
 #shop-container #checkout-login-container a.checkout-button {
-  background-color: #64124d;
-  color: #ebdc78;
+  background-color: #64124D;
+  color: #EBDC78;
   display: inline-block;
   padding: 10px;
   margin: 10px 15px 0 0;
@@ -70,7 +70,7 @@
   height: 0px;
   border-style: solid;
   border-width: 5px 10px 5px 0;
-  border-color: transparent #ebdc78 transparent transparent;
+  border-color: transparent #EBDC78 transparent transparent;
 }
 /* line 69, ../shop.scss */
 #shop-container #shop-above-content .right-triangle, #shop-container #shop-below-content .right-triangle {
@@ -79,7 +79,7 @@
   height: 0px;
   border-style: solid;
   border-width: 5px 0 5px 10px;
-  border-color: transparent transparent transparent #ebdc78;
+  border-color: transparent transparent transparent #EBDC78;
 }
 /* line 78, ../shop.scss */
 #shop-container #shop-above-content .category-name, #shop-container #shop-below-content .category-name {
@@ -95,7 +95,7 @@
 #shop-container #shop-above-content .sorting select, #shop-container #shop-below-content .sorting select {
   background-color: #390e41;
   border: none;
-  color: #ebdc78;
+  color: #EBDC78;
   margin-top: 11px;
   padding: 5px;
 }
@@ -105,14 +105,12 @@
 }
 /* line 101, ../shop.scss */
 #shop-container #category-menu {
-  border: 6px solid #390e41;
   padding: 10px;
   min-height: 292px;
 }
 /* line 107, ../shop.scss */
 #shop-container #category-menu > ul.root > li > a {
-  font-weight: bold;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 /* line 111, ../shop.scss */
 #shop-container #category-menu > ul.root > li li:first-child {
@@ -131,21 +129,24 @@
 }
 /* line 124, ../shop.scss */
 #shop-container #category-menu li a .product-count {
-  color: #ca1e69;
+  color: #CA1E69;
+  font-size: 75%;
 }
-/* line 128, ../shop.scss */
+/* line 129, ../shop.scss */
 #shop-container #category-menu li a.current {
   background-color: #BFAFC1;
+  border-radius: 3px;
+  border: 1px solid #A9A9A9;
 }
-/* line 132, ../shop.scss */
+/* line 135, ../shop.scss */
 #shop-container #category-menu li.level-1 {
   margin-left: 10px;
 }
-/* line 134, ../shop.scss */
+/* line 137, ../shop.scss */
 #shop-container #category-menu li.level-1 a {
   width: 170px;
 }
-/* line 140, ../shop.scss */
+/* line 143, ../shop.scss */
 #shop-container .for-sale-standard-price {
   text-decoration: line-through;
 }

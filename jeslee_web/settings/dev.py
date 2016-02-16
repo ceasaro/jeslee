@@ -9,7 +9,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'jeslee',                      # Or path to database file if using sqlite3.
         'USER': 'root',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
+        'PASSWORD': 'rto@mek8Fj',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
@@ -28,8 +28,8 @@ DEBUG_TOOLBAR_CONFIG = {
     'SHOW_TEMPLATE_CONTEXT': True,
 }
 _dev_apps = list(INSTALLED_APPS)
-_dev_apps.append('debug_toolbar')
-_dev_apps.append('werkzeug')
+# _dev_apps.append('debug_toolbar')
+# _dev_apps.append('werkzeug')
 # _dev_apps.append('debug_toolbar_user_panel')
 #_dev_apps.append('django_nose')
 #_dev_apps.append('rosetta')
