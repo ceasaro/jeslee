@@ -1,5 +1,10 @@
 __author__ = 'ceasaro'
 from django.conf.urls.defaults import *
+
+## leave this import cause it patches some product forms and views
+from jeslee_web.lfs_patch.manage.product import product_patch
+
+
 #from django.views.generic.simple import direct_to_template
 
 # General
@@ -75,7 +80,7 @@ urlpatterns += patterns('lfs.manage.product.product',
     url(r'^product/(?P<product_id>\d*)$', "manage_product", name="lfs_manage_product"),
     url(r'^product-data-form/(?P<product_id>\d*)$', "product_data_form"),
     url(r'^add-product$', "add_product", name="lfs_manage_add_product"),
-    # url(r'^edit-product-data/(?P<product_id>\d*)$', "edit_product_data", name="lfs_manage_edit_product_data"),
+    url(r'^edit-product-data/(?P<product_id>\d*)$', "edit_product_data", name="lfs_manage_edit_product_data"),
     url(r'^delete-product/(?P<product_id>\d*)$', "delete_product", name="lfs_manage_delete_product"),
     url(r'^selectable-products-inline$', "selectable_products_inline", name="lfs_manage_selectable_products_inline"),
     url(r'^save-product-stock/(?P<product_id>\d*)$', "stock", name="lfs_save_product_stock"),
@@ -88,10 +93,6 @@ urlpatterns += patterns('lfs.manage.product.product',
     url(r'^reset-product-filters$', "reset_filters", name="lfs_reset_product_filters"),
     url(r'^set-products-page$', "set_products_page", name="lfs_set_products_page"),
     url(r'^no-products$', "no_products", name="lfs_manage_no_products"),
-)
-# Product patches
-urlpatterns += patterns('jeslee_web.lfs_patch.manage.product.product',
-    url(r'^edit-product-data/(?P<product_id>\d*)$', "edit_product_data_patch", name="lfs_manage_edit_product_data"),
 )
 
 

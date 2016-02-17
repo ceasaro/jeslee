@@ -20,10 +20,6 @@ def new_product_data_form__init__(self, *args, **kwargs):
 
 ProductDataForm.__init__ = new_product_data_form__init__
 
-@permission_required("core.manage_shop", login_url="/login/")
-@require_POST
-def edit_product_data_patch(request, product_id, template_name="manage/product/data.html"):
-    edit_product_data()
 #
 # We need to patch the ProductStockForm of lfs cause it uses a CheckboxInput widget, which cleans the data value
 # to True or False, while lfs is expecting 1 or 0.
@@ -35,6 +31,5 @@ def new_product_stock_form__init__(self, *args, **kwargs):
     old_product_stock_form__init__(self, *args, **kwargs)
     if not kwargs.get("instance").is_variant():
         self.fields["active_packing_unit"].widget = CheckboxIntegerInput()
-
 
 ProductStockForm.__init__ = new_product_stock_form__init__
