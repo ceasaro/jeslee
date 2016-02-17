@@ -31,13 +31,13 @@
 #fashion_show_agenda {
   background-color: #390e41;
   display: table-cell;
-  color: #ebe7ec;
+  color: #EBE7EC;
   padding: 20px 0 20px 30px;
   width: 300px;
 }
 /* line 40, ../pages.scss */
 #fashion_show_agenda h3 {
-  color: #ebdc78;
+  color: #EBDC78;
   font-family: university_roman;
   font-size: 20pt;
   margin-bottom: 30px;
@@ -45,14 +45,14 @@
 }
 /* line 48, ../pages.scss */
 #fashion_show_agenda a {
-  color: #ebe7ec;
+  color: #EBE7EC;
   position: relative;
   text-decoration: none;
   z-index: 10;
 }
 /* line 53, ../pages.scss */
 #fashion_show_agenda a:hover, #fashion_show_agenda a.selected {
-  color: #ebdc78;
+  color: #EBDC78;
   text-decoration: none;
 }
 /* line 58, ../pages.scss */

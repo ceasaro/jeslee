@@ -3,12 +3,19 @@
 {% load lfs_patch_tags %}
 {% load reviews_tags %}
 
+{% if product.stock_amount == 0 or not product.deliverable %}
+<div class="grid_12">
+    <div class="alert-message">
+        Dit product is tijdelijk niet leverbaar
+    </div>
+</div>
+{% endif %}
+
 <form id="product-form"
       action="{% url 'lfs.catalog.views.product_form_dispatcher' %}"
       data="{% url 'lfs_select_variant_from_properties' %}"
       method="post">
     {% csrf_token %}
-
     {# Images #}
     <div class="grid_5">
         {% product_image_slide product %}

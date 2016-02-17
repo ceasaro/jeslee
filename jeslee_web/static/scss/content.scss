@@ -15,60 +15,84 @@
 }
 
 
-.product-card {
-  background-color: $dark-text-color;
-  color:$light-text-color;
-  height: 312px;
-  padding: 6px;
-  margin: 0 0 20px 25px;
-  width: 179px;
-  img {
-    display: block;
-    margin: 0 auto;
+.product-card-container {
+  position: relative;
+  &.no_stock, &.not_deliverable {
+    .sold-out {
+      display: block;
+    }
+    .product-card {
+      background: rgba(57, 14, 65, 0.6);
+    }
   }
-  a {
-    color:$light-text-color;
-    text-decoration: none;
+  .sold-out {
+    color: $alert-color;
+    display: none;
+    font-size:18pt;
+    font-weight:bold;
+    left: 40px;
+    letter-spacing: 4px;
+    position: absolute;
+    -ms-transform: rotate(35deg); /* IE 9 */
+    -webkit-transform: rotate(35deg); /* Chrome, Safari, Opera */
+    transform: rotate(35deg);
+    top:115px;
   }
+  .product-card {
+    background-color: $dark-text-color;
+    color: $light-text-color;
+    height: 312px;
+    padding: 6px;
+    margin: 0 0 20px 25px;
+    width: 179px;
 
-
-  .product-card-content {
-    background-color: $background-color-site;
-    color:$dark-text-color;
-    height: 270px;
-    overflow: hidden;
-
+    img {
+      display: block;
+      margin: 0 auto;
+    }
     a {
-      color:$dark-text-color;
+      color: $light-text-color;
+      text-decoration: none;
     }
 
-    .product-card-text {
-      padding: 20px;
+    .product-card-content {
+      background-color: $background-color-site;
+      color: $dark-text-color;
+      height: 270px;
+      overflow: hidden;
 
-      strong {
-        display: block;
-        margin-bottom: 15px;
+      a {
+        color: $dark-text-color;
       }
-      p {
-        margin: 10px 0;
-        line-height: 1.1;
-      }
-      form {
-        margin-top:20px;
 
-        input {
+      .product-card-text {
+        padding: 20px;
+
+        strong {
+          display: block;
+          margin-bottom: 15px;
+        }
+        p {
           margin: 10px 0;
-          width: 100%;
+          line-height: 1.1;
         }
-        input[type=submit] {
-          background-color: $dark-text-color;
-        }
+        form {
+          margin-top: 20px;
 
+          input {
+            margin: 10px 0;
+            width: 100%;
+          }
+          input[type=submit] {
+            background-color: $dark-text-color;
+          }
+
+        }
       }
     }
-  }
-  .product-card-teaser {
-    margin:6px 14px 0 14px;
+    .product-card-teaser {
+      margin: 6px 14px 0 14px;
+    }
   }
 }
 .product-card:hover {

@@ -1,57 +1,61 @@
 {% load i18n lfs_tags %}
 
-
-<div class="product-card">
-    <a href="{% url 'lfs_product' product.slug %} ">
-    <div class="product-card-content">
-        {% if product %}
-             <img src="{{ product.image.url_208x270 }}"/>
-        {% endif %}
+<div class="product-card-container {% if product.obj.stock_amount == 0 %}no_stock{% endif %} {% if not product.obj.deliverable %}not_deliverable{% endif %}">
+    <div class="sold-out" >
+        Tijdelijk niet beschikbaar
     </div>
-    <div class="product-card-teaser">
-        {% if product %}
-            {{ product.name }}
-            {% category_product_prices_gross product.obj.id %}
-            <div class="product-price">
+    <div class="product-card">
+        <a href="{% url 'lfs_product' product.slug %} ">
+        <div class="product-card-content">
+            {% if product %}
+                 <img src="{{ product.image.url_208x270 }}"/>
+            {% endif %}
+        </div>
+        <div class="product-card-teaser">
+            {% if product %}
+                {{ product.name }}
+                {% category_product_prices_gross product.obj.id %}
+                <div class="product-price">
 
-                {% if price_starting_from %}
-                    {% trans "Starting at" %}
-                {% endif %}
-                {% if product.obj.get_for_sale %}
-                    <span class="for-sale-standard-price">{{ standard_price|currency:request }}</span>
-                    <span class="for-sale-price">{{ price|currency:request }}</span>
-                {% else %}
-                    <span class="standard-price">{{ price|currency:request }}</span>
-                {% endif %}
-                {% if product.price_unit %}
-                    / {{ product.price_unit }}
-                {% endif %}
-                {% if product.obj.get_active_packing_unit %}
-                    <div class="base-price">
-                        {{ base_packing_price }} / {{ product.obj.get_packing_info.1 }}
-                    </div>
-                {% endif %}
-                {% if product.obj.get_active_base_price %}
-                    <div class="base-price">
-                        {% if base_price_starting_from %}
-                            {% trans "Starting at" %}
-                        {% endif %}
-                        {{ base_price }}
-                        {% if product.obj.get_base_price_unit %}
-                            / {{ product.obj.get_base_price_unit }}
-                        {% endif %}
-                    </div>
-                {% endif %}
-                <span class="price-disclaimer">
-                    {% if product.price_includes_tax %}
-                        {% trans 'inc. btw' %}
-                    {% else  %}
-                        {% trans 'exc. btw' %}
+                    {% if price_starting_from %}
+                        {% trans "Starting at" %}
                     {% endif %}
-                </span>
-            </div>
-        {% endif %}
+                    {% if product.obj.get_for_sale %}
+                        <span class="for-sale-standard-price">{{ standard_price|currency:request }}</span>
+                        <span class="for-sale-price">{{ price|currency:request }}</span>
+                    {% else %}
+                        <span class="standard-price">{{ price|currency:request }}</span>
+                    {% endif %}
+                    {% if product.price_unit %}
+                        / {{ product.price_unit }}
+                    {% endif %}
+                    {% if product.obj.get_active_packing_unit %}
+                        <div class="base-price">
+                            {{ base_packing_price }} / {{ product.obj.get_packing_info.1 }}
+                        </div>
+                    {% endif %}
+                    {% if product.obj.get_active_base_price %}
+                        <div class="base-price">
+                            {% if base_price_starting_from %}
+                                {% trans "Starting at" %}
+                            {% endif %}
+                            {{ base_price }}
+                            {% if product.obj.get_base_price_unit %}
+                                / {{ product.obj.get_base_price_unit }}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                    <span class="price-disclaimer">
+                        {% if product.price_includes_tax %}
+                            {% trans 'inc. btw' %}
+                        {% else  %}
+                            {% trans 'exc. btw' %}
+                        {% endif %}
+                    </span>
+                </div>
+            {% endif %}
 
+        </div>
+        </a>
     </div>
-    </a>
 </div>

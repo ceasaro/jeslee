@@ -25,7 +25,7 @@ body {
   display: none;
 }
 
-/* line 23, ../ie-fixes.scss */
+/* line 20, ../ie-fixes.scss */
 #id_username,
 #id_password_1,
 #id_password_2,
@@ -52,7 +52,7 @@ body {
 /* line 52, ../ie-fixes.scss */
 .jeslee-form-container {
   background: #390e41;
-  color: #ebdc78;
+  color: #EBDC78;
   margin-bottom: 20px;
   padding: 20px;
 }
