@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.conf.urls import patterns, include, url
 
 # Uncomment the next two lines to enable the admin:
@@ -65,6 +66,13 @@ urlpatterns = patterns('',
 )
 
 
+if settings.DEBUG:
+    # static files (images, css, javascript, etc.)
+    urlpatterns += patterns('',
+        (r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+        'document_root': settings.MEDIA_ROOT}))
+
+
 import os
 DIRNAME = os.path.dirname(__file__)
 
@@ -88,3 +96,4 @@ urlpatterns += patterns("",
 urlpatterns += patterns("",
     (r'^financial/', include('bookkeeping.urls')),
     )
+
