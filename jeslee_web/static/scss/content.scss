@@ -27,11 +27,14 @@
   }
   .sold-out {
     color: $alert-color;
+    background-color: rgba(57, 14, 65, 0.6);
+    border-radius: 10px;
     display: none;
-    font-size:18pt;
+    font-size:16pt;
     font-weight:bold;
-    left: 40px;
+    left: 23px;
     letter-spacing: 4px;
+    padding: 10px;
     position: absolute;
     -ms-transform: rotate(35deg); /* IE 9 */
     -webkit-transform: rotate(35deg); /* Chrome, Safari, Opera */
