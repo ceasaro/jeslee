@@ -2,21 +2,33 @@
 
 #shop-container {
 
-
   #shop-above-content {
     .product-navigation {
       float: right;
     }
     .navigation-button.previous-product {
-//      width: 54px;
+      //      width: 54px;
     }
     .navigation-button.next-product {
-//      width: 70px;
+      //      width: 70px;
     }
   }
 
   #product-form {
+    .sold-out-message {
+      background-color: #eeeeee;
+      color: $transparent-purple;
+      font-size: 58pt;
+      position: absolute;
+      -ms-transform: rotate(35deg);
+      -webkit-transform: rotate(35deg);
+      transform: rotate(47deg);
+      top: 268px;
+    }
     .product-images {
+      &.sold-out {
+        opacity: 0.3;
+      }
       #product-impression-slide-show {
         position: relative;
         #product-impression-cycle-prev, #product-impression-cycle-next {
@@ -24,12 +36,12 @@
           display: block;
           height: 52px;
           position: absolute;
-          top:206px;
+          top: 206px;
           width: 28px;
           z-index: 110;
         }
         #product-impression-cycle-prev {
-          left:10px;
+          left: -28px;
           .cycle-left-triangle {
             display: inline-block;
             width: 0px;
@@ -42,7 +54,7 @@
           }
         }
         #product-impression-cycle-next {
-          right:10px;
+          right: -38px;
           .cycle-right-triangle {
             display: inline-block;
             width: 0px;
@@ -56,7 +68,7 @@
         }
       }
       .large-image {
-        border:1px solid $action-color;
+        border: 1px solid $action-color;
         height: 584px;
         width: 389px;
         img {
@@ -65,9 +77,9 @@
         }
       }
       .sub-images {
-        padding:10px 0 10px 0;
+        padding: 10px 0 10px 0;
         .sub-image.cycle-slide-active {
-          border:1px solid $action-color;
+          border: 1px solid $action-color;
         }
         .sub-image {
           display: inline-block;
@@ -83,12 +95,12 @@
     }
     .order-info {
       background-color: $dark-background-color;
-      color:$light-text-color;
-      padding:30px 20px 20px 20px;
+      color: $light-text-color;
+      padding: 30px 20px 20px 20px;
 
       .prices {
         .for-sale-price {
-           font-size: $font-size-strong;
+          font-size: $font-size-strong;
         }
         .product-price {
           margin-bottom: 20px;
@@ -101,17 +113,16 @@
           width: 100%;
         }
 
-      .add-to-cart-button {
-        background: url('../../gfx/shopping-bag-small.png') no-repeat 5px center;
-        border:none;
-        color:$light-text-color;
-        cursor: pointer;
-        display: block;
-        margin:10px auto 0 auto;
-        padding: 17px 3px 3px 35px;
-        width: 100px;
-      }
-
+        .add-to-cart-button {
+          background: url('../../gfx/shopping-bag-small.png') no-repeat 5px center;
+          border: none;
+          color: $light-text-color;
+          cursor: pointer;
+          display: block;
+          margin: 10px auto 0 auto;
+          padding: 17px 3px 3px 35px;
+          width: 100px;
+        }
 
       }
 
@@ -121,7 +132,7 @@
         }
       }
       .separator {
-        border-top:1px solid $light-background-color;
+        border-top: 1px solid $light-background-color;
         margin: 20px -10px 20px -10px;
       }
 

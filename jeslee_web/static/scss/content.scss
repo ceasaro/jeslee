@@ -26,20 +26,23 @@
     }
   }
   .sold-out {
-    color: $alert-color;
+    color: $light-text-color;
+    //color: $alert-color;
     background-color: rgba(57, 14, 65, 0.6);
-    border-radius: 10px;
+    //border-radius: 10px;
     display: none;
     font-size:16pt;
     font-weight:bold;
-    left: 23px;
+    left: 31px;
     letter-spacing: 4px;
-    padding: 10px;
+    padding: 5px;
     position: absolute;
-    -ms-transform: rotate(35deg); /* IE 9 */
-    -webkit-transform: rotate(35deg); /* Chrome, Safari, Opera */
-    transform: rotate(35deg);
-    top:115px;
+    text-align: center;
+    //-ms-transform: rotate(35deg); /* IE 9 */
+    //-webkit-transform: rotate(35deg); /* Chrome, Safari, Opera */
+    //transform: rotate(35deg);
+    top:6px;
+    width:169px;
   }
   .product-card {
     background-color: $dark-text-color;
@@ -94,7 +97,7 @@
       }
     }
     .product-card-teaser {
-      margin: 6px 14px 0 14px;
+      margin: 4px 14px 0 14px;
     }
   }
 }

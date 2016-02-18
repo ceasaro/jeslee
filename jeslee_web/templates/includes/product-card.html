@@ -2,7 +2,7 @@
 
 <div class="product-card-container {% if product.obj.stock_amount == 0 %}no_stock{% endif %} {% if not product.obj.deliverable %}not_deliverable{% endif %}">
     <div class="sold-out" >
-        Tijdelijk niet beschikbaar
+        Uitverkocht!
     </div>
     <div class="product-card">
         <a href="{% url 'lfs_product' product.slug %} ">

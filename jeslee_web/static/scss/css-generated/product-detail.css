@@ -4,15 +4,30 @@
 /***********************
  * SIZES
  **********************/
-/* line 7, ../product-detail.scss */
+/* line 6, ../product-detail.scss */
 #shop-container #shop-above-content .product-navigation {
   float: right;
 }
-/* line 20, ../product-detail.scss */
+/* line 18, ../product-detail.scss */
+#shop-container #product-form .sold-out-message {
+  background-color: #eeeeee;
+  color: #A38FA7;
+  font-size: 58pt;
+  position: absolute;
+  -ms-transform: rotate(35deg);
+  -webkit-transform: rotate(35deg);
+  transform: rotate(47deg);
+  top: 268px;
+}
+/* line 29, ../product-detail.scss */
+#shop-container #product-form .product-images.sold-out {
+  opacity: 0.3;
+}
+/* line 32, ../product-detail.scss */
 #shop-container #product-form .product-images #product-impression-slide-show {
   position: relative;
 }
-/* line 22, ../product-detail.scss */
+/* line 34, ../product-detail.scss */
 #shop-container #product-form .product-images #product-impression-slide-show #product-impression-cycle-prev, #shop-container #product-form .product-images #product-impression-slide-show #product-impression-cycle-next {
   background: #390e41;
   display: block;
@@ -22,11 +37,11 @@
   width: 28px;
   z-index: 110;
 }
-/* line 31, ../product-detail.scss */
+/* line 43, ../product-detail.scss */
 #shop-container #product-form .product-images #product-impression-slide-show #product-impression-cycle-prev {
-  left: 10px;
+  left: -28px;
 }
-/* line 33, ../product-detail.scss */
+/* line 45, ../product-detail.scss */
 #shop-container #product-form .product-images #product-impression-slide-show #product-impression-cycle-prev .cycle-left-triangle {
   display: inline-block;
   width: 0px;
@@ -37,11 +52,11 @@
   margin-left: 6px;
   margin-top: 9px;
 }
-/* line 44, ../product-detail.scss */
+/* line 56, ../product-detail.scss */
 #shop-container #product-form .product-images #product-impression-slide-show #product-impression-cycle-next {
-  right: 10px;
+  right: -38px;
 }
-/* line 46, ../product-detail.scss */
+/* line 58, ../product-detail.scss */
 #shop-container #product-form .product-images #product-impression-slide-show #product-impression-cycle-next .cycle-right-triangle {
   display: inline-block;
   width: 0px;
@@ -52,55 +67,55 @@
   margin-left: 7px;
   margin-top: 9px;
 }
-/* line 58, ../product-detail.scss */
+/* line 70, ../product-detail.scss */
 #shop-container #product-form .product-images .large-image {
   border: 1px solid #64124D;
   height: 584px;
   width: 389px;
 }
-/* line 62, ../product-detail.scss */
+/* line 74, ../product-detail.scss */
 #shop-container #product-form .product-images .large-image img {
   display: block;
   margin: 0 auto;
 }
-/* line 67, ../product-detail.scss */
+/* line 79, ../product-detail.scss */
 #shop-container #product-form .product-images .sub-images {
   padding: 10px 0 10px 0;
 }
-/* line 69, ../product-detail.scss */
+/* line 81, ../product-detail.scss */
 #shop-container #product-form .product-images .sub-images .sub-image.cycle-slide-active {
   border: 1px solid #64124D;
 }
-/* line 72, ../product-detail.scss */
+/* line 84, ../product-detail.scss */
 #shop-container #product-form .product-images .sub-images .sub-image {
   display: inline-block;
   height: 100px;
   margin-right: 10px;
   width: 100px;
 }
-/* line 81, ../product-detail.scss */
+/* line 93, ../product-detail.scss */
 #shop-container #product-form .product-info {
   margin: 0 10px 0 20px;
 }
-/* line 84, ../product-detail.scss */
+/* line 96, ../product-detail.scss */
 #shop-container #product-form .order-info {
   background-color: #390e41;
   color: #EBDC78;
   padding: 30px 20px 20px 20px;
 }
-/* line 90, ../product-detail.scss */
+/* line 102, ../product-detail.scss */
 #shop-container #product-form .order-info .prices .for-sale-price {
   font-size: 14pt;
 }
-/* line 93, ../product-detail.scss */
+/* line 105, ../product-detail.scss */
 #shop-container #product-form .order-info .prices .product-price {
   margin-bottom: 20px;
 }
-/* line 100, ../product-detail.scss */
+/* line 112, ../product-detail.scss */
 #shop-container #product-form .order-info .size-and-order select {
   width: 100%;
 }
-/* line 104, ../product-detail.scss */
+/* line 116, ../product-detail.scss */
 #shop-container #product-form .order-info .size-and-order .add-to-cart-button {
   background: url("../../gfx/shopping-bag-small.png") no-repeat 5px center;
   border: none;
@@ -111,11 +126,11 @@
   padding: 17px 3px 3px 35px;
   width: 100px;
 }
-/* line 119, ../product-detail.scss */
+/* line 130, ../product-detail.scss */
 #shop-container #product-form .order-info .share-product .save-product {
   margin-bottom: 15px;
 }
-/* line 123, ../product-detail.scss */
+/* line 134, ../product-detail.scss */
 #shop-container #product-form .order-info .separator {
   border-top: 1px solid #EBDC78;
   margin: 20px -10px 20px -10px;

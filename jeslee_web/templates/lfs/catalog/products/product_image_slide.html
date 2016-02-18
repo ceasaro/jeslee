@@ -1,4 +1,4 @@
-<div class="product-images">
+<div class="product-images {% if product.stock_amount == 0 or not product.deliverable %}sold-out{% endif %}" >
     <div id="product-impression-slide-show" class="cycle-slideshow"
          data-cycle-slides="> div"
          data-cycle-timeout="0"

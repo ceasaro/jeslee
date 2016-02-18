@@ -50,18 +50,6 @@ a.disabled {
   text-align: center;
 }
 
-/* line 38, ../util.scss */
-.alert-message {
-  background-color: #CA1E69;
-  border: solid 5px #390e41;
-  color: #390e41;
-  font-size: 14pt;
-  font-style: italic;
-  font-weight: bold;
-  line-height: 26pt;
-  text-align: center;
-}
-
 /***********************
  * main
  **********************/
