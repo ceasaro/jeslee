@@ -57,6 +57,7 @@ def test():
 def acceptation():
     '''Configuration for acceptation server'''
     env.hosts = ['beta.jeslee.com']
+    env.user = 'ceasaro'
     env.install_dir = '/sites-acc/django/jeslee-beta/'
     env.install_user = 'jeslee'
     #    env.django_media_root = '/opt/caire_media'
