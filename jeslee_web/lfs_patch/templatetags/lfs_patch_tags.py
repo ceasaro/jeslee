@@ -5,6 +5,8 @@ from django.utils.translation import ugettext as _
 
 # portlets imports
 import portlets.utils
+from lfs.catalog import PropertyOption
+from lfs.catalog.settings import PROPERTY_VALUE_TYPE_DISPLAY
 from portlets.models import Slot
 
 # lfs imports
@@ -87,3 +89,30 @@ def product_image_slide(product):
     return {
         "product": product
     }
+
+@register.inclusion_tag('lfs/catalog/products/displayed_properties_select.html')
+def displayed_properties_select(product):
+    properties = {}
+    for ppv in product.property_values.filter(property__display_on_product=True, type=PROPERTY_VALUE_TYPE_DISPLAY):
+        if not ppv.property.id in properties:
+            properties[ppv.property.id] = {
+                'id': ppv.property.id,
+                'name': ppv.property.name,
+                'title': ppv.property.title,
+                'unit': ppv.property.unit,
+                'options': [],
+            }
+        property = properties.get(ppv.property.id)
+        if ppv.property.is_select_field:
+            try:
+                po = PropertyOption.objects.get(pk=int(float(ppv.value)))
+            except (PropertyOption.DoesNotExist, ValueError):
+                continue
+            else:
+                property['options'].append(po)
+        else:
+            property['value'] = ppv.value
+        property['position']= ppv.property.position
+
+    # properties.sort(lambda a, b: cmp(a["position"], b["position"]))
+    return {'properties': sorted(properties.iteritems(), key=lambda (x, y): y['position'])}

@@ -108,24 +108,7 @@
             <hr class="separator"/>
 
             <div class="size-and-order">
-                {% for property in properties %}
-                    <div>{{ property.name }}</div>
-                    {% if property.options|length > 0 %}
-                        <select name="property-{{ property.id }}">
-                            {% for option in property.options %}
-                                <option value="{{ option.id }}"
-                                        {% if option.selected %}selected="selected"{% endif %}>{{ option.name }}</option>
-                            {% endfor %}
-                        </select>
-                    {% else %}
-                        <span class="todo">TODO</span>
-                    {% endif %}
-                    <div>
-                        <div>
-
-                        </div>
-                    </div>
-                {% endfor %}
+                {% displayed_properties_select product %}
 
                 {% if product.is_deliverable %}
                     <div class="order-block">

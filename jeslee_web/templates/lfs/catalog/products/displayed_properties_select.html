@@ -1,0 +1,16 @@
+{% for id, property in properties %}
+    <div>
+        <span class="property-label">
+            {{ property.title }}:
+        </span>
+        <select class="property"
+                name="property_{{ property.id }}">
+            {% for option in property.options %}
+                <option value="{{ option.id }}"
+                        {% if option.selected %}selected="selected"{% endif %}>
+                    {{ option.name }}
+                </option>
+            {% endfor %}
+        </select>
+    </div>
+{% endfor %}
