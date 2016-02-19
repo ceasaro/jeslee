@@ -84,12 +84,12 @@
                 {% else %}
                     <div class="standard-price"
                           nowrap="nowrap">
-                          <span class="standard-price-value">{{ product|get_price_gross:request|currency:request }}</span>* {% if price_unit %}/ {{ price_unit }}{% endif %}
+                          <span class="standard-price-value">{{ product|get_price_gross:request|currency:request }}</span> {% if price_unit %}/ {{ price_unit }}{% endif %}
                     </div>
                     {% if product.get_active_base_price %}
                         <div class="base-price">
                             {{ product|get_base_price_gross:request|currency:request }}
-                            / {{ product.get_base_price_unit }}*
+                            / {{ product.get_base_price_unit }}
                         </div>
                     {% endif %}
 {% comment %}
