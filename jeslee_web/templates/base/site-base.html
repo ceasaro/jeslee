@@ -16,11 +16,11 @@
             <div class="header-contact">
                 <div class="contact-email">
                     <img src="{{ STATIC_URL }}gfx/icons/icon-mail.png" class="share-icon" title="{% trans 'Share product through e-mail' %}"/>
-                    <span>{% trans 'info@jeslee.com' %}</span>
+                    <span>{{ COMPANY.email }}</span>
                 </div>
                 <div class="contact-phone">
                     <img src="{{ STATIC_URL }}gfx/icons/icon-phone.png" class="share-icon" title="{% trans 'Share product through e-mail' %}"/>
-                    <span>06 - 15 94  80 90</span>
+                    <span>{{ COMPANY.mobile }}</span>
                 </div>
             </div>
         </div>
