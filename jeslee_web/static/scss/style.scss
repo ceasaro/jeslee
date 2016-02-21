@@ -216,6 +216,16 @@ form {
       margin-left: 20px;
       //width: 215px;
     }
+    .header-contact {
+      color: $light-text-color;
+      text-align: center;
+      .contact-email {
+        margin: 5px;
+      }
+      .contact-phone {
+        margin-top: 5px;
+      }
+    }
     #header-menu {
       float: right;
       margin-top: 15px;
@@ -238,9 +248,22 @@ form {
           border-right: none;
         }
       }
-      a.link-shopping-bag {
-        height: 59px;
-        width: 36px;
+      .shopping-bag {
+        a.link-shopping-bag {
+          height: 59px;
+          width: 36px;
+        }
+        .shopping-bag-icon {
+          display: inline-block;
+          float: left;
+        }
+        .shopping-bag-info {
+          color:$light-text-color;
+          display: inline-block;
+          padding: 12px 0 0 15px;
+          .shopping-bag-info-title {
+          }
+        }
       }
     }
   }

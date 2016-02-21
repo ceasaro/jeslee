@@ -1,5 +1,25 @@
+{% load static from staticfiles %}
 {% load i18n lfs_tags %}
+        <div class="shopping-bag">
+            <a href="{% url 'lfs.cart.views.cart' %}" class="link-shopping-bag" title="winkeltasje">
+                <div class="shopping-bag-icon" >
+                    <img src="{% static 'gfx/shopping-bag.png' %}" title="winkeltasje"/>
+                </div>
+                <div class="shopping-bag-info">
+                    {% if amount_of_items_int %}
+                        <div class="shopping-bag-info-title">Uw winkeltasje</div>
+                        <div class="shopping-bag-info-items">
+                            {% blocktrans with amount=amount_of_items_locale count counter=amount_of_items_int %}{{ amount_of_items_int }} artikel{% plural %}{{ amount_of_items_int }} artikelen{% endblocktrans %}
+                            voor {{ price|currency:request }}
+                        </div>
+                    {% else %}
+                        {% trans 'Cart is empty' %}
+                    {% endif %}
+                </div>
+            </a>
+        </div>
 
+{% comment %}
 <div class="cart-portlet portlet">
 
     <div class="portlet-header">
@@ -34,3 +54,4 @@
     </div>
 
 </div>
+{% endcomment %}

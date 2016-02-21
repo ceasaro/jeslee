@@ -45,6 +45,7 @@
                             {% endif %}
                         </div>
                     {% endif %}
+{% comment %}
                     <span class="price-disclaimer">
                         {% if product.price_includes_tax %}
                             {% trans 'inc. btw' %}
@@ -52,6 +53,7 @@
                             {% trans 'exc. btw' %}
                         {% endif %}
                     </span>
+{% endcomment %}
                 </div>
             {% endif %}
 

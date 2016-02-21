@@ -293,40 +293,64 @@ form textarea {
   margin-left: 20px;
 }
 /* line 219, ../style.scss */
+#jeslee-header .header-content .header-contact {
+  color: #EBDC78;
+  text-align: center;
+}
+/* line 222, ../style.scss */
+#jeslee-header .header-content .header-contact .contact-email {
+  margin: 5px;
+}
+/* line 225, ../style.scss */
+#jeslee-header .header-content .header-contact .contact-phone {
+  margin-top: 5px;
+}
+/* line 229, ../style.scss */
 #jeslee-header .header-content #header-menu {
   float: right;
   margin-top: 15px;
 }
-/* line 222, ../style.scss */
+/* line 232, ../style.scss */
 #jeslee-header .header-content #header-menu ul {
   float: left;
   margin-top: 26px;
 }
-/* line 225, ../style.scss */
+/* line 235, ../style.scss */
 #jeslee-header .header-content #header-menu ul li {
   display: inline;
 }
-/* line 227, ../style.scss */
+/* line 237, ../style.scss */
 #jeslee-header .header-content #header-menu ul li a {
   border-right: 1px solid #FFF;
   color: #EBDC78;
   padding: 0 10px;
   text-decoration: none;
 }
-/* line 233, ../style.scss */
+/* line 243, ../style.scss */
 #jeslee-header .header-content #header-menu ul li a:hover {
   text-decoration: underline;
 }
-/* line 237, ../style.scss */
+/* line 247, ../style.scss */
 #jeslee-header .header-content #header-menu ul li:last-child {
   border-right: none;
 }
-/* line 241, ../style.scss */
-#jeslee-header .header-content #header-menu a.link-shopping-bag {
+/* line 252, ../style.scss */
+#jeslee-header .header-content #header-menu .shopping-bag a.link-shopping-bag {
   height: 59px;
   width: 36px;
 }
-/* line 247, ../style.scss */
+/* line 256, ../style.scss */
+#jeslee-header .header-content #header-menu .shopping-bag .shopping-bag-icon {
+  display: inline-block;
+  float: left;
+}
+/* line 260, ../style.scss */
+#jeslee-header .header-content #header-menu .shopping-bag .shopping-bag-info {
+  color: #EBDC78;
+  display: inline-block;
+  padding: 12px 0 0 15px;
+}
+/* line 270, ../style.scss */
 #jeslee-header #main-site-menu {
   background-color: #EBE7EC;
   bottom: 1px;
@@ -334,38 +358,38 @@ form textarea {
   position: absolute;
   width: 100%;
 }
-/* line 254, ../style.scss */
+/* line 277, ../style.scss */
 #jeslee-header #main-site-menu ul.main-menu {
   height: 30px;
   margin: 10px auto 0 auto;
 }
-/* line 257, ../style.scss */
+/* line 280, ../style.scss */
 #jeslee-header #main-site-menu ul.main-menu li {
   display: inline;
 }
-/* line 260, ../style.scss */
+/* line 283, ../style.scss */
 #jeslee-header #main-site-menu ul.main-menu li a {
   padding: 11px 20px;
   text-decoration: none;
 }
-/* line 264, ../style.scss */
+/* line 287, ../style.scss */
 #jeslee-header #main-site-menu ul.main-menu li a:hover, #jeslee-header #main-site-menu ul.main-menu li a.selected {
   background-color: #390e41;
   color: #EBDC78;
 }
-/* line 271, ../style.scss */
+/* line 294, ../style.scss */
 #jeslee-header #main-site-menu ul.main-menu li:last-child {
   border-right: none;
 }
-/* line 276, ../style.scss */
+/* line 299, ../style.scss */
 #jeslee-header #main-site-menu ul.sub-menu li {
   display: inline;
 }
-/* line 278, ../style.scss */
+/* line 301, ../style.scss */
 #jeslee-header #main-site-menu ul.sub-menu li a {
   padding: 11px 20px;
 }
-/* line 285, ../style.scss */
+/* line 308, ../style.scss */
 #jeslee-header .header-right-background {
   background: url("../../gfx/background/background-top-right.png") no-repeat scroll right top transparent;
   height: 144px;
@@ -378,7 +402,7 @@ form textarea {
 /***********************
  * body
  **********************/
-/* line 298, ../style.scss */
+/* line 321, ../style.scss */
 #jeslee-body {
   margin: 0 auto;
   min-height: 400px;
@@ -387,13 +411,13 @@ form textarea {
 /***********************
  * footer
  **********************/
-/* line 306, ../style.scss */
+/* line 329, ../style.scss */
 #jeslee-footer {
   margin-top: 20px;
   min-height: 150px;
   widows: 100%;
 }
-/* line 310, ../style.scss */
+/* line 333, ../style.scss */
 #jeslee-footer hr {
   background-color: #390e41;
   opacity: 0.4;
@@ -402,12 +426,12 @@ form textarea {
   border-bottom: 1px solid #390e41;
   padding-top: 10px;
 }
-/* line 318, ../style.scss */
+/* line 341, ../style.scss */
 #jeslee-footer #footer-menu ul {
   color: #000;
   margin: 10px 10px 0 10px;
 }
-/* line 321, ../style.scss */
+/* line 344, ../style.scss */
 #jeslee-footer #footer-menu ul li {
   display: inline;
   padding: 0 20px;
@@ -416,7 +440,7 @@ form textarea {
 /***********************
  * banners and planes
  **********************/
-/* line 333, ../style.scss */
+/* line 356, ../style.scss */
 input[type=submit].purple-button {
   color: #ebdc78;
   font-size: 16pt;
@@ -425,12 +449,12 @@ input[type=submit].purple-button {
   margin-right: 40px;
   margin-top: 20px;
 }
-/* line 340, ../style.scss */
+/* line 363, ../style.scss */
 input[type=submit].purple-button:hover {
   color: #AD9D30;
 }
 
-/* line 345, ../style.scss */
+/* line 368, ../style.scss */
 .purple-button {
   background-color: #64124D;
   border: 6px solid #AD9D30;
@@ -439,35 +463,35 @@ input[type=submit].purple-button:hover {
   padding: 20px;
   text-decoration: none;
 }
-/* line 352, ../style.scss */
+/* line 375, ../style.scss */
 .purple-button.inactive {
   border: none;
   background-color: #A38FA7;
 }
-/* line 355, ../style.scss */
+/* line 378, ../style.scss */
 .purple-button.inactive .purple-button-content {
   width: 100%;
 }
-/* line 361, ../style.scss */
+/* line 384, ../style.scss */
 .purple-button:hover .purple-button-header {
   color: #AD9D30;
 }
-/* line 368, ../style.scss */
+/* line 391, ../style.scss */
 .purple-button:hover .button-change {
   font-size: 90pt;
 }
-/* line 372, ../style.scss */
+/* line 395, ../style.scss */
 .purple-button .purple-button-left-column {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 376, ../style.scss */
+/* line 399, ../style.scss */
 .purple-button .purple-button-right-column {
   display: table-cell;
   text-align: center;
   vertical-align: middle;
 }
-/* line 381, ../style.scss */
+/* line 404, ../style.scss */
 .purple-button .button-change {
   color: #AD9D30;
   float: right;
@@ -475,7 +499,7 @@ input[type=submit].purple-button:hover {
   font-weight: bold;
   width: 90px;
 }
-/* line 388, ../style.scss */
+/* line 411, ../style.scss */
 .purple-button .purple-button-header {
   color: #EBDC78;
   font-size: 18pt;
@@ -484,21 +508,21 @@ input[type=submit].purple-button:hover {
   text-align: center;
   width: 100%;
 }
-/* line 396, ../style.scss */
+/* line 419, ../style.scss */
 .purple-button .purple-button-content {
   color: #fff;
   font-size: 15pt;
   width: 205px;
 }
 
-/* line 403, ../style.scss */
+/* line 426, ../style.scss */
 .white-plane {
   background-color: #fff;
   display: block;
   padding: 10px;
 }
 
-/* line 410, ../style.scss */
+/* line 433, ../style.scss */
 .company-logo {
   display: table-cell;
   height: 128px;
@@ -510,65 +534,65 @@ input[type=submit].purple-button:hover {
 /***********************
  * layouts
  **********************/
-/* line 423, ../style.scss */
+/* line 446, ../style.scss */
 table.definition-list tr td {
   padding: 5px;
 }
-/* line 426, ../style.scss */
+/* line 449, ../style.scss */
 table.definition-list tr td.definition-key {
   font-weight: bold;
 }
 
-/* line 441, ../style.scss */
+/* line 464, ../style.scss */
 dl dd {
   padding-left: 20px;
 }
 
-/* line 446, ../style.scss */
+/* line 469, ../style.scss */
 em {
   font-style: italic;
 }
-/* line 448, ../style.scss */
+/* line 471, ../style.scss */
 em a {
   font-style: italic;
 }
 
-/* line 454, ../style.scss */
+/* line 477, ../style.scss */
 sup a {
   text-decoration: none;
 }
 
-/* line 459, ../style.scss */
+/* line 482, ../style.scss */
 .text-wrap-right {
   float: right;
   margin: 20px 0 20px 20px;
 }
 
-/* line 463, ../style.scss */
+/* line 486, ../style.scss */
 .text-wrap-left {
   float: left;
   margin: 20px 20px 20px 0;
 }
 
-/* line 468, ../style.scss */
+/* line 491, ../style.scss */
 .footnotes {
   margin-top: 40px;
 }
-/* line 470, ../style.scss */
+/* line 493, ../style.scss */
 .footnotes .footnote {
   margin-top: 10px;
 }
-/* line 474, ../style.scss */
+/* line 497, ../style.scss */
 .footnotes .footnote a {
   font-size: 10pt;
 }
 
-/* line 480, ../style.scss */
+/* line 503, ../style.scss */
 .full-out-wrapper {
   display: table;
   width: 1000%;
 }
-/* line 483, ../style.scss */
+/* line 506, ../style.scss */
 .full-out-wrapper .full-out-right {
   background-color: #390e41;
   display: table-cell;

@@ -263,7 +263,7 @@ msgstr "Totale levertijd"
 
 #: templates/lfs/cart/cart_inline.html:293
 msgid "Your Cart is empty"
-msgstr "Jouw winkelmandje is leeg"
+msgstr "Jouw winkeltasje is leeg"
 
 #: templates/lfs/catalog/breadcrumbs.html:3 templates/lfs/shop/shop.html:6
 #: templates/registration/password_reset_done.html:10
@@ -847,7 +847,7 @@ msgstr "Artikel"
 
 #: templates/lfs/portlets/cart.html:29
 msgid "Cart is empty"
-msgstr "Winkelmandje is leeg"
+msgstr "Winkeltasje is leeg"
 
 #: templates/lfs/portlets/delivery_time.html:12
 msgid "Deliverable"
