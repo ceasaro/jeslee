@@ -45,9 +45,6 @@
     <div class="grid_3">
         <div class="order-info">
 
-            <div>
-                {{ product.get_name }}
-            </div>
             {% average_for_instance product %}
 
             {# Prices #}
@@ -72,7 +69,6 @@
 {#                            / {{ product.get_base_price_unit }}*#}
                         </div>
                     {% endif %}
-{% comment %}
                     <div class="price-disclaimer">
                         {% if price_includes_tax %}
                             {% trans 'inc. VAT' %}
@@ -80,7 +76,6 @@
                             {% trans 'exc. VAT' %}
                         {% endif %}
                     </div>
-{% endcomment %}
                 {% else %}
                     <div class="standard-price"
                           nowrap="nowrap">
@@ -92,7 +87,6 @@
                             / {{ product.get_base_price_unit }}
                         </div>
                     {% endif %}
-{% comment %}
                     <div class="price-disclaimer">
                         {% if price_includes_tax %}
                             {% trans 'inc. VAT' %}
@@ -100,7 +94,6 @@
                             {% trans 'exc. VAT' %}
                         {% endif %}
                     </div>
-{% endcomment %}
                 {% endif %}
             </div> <!-- .prices -->
 {#            {% shipping product %}#}

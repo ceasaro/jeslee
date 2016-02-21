@@ -368,7 +368,7 @@ msgstr "Volgende pagina"
 msgid "*inc. VAT"
 msgstr "*incl. 21% BTW"
 
-msgid "*inc. VAT"
+msgid "inc. VAT"
 msgstr "incl. 21% BTW"
 
 #: templates/lfs/catalog/categories/product/default.html:75

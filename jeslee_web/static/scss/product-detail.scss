@@ -99,12 +99,18 @@
       padding: 30px 20px 20px 20px;
 
       .prices {
+        .standard-price-value {
+          font-size: 22pt;
+        }
         .for-sale-price {
-          font-size: $font-size-strong;
+          font-size: 24pt;
         }
         .product-price {
           margin-bottom: 20px;
 
+        }
+        .price-disclaimer {
+          font-size: 8pt;
         }
       }
 
