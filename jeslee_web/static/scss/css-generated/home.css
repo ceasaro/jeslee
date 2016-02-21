@@ -5,26 +5,31 @@
 #home-page .home-page-impression {
   margin-bottom: 20px;
 }
-/* line 12, ../home.scss */
+/* line 8, ../home.scss */
+#home-page .home-page-introduction {
+  line-height: 1.5;
+  margin-left: 58px;
+}
+/* line 16, ../home.scss */
 #home-page #upcoming_fashion_show.purple-button .purple-button-content {
   margin-left: 36px;
   width: 100%;
 }
-/* line 15, ../home.scss */
+/* line 19, ../home.scss */
 #home-page #upcoming_fashion_show.purple-button .purple-button-content .fashion_show_start_time {
   display: inline-block;
   margin-top: 11px;
   vertical-align: top;
 }
-/* line 20, ../home.scss */
+/* line 24, ../home.scss */
 #home-page #upcoming_fashion_show.purple-button .purple-button-content .fashion_show_start_time .day {
   font-size: 34pt;
 }
-/* line 23, ../home.scss */
+/* line 27, ../home.scss */
 #home-page #upcoming_fashion_show.purple-button .purple-button-content .fashion_show_start_time .month {
   font-size: 22pt;
 }
-/* line 27, ../home.scss */
+/* line 31, ../home.scss */
 #home-page #upcoming_fashion_show.purple-button .purple-button-content .fashion_show_location {
   border-left: 1px solid #fff;
   display: inline-block;
@@ -33,16 +38,16 @@
   padding-left: 20px;
   overflow: hidden;
 }
-/* line 40, ../home.scss */
+/* line 44, ../home.scss */
 #home-page .sponsors a {
   margin: 0 5px 5px 5px;
   display: inline-block;
 }
-/* line 43, ../home.scss */
+/* line 47, ../home.scss */
 #home-page .sponsors a .white-plane {
   padding: 6px;
 }
-/* line 46, ../home.scss */
+/* line 50, ../home.scss */
 #home-page .sponsors a .company-logo {
   height: 75px;
   width: auto;

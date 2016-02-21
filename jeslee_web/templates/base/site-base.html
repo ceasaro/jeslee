@@ -27,16 +27,6 @@
         <div class="grid_3">
             {% block header-menu %}
             <div id="header-menu">
-    {% comment %}
-                <ul>
-                    {% if user.is_authenticated %}
-                    <li>welkom {{ user }}<a href="{% url 'logout' %}">Uitloggen</a></li>
-                    {% else %}
-                    <li><a href="{% url 'login' %}">Inloggen</a></li>
-                    {% endif %}
-                    <li><a href="{% url 'lfs.cart.views.cart' %}">Je aankopen</a></li>
-                </ul>
-    {% endcomment %}
                 {% lfs_cart_portlet %}
             </div>
             {% endblock %}

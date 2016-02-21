@@ -25,6 +25,11 @@
             <img src="{% static 'gfx/feestelijke-kleding-voor-kinderen.jpg'%}" title="feest kleding voor kinderen"/>
         </div>
 
+        <div class="home-page-introduction">
+            Jeslee is de speciaalzaak voor feestkleding voor meisjes<br/>
+            Er zijn regelmatig nieuwe modellen in de <a href="{% url 'winkel' %}">online winkel</a>.<br/>
+            Denk bijvoorbeeld aan verjaardagen, bruiloften, kerst, oud & nieuw, communie etc. Voor elke gelegenheid is er een jurkje.
+        </div>
         {% if upcoming_fashion_show %}
             <div class="grid_6">
                 <a href="{% url 'fashion-show' upcoming_fashion_show.pk %}" id="upcoming_fashion_show" class="purple-button ">
