@@ -1,5 +1,11 @@
 {% extends 'bookkeeping/transactions/transaction-base.html' %}
 
+{% load static from staticfiles %}
+
+{% block javascript %}
+    <script src="{% static 'js/transactions/payment_new.js' %}"></script>
+{% endblock %}
+
 {% block page-content %}
     <form action="" method="post" class="regular-form">
     {% csrf_token %}
