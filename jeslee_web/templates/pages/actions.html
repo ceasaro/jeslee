@@ -1,0 +1,81 @@
+{% extends 'pages/base-page-text.html' %}
+
+{% load static from staticfiles %}
+{% load jeslee_utils %}
+
+
+{% block page-title %}
+    Jeslee steunt CliniClowns
+{% endblock %}
+
+{% block javascript %}
+    {{ block.super }}
+    <script src="{% static 'js/jquery/jquery.expander.js' %}"></script>
+{% endblock %}
+
+{% block jquery-document-ready %}
+{% endblock %}
+
+{% block menu_about_class %}selected{% endblock %}
+
+{% block page-content %}
+
+    <article>
+        <div class="expandable">
+            <p>
+                <a href="https://www.cliniclowns.nl/steun-ons/acties/kom-in-actie/actie/jurkje-rokje-met-rood-neusje"
+                   target="_blank">klik hier om de actie te steunen!</a>
+            </p>
+
+            <p>Jeslee : “ Het lachen is magisch want het kan de stoute ziekte eventjes weg jagen”</p>
+            <p>Jeslee roept alle meisjes van Nederland op om een eigen jurkje* te laten maken om CliniClowns te steunen.
+                Iedere meisje mag zelf aangeven waar het rode neusje op haar jurkje moet komen. Onder de oksel (hihi)
+                of toch helemaal onderaan ? Of liever als decoratie bij de hals? Je mag het ook ergens op het jurkje
+                verstoppen zodat niemand weet dat jouw jurkje een rood neusje heeft.</p>
+
+            <div>
+                Maar hoe werkt dit eigenlijk ?
+                <ul>
+                    <li>Je stuurt een eenvoudig berichtje zoals : "Hoi, ik wil ook een uniek jurkje” naar
+                        info@jeslee.com
+                    </li>
+                    <li>Je ontvangt daarna een antwoord met foto's van diverse stofjes. Elke stof heeft een nummer. Je
+                        mag
+                        1 of 2 stofjes voor je jurkje uitkiezen.
+                    </li>
+                    <li>Je laat ons weten waar het rode neusje op je jurkje moet komen (het is eigenlijk niet een echt
+                        neus maar een rood diamantje wat symbolisch is voor het rode neusje van de clowns)
+                    </li>
+                    <li>Na 1 week ontvang je je unieke jurkje en als je het mooi vindt mogen je ouders €25 op de
+                        rekening
+                        van Jeslee storten. Van dit bedrag gaat € 10 naar CliniClowns.
+                    </li>
+                </ul>
+            </div>
+            <p>
+                Deze actie is geldig tot oktober! Wees dus snel en stuur ons een berichtje zodat ons naaisters met je
+                jurkje
+                kunnen beginnen!
+            </p>
+
+            <div>
+                * Deze actie-jurkjes zijn mouwloos en hebben op een geheime plekje een rood neusje. De originele Jeslee
+                jurkjes hebben altijd het Jeslee-label aan de binnenkant en kunnen alleen via info@jeslee.com bestelt
+                worden.
+                Heeft u een ander model in gedachten, of wilt u liever een rokje of een broekje? laat het dan aan ons
+                per mail weten.<br/>
+                **Wilt u zelf € 10 op de rekening van CliniClowns storten? laat het dan van tevoren aan ons per mail
+                weten.<br/>
+            </div>
+            <p>
+                Heb je vragen over de jurkjes? Neem dan contact op met onze klantenservice via 06-15948090.
+            </p>
+
+        </div>
+    </article>
+{% endblock page-content %}
+
+{% block page-right-column %}
+    <div id="about-jeslee-right-column">
+    </div>
+{% endblock page-right-column %}

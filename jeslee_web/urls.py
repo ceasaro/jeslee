@@ -21,7 +21,7 @@ urlpatterns = patterns('',
 
     # pages
     url(r'^over-jeslee/$', TemplateView.as_view(template_name='pages/about-jeslee.html'), name='about'),
-    # url(r'^winkel/$', HomeView.as_view(template_name="lfs/collections.html"), name='winkel'),
+    url(r'^acties/$', TemplateView.as_view(template_name='pages/actions.html'), name='actions'),
     url(r'^winkel/$', HomeView.as_view(template_name="pages/web-shop-uc.html"), name='winkel'),
     (r'^winkel_/', include('jeslee_web.lfs_patch.core.urls')),
     url(r'^modeshows/', include('jeslee_web.fashion_show.urls')),
